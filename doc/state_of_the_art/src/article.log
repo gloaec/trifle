@@ -1,0 +1,329 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2013.4.30)  27 JAN 2014 20:25
+entering extended mode
+ %&-line parsing enabled.
+**article.tex
+(./article.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, loaded.
+(./style.cls
+
+
+ Two Column Journal Style for the
+ Proceedings of the National Academy of Science 
+ Written by Amy Hendrickson, TeXnology, Inc., 9/04
+ 
+ This version is dated April 15, 2008
+
+
+
+LaTeX Warning: You have requested document class `style',
+               but the document class provides `pnastwo'.
+
+Document Class: pnastwo 
+\affilcount=\count79
+\saveaffilcount=\count80
+\c@fnaffilcount=\count81
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+\bibskip=\skip43
+\footnum=\count90
+\savefootnum=\count91
+\abovefigcaptionskip=\skip44
+\abovetabcaptionskip=\skip45
+\abovetableskip=\skip46
+\belowtabcaptionskip=\dimen103
+\saveparskip=\dimen104
+\captionskip=\dimen105
+\PushOneColTopFig=\dimen106
+\PushOneColBotFig=\dimen107
+\PushOneColTopTab=\dimen108
+\PushOneColBotTab=\dimen109
+\PushTwoColTopFig=\dimen110
+\PushTwoColBotFig=\dimen111
+\PushTwoColTopTab=\dimen112
+\PushTwoColBotTab=\dimen113
+\intextfloatskip=\skip47
+\c@appfigure=\count92
+\c@apptable=\count93
+\c@appplate=\count94
+\checkforspace=\dimen114
+\savetopinsert=\box26
+\savebotinsert=\box27
+\secondsavetopinsert=\box28
+\secondsavebotinsert=\box29
+\firstcolbox=\box30
+\secondcolbox=\box31
+\thefirstbox=\box32
+\thesecondbox=\box33
+\firstcol=\dimen115
+\secondcol=\dimen116
+\checkheight=\dimen117
+\loopnum=\count95
+\firstcolsavefignum=\count96
+\footnotebox=\box34
+\ColUsed=\dimen118
+\FigSpace=\dimen119
+\testdblbotins=\box35
+\pageloopnum=\count97
+\endcolsavetopinsert=\box36
+\endcolsavebotinsert=\box37
+\testpagesize=\box38
+\savelastskip=\dimen120
+\partialpage=\box39
+\figandtabnumber=\count98
+\figandtabbox=\box40
+\pagefloatnumber=\count99
+\sizeoffloat=\box41
+\bogus=\count100
+\figinsert=\insert233
+\herebox=\box42
+\endfigbox=\box43
+\spanbox=\box44
+\dbltopins=\box45
+\dblbotins=\box46
+\dblbotskip=\skip48
+\dblfigandtabnumber=\count101
+\dblfigandtabbox=\box47
+\dblloopnum=\count102
+\savedblfigandtabnumber=\count103
+\dblspanherebox=\box48
+\captionwidth=\dimen121
+\widecaptionwidth=\dimen122
+\tablenoteloopnum=\count104
+\tablenotenum=\count105
+\c@theorem=\count106
+\c@lemma=\count107
+\c@definition=\count108
+\c@claim=\count109
+\c@alemma=\count110
+\c@remark=\count111
+\tablewide=\box49
+) (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen123
+\Gin@req@width=\dimen124
+)
+(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen125
+\extrarowheight=\dimen126
+\NC@list=\toks15
+\extratabsurround=\skip49
+\backup@length=\skip50
+)
+\TX@col@width=\dimen127
+\TX@old@table=\dimen128
+\TX@old@col=\dimen129
+\TX@target=\dimen130
+\TX@delta=\dimen131
+\TX@cols=\count112
+\TX@ftn=\toks16
+)
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks17
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen132
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen133
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count113
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count114
+\leftroot@=\count115
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count116
+\DOTSCASE@=\count117
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box50
+\strutbox@=\box51
+\big@size=\dimen134
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count118
+\c@MaxMatrixCols=\count119
+\dotsspace@=\muskip10
+\c@parentequation=\count120
+\dspbrk@lvl=\count121
+\tag@help=\toks19
+\row@=\count122
+\column@=\count123
+\maxfields@=\count124
+\andhelp@=\toks20
+\eqnshift@=\dimen135
+\alignsep@=\dimen136
+\tagshift@=\dimen137
+\tagwidth@=\dimen138
+\totwidth@=\dimen139
+\lineht@=\dimen140
+\@envbody=\toks21
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+) (./article.aux)
+\openout1 = `article.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 129.
+
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 129.
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no î in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+ [1
+
+]
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ú in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ù in font cmr9!
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+ [2]
+Missing character: There is no √ in font cmr9!
+Missing character: There is no § in font cmr9!
+Missing character: There is no √ in font cmr9!
+Missing character: There is no § in font cmr9!
+ [3]
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 580.
+Missing character: There is no ‚ in font cmr9!
+Missing character: There is no Ä in font cmr9!
+Missing character: There is no ô in font cmr9!
+\dblfigandtabbox1=\box52
+
+Overfull \hbox (1.01595pt too wide) in paragraph at lines 729--729
+[]|\OT1/cmr/bx/n/9 Architecture|  
+ []
+
+
+ ======================================================================== 
+ C A R E F U L !!!!!
+ 
+ You have used \begin{figure}[h] !
+ If there are any figures that appear earlier on the page
+ they may be numbered incorrectly.
+ 
+ Please check this and every other page on which you have used 
+ \begin{figure}[h] !
+ 
+ ======================================================================== 
+
+File: img/context_toolkit.eps Graphic file (type eps)
+<img/context_toolkit.eps> [4] (./article.lof)
+\tf@lof=\write3
+\openout3 = `article.lof'.
+
+ (./article.lot)
+\tf@lot=\write4
+\openout4 = `article.lot'.
+
+ [5]
+(./article.bbl) [6] (./article.aux) ) 
+Here is how much of TeX's memory you used:
+ 2026 strings out of 495062
+ 23093 string characters out of 1182644
+ 121742 words of memory out of 3000000
+ 5200 multiletter control sequences out of 15000+50000
+ 13688 words of font info for 50 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 27i,9n,24p,205b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on article.dvi (6 pages, 61696 bytes).

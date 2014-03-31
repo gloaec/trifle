@@ -1,0 +1,223 @@
+\begin{thebibliography}{10}
+
+\bibitem{Abowd1998}
+D.~Abowd, A.~K. Dey, R.~Orr, and J.~Brotherton.
+\newblock {Context-awareness in wearable and ubiquitous computing}.
+\newblock {\em Virtual Reality}, 3(3):200--211, September 1998.
+
+\bibitem{Abowd2002}
+GD~Abowd, Maria Ebling, and G~Hung.
+\newblock {Context-aware computing}.
+\newblock {\em \ldots Pervasive Computing}, 2002.
+
+\bibitem{Abowd1997}
+Gregory~D. Abowd, Christopher~G. Atkeson, Jason Hong, Sue Long, Rob Kooper, and
+  Mike Pinkerton.
+\newblock {Cyberguide: a mobile context-aware tour guide}.
+\newblock {\em Wireless Networks}, 3(5):421--433, October 1997.
+
+\bibitem{Ackerman2001}
+Mark Ackerman, Trevor Darrell, and Daniel Weitzner.
+\newblock {Privacy in Context}.
+\newblock {\em Human-Computer Interaction}, 16(2):167--176, December 2001.
+
+\bibitem{Agrawal2005}
+D.~Agrawal, KW~Lee, and J.~Lobo.
+\newblock {Policy-based management of networked computing systems}.
+\newblock {\em Communications Magazine, IEEE}, 43(10):69--75, 2005.
+
+\bibitem{Ayed2008}
+Dhouha Ayed, Chantal Taconet, Guy Bernard, and Yolande Berbers.
+\newblock {CADeComp: Context-aware deployment of component-based applications}.
+\newblock {\em \ldots and Computer Applications}, 31(3):224--257, August 2008.
+
+\bibitem{Bergstra2008}
+Jan Bergstra, Mark Burgess, and Lars Kristiansen.
+\newblock {On the Complexity of Change and Configuration Management}.
+\newblock In {\em Handbook of Network and System Administration}, pages
+  567--622. 2008.
+
+\bibitem{Catharina2002}
+Catharina Candolin and Hannu~H. Kari.
+\newblock {Context Aware Management Architecture}.
+\newblock 2002.
+
+\bibitem{Chen2003}
+Harry Chen, Tim Finin, and A~Joshi.
+\newblock {An intelligent broker for context-aware systems}.
+\newblock {\em Adjunct proceedings of Ubicomp}, 2003.
+
+\bibitem{Chetan2005}
+Shiva Chetan and J~Al-Muhtadi.
+\newblock {Mobile gaia: a middleware for ad-hoc pervasive computing}.
+\newblock {\em \ldots , 2005. CCNC. 2005 \ldots}, 00(C), 2005.
+
+\bibitem{Cuadrado2012}
+F~Cuadrado.
+\newblock {An autonomous engine for services configuration and deployment}.
+\newblock {\em \ldots , IEEE Transactions on}, 38(3):520--536, 2012.
+
+\bibitem{Cuadrado2009}
+F.~Cuadrado and J.C. Dueas.
+\newblock {A model for enabling context-adapted deployment and configuration
+  operations for the banking environment}.
+\newblock {\em \ldots and Services, 2009. \ldots}, pages 13--18, 2009.
+
+\bibitem{Dey2000}
+AK~Dey.
+\newblock {Providing architectural support for building context-aware
+  applications}.
+\newblock (November), 2000.
+
+\bibitem{Dey2001}
+Anind Dey, Gregory Abowd, and Daniel Salber.
+\newblock {A Conceptual Framework and a Toolkit for Supporting the Rapid
+  Prototyping of Context-Aware Applications}.
+\newblock {\em Human-Computer Interaction}, 16(2):97--166, December 2001.
+
+\bibitem{Dey2001a}
+Anind~K Dey.
+\newblock {Understanding and Using Context}.
+\newblock {\em Personal and Ubiquitous Computing}, 5(1):4--7, February 2001.
+
+\bibitem{DiNitto2008}
+Elisabetta {Di Nitto}, Carlo Ghezzi, Andreas Metzger, Mike Papazoglou, and
+  Klaus Pohl.
+\newblock {A journey to highly dynamic, self-adaptive service-based
+  applications}.
+\newblock {\em Automated Software Engineering}, 15(3-4):313--341, September
+  2008.
+
+\bibitem{Dustdar2007}
+Schahram Dustdar, Florian Rosenberg, and Matthias Baldauf.
+\newblock {A survey on context-aware systems}, 2007.
+
+\bibitem{Ebling2002}
+Maria~R Ebling, Guerney D~H Hunt, and Hui Lei.
+\newblock {Issues for Context Services for Pervasive Computing Uses of
+  Context}.
+\newblock 2002.
+
+\bibitem{Gaiti2006}
+Dominique Ga\"{\i}ti, Guy Pujolle, Ehab Al-Shaer, Ken Calvert, Simon Dobson,
+  Guy Leduc, and Olli Martikainen, editors.
+\newblock {\em {Autonomic Networking}}, volume 4195 of {\em Lecture Notes in
+  Computer Science}.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2006.
+
+\bibitem{Hofer2002}
+Thomas Hofer, Wieland Schwinger, Mario Pichler, Gerhard Leonhartsberger, Josef
+  Altmann, A~Hagenberg, Werner Retschitzegger, and Johannes Kepler.
+\newblock {Context-Awareness on Mobile Devices - the Hydrogen Approach}.
+\newblock 43(7236), 2002.
+
+\bibitem{Hong2001}
+Jason Hong and James Landay.
+\newblock {An Infrastructure Approach to Context-Aware Computing}.
+\newblock {\em Human-Computer Interaction}, 16(2):287--303, December 2001.
+
+\bibitem{Jennings2007}
+B.~Jennings.
+\newblock {Towards autonomic management of communications networks}.
+\newblock {\em Communications \ldots}, 45(10):112--121, 2007.
+
+\bibitem{Kagal}
+L.~Kagal and T.~Finin.
+\newblock {A policy language for a pervasive computing environment}.
+\newblock In {\em Proceedings POLICY 2003. IEEE 4th International Workshop on
+  Policies for Distributed Systems and Networks}, pages 63--74. IEEE Comput.
+  Soc, 2003.
+
+\bibitem{Kon2005}
+Fabio Kon, Jeferson~Roberto Marques, Tomonori Yamane, Roy~H. Campbell, and
+  M.~Dennis Mickunas.
+\newblock {Design, implementation, and performance of an automatic
+  configuration service for distributed component systems}.
+\newblock {\em Software: Practice and Experience}, 35(7):667--703, June 2005.
+
+\bibitem{Korpipaa2003}
+P~Korpip\"{a}\"{a} and J~M\"{a}ntyj\"{a}rvi.
+\newblock {An ontology for mobile device sensor-based context awareness}.
+\newblock {\em Modeling and Using Context}, 2003.
+
+\bibitem{Mostinckx2007}
+Stijn Mostinckx, Christophe Scholliers, Eline Philips, Charlotte Herzeel, and
+  Wolfgang~De Meuter.
+\newblock {\em {Fact Spaces: Coordination in the Face of Disconnection}},
+  volume 4467 of {\em Lecture Notes in Computer Science}.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2007.
+
+\bibitem{Parra2007}
+CA~Parra and M~D'Hondt.
+\newblock {Introducing context-awareness in applications by transforming
+  high-level rules}.
+\newblock {\em 3rd Workshop on \ldots}, 2007.
+
+\bibitem{Roller2003}
+Dieter Roller and Ingo Kreuz.
+\newblock {Selecting and parameterising components using knowledge based
+  configuration and a heuristic that learns and forgets}.
+\newblock {\em Computer-Aided Design}, 35(12):1085--1098, October 2003.
+
+\bibitem{Ruiz2009}
+JL~Ruiz, JC~Due\~{n}as, and F~Cuadrado.
+\newblock {Model-based context-aware deployment of distributed systems}.
+\newblock {\em Communications Magazine, \ldots}, (June):164--171, 2009.
+
+\bibitem{Schilit1994}
+B.~Schilit, N.~Adams, and R.~Want.
+\newblock {Context-Aware Computing Applications}.
+\newblock In {\em 1994 First Workshop on Mobile Computing Systems and
+  Applications}, pages 85--90. IEEE, December 1994.
+
+\bibitem{Schmidt1999}
+Albrecht Schmidt, Michael Beigl, and Hans-W Gellersen.
+\newblock {There is more to context than location}.
+\newblock {\em Computers \& Graphics}, 23(6):893--901, 1999.
+
+\bibitem{Serrano2006}
+J.~Mart\'{\i}n Serrano, Joan Serrat, John Strassner, and Ray Carroll.
+\newblock {Policy-Based Management and Context Modelling Contributions for
+  Supporting Services in Autonomic Systems}.
+\newblock In {\em Autonomic Networking}, pages 172--187. Dominique Ga\"{\i}ti,
+  Guy Pujolle, Ehab Al-Shaer, Ken Calvert, Simon Dobson, Guy Leduc, Olli
+  Martikainen, 2006.
+
+\bibitem{Sheng2005}
+Q.Z. Sheng and B.~Benatallah.
+\newblock {ContextUML: A UML-Based Modeling Language for Model-Driven
+  Development of Context-Aware Web Services Development}.
+\newblock {\em International Conference on Mobile Business (ICMB'05)}, pages
+  206--212, 2005.
+
+\bibitem{Strang2004}
+Thomas Strang and C~Linnhoff-Popien.
+\newblock {A context modeling survey}.
+\newblock {\em Workshop Proceedings}, 2004.
+
+\bibitem{Thomas2010}
+N.~Thomas, J.~Bradley, W.~Knottenbelt, N.~Dingle, U.~Harder, Diego
+  Perez-Palacin, and Jos\'{e} Merseguer.
+\newblock {Performance Evaluation of Self-reconfigurable Service-oriented
+  Software With Stochastic Petri Nets}.
+\newblock {\em Electronic Notes in Theoretical Computer Science}, 261:181--201,
+  2010.
+
+\bibitem{Voida2002}
+S.~Voida, E.D. Mynatt, B.~MacIntyre, and G.M. Corso.
+\newblock {Integrating virtual and physical context to support knowledge
+  workers}.
+\newblock {\em IEEE Pervasive Computing}, 1(3):73--79, July 2002.
+
+\bibitem{Winograd2001}
+Terry Winograd.
+\newblock {Architectures for Context}.
+\newblock {\em Human-Computer Interaction}, 16(2):401--419, December 2001.
+
+\bibitem{Yang2009}
+Mei Yang, Yingtao Jiang, Ling Wang, Yulu Yang, Yitzhak Birk, and Evgeny
+  Fiksman.
+\newblock {Dynamic reconfiguration architectures for multi-context FPGAs}.
+\newblock {\em Computers \& Electrical Engineering}, 35(6):878--903, 2009.
+
+\end{thebibliography}

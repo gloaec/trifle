@@ -1,0 +1,7 @@
+#!/bin/bash
+
+latex article.tex
+bibtex article.aux
+latex article.tex
+latex article.tex
+dvipdf article.dvi
