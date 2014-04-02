@@ -6,75 +6,15 @@
 % BASIC CLASS FILE
 %------------------------------------------------
 
-\documentclass{pnastwo}
-
-%------------------------------------------------
-% POSITION OF TEXT
-%------------------------------------------------
-
-%% Changing position of text on physical page:
-%% Since not all printers position
-%% the printed page in the same place on the physical page,
-%% you can change the position yourself here, if you need to:
-
-% \advance\voffset -.5in % Minus dimension will raise the printed page on the 
-                         %  physical page; positive dimension will lower it.
-
-%% You may set the dimension to the size that you need.
-
-%------------------------------------------------
-% GRAPHICS STYLE FILE
-%------------------------------------------------
-
-%% Requires graphics style file (graphicx.sty), used for inserting
-%% .eps/image files into LaTeX articles.
-%% Note that inclusion of .eps files is for your reference only;
-%% when submitting to PNAS please submit figures separately.
-
-%% Type into the square brackets the name of the driver program 
-%% that you are using. If you don't know, try dvips, which is the
-%% most common PC driver, or textures for the Mac. These are the options:
-
-% [dvips], [xdvi], [dvipdf], [dvipdfm], [dvipdfmx], [pdftex], [dvipsone],
-% [dviwindo], [emtex], [dviwin], [pctexps], [pctexwin], [pctexhp], [pctex32],
-% [truetex], [tcidvi], [vtex], [oztex], [textures], [xetex]
-
-\usepackage{graphicx}
-\usepackage{tabularx}
-
-%------------------------------------------------
-% OPTIONAL POSTSCRIPT FONT FILES
-%------------------------------------------------
-
-%% PostScript font files: You may need to edit the PNASoneF.sty
-%% or PNAStwoF.sty file to make the font names match those on your system. 
-%% Alternatively, you can leave the font style file commands commented out
-%% and typeset your article using the default Computer Modern 
-%% fonts (recommended). If accepted, your article will be typeset
-%% at PNAS using PostScript fonts.
-
-% Choose PNASoneF for one column; PNAStwoF for two column:
-%\usepackage{PNASoneF}
-%\usepackage{pnastwof}
+\documentclass{style}
 
 %------------------------------------------------
 % ADDITIONAL OPTIONAL STYLE FILES
 %------------------------------------------------
 
-%% The AMS math files are commonly used to gain access to useful features
-%% like extended math fonts and math commands.
-
+\usepackage{graphicx}
+\usepackage{tabularx}
 \usepackage{amssymb,amsfonts,amsmath}
-
-%------------------------------------------------
-% OPTIONAL MACRO FILES
-%------------------------------------------------
-
-%% Insert self-defined macros here.
-%% \newcommand definitions are recommended; \def definitions are supported
-
-%\newcommand{\mfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}}
-%\def\s{\sigma}
 
 %------------------------------------------------
 % DO NOT EDIT THIS SECTION
@@ -93,7 +33,7 @@
 
 \author{Ghislain Loaec\affil{1}{University of Burgundy}}
 
-\contributor{Draft}
+\contributor{Submission Candidate}
 
 %-------------------------------------------------------------------------------
 
@@ -110,11 +50,11 @@
 The fundamental objective of ubiquitous computing is to ease the human labor in
 computer use.  This results in enhancing the resources available throughout the
 physical environment.  In order to extract the maximum benefit of a digital
-environment, embeded systems and services must cooperate.  Every single operand
-has its own information, merged to circumstances in which a task is performed
-gives a context (TODO: Reformulate) The primary challenge with context-handling
-interacting with humans, is that there is no standard, reusable model that can
-be used to handle context.
+environment, embeded systems and services must cooperate. Software failures due
+to configuration errors are commonplace as computer systems continue to grow
+larger and more complex. The primary challenge with context-handling
+interacting with humans, is that there is no standard, or reusable model that
+can be used to handle context.
 \end{abstract}
 
 %------------------------------------------------
@@ -135,24 +75,37 @@ be used to handle context.
 
 \section{Introduction}
 
-\dropcap{C}ontext-aware management introduces on conflicts notion of policy.  A
-context-aware system must be capable of mimicking a human’s ability to recognise
-and exploit implicit information in the environment, in order to advance the
-operations of its functionalities.  Although identifying and deducing a human
-activity is a challenge, it is critical that context-aware applications should
-operate by conveying the appropriate information to the right place at the right
-time through inferring the user’s intention.  Context-aware computing is a
-computing paradigm in which applications can discover and take advantage of
-contextual information such as location, time of day, people and devices, and
-user activity. Context-aware computing is especially suited to the areas of
-mobile and pervasive computing. Instead of adapting systems and applications so
-that mobility is hidden, context-aware computing provides support for
-mobile-aware applications.“
+\dropcap{S}oftware configuration imposes a major cost on system administration.
+Configuration errors may result in security vulnerabilities, application
+crashes, severe disruptions in software functionality, unexpected changes in the
+UI, and incorrect program executions. Dealing with context seems to be a major
+challenge which the field of Artificial Intelligence (AI) will have to face in
+the next few years. 
+
+A context-aware system must be capable of mimicking a human’s ability to
+recognise and exploit implicit information in the environment, in order to
+advance or correct the operations of its functionalities.  This entails a
+dynamic configuration for every component of a context-aware system, in order
+to adjust its behavior depending on the situation. Although identifying and
+deducing a human activity is a challenge, it is critical that context-aware
+applications should operate by conveying the appropriate information to the
+right place at the right time through inferring the user’s intention.
+Context-aware computing is a computing paradigm in which applications can
+discover and take advantage of contextual information such as location, time of
+day, people and devices, and user activity.
+
+In this paper, we present common architecture principles of context-aware
+systems and derive a layered conceptual design framework to explain the
+different elements common to most context-aware architectures. Based on these
+design principles, we introduce various existing context-aware systems focusing
+on context-aware middleware and frameworks, which ease the configuration of
+context-based applications and services.
 
 \section{Background}
 
-Definition of context (Much debate has occured and are still takinh place about
-the meaning of both context and context aware computing)
+Much debate has occured and are still taking place about the meaning of both
+context and context aware computing.  While most people tacitly understand what
+context is, they find it hard to elucidate. 
 
 \begin{quotation}
   ... any information the can be used to charaterize the situation of an entity.
@@ -161,10 +114,28 @@ the meaning of both context and context aware computing)
   application themselves.  \cite{Abowd1997}
 \end{quotation}
 
-- Talk about the ``five W's'' - Comparison with human interactions : use of the
-implicit information about the situation, i.e. context, to enhance the
-convesational bandwidth.
+This definition makes it easier for an application developer to enumerate the
+context for a given application scenario. If a piece of information can be used
+to characterize the situation of a participant in an interaction, then that
+information is context.
 
+The Five Ws are questions whose answers are considered basic in
+information-gathering. They constitute a formula for getting the complete story
+on a subject. According to the principle of the Five Ws, a report can only be
+considered complete if it answers these questions starting with an interrogative
+word:
+
+\begin{itemize}
+    \item \textbf{Who} is it about?
+    \item \textbf{What} happened?
+    \item \textbf{When} did it take place?
+    \item \textbf{Where} did it take place?
+    \item \textbf{Why} did it happen?
+\end{itemize}
+
+Each question should have a factual answer — facts necessary to include for a
+report to be considered complete. Importantly, none of these questions can
+be answered with a simple "yes" or "no".
 
 \begin{quotation}
   Context-aware computing : exploit the progress in sensing and mechanisms for
@@ -172,14 +143,14 @@ convesational bandwidth.
   \cite{Abowd2002}
 \end{quotation}
 
-Context information can be formed into an abstract model of all actors in a
-system.
+This context information can be formed into an abstract model of all
+actors in a system.
 
-\begin{quotation}
-  Context-aware computing is any system that "adapts according to its location
-  of use, the collection of nearby people and objects, as well as changes over
-  time" \cite{Schilit1994}
-\end{quotation}
+Context-aware computing was first defined by Schilit and Theimer as any system
+that "adapts according to its location of use, the collection of nearby people
+and objects, as well as changes over time" \cite{Schilit1994}
+Since then, there have been numerous attempts to define context-aware
+computing, most of which have been too specific
 
 \section{Context overview}
 
@@ -240,7 +211,7 @@ is prohibitively costly and so requires very efficient algorithms
 \subsection{Context information characterisics}
 
 Researchers at the University of Queensland have classified four
-characteristics: (Candolin  Kari 2002)
+characteristics: \cite{Catharina2002}
 
 \begin{enumerate}
     \item \textbf{Context information exhibits a range of temporal
@@ -265,20 +236,20 @@ characteristics: (Candolin  Kari 2002)
             context information.  The speed at which the context information
             changes raises reasons for the doubt over the soundness of the
             context.  This "delay between the production and use of context
-            information" \cite{Candolin2002} is a concern.  Other sources of
+            information" \cite{Catharina2002} is a concern.  Other sources of
             concern regarding the soundness of context information include the
-            reliability of information context producers : sensor failure,
-            broken path between producers or any source that would provide wrong
-            or outdated information.
+	    reliability of information from the context producers : sensor
+	    failure, broken path between producers or any source that would
+	    provide wrong or outdated information.
 
     \item \textbf{Information has many alternative representations}
 
             The raw data gathered from both physical and virtual environment can
             take on many forms and must be processed when combined with other
-            context information.  The probability of the context-aware system
+            context informations.  The probability of the context-aware system
             obtaining a 100\% success rate in "capturing the relationships that
             exist between the alternative representations"
-            \cite{Candolin2002} of the context information and the one apt
+            \cite{Catharina2002} of the context information and the one apt
             to the current situation is extremely low.
 
     \item \textbf{Context information is highly interrelated}
@@ -289,20 +260,16 @@ characteristics: (Candolin  Kari 2002)
             Context may not be reliable
             “where the characteristics of the derived information are intimately
             linked to the properties of the information it is derived from”
-            \cite{Candolin2002}.
+            \cite{Catharina2002}.
 
 \end{enumerate}
 
 \subsection{Context-aware system}
 
-A context-aware system is characterized by the capability of mimicking the
-human's ability to recognise the implicit information in the environment and to
-exploit it in order to advance the operations of its functionalities.
-Although identifying and deducing a human activity is a challenge.
-In terms of configuration management, this results in conveying the appropriate
-information to the right place and at the right time through inferring the
-user’s intention.
-To accomplish this objective, thes context aware system must :
+A system is context-aware if it uses context to provide relevant information
+and/or services to the user, where relevancy depends on the user’s task.
+Context-aware systems can be implemented in many ways, but in order to
+accomplish this objective, the context aware system generally must :
 
 \begin{itemize}
     \item Gather the information
@@ -316,7 +283,7 @@ To accomplish this objective, thes context aware system must :
 
 The researchers of the Context Toolkit at the University of Berkeley propose
 that there are three features that a context-aware application must support:
-\cite{Dey2000} 
+\cite{Dey2000}
 
 \begin{enumerate}
     \item Presentation of information and services to a user 
@@ -325,8 +292,8 @@ that there are three features that a context-aware application must support:
 \end{enumerate}
 
 The developers of Kimura System have designed distributed components of a
-pervasive context-aware system. These components fall into three classes (Voida
-et al 2002), these are: 
+pervasive context-aware system. These components fall into three classes
+\cite{Voida2002}, these are: 
 
 \begin{enumerate}
     \item Context Acquisition - the system gathers context information and adds
@@ -376,8 +343,8 @@ failure.
 
 The method of context-data acquisition is very important when designing
 context-aware systems because it predefines the architectural style of the
-system at least to some extent. Chen (2004) presents three different approaches
-on how to acquire contextual information.
+system at least to some extent. Chen (2003) \cite{Chen2003} presents three
+different approaches on how to acquire contextual information.
 
 \subsubsection{Direct sensor access}
 
@@ -408,8 +375,8 @@ to this so-called context server to facilitate concurrent multiple access
 
 \subsection{Achitectures for Managing Context}
 
-Winograd (2001) describes three different context management models for
-coordinating multiple processes and components:
+Winograd (2001) \cite{Winograd2001} describes three different context management
+models for coordinating multiple processes and components:
 
 \begin{itemize}
         \item \textbf{Widgets}
@@ -426,11 +393,11 @@ coordinating multiple processes and components:
 
         \item \textbf{Network services}
                 This more flexible approach, argued for example in Hong and
-                Landay (2001), resembles the context server architecture.
-                Instead of a global widget manager discovery techniques are used
-                to find networked services. This service based approach is not
-                as efficient as a widget architecture due to complex network
-                based components but provides robustness.
+                Landay (2001) \cite{Hong2001}, resembles the context server
+                architecture.  Instead of a global widget manager discovery
+                techniques are used to find networked services. This service
+                based approach is not as efficient as a widget architecture due
+                to complex network based components but provides robustness.
 
         \item \textbf{Blackboard}
                 In contrast to the process-centric view of the widget and the
@@ -572,10 +539,14 @@ context-aware system. Additional attributes that might be useful include:
         \cite{Dey2001}
 \end{quotation}
 
-Approaches :
-
-use context fusion to convert the lower level context into higher level usable
-by applications. \cite{Dustdar2007}
+After sensing, acquiring and saving the context from various sources the next
+activity for the context- aware system is to produce a mechanism for achieving
+context interpretation, so that the gathered context information is utilised in
+a fitting manner.  The interpretation may involve integrating numerous contexts
+into one to provide a higher-level context, thus the interpreter alters context
+information by raising its level of abstraction.  One approach is to use context
+fusion to convert the lower level context into higher level usable by
+applications. \cite{Dustdar2007}
 
 \subsection{Layered conceptual framework}
 
@@ -627,32 +598,51 @@ by applications. \cite{Dustdar2007}
 
 \subsection{Security and Privacy}
 
+\begin{quotation}
+	Privacy is intrinsically bound up with control \cite{Ackerman2001}
+\end{quotation}
+
 As context may include sensitive information on people, e.g., their location and
-their activity, it is necessary to have the opportunity to protect privacy. For
-these purposes the Context Toolkit introduces the concept of context ownership.
-Users are assigned to sensed context data as their respective owners. They are
-allowed to control the other users’ access. New components involved in this
-access control are the Mediated Widgets, Owner Permissions, a modified
-BaseObject and Authenticators. The MediatedWidget class is an extension of a
-basic widget which contains a so-called widget developer specifying who owns the
-data being sensed. The Owner Permission is the component that receives
-permission queries and determines to grant or to deny access based on stored
-situations. These situations include authorised
-users, time of access etc. The modified BaseObject contains all the original
-methods augmented with identification mechanisms. Now applications and
-components have to provide their identity along with the usual request for
-information. Finally the authenticator is responsible for proofing the identity
-by using a public-key infrastructure. CoBrA includes an own flexible policy
-language to control context access, called Rei (Kagal et al., 2003). This policy
-language is modelled on deontic concepts of rights, prohibitions, obligations
-and dispensations and controls data access through dynamically modifiable domain
-dependent policy rules.
+their activity, it is necessary to have the opportunity to protect privacy.
+Context-aware systems raise privacy challenges not previously considered by
+traditional systems.  The control of the various sensors and services is not
+well specified in Dey et al. \cite{Dey2001}, although often applications such as
+Context Toolit are implied to be under the control of a "user".  Users are
+assigned to sensed context data as their respective owners. They are allowed to
+control the other users’ access. 
+
+However, the control over systems determining the presence of individuals in a
+room or other location, on the other hand, is not specified at all. This is a
+critical point.
+
+In general, in a context aware environment with a suite of context aware
+applications, an individual operates within many social environments, and social
+environments may make a use of many individuals' data.
+
+Often disregarded aspects, security and privacy belong to the most important
+components of a context-aware system as the protection of sensitive context data
+must be guaranteed.
 
 \section {Existent systems and frameworks}
 
-\begin{table*}[h]
-    \caption{Table caption}\label{sampletable}
-    \begin{tabularx}{\linewidth}{X X X X X X X X}
+In Table 1 we have summarised the main aspects of the discussed approaches. The
+architectural style of a context-aware system is mainly driven by the context
+acquisition method. The main criteria for a reasonable architectural approach
+is the separation of concerns between the context acquisition and the user
+components as proposed by Dey (2000) \cite{Dey2000}. All the frameworks
+presented in this paper support this separation of concerns.
+
+\begin{table*}%[h]
+    \begin{tabularx}{\linewidth}{
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+    }
         \hline
         \textbf{Architecture} & 
         \textbf{Sensing} & 
@@ -718,7 +708,7 @@ dependent policy rules.
         Supported (e.g., secure tracking, location privacy, access control)\\
 
         Hydrogen &
-        Tree layered architecture &
+        Three layered architecture &
         Adapters for various context types &
         Object-oriented &
         Interpretation and aggregation of raw data only &
@@ -737,325 +727,247 @@ dependent policy rules.
 
         \hline
     \end{tabularx}
+    \caption{Comparison of existing context-management frameworks}
+    \label{ContextManagementFrameworkComparison}
 \end{table*}
 
-\subsection{Location-based systems}
-
-GPS satellites, mobile phone towers, badge proximity detectors, cameras,
-magnetic card readers, barcode readers, etc.
-
-\subsection{Context-aware systems}
-
-Use only one aspect of context, namely location information.  The use of
-different types of context atoms such as noise, light and location allows the
-combination to high-level context objects.
-
-TODO: Talk about Creole / Tiramisu
-
-\subsection{Context-aware architectures}
-
-\begin{itemize}
-        \item CoBrA : Context Broker Architecture
-        \item CaSS : Context-Awareness Sub-Structure
-        \item SOCAM : Service-Oriented Context-Aware Middleware
-        \item CORTEX : context-aware middleware approach. The architecture is
-                based on the Sentient Object Model
-        \item Gaia : another middleware infrastructure, extends typical
-                operating system concepts to include context-awareness.
-        \item CADeComp : Context-aware deployment of component-based
-                applications
-        \item Context Management Framework : Blackboard based
-        \item Context Toolkit : Widget based
-        \item Hydrogen : Three layered architecture, adapters for various
-                context type
-        \item ...
-\end{itemize}
-
 \begin{figure}[h]
-\centerline{\includegraphics[width=0.6\linewidth]{img/context_toolkit.eps}}
-\caption{Example configuration of context toolkit components}
-\label{Contexttoolkit}
+    \centerline{\includegraphics[width=0.6\linewidth]{img/context_toolkit.eps}}
+    \caption{Example configuration of context toolkit components}
+    \label{Contexttoolkit}
 \end{figure}
 
-\section{Research directions}
+\subsection{Sensing technologies}
 
-Challenges
+In every framework, the sensing technology is implemented differently. In order
+to support the aforementioned separation of concerns, it is important to
+encapsulate the concrete sensing mechanism in separate components. Furthermore,
+it allows to access the contextual data via defined interfaces. There is so far
+no standard description language or ontology to enable the reuse of contextual
+information accross various middleware systems and frameworks. Therefore,
+proprietary solutions have emerged, as used by many frameworks.
+For sensing the context information SOCAM has the most sophisicated approach :
+web services provide apis (using SOAP) for external virtual sensors and internal
+providers for querying sensores are consumed by using context events. Those
+context events are modelized in OWL based on a prefefined ontology.
+
+\subsection{Context representations}
+
+For providing intelligent and adaptable context-aware applications or services,
+the context model and the context processing logic supported by individual
+frameworks is a major criteria. Ontologies provide a rich formalism for
+representing context information. Based on a highly sophisticated ontological
+model, the reasoning engines can derive new concepts to adapt the service
+behaviour accordingly. The key-value context representation used in Context
+Toolkit is, therefore, a major drawback. The fact that such attributes do not
+hold any semantics rescricts consequently the development of intelligent context
+processsing and aggregation. In addition, non-ontology based model requires a 
+consequent programming effort and tightly couples the context model to the rest
+of the system. Moreover, the reasoning and knowledge sharing across systems are 
+impossible due to the lack of declarative semantics of programs. SOCAM, for
+instance, uses a general upper ontology to specify basic common contextual
+properties and to refine this general ontology. In order to provide very fine
+grained possibilities for specifying and formalising context, some
+domain-specific ontologies can be defined.
+
+\subsection{Resource discovery}
+
+Resource discovery mechanisms are rarely implemented despite the importance of
+such dynamic mechanisms, especially in a pervasive environment, where the
+context sources and available sensors change constantly. SOCAM is the only
+system based the service oriented architecture.  It offers a service
+locating service, which dynamically binds to available context providers. This
+missing feature in most frameworks is indeed a consequent shortcomming since
+it implies that the used context sources are stable and permanently available,
+which is not always the case in real-world applications. If one or more context
+sources behave wrong, it may lead to a decreased availability of the
+context-aware service or application. 
+
+\subsection{Historical context management}
+
+Although most frameworks keep a history of context data, none of them actually
+exploits it. Yet, It could allow to provide highly adaptable context-aware
+services if historical context was used to implement self-learning algorithms.
+Furthermore, contextual information can be predicted to proactively provide a
+certain set of services to the user.
+
+\subsection{Security and privacy}
+
+Another important aspect is security and privacy.  Contextual information mostly
+considers user profile information and other sensitive information.  Therefore,
+concepts are needed to express policies and to define ownership of context
+information. CoBrA includes an own flexible policy language to control context
+access, called Rei \cite{Kagal}. This policy language is modelled on deontic
+concepts of rights, prohibitions, obligations and dispensations and controls
+data access through dynamically modifiable domain dependent policy rules.
+Gaia uses several mechanisms to define privacy restrictions and secure
+communication for tracking locations of people. The Context Toolkit implements
+the concept of context ownership, which is used to allow access to the context
+to the owner only. Security concepts are not implemented in the other frameworks.
+Many systems totally lack security modules, others offer basic security
+mechanisms and only a few systems provide advanced and sufficient security
+options. 
+
+\subsection{Conclusion}
+
+Every system and framework uses its own format to describe context and
+its own communications mechanisms which appears to be the main problem of
+today's context-aware systems.
+%\subsection{Location-based systems}
+%
+%GPS satellites, mobile phone towers, badge proximity detectors, cameras,
+%magnetic card readers, barcode readers, etc.
+%
+%\subsection{Context-aware systems}
+%
+%Use only one aspect of context, namely location information.  The use of
+%different types of context atoms such as noise, light and location allows the
+%combination to high-level context objects.
+%
+%\subsection{Context-aware architectures}
+%
+%CaSS : Context-Awareness Sub-Structure
+%
+%\begin{itemize}
+%        \item CADeComp : Context-aware deployment of component-based
+%                applications
+%        \item CaSS : Context-Awareness Sub-Structure
+%        \item CoBrA : Context Broker Architecture
+%        \item SOCAM : Service-Oriented Context-Aware Middleware
+%
+%        \item CORTEX : context-aware middleware approach. The architecture is
+%                based on the Sentient Object Model
+%        \item Gaia : another middleware infrastructure, extends typical
+%                operating system concepts to include context-awareness.
+%        \item Context Management Framework : Blackboard based
+%        \item Context Toolkit : Widget based
+%        \item Hydrogen : Three layered architecture, adapters for various
+%                context type
+%        \item ...
+%\end{itemize}
+
+\section{Research directions and challenges}
+
+In this paper we described different design principles and context models for
+context-aware systems and presented various existent middleware and
+server-based approaches to ease the configuration of context-aware application.
+
+There are several research areas involved in the development of context-based
+configuration. Here are three of the most relevant :
+
+\subsection{Middleware and implementation details}
+
+The need for new middleware arises on the implementation side. Current
+middleware technologies are not adequate to handle the resctrictions imposed by
+mobility and smart environmental systems : volatile connections, processing and
+memory restrictions on mobile devices, narrow communication channels, reduced
+screens, restricted input mechanisms, and the list goes on. There are a set of 
+contex-aware imlementations in litterature with some working prototypes :
+
+\begin{itemize}
+    \item \textbf{Hydrogen} \cite{Hofer2002}: a three layer architecture
+    \item \textbf{Gaia} \cite{Chetan2005}: another middleware infrastructure,
+    extends typical operating system concepts to include context-awareness.
+    \item \textbf{CybreMinder} \cite{Abowd2002}: a context-aware system for sup-
+    porting reminders
+    \item \textbf{Context Toolkit} \cite{Dey2001}: a widget based architecture
+\end{itemize}
+
+\subsection{Representation of context-information}
+
+The representation of context-information is another concern. We presented in
+this paper a generic ontology approach. It is based on four main concepts: user,
+environment, platform and resources.  Presently, ontologies are mainly employed
+to enable communication across the different devices in the same network. As
+proposed by ContextUML \cite{Sheng2005}, the Unified Modeling Language (UML) can
+also be used to model context. The models could be used to separate the
+definition and information related to the context from the specific
+implementation. There are other characteristics that make context information
+difficult to model, as stated before, it is sometimes necessary to differentiate
+between static and dynamic information.
+
+\subsection{Semantic rules}
+
+Another area of research would be concerning use of rules to express behavior in
+terms of high-level elements. Rule languages are used in some cases to achieve
+context-awareness.  CRIME \cite{Mostinckx2007} for example, is a prototypical
+implementation of the Fact Space Model, which is a coordination language that
+provides the applications a view of their environment The rules in CRIME
+describe the behavior of the applica- tions according to the context
+information. CRIME also deals with disconnection by invalidating the facts and
+the conclusions that are drawn from devices that are no longer available in the
+environment
 
 \section{Conclusion and discussion}
 
-%-------------------------------------------------------------------------------
-%	MATERIALS AND METHODS
-%-------------------------------------------------------------------------------
+Component technologies will play a fundamental role in the next generation
+computer systems as the complexity of software and the diversity and
+pervasiveness of computing devices increase. However, component technologies
+must offer mechanisms for automatic management of inter-component dependencies
+and component-to-resource dependencies. Otherwise, the development of
+component- based systems will continue to be difficult and frequently lead to
+unreliable and non-robust systems.  
 
-%% Optional Materials and Methods Section
-%% The Materials and Methods section header will be added automatically.
-%
-%\begin{materials}
-%Suspendisse viverra eleifend nulla at facilisis. Nullam eget tellus orci. Cras
-%sit amet lorem velit. Maecenas rhoncus pellentesque orci eget vulputate.
-%Phasellus massa nisi, mattis nec elementum accumsan, blandit non neque. In ac
-%enim elit, sit amet luctus ante. Cras feugiat commodo lectus, vitae convallis
-%dui sagittis id. In in tellus lacus, sed lobortis eros. Phasellus sit amet
-%eleifend velit. Duis ornare dapibus porttitor. Maecenas eros velit, dignissim
-%at egestas in, tincidunt lacinia erat. Proin elementum mi vel lectus suscipit
-%fringilla. Mauris justo est, ullamcorper in rutrum interdum, accumsan eget mi.
-%Maecenas ut massa aliquet purus eleifend vehicula in a nisi. Fusce molestie
-%cursus lacinia.
-%
-%\begin{definition}
-%A bounded function $\theta$ is a weak solution of QG if for any
-%$\phi\,\epsilon\,
-%C_0^{\infty}(\fdb\times\mathbb{R}\times[0,\vep])$ we have
-%\begin{eqnarray}
-%&&  \int_{\mathbb{R}^+\times\fd\times\mathbb{R}} \hspace{-25pt}
-% \theta(x,y,t)\, \pr_t \phi
-%\,(x,y,t) dy dx dt+\nonumber\\
-%  & +&\int_{\mathbb{R}^+\times\fd\times\mathbb{R}}
-%\hspace{-26pt} \theta\,(x,y,t) u(x,y,t)\cdot\nabla\phi\,(x,y,t)
-%dydxdt = 0 \label{weaksol} \end{eqnarray}
-%where $u$ is determined previously.
-%\end{definition}
-%
-%Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-%cubilia Curae; Mauris eu sapien nunc, sit amet accumsan dui. Nulla ac diam ut
-%nunc placerat semper eget et libero. Vestibulum ante ipsum primis in faucibus
-%orci luctus et ultrices posuere cubilia Curae; Cras hendrerit ullamcorper
-%sapien vitae luctus. Quisque vel diam massa. Vestibulum dui nibh, facilisis vel
-%vestibulum eu, viverra in quam.
-%
-%\begin{theorem}
-%If the active scalar $\theta$ satisfies
-%the equation \eqref{weaksol}, then $\varphi$ satisfies the equation
-%\begin{eqnarray}
-%\mfrac{\pr \varphi}{\pr t}(x,t)&=&\hspace{-2pt}\dst
-%\int_{\fd}\mfrac{\mfrac{\pr \varphi}{\pr x}(x,t)-\mfrac{\pr
-%\varphi}{\pr
-%u}(u,t)}{[(x-u)^{2}+(\varphi(x,t)-\varphi(u,t))^{2}]^{\f12}}\nonumber\\
-%&&
-%\chi(x-u,\varphi(x,t)-\varphi(u,t)) du \hspace{3pt} +
-%\nonumber\\
-%&+&\dst \int_{\fd} \Big{[}\mfrac{\pr \varphi} {\pr
-%x}(x,t)-\mfrac{\pr \varphi}{\pr u} (u,t)\Big{]}
-%\nonumber\\&&
-%\eta(x-u,\varphi(x,t)-\varphi(u,t)) du + Error
-%\end{eqnarray}
-%with $|Error|\leq C\, \delta | log\delta| $ where $C$ depends only
-%on $\|\theta\|_{L^{\infty}}$ and $\|
-%\nabla\varphi\|_{L^{\infty}}$.
-%\end{theorem}
-%
-%Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-%inceptos himenaeos. Integer accumsan ornare tortor at varius. Phasellus
-%ullamcorper blandit dolor sit amet tempus. Curabitur ligula urna, ultrices in
-%iaculis eu, eleifend vel urna. Praesent ullamcorper imperdiet purus, ut
-%interdum sem interdum dictum. Proin euismod volutpat eros ac mattis. Quisque
-%sit amet massa ac tortor cursus malesuada at vitae nisi. Nam quis neque et nunc
-%vehicula cursus sit amet at tellus.
-%\end{materials}
-%
-%-------------------------------------------------------------------------------
-%	APPENDICES (OPTIONAL)
-%-------------------------------------------------------------------------------
+Future ubiquitous computing environments will be composed of thousands of
+devices running millions of software components. Current systems rely heavily
+on manual configuration but with a system composed of millions of components
+this will no longer be possible.  There are only two ways out of this
+situation: static configuration or dynamic, automatic configuration
 
-\appendix
-An appendix without a title.
-
-\appendix[Appendix title]
-An appendix with a title.
+Since future environments tend to be more and more dynamic, automatic
+configuration seems to be the only viable solution.
 
 %-------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %-------------------------------------------------------------------------------
 
 \begin{acknowledgments}
-  Bla bla bla thank you
+    The author gratefully acknowledge the help and wise input provided by Prof.
+Nader Mbarek during the development of this work.  A special thank you goes to
+Prof. Albert Dipanda for allowing me to work on a topic in adequacy with my
+professional activities.  Thanks to Luc Bourdot, president of the FOSS center
+of excellence of the french ministry of education and EOLE team leader, for
+granting me some free time to work on this paper. I would to thank Gwenael
+Remond as well, head developper of Era firewall, for his valuable comments and
+for sharing his knowledge on autonomic configuration. I am also grateful for the
+precious feedback provided by the anonymous reviewers of this paper
 \end{acknowledgments}
 
+%-------------------------------------------------------------------------------
+%	LIST OF FIGURES / TABLES
+%-------------------------------------------------------------------------------
+
+%\tableofcontents
+\listoffigures
+\listoftables
+
+%-------------------------------------------------------------------------------
+%	APPENDICES (OPTIONAL)
+%-------------------------------------------------------------------------------
+
+\appendix[Glossary]
+
+\begin{itemize}
+        \item CADeComp : Context-aware deployment of component-based
+                applications
+        \item CaSS : Context-Awareness Sub-Structure
+        \item CoBrA : Context Broker Architecture
+        \item SOCAM : Service-Oriented Context-Aware Middleware
+\end{itemize}
+
+\appendix[References]
 
 %-------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %-------------------------------------------------------------------------------
-
-%% PNAS does not support submission of supporting .tex files such as BibTeX.
-%% Instead all references must be included in the article .tex document. 
-%% If you currently use BibTeX, your bibliography is formed because the 
-%% command \verb+\bibliography{}+ brings the <filename>.bbl file into your
-%% .tex document. To conform to PNAS requirements, copy the reference listings
-%% from your .bbl file and add them to the article .tex file, using the
-%% bibliography environment described above.  
-
-%%  Contact pnas@nas.edu if you need assistance with your
-%%  bibliography.
-
-% Sample bibliography item in PNAS format:
-%% \bibitem{in-text reference} comma-separated author names up to 5,
-%% for more than 5 authors use first author last name et al. (year published)
-%% article title  {\it Journal Name} volume #: start page-end page.
-%% ie,
-% \bibitem{Neuhaus} Neuhaus J-M, Sitcher L, Meins F, Jr, Boller T (1991) 
-% A short C-terminal sequence is necessary and sufficient for the
-% targeting of chitinases to the plant vacuole. 
-% {\it Proc Natl Acad Sci USA} 88:10362-10366.
-
-
-%% Enter the largest bibliography number in the facing curly brackets
-%% following \begin{thebibliography}
 
 \nocite{*}
 
 \bibliography{biblio}{}
 \bibliographystyle{plain}
 
-
-%\begin{thebibliography}{10}
-%\bibitem{BN}
-%N.~Gui, H.~Sun V.~De Florio, and C.~Vincenzo Blondia, 
-%{\em Toward architecture-based context-aware deployment and adaptationn}, 
-%Advances in NIPS, 15 (2003).
-%
-%\bibitem{BBG:EmbeddingRiemannianManifoldHeatKernel}
-%P.~B\'erard, G.~Besson, and S.~Gallot, {\em Embedding {R}iemannian
-%  manifolds by their heat kernel}, Geom. and Fun. Anal., 4 (1994),
-%  pp.~374--398.
-%
-%\bibitem{CLAcha1}
-%R.R.~Coifman and S.~Lafon, {\em Diffusion maps}, Appl. Comp. Harm. Anal.,
-%  21 (2006), pp.~5--30.
-%
-%\bibitem{DiffusionPNAS}
-%R.R.~Coifman, S.~Lafon, A.~Lee, M.~Maggioni, B.~Nadler, F.~Warner, and
-%  S.~Zucker, {\em Geometric diffusions as a tool for harmonic analysis and
-%  structure definition of data. {P}art {I}: Diffusion maps}, Proc. of Nat.
-%  Acad. Sci.,  (2005), pp.~7426--7431.
-%
-%\bibitem{Clementi:LowDimensionaFreeEnergyLandscapesProteinFolding}
-%P.~Das, M.~Moll, H.~Stamati, L.~Kavraki, and C.~Clementi, {\em
-%  Low-dimensional, free-energy landscapes of protein-folding reactions by
-%  nonlinear dimensionality reduction}, P.N.A.S., 103 (2006), pp.~9885--9890.
-%
-%\bibitem{DoGri}
-%D.~Donoho and C.~Grimes, {\em Hessian eigenmaps: new locally linear
-%  embedding techniques for high-dimensional data}, Proceedings of the National
-%  Academy of Sciences, 100 (2003), pp.~5591--5596.
-%
-%\bibitem{DoGri:WhenDoesIsoMap}
-%D.~L. Donoho and C.~Grimes, {\em When does isomap recover natural
-%  parameterization of families of articulated images?}, Tech. Report Tech. Rep.
-%  2002-27, Department of Statistics, Stanford University, August 2002.
-%
-%\bibitem{GruterWidman:GreenFunction}
-%M.~Gr\"uter and K.-O. Widman, {\em The {G}reen function for uniformly
-%  elliptic equations}, Man. Math., 37 (1982), pp.~303--342.
-%
-%\bibitem{Simon:NeumannEssentialSpectrum}
-%R.~Hempel, L.~Seco, and B.~Simon, {\em The essential spectrum of neumann
-%  laplacians on some bounded singular domains}, 1991.
-%
-%\bibitem{1}
-%Kadison, R.\ V.\ and Singer, I.\ M.\ (1959)
-%Extensions of pure states, {\it Amer.\ J.\ Math.\ \bf
-%81}, 383-400.
-%
-%\bibitem{2}
-%Anderson, J.\ (1981) A conjecture concerning the pure states of
-%$B(H)$ and a related theorem. in {\it Topics in Modern Operator
-%Theory}, Birkha\"user, pp.\ 27-43.
-%
-%\bibitem{3}
-%Anderson, J.\ (1979) Extreme points in sets of
-%positive linear maps on $B(H)$. {\it J.\ Funct.\
-%Anal.\
-%\bf 31}, 195-217.
-%
-%\bibitem{4}
-%Anderson, J.\ (1979) Pathology in the Calkin algebra. {\it J.\
-%Operator Theory \bf 2}, 159-167.
-%
-%\bibitem{5}
-%Johnson, B.\ E.\ and Parrott, S.\ K.\ (1972) Operators commuting
-%with a von Neumann algebra modulo the set of compact operators.
-%{\it J.\ Funct.\ Anal.\ \bf 11}, 39-61.
-%
-%\bibitem{6}
-%Akemann, C.\ and Weaver, N.\ (2004) Consistency of a
-%counterexample to Naimark's problem. {\it Proc.\ Nat.\ Acad.\
-%Sci.\ USA \bf 101}, 7522-7525.
-%
-%\bibitem{TSL}
-%J.~Tenenbaum, V.~de~Silva, and J.~Langford, {\em A global geometric
-%  framework for nonlinear dimensionality reduction}, Science, 290 (2000),
-%  pp.~2319--2323.
-%
-%\bibitem{ZhaZha}
-%Z.~Zhang and H.~Zha, {\em Principal manifolds and nonlinear dimension
-%  reduction via local tangent space alignement}, Tech. Report CSE-02-019,
-%  Department of computer science and engineering, Pennsylvania State
-%  University, 2002.
-%\end{thebibliography}
-
 %-------------------------------------------------------------------------------
 
 \end{article}
-
-%-------------------------------------------------------------------------------
-%	FIGURES AND TABLES
-%-------------------------------------------------------------------------------
-
-%% Adding Figure and Table References
-%% Be sure to add figures and tables after \end{article}
-%% and before \end{document}
-
-%% For figures, put the caption below the illustration.
-%%
-%% \begin{figure}
-%% \caption{Almost Sharp Front}\label{afoto}
-%% \end{figure}
-
-%\begin{figure}[h]
-%\centerline{\includegraphics[width=0.4\linewidth]{placeholder.jpg}}
-%\caption{Figure caption}\label{placeholder}
-%\end{figure}
-
-%% For Tables, put caption above table
-%%
-%% Table caption should start with a capital letter, continue with lower case
-%% and not have a period at the end
-%% Using @{\vrule height ?? depth ?? width0pt} in the tabular preamble will
-%% keep that much space between every line in the table.
-
-%% \begin{table}
-%% \caption{Repeat length of longer allele by age of onset class}
-%% \begin{tabular}{@{\vrule height 10.5pt depth4pt  width0pt}lrcccc}
-%% table text
-%% \end{tabular}
-%% \end{table}
-
-%\begin{table}[h]
-%\caption{Table caption}\label{sampletable}
-%\begin{tabular}{l l l}
-%\hline
-%\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-%\hline
-%Treatment 1 & 0.0003262 & 0.562 \\
-%Treatment 2 & 0.0015681 & 0.910 \\
-%Treatment 3 & 0.0009271 & 0.296 \\
-%\hline
-%\end{tabular}
-%\end{table}
-
-%% For two column figures and tables, use the following:
-
-%% \begin{figure*}
-%% \caption{Almost Sharp Front}\label{afoto}
-%% \end{figure*}
-
-%% \begin{table*}
-%% \caption{Repeat length of longer allele by age of onset class}
-%% \begin{tabular}{ccc}
-%% table text
-%% \end{tabular}
-%% \end{table*}
-
-%-------------------------------------------------------------------------------
 
 \end{document}
