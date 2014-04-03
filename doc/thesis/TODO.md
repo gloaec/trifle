@@ -1,0 +1,3 @@
+- Download articles from hio.no (unavailable so far)
+- Get latex mermoir template
+- Check CFGENgine 3

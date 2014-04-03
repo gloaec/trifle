@@ -1,0 +1,53 @@
+Paxos made simple
+L Lamport - ACM Sigact News, 2001
+The Paxos algorithm for implementing a fault-tolerant distributed system has been regarded
+as difficult to understand, perhaps because the original presentation was Greek to many
+readers [5]. In fact, it is among the simplest and most obvious of distributed algorithms. At ...
+
+Revisiting the Paxos algorithm
+R De Prisco, B Lampson, N Lynch - 1997
+Abstract This paper develops a new I/O automaton model called the Clock General Timed
+Automaton (Clock GTA) model. The Clock GTA is based on the General Timed Automaton
+(GTA) of Lynch and Vaandrager. The Clock GTA provides a systematic way of describing ...
+
+In search of an understandable consensus algorithm
+D Ongaro, J Ousterhout - Draft of October, 2013
+Abstract Raft is a consensus algorithm for managing a replicated log. It produces a result
+equivalent to (multi-) Paxos, and it is as efficient as Paxos, but its structure is different from
+Paxos; this makes Raft more understandable than Paxos and also provides a better ...
+
+Link Delay Inference in ANA Network
+E Paintsil - 2008
+Estimating quality of service (QoS) parameters such as link delay distribution from the end-to-
+end delay of a multicast tree topology in network tomography cannot be achieved without
+multicast probing techniques or designing unicast probing packets that mimic the ...
+
+Towards topic maps for a promise theory based configuration management
+E Kefialew - 2009
+Knowledge management is the major challenge of today. Capturing expert information in a
+knowledge base that allows non-experts to locate it requires a carefully designed
+knowledge model. We attempt to discover whether the relationship between Topic Maps ...
+
+Fault detection in autonomic networks using the concept of promised cooperation
+R Badonnel, M Burgess - Managing Virtualization of Networks and Services, 2007
+Abstract Fault detection is a crucial issue in autonomic networks for identifying unreliable
+nodes and reducing their impact on the network availability and performance. We propose in
+this paper to improve this situation based on the concept of promised cooperation. We ...
+
+Laws of human-computer behaviour and collective organization
+M Burgess, S Fagernes - IEEE Transactions on Network and Service …, 1999
+Abstract—We begin with two axioms: that system behaviour is an empirical phenomenon and
+that organization is a form of behaviour. We derive laws and characterizations of behaviour for
+generic systems. In our view behaviour is not determined by internal mech- anisms alone ...
+
+A process algebra based framework for promise theory
+J Bergstra, I Bethke, M Burgess - arXiv preprint arXiv:0707.0744, 2007
+Abstract: We present a process algebra based approach to formalize the interactions of
+computing devices such as the representation of policies and the resolution of conflicts. As
+an example we specify how promises may be used in coming to an agreement regarding ...
+
+Promise theory-a model of autonomous objects for pervasive computing and swarms.
+M Burgess, S Fagernes - ICNS, 2006
+Abstract—The theory of promises describes policy governed services, in a framework of
+completely autonomous agents, which assist one another by voluntary cooperation alone.
+We propose this as a framework for analysing realistic models of modern networking, and ...
