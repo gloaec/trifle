@@ -1,0 +1,497 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Client"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Command"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Computer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Desktop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#File"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interface"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Laptop"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LogicalPartition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Machine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Operating_System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Package"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalPartition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Promise"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Server"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Service"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Storage"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#CausedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Causes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ComponentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ComposedOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ConfiguredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Configures"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ContainedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EditedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Edits"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#InstalledBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Installs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ManagedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Manages"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#MonitoredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Monitors"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OwnedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Owns"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#PromisedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Promises"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ProvidedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Provides"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#RequiredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Requires"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Runs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#RunsOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#StartedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Starts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#UsedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Uses"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Writes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#WrittenBy"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Client"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Computer"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Desktop"/>
+        <Class IRI="#Computer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#File"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#EditedBy"/>
+            <Class IRI="#Package"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#File"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#UsedBy"/>
+            <Class IRI="#Package"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#File"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#UsedBy"/>
+            <Class IRI="#Person"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Laptop"/>
+        <Class IRI="#Computer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LogicalPartition"/>
+        <Class IRI="#Storage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Package"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ConfiguredBy"/>
+            <Class IRI="#Machine"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Package"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#InstalledBy"/>
+            <Class IRI="#Package"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Package"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ManagedBy"/>
+            <Class IRI="#Machine"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Package"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#RunsOn"/>
+            <Class IRI="#Machine"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalPartition"/>
+        <Class IRI="#Storage"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Process"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#ComponentOf"/>
+            <Class IRI="#Package"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Promise"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#PromisedBy"/>
+            <Class IRI="#File"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Promise"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#PromisedBy"/>
+            <Class IRI="#Package"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Promise"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#PromisedBy"/>
+            <Class IRI="#Person"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Server"/>
+        <Class IRI="#Machine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Service"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ProvidedBy"/>
+            <Class IRI="#Machine"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Service"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#UsedBy"/>
+            <Class IRI="#Person"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Service"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#RequiredBy"/>
+            <Class IRI="#Package"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Client"/>
+        <Class IRI="#Server"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Desktop"/>
+        <Class IRI="#Laptop"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#LogicalPartition"/>
+        <Class IRI="#PhysicalPartition"/>
+    </DisjointClasses>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Causes"/>
+        <ObjectProperty IRI="#CausedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#ComposedOf"/>
+        <ObjectProperty IRI="#ComponentOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Configures"/>
+        <ObjectProperty IRI="#ConfiguredBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Contains"/>
+        <ObjectProperty IRI="#ContainedIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Edits"/>
+        <ObjectProperty IRI="#EditedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Installs"/>
+        <ObjectProperty IRI="#InstalledBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Manages"/>
+        <ObjectProperty IRI="#ManagedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Monitors"/>
+        <ObjectProperty IRI="#MonitoredBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Owns"/>
+        <ObjectProperty IRI="#OwnedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Promises"/>
+        <ObjectProperty IRI="#PromisedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Provides"/>
+        <ObjectProperty IRI="#ProvidedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Requires"/>
+        <ObjectProperty IRI="#RequiredBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Runs"/>
+        <ObjectProperty IRI="#RunsOn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Starts"/>
+        <ObjectProperty IRI="#StartedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Writes"/>
+        <ObjectProperty IRI="#WrittenBy"/>
+    </InverseObjectProperties>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CausedBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An association type where one topic plays the role of affecting the other by changing its state from state X to state Y.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Command</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">A Command is a utility that can be used by users to start a specific process if there is no schedule set for the same purpose. A very good example that can illustrate the relation ship among those topic types is that of a web service that needs a process such as ”httpd” running on the background which is started by a command:”httpd start”.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ComponentOf</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The relationship between an entity X which is a component for another entity Y which plays the role of being a complex for thecomponent X.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Computer</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Computers are the main types of machines for this thesis work. That is why the two terminologies are interchangeably used in different parts of this literature. Personal computers, laptops, server computers all belong to this topic type. A computer runs one or more operating systems. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConfiguredBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">When an entity X can bring the necessary changes forentity Y in order to let it serve its intended purpose. The relationshipbetween a machine and a configuration management package such as Cfengine 3 is a typical example of such kinds of relationships.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ContainedIn</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">If an entity X is contained with in Y either physically or conceptually, the relationship is called as ContainedIn.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EditedBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Writings such as a file could be amended by an editor such as user of the file for some purpose.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#InstalledBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An entity X can put program Y into a machine in order to let it serve its intended purpose. This relation ship between a program and an entity who put it into a machine is called as InstalledBy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Interface</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Interface is defined as a device used to provide network access to a computer.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Machine</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Machine is any device that can accept and process information to provide a desired result based on a program or sequence of instructions on how the data is to be processed.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ManagedBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">If X is responsible for the proper functioning of Y in order to let it accomplish its intended purpose, X is said to be the manger of Y. The act of managing includes a continuous supervision and action taking when there is a deviation from the desired way of behaving.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MonitoredBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Monitoring is mainly the responsibility of keeping an eye on some thing. If an entity X monitors Y, it keeps an eye on Y so that it may report to the manager of Y when there is a deviation from the desired behavior.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Operating_System</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Operating System is a program that bridges the gap between the package and the underlying hardware components of a computer. Operating system as a topic type consists of different operating systems as topics including Windows XP, OS X, and Linux.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OwnedBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Ownership is a kind of relationship that could exist between an entity which has become a possession and its owner. The relationship between a file and its owner is an example of this type of associations.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Package</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Packages on the other hand are application programs designed to serve specific purpose. It could be to give a network service or web service on a machine. The package named Apache is a good example topic of type package which is designed to enable a web service.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PromisedBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The relationship between a promise and its promiser.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ProvidedBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">When an entity X has the potential and willingness of providing some thing to some other entity, the relationship that exists between them is called ProvidedBy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RequiredBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">If X depends on Y in order to serve its intended purpose, the relationship between them is called RequiredBy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RunsOn</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">If entity X performs its actitvities or execution on entity Y, the relationship is called as RunsOn.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Service</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Service is a specific functionality of a computer system such as a web service or network service provided by a machine. A process which is defined in this literature as a package or part of a package on action enables the provisioning of services by performing real activities behind the scene.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#StartedBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">When an entity X makes another entity Y to start doing something or behave in some manner, the association is said to be of type StartedBy.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Storage</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Storage is a logical partition of a physical storage media that mainly serves as a location for the different kinds of files. Defined as a file as a complete named collection of information such as a program, set of data used by a program or a user created document.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UsedBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">If an entity X uses entity Y at any point in time for any of its purposes, the the type of association is called UsedBy</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WrittenBy</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">The relationship beween a writing X and its writer Y.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
