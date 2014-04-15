@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-from trifle.ontology import g
+import rdflib
+
+g = rdflib.Graph()
+g.parse("/home/ghis/Workspace/trifle/src/ontology.owl")
 
 def providedLocally(machine=None):
     return g.query(
@@ -12,6 +15,7 @@ def providedLocally(machine=None):
 
 
 def provided():
+    """ List of services available in the environemment """
     return g.query(
         """ SELECT ?service ?machine ?host ?port 
             WHERE {
