@@ -30,255 +30,255 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CausedBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#causedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CausedBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#causedBy">
         <rdfs:comment>An association type where one topic plays the role of affecting the other by changing its state from state X to state Y.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Causes -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#causes -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Causes">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CausedBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#causes">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#causedBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ComponentOf -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#componentOf -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ComponentOf">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#componentOf">
         <rdfs:comment>The relationship between an entity X which is a component for another entity Y which plays the role of being a complex for thecomponent X.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ComposedOf -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#composedOf -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ComposedOf">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ComponentOf"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#composedOf">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#componentOf"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ConfiguredBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#configuredBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ConfiguredBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#configuredBy">
         <rdfs:comment>When an entity X can bring the necessary changes forentity Y in order to let it serve its intended purpose. The relationshipbetween a machine and a configuration management package such as Cfengine 3 is a typical example of such kinds of relationships.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Configures -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#configures -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Configures">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ConfiguredBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#configures">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#configuredBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ContainedIn -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#containedIn -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ContainedIn">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#containedIn">
         <rdfs:comment>If an entity X is contained with in Y either physically or conceptually, the relationship is called as ContainedIn.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Contains -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#contains -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Contains">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ContainedIn"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#contains">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#containedIn"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#EditedBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#editedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#EditedBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#editedBy">
         <rdfs:comment>Writings such as a file could be amended by an editor such as user of the file for some purpose.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Edits -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#edits -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Edits">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#EditedBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#edits">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#editedBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#InstalledBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#installedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#InstalledBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#installedBy">
         <rdfs:comment>An entity X can put program Y into a machine in order to let it serve its intended purpose. This relation ship between a program and an entity who put it into a machine is called as InstalledBy.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Installs -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#installs -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Installs">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#InstalledBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#installs">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#installedBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ManagedBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#managedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ManagedBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#managedBy">
         <rdfs:comment>If X is responsible for the proper functioning of Y in order to let it accomplish its intended purpose, X is said to be the manger of Y. The act of managing includes a continuous supervision and action taking when there is a deviation from the desired way of behaving.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Manages -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#manages -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Manages">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ManagedBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#manages">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#managedBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#MonitoredBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#monitoredBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#MonitoredBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#monitoredBy">
         <rdfs:comment>Monitoring is mainly the responsibility of keeping an eye on some thing. If an entity X monitors Y, it keeps an eye on Y so that it may report to the manager of Y when there is a deviation from the desired behavior.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Monitors -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#monitors -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Monitors">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#MonitoredBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#monitors">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#monitoredBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#OwnedBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ownedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#OwnedBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ownedBy">
         <rdfs:comment>Ownership is a kind of relationship that could exist between an entity which has become a possession and its owner. The relationship between a file and its owner is an example of this type of associations.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Owns -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#owns -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Owns">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#OwnedBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#owns">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ownedBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#PromisedBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#promisedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#PromisedBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#promisedBy">
         <rdfs:comment>The relationship between a promise and its promiser.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Promises -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#promises -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Promises">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#PromisedBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#promises">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#promisedBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ProvidedBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#providedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ProvidedBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#providedBy">
         <rdfs:comment>When an entity X has the potential and willingness of providing some thing to some other entity, the relationship that exists between them is called ProvidedBy.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Provides -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#provides -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Provides">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ProvidedBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#provides">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#providedBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RequiredBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#requiredBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RequiredBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#requiredBy">
         <rdfs:comment>If X depends on Y in order to serve its intended purpose, the relationship between them is called RequiredBy.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Requires -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#requires -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Requires">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RequiredBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#requires">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#requiredBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Runs -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#runs -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Runs">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RunsOn"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#runs">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#runsOn"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RunsOn -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#runsOn -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RunsOn">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#runsOn">
         <rdfs:comment>If entity X performs its actitvities or execution on entity Y, the relationship is called as RunsOn.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#StartedBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#startedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#StartedBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#startedBy">
         <rdfs:comment>When an entity X makes another entity Y to start doing something or behave in some manner, the association is said to be of type StartedBy.</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Starts -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#starts -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Starts">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#StartedBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#starts">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#startedBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#UsedBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#usedBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#UsedBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#usedBy">
         <rdfs:comment>If an entity X uses entity Y at any point in time for any of its purposes, the the type of association is called UsedBy</rdfs:comment>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Uses -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#uses -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Uses"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#uses"/>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Writes -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#writes -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Writes">
-        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#WrittenBy"/>
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#writes">
+        <inverseOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#writtenBy"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#WrittenBy -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#writtenBy -->
 
-    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#WrittenBy">
+    <ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#writtenBy">
         <rdfs:comment>The relationship beween a writing X and its writer Y.</rdfs:comment>
     </ObjectProperty>
     
@@ -295,101 +295,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Address -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Address">
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#AllowConnectFrom -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#AllowConnectFrom">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Architecture -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Architecture">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#AuditingEnabled -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#AuditingEnabled">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
-    </DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CPU -->
 
     <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CPU">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CheckForeign -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CheckForeign">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CheckRoot -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#CheckRoot">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Description -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Description">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Email -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Email">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ForceIpv4 -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ForceIpv4">
-        <rdfs:comment>TODO: Add Ipv4 and Ipv6 as datatypes</rdfs:comment>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#GroupID -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#GroupID">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
@@ -404,98 +313,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#HardwarePlateform -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#HardwarePlateform">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Operating_System"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#HomeDirectory -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#HomeDirectory">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Language -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Language">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Location -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Location">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#LogLevel -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#LogLevel">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ManualPage -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ManualPage">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#MapRoot -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#MapRoot">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#MotherBoardSerialNo -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#MotherBoardSerialNo">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#PackageFileRepositories -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#PackageFileRepositories">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Password -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Password">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RAM -->
 
     <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RAM">
@@ -505,84 +322,111 @@
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ServiceCriticality -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#address -->
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ServiceCriticality">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ServicePort -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ServicePort">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ServiceType -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ServiceType">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ShellAccount -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ShellAccount">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#address">
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Status -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#allowConnectFrom -->
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Status">
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#allowConnectFrom">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#architecture -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#architecture">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#auditingEnabled -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#auditingEnabled">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#TrustKeyFrom -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#checkForeign -->
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#TrustKeyFrom">
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#checkForeign">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#checkRoot -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#checkRoot">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#description -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#email -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#email">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#forceIpv4 -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#forceIpv4">
+        <rdfs:comment>TODO: Add Ipv4 and Ipv6 as datatypes</rdfs:comment>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Type -->
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#groupID -->
 
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Type">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Operating_System"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Version -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Version">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Operating_System"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
-        <rdfs:range rdf:resource="&xsd;string"/>
-    </DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#WebPage -->
-
-    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#WebPage">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#groupID">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
-        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#hardwarePlateform -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#hardwarePlateform">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Operating_System"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#homeDirectory -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#homeDirectory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
     </DatatypeProperty>
     
 
@@ -592,6 +436,162 @@
     <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#isVirtualized">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
         <rdfs:range rdf:resource="&xsd;boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#language -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#language">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#location -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#location">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#logLevel -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#logLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#manualPage -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#manualPage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#mapRoot -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#mapRoot">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#motherBoardSerialNo -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#motherBoardSerialNo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#packageFileRepositories -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#packageFileRepositories">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#password -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#password">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#serviceCriticality -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#serviceCriticality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#servicePort -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#servicePort">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#serviceType -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#serviceType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#shellAccount -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#shellAccount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#status -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#status">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#trustKeyFrom -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#trustKeyFrom">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#type -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Operating_System"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#version -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#version">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Operating_System"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#webPage -->
+
+    <DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#webPage">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
     </DatatypeProperty>
     
 
@@ -647,19 +647,19 @@
     <Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#File">
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#EditedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#editedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#UsedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#usedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#UsedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#usedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
             </Restriction>
         </rdfs:subClassOf>
@@ -713,26 +713,26 @@
     <Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package">
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ConfiguredBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#managedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ManagedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#configuredBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RunsOn"/>
-                <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
-            </Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#InstalledBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#installedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#runsOn"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Packages on the other hand are application programs designed to serve specific purpose. It could be to give a network service or web service on a machine. The package named Apache is a good example topic of type package which is designed to enable a web service.</rdfs:comment>
@@ -759,7 +759,7 @@
     <Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Process">
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ComponentOf"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#componentOf"/>
                 <onClass rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
                 <qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</qualifiedCardinality>
             </Restriction>
@@ -773,19 +773,19 @@
     <Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Promise">
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#PromisedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#promisedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#PromisedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#promisedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#File"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#PromisedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#promisedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
             </Restriction>
         </rdfs:subClassOf>
@@ -806,19 +806,19 @@
     <Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Service">
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#ProvidedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#providedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Machine"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#UsedBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#usedBy"/>
                 <someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Person"/>
             </Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <Restriction>
-                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#RequiredBy"/>
+                <onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#requiredBy"/>
                 <allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/untitled-ontology-28#Package"/>
             </Restriction>
         </rdfs:subClassOf>
