@@ -453,7 +453,7 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#location">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
-        <rdfs:range rdf:resource="&xsd;boolean"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
 
@@ -490,6 +490,22 @@
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#motherBoardSerialNo">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2014/3/trifle#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#File"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Interface"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Operating_System"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Process"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Service"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Storage"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
     
