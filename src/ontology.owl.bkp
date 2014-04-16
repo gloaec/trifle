@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns="http://www.semanticweb.org/ontologies/2014/3/trifle#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#name">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Storage"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Service"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Process"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Operating_System"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Interface"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#File"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N72e805a489f54db5890cbcd5696b0bed">
+    <name>plymouth-splash</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="ciscod">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+    <name>ciscod</name>
+  </Service>
+  <Service rdf:nodeID="avahi-daemon">
+    <status>None</status>
+    <name>avahi-daemon</name>
+  </Service>
+  <Service rdf:nodeID="vpnagentd">
+    <name>vpnagentd</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#manualPage">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Service"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N0484e4b1b6174765b5038bf464f60070">
+    <name>udevtrigger</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N85cc0979a1694ec892769677e6189227">
+    <status>None</status>
+    <name>binfmt-support</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#language">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="anacron">
+    <name>anacron</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#checkForeign">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N117fb743b3ce4487ad99739a7c3d8410">
+    <status>None</status>
+    <name>alsa-restore</name>
+  </Service>
+  <Service rdf:nodeID="qemu-kvm">
+    <name>qemu-kvm</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="bootlogd">
+    <name>bootlogd</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="N621c128925e0457d881e4b6847e9df63">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>bootlogd</name>
+  </Service>
+  <Service rdf:nodeID="postfix">
+    <name>postfix</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="apparmor">
+    <name>apparmor</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="N2440ccd0f1714258bb9db4424805e776">
+    <status>None</status>
+    <name>alsa-store</name>
+  </Service>
+  <Service rdf:nodeID="plymouth-log">
+    <status>None</status>
+    <name>plymouth-log</name>
+  </Service>
+  <Service rdf:nodeID="N87d058e5adcc4694b5cf75a9ded8feb5">
+    <name>brltty</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="mysql">
+    <name>mysql</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="kerneloops">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>kerneloops</name>
+  </Service>
+  <Service rdf:nodeID="rsyslog">
+    <status>None</status>
+    <name>rsyslog</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#writes">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#writtenBy">
+        <rdfs:comment>The relationship beween a writing X and its writer Y.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="N13991ddadb4842669babbfe9706b791c">
+    <status>None</status>
+    <name>plymouth</name>
+  </Service>
+  <Service rdf:nodeID="N0afd7beaca3c4c1799193fdae5974ac5">
+    <status>None</status>
+    <name>whoopsie</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#serviceCriticality">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Service"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N234d065250ae462cab32352aeabccd7c">
+    <name>vpnagentd</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+  </Service>
+  <Service rdf:nodeID="plymouth-stop">
+    <status>None</status>
+    <name>plymouth-stop</name>
+  </Service>
+  <Service rdf:nodeID="network-interface-container">
+    <name>network-interface-container</name>
+    <status>None</status>
+  </Service>
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Romeo">
+    <firstName>Romeo</firstName>
+    <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+    <lastName>Capulet</lastName>
+    <sexe>male</sexe>
+  </owl:NamedIndividual>
+  <Service rdf:nodeID="killprocs">
+    <name>killprocs</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N403de486077744a48399911597f1de77">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>rsync</name>
+  </Service>
+  <Service rdf:nodeID="Na52fc0ec5cce4606806cb1a4aad782be">
+    <status>None</status>
+    <name>umountfs</name>
+  </Service>
+  <Service rdf:nodeID="apache2">
+    <name>apache2</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+  </Service>
+  <Service rdf:nodeID="Nf6e0ef2b8f624dbc853ced8f574259c7">
+    <status>None</status>
+    <name>udevmonitor</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#webPage">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#email">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="Naddf76e399794eec8bb4709ba76534f6">
+    <name>lightdm</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nab877975b0b8455c9066cc4fe846d6bf">
+    <status>None</status>
+    <name>sudo</name>
+  </Service>
+  <Service rdf:nodeID="jetty">
+    <name>jetty</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="N3a7a8038d1e14d4cbe6d5602713517bd">
+    <name>winbind</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+  </Service>
+  <Service rdf:nodeID="N32b1d98c852945bdb41a957748af5b3e">
+    <name>ondemand</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="lsh-server">
+    <name>lsh-server</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+  </Service>
+  <Service rdf:nodeID="rfkill-store">
+    <name>rfkill-store</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#HDD">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="Nabe65d6245864fd5903e4df28c60d3a2">
+    <status>None</status>
+    <name>dmesg</name>
+  </Service>
+  <Service rdf:nodeID="network-interface-security">
+    <status>None</status>
+    <name>network-interface-security</name>
+  </Service>
+  <Service rdf:nodeID="N2d888d8fc78844d7842a0257689ad4a3">
+    <status>None</status>
+    <name>module-init-tools</name>
+  </Service>
+  <Service rdf:nodeID="N8b2c0ec8c3e2423e9d1fb3db175d0dd9">
+    <name>umountroot</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#location">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="cryptdisks-enable">
+    <status>None</status>
+    <name>cryptdisks-enable</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#logLevel">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#groupID">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="Nf14ee47b2a46406ea69f43b2791ff0ec">
+    <status>None</status>
+    <name>speech-dispatcher</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#packageFileRepositories">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#description">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#architecture">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="cron">
+    <name>cron</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="hwclock-save">
+    <status>None</status>
+    <name>hwclock-save</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#runs">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#runsOn">
+        <rdfs:comment>If entity X performs its actitvities or execution on entity Y, the relationship is called as RunsOn.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="N5c01df8745904745942cbf64838a012b">
+    <name>rc.local</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#address">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N6586c7631bde440e82a0ec16cd6caa13">
+    <status>None</status>
+    <name>network-interface-security</name>
+  </Service>
+  <Service rdf:nodeID="N6895abec8b094b7da79feaa82d03a4ec">
+    <status>None</status>
+    <name>network-interface</name>
+  </Service>
+  <Service rdf:nodeID="pppd-dns">
+    <status>None</status>
+    <name>pppd-dns</name>
+  </Service>
+  <Service rdf:nodeID="Ncfce726654164038a9ebc08b01e7dc26">
+    <name>unattended-upgrades</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="udevmonitor">
+    <status>None</status>
+    <name>udevmonitor</name>
+  </Service>
+  <Service rdf:nodeID="rfkill-restore">
+    <name>rfkill-restore</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#checkRoot">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="module-init-tools">
+    <status>None</status>
+    <name>module-init-tools</name>
+  </Service>
+  <Service rdf:nodeID="dnsmasq">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>dnsmasq</name>
+  </Service>
+  <Service rdf:nodeID="acpid">
+    <name>acpid</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#mapRoot">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="postgresql">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+    <name>postgresql</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#monitors">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#monitoredBy">
+        <rdfs:comment>Monitoring is mainly the responsibility of keeping an eye on some thing. If an entity X monitors Y, it keeps an eye on Y so that it may report to the manager of Y when there is a deviation from the desired behavior.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:AllDisjointClasses rdf:nodeID="Nc6d8cbac0d1a4d10b0ac02804c91c2d5">
+    <owl:members rdf:parseType="Collection">
+      <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Computer"/>
+      <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Phone"/>
+      <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Tablet"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <Service rdf:nodeID="irqbalance">
+    <status>None</status>
+    <name>irqbalance</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#forceIpv4">
+    <rdfs:comment>TODO: Add Ipv4 and Ipv6 as datatypes</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="Nf452b37bddf748cc80f7770c3c84f2ea">
+    <name>cups</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nfd455a2742e4461ea43845daad887085">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>pulseaudio</name>
+  </Service>
+  <Service rdf:nodeID="sudo">
+    <status>None</status>
+    <name>sudo</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#hardwarePlateform">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Operating_System"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="bitlbee">
+    <name>bitlbee</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N43678437593b4ef294606bc774e76067">
+    <name>hwclock-save</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="atd">
+    <status>None</status>
+    <name>atd</name>
+  </Service>
+  <Service rdf:nodeID="grub-common">
+    <name>grub-common</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="Nd3e65c18f3dc4080936ce9de4fb592fe">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+    <name>cfengine3</name>
+  </Service>
+  <Service rdf:nodeID="N0261b64324a744e4bdbdb6606a1a5fbd">
+    <name>plymouth-stop</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="hwclock">
+    <status>None</status>
+    <name>hwclock</name>
+  </Service>
+  <Service rdf:nodeID="bumblebeed">
+    <status>None</status>
+    <name>bumblebeed</name>
+  </Service>
+  <Service rdf:nodeID="Nc291a95a43d7463ea9f71d81680be67b">
+    <status>None</status>
+    <name>cryptdisks-udev</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#manages">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#managedBy">
+        <rdfs:comment>If X is responsible for the proper functioning of Y in order to let it accomplish its intended purpose, X is said to be the manger of Y. The act of managing includes a continuous supervision and action taking when there is a deviation from the desired way of behaving.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#contains">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#containedIn">
+        <rdfs:comment>If an entity X is contained with in Y either physically or conceptually, the relationship is called as ContainedIn.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="mongodb">
+    <status>None</status>
+    <name>mongodb</name>
+  </Service>
+  <Service rdf:nodeID="N25fd64105dec457d929e6e49fbc58205">
+    <status>None</status>
+    <name>plymouth-upstart-bridge</name>
+  </Service>
+  <Service rdf:nodeID="Nbe5202cd2cad4306b4d31ec74b3adacc">
+    <name>modemmanager</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#shellAccount">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="sendsigs">
+    <status>None</status>
+    <name>sendsigs</name>
+  </Service>
+  <Service rdf:nodeID="lightdm">
+    <status>None</status>
+    <name>lightdm</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#starts">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#startedBy">
+        <rdfs:comment>When an entity X makes another entity Y to start doing something or behave in some manner, the association is said to be of type StartedBy.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="N1876a298e5354b0ea092a49e769bbf16">
+    <status>None</status>
+    <name>resolvconf</name>
+  </Service>
+  <Service rdf:nodeID="N5811e0e499bc4309ba26325e7b681d70">
+    <name>plymouth-ready</name>
+    <status>None</status>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#promises">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#promisedBy">
+        <rdfs:comment>The relationship between a promise and its promiser.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="N2bb2afc90c87446e8d42ef58684535c6">
+    <status>None</status>
+    <name>hostname</name>
+  </Service>
+  <Service rdf:nodeID="Nccadc519bf7048619f8792ca0e32728f">
+    <name>passwd</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N2c6ef6e641a84090a893336cf3e1aea4">
+    <name>mysql</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="udevtrigger">
+    <name>udevtrigger</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="networking">
+    <name>networking</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="brltty">
+    <name>brltty</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="Nf039611300b54481ac922f87b020374f">
+    <name>setvtrgb</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="friendly-recovery">
+    <status>None</status>
+    <name>friendly-recovery</name>
+  </Service>
+  <Service rdf:nodeID="N01f58b5782fc4b03b423db834d290393">
+    <name>bitlbee</name>
+    <status>None</status>
+  </Service>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Man">
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Women"/>
+    <owl:equivalentClass>
+      <owl:Class rdf:nodeID="N683c120b5bc3471d92c70824de3e1aba">
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+          <owl:Restriction rdf:nodeID="Nad6bda73978548c288d1533dadfb46e6">
+            <owl:hasValue>male</owl:hasValue>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#sexe">
+                <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+              </owl:DatatypeProperty>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+  </owl:Class>
+  <Service rdf:nodeID="N795e6ca86c1748909f059feb66d301bd">
+    <name>hwclock</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N2554a19abd10459c94bfb6cea1061f8b">
+    <name>postfix</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="winbind">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+    <name>winbind</name>
+  </Service>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#LogicalPartition">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Storage"/>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#PhysicalPartition"/>
+  </owl:Class>
+  <Service rdf:nodeID="udev-fallback-graphics">
+    <status>None</status>
+    <name>udev-fallback-graphics</name>
+  </Service>
+  <Service rdf:nodeID="N105071f67af84263bb2fa30d90360058">
+    <name>kerneloops</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="Ne60f29922ab548da8c29d8b0baecec9d">
+    <status>None</status>
+    <name>network-interface-container</name>
+  </Service>
+  <Service rdf:nodeID="N12a55f65867749f9ad0976059a910c80">
+    <name>stop-bootlogd</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#lastName">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N2e0673298aae433a90ae8a7279177f90">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>stop-bootlogd-single</name>
+  </Service>
+  <Service rdf:nodeID="N707e712186bf492aad16d080018e2ec9">
+    <status>None</status>
+    <name>nmbd</name>
+  </Service>
+  <Service rdf:nodeID="N6571bf939c1e4449bb10a0e331b47bf5">
+    <status>None</status>
+    <name>apport</name>
+  </Service>
+  <Service rdf:nodeID="Nc0acce64faed4aa2b3503dd3714ce7c3">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+    <name>lsh-server</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#installs">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#installedBy">
+        <rdfs:comment>An entity X can put program Y into a machine in order to let it serve its intended purpose. This relation ship between a program and an entity who put it into a machine is called as InstalledBy.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="N404106e50de44ee9bdc4fd6f0ac3b499">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+    <name>ciscod</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#auditingEnabled">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N699797a9386140b0ad3c57803c161816">
+    <status>None</status>
+    <name>mongodb</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#causes">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#causedBy">
+        <rdfs:comment>An association type where one topic plays the role of affecting the other by changing its state from state X to state Y.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="acpi-support">
+    <name>acpi-support</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nfb96200ec6594c7d8337bf6112c08fb1">
+    <name>udev-finish</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="smbd">
+    <name>smbd</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="console-setup">
+    <status>None</status>
+    <name>console-setup</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#version">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Operating_System"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="stop-bootlogd-single">
+    <name>stop-bootlogd-single</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="N3d2d09d7ea4d4950ae9435a90c094c91">
+    <name>saned</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+  </Service>
+  <Service rdf:nodeID="dns-clean">
+    <name>dns-clean</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N21fc087418724f168e5e89af87759d58">
+    <name>x11-common</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="failsafe-x">
+    <status>None</status>
+    <name>failsafe-x</name>
+  </Service>
+  <Service rdf:nodeID="dbus">
+    <name>dbus</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Apache001">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <providedBy>
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#LocalMachine">
+        <location>192.168.1.4</location>
+        <forceIpv4>192.168.1.4</forceIpv4>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Desktop"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Server"/>
+      </owl:NamedIndividual>
+    </providedBy>
+    <servicePort>80</servicePort>
+  </Service>
+  <Service rdf:nodeID="N7474dae12b7647a68597abe02af66d25">
+    <name>killprocs</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="umountnfs.sh">
+    <status>None</status>
+    <name>umountnfs.sh</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#motherBoardSerialNo">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#password">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="cups">
+    <name>cups</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N8c52a4a1abaf4ef5a5f00018c89e9637">
+    <name>cryptdisks</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="alsa-restore">
+    <name>alsa-restore</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="ondemand">
+    <name>ondemand</name>
+    <status>None</status>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#requires">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#requiredBy">
+        <rdfs:comment>If X depends on Y in order to serve its intended purpose, the relationship between them is called RequiredBy.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="Ne7e8f788595d4b93bcef68c3102e0be5">
+    <name>atd</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#CPU">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N7863c57390254750b5778ea02e956ded">
+    <name>udev-fallback-graphics</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="cryptdisks-early">
+    <status>None</status>
+    <name>cryptdisks-early</name>
+  </Service>
+  <Service rdf:nodeID="resolvconf">
+    <status>None</status>
+    <name>resolvconf</name>
+  </Service>
+  <Service rdf:nodeID="N8b181440ee82411b90fca0c0244ebdc8">
+    <status>None</status>
+    <name>openvpn</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#firstName">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="rc.local">
+    <status>None</status>
+    <name>rc.local</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#type">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Operating_System"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="Nd31ff7486a3d4666b1d82e45273bce4c">
+    <status>None</status>
+    <name>failsafe-x</name>
+  </Service>
+  <Service rdf:nodeID="N711efbf9f31942e3a785bc5031e3632c">
+    <status>None</status>
+    <name>qemu-kvm</name>
+  </Service>
+  <Service rdf:nodeID="N5169cec22e114568b2a091ad1048f68d">
+    <status>None</status>
+    <name>rfkill-restore</name>
+  </Service>
+  <Service rdf:nodeID="alsa-store">
+    <status>None</status>
+    <name>alsa-store</name>
+  </Service>
+  <Service rdf:nodeID="unattended-upgrades">
+    <name>unattended-upgrades</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#homeDirectory">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#edits">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#editedBy">
+        <rdfs:comment>Writings such as a file could be amended by an editor such as user of the file for some purpose.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="N20dd5a6fc7424d8cb0f81d576d26c97a">
+    <status>None</status>
+    <name>cron</name>
+  </Service>
+  <Service rdf:nodeID="Nbce8a6269be44a29984fc4cc4cdc026a">
+    <status>None</status>
+    <name>virtualbox</name>
+  </Service>
+  <Service rdf:nodeID="N18bff306db0c412b904958a0b911f618">
+    <name>plymouth-log</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nda5ecdebaee14a15a12061b25ba40c33">
+    <name>ufw</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="plymouth-splash">
+    <name>plymouth-splash</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nf772b28c63ad4a4abed402fe65271fa5">
+    <name>cryptdisks-early</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N96b8a6e8ac6e484cbfea4306beede162">
+    <name>anacron</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="saned">
+    <name>saned</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+  </Service>
+  <Service rdf:nodeID="passwd">
+    <status>None</status>
+    <name>passwd</name>
+  </Service>
+  <Service rdf:nodeID="modemmanager">
+    <status>None</status>
+    <name>modemmanager</name>
+  </Service>
+  <Service rdf:nodeID="umountroot">
+    <name>umountroot</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nca19acb988c1409086b18f8d701d12ff">
+    <name>dns-clean</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="plymouth-ready">
+    <name>plymouth-ready</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nf307c73341324c8392dc063e5e7be602">
+    <name>jetty</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="hostapd">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>hostapd</name>
+  </Service>
+  <Service rdf:nodeID="Nbc2c329ec06445b486912cba0da7ab21">
+    <name>procps</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N0c057bce86194fbe8d5660852cfa7a03">
+    <name>friendly-recovery</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="speech-dispatcher">
+    <name>speech-dispatcher</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N78e3c32d6a7c48cc88cc60aab7585ad8">
+    <status>None</status>
+    <name>rsyslog</name>
+  </Service>
+  <Service rdf:nodeID="Nfc674506ff65496fa467d5ae9620311d">
+    <status>None</status>
+    <name>network-manager</name>
+  </Service>
+  <Service rdf:nodeID="plymouth-upstart-bridge">
+    <status>None</status>
+    <name>plymouth-upstart-bridge</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#isVirtualized">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="cryptdisks-udev">
+    <name>cryptdisks-udev</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="whoopsie">
+    <name>whoopsie</name>
+    <status>None</status>
+  </Service>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Promise">
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Ne847c713536d44598a0b5c4f405f2646">
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#promisedBy"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N4398d48f38f74a0aa2a22453dc3996be">
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#File"/>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#promisedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nb0119961a6f24bec9d1fd05f80335802">
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#promisedBy"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <Service rdf:nodeID="Nbe303e7f0d7a48ce8982230d8a8c25e5">
+    <name>bumblebeed</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#status">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Service"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="binfmt-support">
+    <name>binfmt-support</name>
+    <status>None</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#trustKeyFrom">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N7710430f63b143e082b4659d1c6e2e9b">
+    <status>None</status>
+    <name>console-setup</name>
+  </Service>
+  <Service rdf:nodeID="N6e6e69a7ed2f45b1a9e373b1736d4a07">
+    <status>None</status>
+    <name>bluetooth</name>
+  </Service>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Client">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Server"/>
+  </owl:Class>
+  <Service rdf:nodeID="N8974e7181f6f4198a1a82f0affd3f121">
+    <status>None</status>
+    <name>rfkill-store</name>
+  </Service>
+  <Service rdf:nodeID="rsync">
+    <name>rsync</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="bluetooth">
+    <name>bluetooth</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="plymouth">
+    <name>plymouth</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nf31fe0c44fb14cf4af6cb6745045e732">
+    <status>None</status>
+    <name>dbus</name>
+  </Service>
+  <Service rdf:nodeID="N5fdc2fd00966410389692bf4295939a2">
+    <name>apache2</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#allowConnectFrom">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="umountfs">
+    <status>None</status>
+    <name>umountfs</name>
+  </Service>
+  <Service rdf:nodeID="setvtrgb">
+    <name>setvtrgb</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N240c134aa8c042c4b3c2018882b70c5f">
+    <status>None</status>
+    <name>umountnfs.sh</name>
+  </Service>
+  <Service rdf:nodeID="N3e28cdda8ff2499e83bfeeb508686a2a">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+    <name>postgresql</name>
+  </Service>
+  <Service rdf:nodeID="Naf707f5be59841f5bc8baea4725b99da">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>dnsmasq</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#RAM">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="N14ce3501084849ab8e0232f0514aaed8">
+    <status>None</status>
+    <name>avahi-daemon</name>
+  </Service>
+  <Service rdf:nodeID="N6f70bbd07edc4fdcb2d174b2b9eda404">
+    <name>pppd-dns</name>
+    <status>None</status>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#owns">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#ownedBy">
+        <rdfs:comment>Ownership is a kind of relationship that could exist between an entity which has become a possession and its owner. The relationship between a file and its owner is an example of this type of associations.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="cfengine3">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</status>
+    <name>cfengine3</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#uses"/>
+  <Service rdf:nodeID="N091bef69250243ae87e7296b5cc086f0">
+    <status>None</status>
+    <name>sendsigs</name>
+  </Service>
+  <Service rdf:nodeID="Nc351473117fa4bb19c79b3f272f3fc6d">
+    <name>urandom</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="Nf8cf6a75c72e46bf86d8bf4c080198c7">
+    <status>None</status>
+    <name>udev</name>
+  </Service>
+  <Service rdf:nodeID="N309fb90b3bcb450981fabe1332b11022">
+    <name>acpid</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="nmbd">
+    <name>nmbd</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nbaa6751f64764c24873811e66e243c66">
+    <name>grub-common</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="N9bac5534df48458881ec48dc14b3a9d8">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>ssh</name>
+  </Service>
+  <Service rdf:nodeID="vsftpd">
+    <name>vsftpd</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N191d7818c03f4238b51fe55e0e6dc031">
+    <status>None</status>
+    <name>networking</name>
+  </Service>
+  <Service rdf:nodeID="network-manager">
+    <status>None</status>
+    <name>network-manager</name>
+  </Service>
+  <Service rdf:nodeID="cryptdisks">
+    <name>cryptdisks</name>
+    <status>None</status>
+  </Service>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Command">
+    <rdfs:comment>A Command is a utility that can be used by users to start a specific process if there is no schedule set for the same purpose. A very good example that can illustrate the relation ship among those topic types is that of a web service that needs a process such as ”httpd” running on the background which is started by a command:”httpd start”.</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#composedOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#componentOf">
+        <rdfs:comment>The relationship between an entity X which is a component for another entity Y which plays the role of being a complex for thecomponent X.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="Nd1848a8ed79a4c68bcd9c1257403fea8">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>hostapd</name>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#provides">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#providedBy">
+        <rdfs:comment>When an entity X has the potential and willingness of providing some thing to some other entity, the relationship that exists between them is called ProvidedBy.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="ssh">
+    <name>ssh</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="openvpn">
+    <name>openvpn</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nb3ba4421fecc458ca88965d786b0a758">
+    <status>None</status>
+    <name>irqbalance</name>
+  </Service>
+  <Service rdf:nodeID="N2f50a1fad0584cbfb953b35f9375a5c2">
+    <name>cryptdisks-enable</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="Nbb561eb25c41444a98113b7d11ab5068">
+    <name>vsftpd</name>
+    <status>None</status>
+  </Service>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#configures">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#configuredBy">
+        <rdfs:comment>When an entity X can bring the necessary changes forentity Y in order to let it serve its intended purpose. The relationshipbetween a machine and a configuration management package such as Cfengine 3 is a typical example of such kinds of relationships.</rdfs:comment>
+      </owl:ObjectProperty>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <Service rdf:nodeID="ufw">
+    <status>None</status>
+    <name>ufw</name>
+  </Service>
+  <Service rdf:nodeID="stop-bootlogd">
+    <name>stop-bootlogd</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle"/>
+  <Service rdf:nodeID="x11-common">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>x11-common</name>
+  </Service>
+  <Service rdf:nodeID="Nc10731cedf074d8396d124220f6aa4a0">
+    <status>None</status>
+    <name>smbd</name>
+  </Service>
+  <Service rdf:nodeID="hostname">
+    <status>None</status>
+    <name>hostname</name>
+  </Service>
+  <Service rdf:nodeID="dmesg">
+    <status>None</status>
+    <name>dmesg</name>
+  </Service>
+  <Service rdf:nodeID="procps">
+    <name>procps</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="N2ba644fac85245d9bf41db3d4ba339b7">
+    <name>apparmor</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="urandom">
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+    <name>urandom</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#serviceType">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Service"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="udev">
+    <name>udev</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="udev-finish">
+    <status>None</status>
+    <name>udev-finish</name>
+  </Service>
+  <Service rdf:nodeID="virtualbox">
+    <name>virtualbox</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="apport">
+    <name>apport</name>
+    <status>None</status>
+  </Service>
+  <Service rdf:nodeID="pulseaudio">
+    <name>pulseaudio</name>
+    <status rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</status>
+  </Service>
+  <Service rdf:nodeID="N0b06898f520c4901a11410e30bf55422">
+    <status>None</status>
+    <name>acpi-support</name>
+  </Service>
+  <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#servicePort">
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Service"/>
+  </owl:DatatypeProperty>
+  <Service rdf:nodeID="network-interface">
+    <name>network-interface</name>
+    <status>None</status>
+  </Service>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Phone">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#File">
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nbbcfb6a5b18f4c47b447014825c5c5bd">
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#editedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N043f110a61634e1a974152c78362f141">
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#usedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N5de2fa315ea04624afb39833adf4fec9">
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#usedBy"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Desktop">
+    <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Laptop"/>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Computer"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Package">
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N00cbe2684b3241a185593ad527ced054">
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#installedBy"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N4539cc55cb79495ebee74826f2b16101">
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#runsOn"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Packages on the other hand are application programs designed to serve specific purpose. It could be to give a network service or web service on a machine. The package named Apache is a good example topic of type package which is designed to enable a web service.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nbcdb869da67f4083843daf3eb5e0ff56">
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#configuredBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N41e22a1b54694f25a24554c906c91aac">
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#managedBy"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Server">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Storage">
+    <rdfs:comment>Storage is a logical partition of a physical storage media that mainly serves as a location for the different kinds of files. Defined as a file as a complete named collection of information such as a program, set of data used by a program or a user created document.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Service">
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nf9adde152e5f4cefb167fc9d2f7854a6">
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#providedBy"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nd002bf89cf3c45eb89ce249d6014cc9c">
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#usedBy"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="Nd3e8930a16454117a550fb580d325614">
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#requiredBy"/>
+        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:comment>Service is a specific functionality of a computer system such as a web service or network service provided by a machine. A process which is defined in this literature as a package or part of a package on action enables the provisioning of services by performing real activities behind the scene.</rdfs:comment>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#usedBy">
+    <rdfs:comment>If an entity X uses entity Y at any point in time for any of its purposes, the the type of association is called UsedBy</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Computer">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+    <rdfs:comment>Computers are the main types of machines for this thesis work. That is why the two terminologies are interchangeably used in different parts of this literature. Personal computers, laptops, server computers all belong to this topic type. A computer runs one or more operating systems. </rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Tablet">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Women">
+    <owl:equivalentClass>
+      <owl:Class rdf:nodeID="Naa049cd6e90743c68fe0ba66b6407172">
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+          <owl:Restriction rdf:nodeID="N53b2cc0a86c84c4a8a0f2d997617bc84">
+            <owl:hasValue>female</owl:hasValue>
+            <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#sexe"/>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Person"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Process">
+    <rdfs:subClassOf>
+      <owl:Restriction rdf:nodeID="N1c84854e731d4062ad0d102901e09d7b">
+        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Package"/>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#componentOf"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#PhysicalPartition">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Storage"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Operating_System">
+    <rdfs:comment>Operating System is a program that bridges the gap between the package and the underlying hardware components of a computer. Operating system as a topic type consists of different operating systems as topics including Windows XP, OS X, and Linux.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Laptop">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/2014/3/trifle#Computer"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Interface">
+    <rdfs:comment>Interface is defined as a device used to provide network access to a computer.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/ontologies/2014/3/trifle#Machine">
+    <rdfs:comment>Machine is any device that can accept and process information to provide a desired result based on a program or sequence of instructions on how the data is to be processed.</rdfs:comment>
+  </owl:Class>
+</rdf:RDF>

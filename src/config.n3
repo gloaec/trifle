@@ -1,0 +1,402 @@
+@prefix : <http://www.semanticweb.org/ontologies/2014/3/trifle#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix imdb: <http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.semanticweb.org/ontologies/2014/3/trifle> a owl:Ontology .
+
+:Apache001 a :Service,
+        owl:NamedIndividual ;
+    :providedBy :LocalMachine ;
+    :servicePort "80" .
+
+:CPU a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:Client a owl:Class ;
+    rdfs:subClassOf :Machine ;
+    owl:disjointWith :Server .
+
+:Command a owl:Class ;
+    rdfs:comment "A Command is a utility that can be used by users to start a specific process if there is no schedule set for the same purpose. A very good example that can illustrate the relation ship among those topic types is that of a web service that needs a process such as ”httpd” running on the background which is started by a command:”httpd start”." .
+
+:HDD a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:LogicalPartition a owl:Class ;
+    rdfs:subClassOf :Storage ;
+    owl:disjointWith :PhysicalPartition .
+
+:Man a owl:Class ;
+    rdfs:subClassOf :Person ;
+    owl:disjointWith :Women ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Person [ a owl:Restriction ;
+                        owl:hasValue "male" ;
+                        owl:onProperty :sexe ] ) ] .
+
+:Phone a owl:Class ;
+    rdfs:subClassOf :Machine .
+
+:Promise a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :promisedBy ;
+            owl:someValuesFrom :Person ],
+        [ a owl:Restriction ;
+            owl:onProperty :promisedBy ;
+            owl:someValuesFrom :Package ],
+        [ a owl:Restriction ;
+            owl:onProperty :promisedBy ;
+            owl:someValuesFrom :File ] .
+
+:RAM a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:Romeo a :Person,
+        owl:NamedIndividual ;
+    :firstName "Romeo" ;
+    :lastName "Capulet" ;
+    :sexe "male" .
+
+:Tablet a owl:Class ;
+    rdfs:subClassOf :Machine .
+
+:address a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+:allowConnectFrom a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:architecture a owl:DatatypeProperty ;
+    rdfs:domain :Package ;
+    rdfs:range xsd:string .
+
+:auditingEnabled a owl:DatatypeProperty ;
+    rdfs:domain :Package ;
+    rdfs:range xsd:boolean .
+
+:causes a owl:ObjectProperty ;
+    owl:inverseOf :causedBy .
+
+:checkForeign a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:boolean .
+
+:checkRoot a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:boolean .
+
+:composedOf a owl:ObjectProperty ;
+    owl:inverseOf :componentOf .
+
+:configures a owl:ObjectProperty ;
+    owl:inverseOf :configuredBy .
+
+:contains a owl:ObjectProperty ;
+    owl:inverseOf :containedIn .
+
+:description a owl:DatatypeProperty ;
+    rdfs:domain :Package ;
+    rdfs:range xsd:string .
+
+:edits a owl:ObjectProperty ;
+    owl:inverseOf :editedBy .
+
+:email a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:firstName a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:forceIpv4 a owl:DatatypeProperty ;
+    rdfs:comment "TODO: Add Ipv4 and Ipv6 as datatypes" ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:groupID a owl:DatatypeProperty ;
+    rdfs:domain :Machine,
+        :Person ;
+    rdfs:range xsd:string .
+
+:hardwarePlateform a owl:DatatypeProperty ;
+    rdfs:domain :Operating_System .
+
+:homeDirectory a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+:installs a owl:ObjectProperty ;
+    owl:inverseOf :installedBy .
+
+:isVirtualized a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:boolean .
+
+:language a owl:DatatypeProperty ;
+    rdfs:domain :Package ;
+    rdfs:range xsd:string .
+
+:lastName a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:location a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:logLevel a owl:DatatypeProperty ;
+    rdfs:domain :Package ;
+    rdfs:range xsd:string .
+
+:manages a owl:ObjectProperty ;
+    owl:inverseOf :managedBy .
+
+:manualPage a owl:DatatypeProperty ;
+    rdfs:domain :Package,
+        :Service ;
+    rdfs:range xsd:anyURI .
+
+:mapRoot a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:boolean .
+
+:monitors a owl:ObjectProperty ;
+    owl:inverseOf :monitoredBy .
+
+:motherBoardSerialNo a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:name a owl:DatatypeProperty ;
+    rdfs:domain :File,
+        :Interface,
+        :Machine,
+        :Operating_System,
+        :Package,
+        :Process,
+        :Service,
+        :Storage ;
+    rdfs:range xsd:string .
+
+:owns a owl:ObjectProperty ;
+    owl:inverseOf :ownedBy .
+
+:packageFileRepositories a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:password a owl:DatatypeProperty ;
+    rdfs:domain :Machine,
+        :Person ;
+    rdfs:range xsd:string .
+
+:promises a owl:ObjectProperty ;
+    owl:inverseOf :promisedBy .
+
+:provides a owl:ObjectProperty ;
+    owl:inverseOf :providedBy .
+
+:requires a owl:ObjectProperty ;
+    owl:inverseOf :requiredBy .
+
+:runs a owl:ObjectProperty ;
+    owl:inverseOf :runsOn .
+
+:serviceCriticality a owl:DatatypeProperty ;
+    rdfs:domain :Service .
+
+:servicePort a owl:DatatypeProperty ;
+    rdfs:domain :Service .
+
+:serviceType a owl:DatatypeProperty ;
+    rdfs:domain :Service .
+
+:shellAccount a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:starts a owl:ObjectProperty ;
+    owl:inverseOf :startedBy .
+
+:status a owl:DatatypeProperty ;
+    rdfs:domain :Machine,
+        :Service ;
+    rdfs:range xsd:boolean .
+
+:trustKeyFrom a owl:DatatypeProperty ;
+    rdfs:domain :Machine ;
+    rdfs:range xsd:string .
+
+:type a owl:DatatypeProperty ;
+    rdfs:domain :Operating_System,
+        :Package ;
+    rdfs:range xsd:string .
+
+:uses a owl:ObjectProperty .
+
+:version a owl:DatatypeProperty ;
+    rdfs:domain :Operating_System,
+        :Package ;
+    rdfs:range xsd:string .
+
+:webPage a owl:DatatypeProperty ;
+    rdfs:domain :Package,
+        :Person ;
+    rdfs:range xsd:anyURI .
+
+:writes a owl:ObjectProperty ;
+    owl:inverseOf :writtenBy .
+
+:Desktop a owl:Class ;
+    rdfs:subClassOf :Computer ;
+    owl:disjointWith :Laptop .
+
+:Interface a owl:Class ;
+    rdfs:comment "Interface is defined as a device used to provide network access to a computer." .
+
+:Laptop a owl:Class ;
+    rdfs:subClassOf :Computer .
+
+:LocalMachine a :Desktop,
+        :Server,
+        owl:NamedIndividual ;
+    :forceIpv4 "192.168.1.4" ;
+    :location "192.168.1.4" .
+
+:PhysicalPartition a owl:Class ;
+    rdfs:subClassOf :Storage .
+
+:Process a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass :Package ;
+            owl:onProperty :componentOf ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+
+:Women a owl:Class ;
+    rdfs:subClassOf :Person ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( :Person [ a owl:Restriction ;
+                        owl:hasValue "female" ;
+                        owl:onProperty :sexe ] ) ] .
+
+:causedBy a owl:ObjectProperty ;
+    rdfs:comment "An association type where one topic plays the role of affecting the other by changing its state from state X to state Y." .
+
+:containedIn a owl:ObjectProperty ;
+    rdfs:comment "If an entity X is contained with in Y either physically or conceptually, the relationship is called as ContainedIn." .
+
+:monitoredBy a owl:ObjectProperty ;
+    rdfs:comment "Monitoring is mainly the responsibility of keeping an eye on some thing. If an entity X monitors Y, it keeps an eye on Y so that it may report to the manager of Y when there is a deviation from the desired behavior." .
+
+:ownedBy a owl:ObjectProperty ;
+    rdfs:comment "Ownership is a kind of relationship that could exist between an entity which has become a possession and its owner. The relationship between a file and its owner is an example of this type of associations." .
+
+:startedBy a owl:ObjectProperty ;
+    rdfs:comment "When an entity X makes another entity Y to start doing something or behave in some manner, the association is said to be of type StartedBy." .
+
+:writtenBy a owl:ObjectProperty ;
+    rdfs:comment "The relationship beween a writing X and its writer Y." .
+
+:Computer a owl:Class ;
+    rdfs:comment "Computers are the main types of machines for this thesis work. That is why the two terminologies are interchangeably used in different parts of this literature. Personal computers, laptops, server computers all belong to this topic type. A computer runs one or more operating systems. " ;
+    rdfs:subClassOf :Machine .
+
+:File a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :usedBy ;
+            owl:someValuesFrom :Package ],
+        [ a owl:Restriction ;
+            owl:onProperty :usedBy ;
+            owl:someValuesFrom :Person ],
+        [ a owl:Restriction ;
+            owl:onProperty :editedBy ;
+            owl:someValuesFrom :Package ] .
+
+:Server a owl:Class ;
+    rdfs:subClassOf :Machine .
+
+:componentOf a owl:ObjectProperty ;
+    rdfs:comment "The relationship between an entity X which is a component for another entity Y which plays the role of being a complex for thecomponent X." .
+
+:configuredBy a owl:ObjectProperty ;
+    rdfs:comment "When an entity X can bring the necessary changes forentity Y in order to let it serve its intended purpose. The relationshipbetween a machine and a configuration management package such as Cfengine 3 is a typical example of such kinds of relationships." .
+
+:editedBy a owl:ObjectProperty ;
+    rdfs:comment "Writings such as a file could be amended by an editor such as user of the file for some purpose." .
+
+:installedBy a owl:ObjectProperty ;
+    rdfs:comment "An entity X can put program Y into a machine in order to let it serve its intended purpose. This relation ship between a program and an entity who put it into a machine is called as InstalledBy." .
+
+:managedBy a owl:ObjectProperty ;
+    rdfs:comment "If X is responsible for the proper functioning of Y in order to let it accomplish its intended purpose, X is said to be the manger of Y. The act of managing includes a continuous supervision and action taking when there is a deviation from the desired way of behaving." .
+
+:providedBy a owl:ObjectProperty ;
+    rdfs:comment "When an entity X has the potential and willingness of providing some thing to some other entity, the relationship that exists between them is called ProvidedBy." .
+
+:requiredBy a owl:ObjectProperty ;
+    rdfs:comment "If X depends on Y in order to serve its intended purpose, the relationship between them is called RequiredBy." .
+
+:runsOn a owl:ObjectProperty ;
+    rdfs:comment "If entity X performs its actitvities or execution on entity Y, the relationship is called as RunsOn." .
+
+:sexe a owl:DatatypeProperty ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+:Storage a owl:Class ;
+    rdfs:comment "Storage is a logical partition of a physical storage media that mainly serves as a location for the different kinds of files. Defined as a file as a complete named collection of information such as a program, set of data used by a program or a user created document." .
+
+:usedBy a owl:ObjectProperty ;
+    rdfs:comment "If an entity X uses entity Y at any point in time for any of its purposes, the the type of association is called UsedBy" .
+
+:Operating_System a owl:Class ;
+    rdfs:comment "Operating System is a program that bridges the gap between the package and the underlying hardware components of a computer. Operating system as a topic type consists of different operating systems as topics including Windows XP, OS X, and Linux." .
+
+:promisedBy a owl:ObjectProperty ;
+    rdfs:comment "The relationship between a promise and its promiser." .
+
+:Service a owl:Class ;
+    rdfs:comment "Service is a specific functionality of a computer system such as a web service or network service provided by a machine. A process which is defined in this literature as a package or part of a package on action enables the provisioning of services by performing real activities behind the scene." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :usedBy ;
+            owl:someValuesFrom :Person ],
+        [ a owl:Restriction ;
+            owl:onProperty :providedBy ;
+            owl:someValuesFrom :Machine ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom :Package ;
+            owl:onProperty :requiredBy ] .
+
+:Package a owl:Class ;
+    rdfs:comment "Packages on the other hand are application programs designed to serve specific purpose. It could be to give a network service or web service on a machine. The package named Apache is a good example topic of type package which is designed to enable a web service." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :managedBy ;
+            owl:someValuesFrom :Machine ],
+        [ a owl:Restriction ;
+            owl:onProperty :installedBy ;
+            owl:someValuesFrom :Package ],
+        [ a owl:Restriction ;
+            owl:onProperty :configuredBy ;
+            owl:someValuesFrom :Machine ],
+        [ a owl:Restriction ;
+            owl:onProperty :runsOn ;
+            owl:someValuesFrom :Machine ] .
+
+:Person a owl:Class .
+
+:Machine a owl:Class ;
+    rdfs:comment "Machine is any device that can accept and process information to provide a desired result based on a program or sequence of instructions on how the data is to be processed." .
+

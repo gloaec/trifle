@@ -1,49 +1,76 @@
-#!/usr/bin/env python
-""" film.py: a simple tool to manage your movies review
-Simon Rozet, http://atonie.org/
-
-@@ :
-- manage directors and writers
-- manage actors
-- handle non IMDB uri
-- markdown support in comment
-
---
-Usage:
-    film.py whoami "John Doe <john@doe.org>"
-        Initialize the store and set your name and email.
-    film.py whoami
-        Tell you who you are
-    film.py http://www.imdb.com/title/tt0105236/
-        Review the movie "Reservoir Dogs"
-"""
-import datetime, os, sys, re, time, imdb
+# -*- coding: utf-8 -*-
+import datetime
+import os
+import sys
+import re
+import time
 from rdflib import BNode, ConjunctiveGraph, URIRef, Literal, Namespace, RDF
 
-#storefn = os.path.expanduser('~/movies.n3')
-storefn = '/home/simon/codes/film.dev/movies.n3'
-storeuri = 'file://'+storefn
-title = 'Movies viewed by %s'
+from trifle.recipes import getHostname, getServices
+from trifle.stores  import Services
+#from trifle import config
+
+config = {
+    'STORE_FILE': '/home/ghis/Workspace/trifle/src/config.n3',
+    'STORE_URI'  : 'file:///home/ghis/Workspace/trifle/src/config.n3',
+    'NAMESPACES' : {
+        'dc'  : 'http://purl.org/dc/elements/1.1/',
+        'foaf': 'http://xmlns.com/foaf/0.1/',
+        'imdb': 'http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#',
+        'rev' : 'http://purl.org/stuff/rev#'
+    }
+}
 
 r_who = re.compile('^(.*?) <([a-z0-9_-]+(\.[a-z0-9_-]+)*@[a-z0-9_-]+(\.[a-z0-9_-]+)+)>$')
 
-DC = Namespace('http://purl.org/dc/elements/1.1/')
+DC   = Namespace('http://purl.org/dc/elements/1.1/')
 FOAF = Namespace('http://xmlns.com/foaf/0.1/')
 IMDB = Namespace('http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#')
-REV = Namespace('http://purl.org/stuff/rev#')
+REV  = Namespace('http://purl.org/stuff/rev#')
 
 class Store:
-    def __init__(self):
-        self.graph = ConjunctiveGraph()
-        if os.path.exists(storefn):
-            self.graph.load(storeuri, format='n3')
-        self.graph.bind('dc', 'http://purl.org/dc/elements/1.1/')
-        self.graph.bind('foaf', 'http://xmlns.com/foaf/0.1/')
-        self.graph.bind('imdb', 'http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#')
-        self.graph.bind('rev', 'http://purl.org/stuff/rev#')
 
-    def save(self):
-        self.graph.serialize(storeuri, format='n3')
+    def __init__(self, 
+            storefile=config['STORE_FILE'],
+            storeuri=config['STORE_URI'], 
+            format='n3', namespaces={}):
+
+        self.namespaces = config['NAMESPACES']
+        self.graph      = ConjunctiveGraph()
+        self.storeuri   = storeuri
+        self.storefile  = storefile
+        self.format     = format
+
+        for namespace, uri in namespaces.iteritems():
+            self.namespaces[namespace] = uri
+        if os.path.exists(storefile):
+            self.graph.load(storeuri, format=format)
+        for namespace, uri in self.namespaces.iteritems():
+            self.graph.bind(namespace, uri)
+
+    def save(self, format=None):
+        if not format: format = self.format
+        self.graph.serialize(self.storeuri, format=format)
+
+    def get(self, something): 
+        pass
+
+    @property
+    def local(self):
+        """ Idee: local config only """
+        hostname = getHostname()
+        query = "?m a :Machine . ?m location %s" % hostname
+        return hostname
+
+    def on(self, ip=None):
+        """ Idee: store.on('192.168.1.43').query('SELECT..') """
+
+    def query(self, sparql):
+        return self.graph.query(sparql)
+
+    def register(self):
+        name = ""
+        location = ""
 
     def who(self, who=None):
         if who is not None:
@@ -55,6 +82,10 @@ class Store:
             self.save()
         else:
             return self.graph.objects(URIRef(storeuri+'#author'), FOAF['name'])
+
+    @property
+    def services(self): 
+        return Services()
 
     def new_movie(self, movie):
         movieuri = URIRef('http://www.imdb.com/title/tt%s/' % movie.movieID)
@@ -91,7 +122,7 @@ def main(argv=None):
     if argv[1] in ('help', '--help', 'h', '-h'):
         help()
     elif argv[1] == 'whoami':
-        if os.path.exists(storefn):
+        if os.path.exists(storefile):
             print list(s.who())[0]
         else:
             s.who(argv[2])

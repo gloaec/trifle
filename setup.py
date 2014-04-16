@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from distutils.core import setup
+from setuptools import setup
 
 project = "trifle"
 
@@ -17,6 +17,20 @@ setup(
     description      = "Context-Aware Configuration Management System",
     long_description = __doc__,
     package_dir      = {"":"src"},
-    packages         = [project],
+    packages         = [
+        project,
+        "%s.managers" % project,
+        "%s.utils"    % project
+    ],
+    classifiers      = [
+        'Environment :: Web Environment',
+        'Intended Audience :: Developers',
+        'Programming Language :: Python',
+        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+    ],
+    platforms        = 'any',
+    entry_points     = {
+      'console_scripts': [ "%s = %s:main" % (project, project) ],
+    },
 )
 

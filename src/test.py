@@ -4,9 +4,15 @@ import subprocess
 from termcolor import colored
 from rdflib import Graph, Namespace, URIRef, BNode, Literal
 from rdflib.namespace import RDF, FOAF
+from trifle.recipes import getHostname, getServices
 
-g = Graph().parse("/home/ghis/Workspace/trifle/src/ontology.owl")
-n = Namespace("http://www.semanticweb.org/ontologies/2014/3/trifle#")
+VERBOSE   = False
+ONTOLOGY  = "/home/ghis/Workspace/trifle/src/ontology.owl"
+OUT       = "/home/ghis/Workspace/trifle/src/config.n3"
+NAMESPACE = "http://www.semanticweb.org/ontologies/2014/3/trifle#"
+
+g = Graph().parse(ONTOLOGY)
+n = Namespace(NAMESPACE)
 
 def provided(refresh=False):
     """ List of services available in the environemment """
@@ -22,25 +28,14 @@ def provided(refresh=False):
 
 
 def pull(): 
-    cmd = 'service --status-all 2>&1'
-    exc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
-    for line in exc.stdout:
-         info = re.search('\[\s?([+-\??])\s?\]\s+(.*)', line, re.IGNORECASE)
-         if info:
-            status  = {'+': True, '-': False, '?': None}[info.group(1)]
-            pstatus = {'+': 'on', '-': 'off', '?': 'unknown'}[info.group(1)]
-            pcolor  = {'+': 'green', '-': 'red', '?': 'grey'}[info.group(1)]
-            name    = info.group(2).strip()
-            node    = BNode(name)
-            g.add( (node, RDF.type,   n.Service) )
-            g.add( (node, n.name,     Literal(name)) )
-            g.add( (node, n.status,   Literal(status)) )
-            #g.add( (node, RDF.nodeID, BNode(name)) )
-            #g.remove( (n., None, None) ) 
-            print "%40s" % name, colored(pstatus, pcolor, attrs=['bold'])
-    print g.serialize(format='turtle')
+    for service in getServices():
+        node    = BNode(service['name'])
+        g.add( (node, RDF.type,   n.Service) )
+        g.add( (node, n.name,     Literal(service['name'])) )
+        g.add( (node, n.status,   Literal(service['status'])) )
+        #g.add( (node, RDF.nodeID, BNode(name)) )
+        #g.remove( (n., None, None) ) 
+    g.serialize(OUT, format='n3')
 
 for service in provided(refresh=True):
     print "Service '%s' on machine '%s' (host: %s | port: %s)" % service
-
-
