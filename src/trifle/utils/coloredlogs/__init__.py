@@ -186,7 +186,7 @@ class ColoredStreamHandler(logging.StreamHandler):
         elif severity == 'WARNING': color = 'yellow'
         elif severity == 'VERBOSE': color = 'blue'
         elif severity == 'INFO'   : color = 'blue'
-        elif severity == 'DEBUG'  : color = 'greed'
+        elif severity == 'DEBUG'  : color = 'green'
         message = self.wrap_color(color, message, bold=bold)
         # Compose the formatted log message as:
         #   timestamp hostname name severity message

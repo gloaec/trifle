@@ -8,7 +8,8 @@ __all__ = ['create_app']
 
 DEFAULT_BLUEPRINTS = [
     api,
-    frontend
+    frontend,
+    monitor
 ]
 
 def create_app(config=None, app_name=None, blueprints=None):

@@ -320,3 +320,11 @@ table.dataTable thead .sorting:after {
     box-shadow: 0px 1px 1px #CCC;
     border-radius: 0 0 4px 4px;
 }
+
+.sparql-query {
+    word-break: break-all;
+    word-wrap: break-word;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-size: 1.2em;
+}
+

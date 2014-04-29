@@ -5,20 +5,34 @@ import os
 import sys
 import logging
 
+filedir = os.path.dirname(os.path.realpath(__file__))
+srcdir  = os.path.join(filedir, 'src')
+sys.path.insert(0, srcdir)
 
+from trifle.utils    import coloredlogs
 from trifle.managers import Manager
-from trifle.store import Store
+from trifle.store    import Store
+from trifle.server   import create_app
 
+# Create a logger object.
+logger = logging.getLogger('trifle')
+coloredlogs.install(level=logging.DEBUG)
 config = {}
 
 def main(argv=None, prog=None, **kwargs):
-    logging.basicConfig(level=logging.DEBUG)
-    manager = Manager()
-    config  = get_config()
-    manager.run()
+    try:
+        store   = Store()
+        app     = create_app()
+        manager = Manager(app=app)#, store=store)
+        config  = get_config()
+        manager.run()
+    except Exception, e:
+        msg = e.message #colored(e.message, 'red')
+        logger.exception(msg)
 
 def get_config(filename="trifle.conf"):
     config = {}
+    execfile(os.path.join(srcdir, filename), config)
     return config
 
 if __name__ == "__main__":

@@ -862,6 +862,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        {% for row in results %}
+                                            <tr>
+                                                {% for col in row %}
+                                                    <td>{{ col }}</td>
+                                                {% endfor %}
+                                            </tr>
+                                        {% endfor %}
                                         <tr>
                                             <td>1</td>
                                             <td>Mark</td>
