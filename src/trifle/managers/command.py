@@ -3,8 +3,9 @@ from __future__ import absolute_import
 import warnings
 import argparse
 
-from trifle.utils.cli      import prompt, prompt_pass, prompt_bool, prompt_choices
-from trifle.managers.group import Group
+from trifle.utils.cli       import prompt, prompt_pass, prompt_bool, prompt_choices
+from trifle.managers.parser import ArgumentParser
+from trifle.managers.group  import Group
 
 class Command(object):
     """
@@ -33,7 +34,7 @@ class Command(object):
 
     def create_parser(self, *args, **kwargs):
 
-        parser = argparse.ArgumentParser(*args, **kwargs)
+        parser = ArgumentParser(*args, **kwargs)
 
         for option in self.get_options():
             if isinstance(option, Group):

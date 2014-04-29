@@ -4,7 +4,10 @@ import os
 import sys
 import re
 import time
-from rdflib import BNode, ConjunctiveGraph, URIRef, Literal, Namespace, RDF
+from rdflib            import BNode, ConjunctiveGraph, plugin, \
+                              URIRef, Literal, Namespace, RDF
+from rdflib.parser     import Parser
+from rdflib.serializer import Serializer
 
 from trifle.recipes import getHostname, getServices
 from trifle.stores  import Services
@@ -27,6 +30,11 @@ DC   = Namespace('http://purl.org/dc/elements/1.1/')
 FOAF = Namespace('http://xmlns.com/foaf/0.1/')
 IMDB = Namespace('http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#')
 REV  = Namespace('http://purl.org/stuff/rev#')
+
+plugin.register("rdfjson", Parser,
+   "rdflib.plugins.parsers.rdfjson", "JsonParser")
+plugin.register("rdfjson", Serializer,
+    "rdflib.plugins.serializers.rdfjson", "JsonSerializer")
 
 class Store:
 
@@ -69,7 +77,7 @@ class Store:
         return self.graph.query(sparql)
 
     def register(self):
-        name = ""
+        name = getHostname()
         location = ""
 
     def who(self, who=None):

@@ -5,15 +5,16 @@ import os
 import sys
 import logging
 
+
 from trifle.managers import Manager
 from trifle.store import Store
 
 config = {}
 
 def main(argv=None, prog=None, **kwargs):
+    logging.basicConfig(level=logging.DEBUG)
     manager = Manager()
     config  = get_config()
-    logging.basicConfig(level=logging.DEBUG)
     manager.run()
 
 def get_config(filename="trifle.conf"):

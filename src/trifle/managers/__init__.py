@@ -11,6 +11,7 @@ from trifle.exceptions       import InvalidCommand
 from trifle.store            import Store
 from trifle.utils.cli        import prompt, prompt_pass, prompt_bool, prompt_choices
 from trifle.utils.compat     import text_type, iteritems, imap, izip
+from trifle.managers.parser  import ArgumentParser
 from trifle.managers.command import Command
 from trifle.managers.shell   import Shell
 from trifle.managers.option  import Option
@@ -46,9 +47,9 @@ class Manager(object):
             def run(self):
                 print "hello"
 
-        store = Store(__name__)          
+        app = Flask(__name__)
 
-        manager = Manager(store)
+        manager = Manager(app)
         manager.add_command("print", Print())
 
         if __name__ == "__main__":
@@ -59,7 +60,7 @@ class Manager(object):
         python manage.py print
         > hello
 
-    :param store: Store instance or callable returning a Store instance.
+    :param app: Flask instance or callable returning a Flask instance.
     :param with_default_commands: load commands **runserver** and **shell**
                                   by default.
     :param disable_argcomplete: disable automatic loading of argcomplete.
@@ -67,17 +68,18 @@ class Manager(object):
     """
     help = description = usage = None
 
-    def __init__(self, store=None, with_default_commands=True, usage=None,
+    def __init__(self, app=None, db=None, with_default_commands=None, usage=None,
                  help=None, description=None, disable_argcomplete=False):
 
-        self.store = store
+        self.app = app
+        self.db = db
 
         self._commands = dict()
         self._options = list()
 
         # Primary/root Manager instance adds default commands by default,
         # Sub-Managers do not
-        if with_default_commands or (store and with_default_commands is None):
+        if with_default_commands or (app and with_default_commands is None):
             self.add_default_commands()
 
         self.usage = usage if usage is not None else self.usage
@@ -108,14 +110,14 @@ class Manager(object):
 
         The arguments are then passed to your function, e.g.::
 
-            def create_store(config=None):
-                store = Store(__name__)
+            def create_app(config=None):
+                app = Flask(__name__)
                 if config:
-                    store.config.from_pyfile(config)
+                    app.config.from_pyfile(config)
 
-                return store
+                return app
 
-            manager = Manager(create_store)
+            manager = Manager(create_app)
             manager.add_option("-c", "--config", dest="config", required=False)
 
         and are evoked like this::
@@ -130,15 +132,15 @@ class Manager(object):
 
         self._options.append(Option(*args, **kwargs))
 
-    def create_store(self, **kwargs):
+    def create_app(self, **kwargs):
         if self.parent:
             # Sub-manager, defer to parent Manager
-            return self.parent.create_store(**kwargs)
+            return self.parent.create_app(**kwargs)
 
-        if isinstance(self.store, Store):
-            return self.store
+        if isinstance(self.app, Flask):
+            return self.app
 
-        return self.store(**kwargs)
+        return self.app(**kwargs)
 
     def create_parser(self, prog, parents=None):
         """
@@ -147,14 +149,14 @@ class Manager(object):
         """
         prog = os.path.basename(prog)
 
-        options_parser = argparse.ArgumentParser(add_help=False)
+        options_parser = ArgumentParser(add_help=False)
         for option in self.get_options():
             options_parser.add_argument(*option.args, **option.kwargs)
 
         # parser_parents = parents if parents else [option_parser]
         # parser_parents = [options_parser]
 
-        parser = argparse.ArgumentParser(prog=prog, usage=self.usage,
+        parser = ArgumentParser(prog=prog, usage=self.usage,
                                          description=self.description,
                                          parents=[options_parser])
 
@@ -178,6 +180,8 @@ class Manager(object):
 
         return parser
 
+    # def foo(self, app, *args, **kwargs):
+    #     print(args)
 
     def get_options(self):
         if self.parent:
@@ -315,12 +319,12 @@ class Manager(object):
         """
         Decorator that wraps function in shell command. This is equivalent to::
 
-            def _make_context(store):
-                return dict(store=store)
+            def _make_context(app):
+                return dict(app=app)
 
             manager.add_command("shell", Shell(make_context=_make_context))
 
-        The decorated function should take a single "store" argument, and return
+        The decorated function should take a single "app" argument, and return
         a dict.
 
         For more sophisticated usage use the Shell class.
@@ -332,32 +336,32 @@ class Manager(object):
 
     def handle(self, prog, args=None):
 
-        store_parser = self.create_parser(prog)
+        app_parser = self.create_parser(prog)
 
         if args is None or len(args) == 0:
-            store_parser.print_help()
+            app_parser.print_help()
             return 2
 
         args = list(args or [])
-        store_namespace, remaining_args = store_parser.parse_known_args(args)
+        app_namespace, remaining_args = app_parser.parse_known_args(args)
 
         # get the handle function and remove it from parsed options
-        kwargs = store_namespace.__dict__
+        kwargs = app_namespace.__dict__
         handle = kwargs.pop('func_handle', None)
         if not handle:
-            store_parser.error('too few arguments')
+            app_parser.error('too few arguments')
 
         # get only safe config options
-        store_config_keys = [action.dest for action in store_parser._actions
+        app_config_keys = [action.dest for action in app_parser._actions
                            if action.__class__ in safe_actions]
 
         # pass only safe app config keys
-        store_config = dict((k, v) for k, v in iteritems(kwargs)
-                          if k in store_config_keys)
+        app_config = dict((k, v) for k, v in iteritems(kwargs)
+                          if k in app_config_keys)
 
         # remove application config keys from handle kwargs
         kwargs = dict((k, v) for k, v in iteritems(kwargs)
-                      if k not in store_config_keys)
+                      if k not in app_config_keys)
 
         # get command from bound handle function (py2.7+)
         command = handle.__self__
@@ -367,14 +371,14 @@ class Manager(object):
             if len(remaining_args):
                 # raise correct exception
                 # FIXME maybe change capture_all_args flag
-                store_parser.parse_args(args)
+                app_parser.parse_args(args)
                 # sys.exit(2)
                 pass
             positional_args = []
 
-        store = self.create_store(**store_config)
+        app = self.create_app(**app_config)
 
-        return handle(store, *positional_args, **kwargs)
+        return handle(app, *positional_args, **kwargs)
 
     def run(self, commands=None, default_command=None):
         """

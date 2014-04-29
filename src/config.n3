@@ -1,11 +1,7 @@
 @prefix : <http://www.semanticweb.org/ontologies/2014/3/trifle#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix imdb: <http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rev: <http://purl.org/stuff/rev#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -43,16 +39,13 @@
                         owl:hasValue "male" ;
                         owl:onProperty :sexe ] ) ] .
 
-:Phone a owl:Class ;
-    rdfs:subClassOf :Machine .
-
 :Promise a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty :promisedBy ;
-            owl:someValuesFrom :Person ],
+            owl:someValuesFrom :Package ],
         [ a owl:Restriction ;
             owl:onProperty :promisedBy ;
-            owl:someValuesFrom :Package ],
+            owl:someValuesFrom :Person ],
         [ a owl:Restriction ;
             owl:onProperty :promisedBy ;
             owl:someValuesFrom :File ] .
@@ -66,9 +59,6 @@
     :firstName "Romeo" ;
     :lastName "Capulet" ;
     :sexe "male" .
-
-:Tablet a owl:Class ;
-    rdfs:subClassOf :Machine .
 
 :address a owl:DatatypeProperty ;
     rdfs:range xsd:string .
@@ -87,10 +77,6 @@
 
 :causes a owl:ObjectProperty ;
     owl:inverseOf :causedBy .
-
-:checkForeign a owl:DatatypeProperty ;
-    rdfs:domain :Machine ;
-    rdfs:range xsd:boolean .
 
 :checkRoot a owl:DatatypeProperty ;
     rdfs:domain :Machine ;
@@ -149,9 +135,7 @@
     rdfs:domain :Package ;
     rdfs:range xsd:string .
 
-:lastName a owl:DatatypeProperty ;
-    rdfs:domain :Person ;
-    rdfs:range xsd:string .
+:lastName a owl:AnnotationProperty .
 
 :location a owl:DatatypeProperty ;
     rdfs:domain :Machine ;
@@ -208,9 +192,6 @@
 
 :provides a owl:ObjectProperty ;
     owl:inverseOf :providedBy .
-
-:requires a owl:ObjectProperty ;
-    owl:inverseOf :requiredBy .
 
 :runs a owl:ObjectProperty ;
     owl:inverseOf :runsOn .
@@ -276,6 +257,9 @@
     :forceIpv4 "192.168.1.4" ;
     :location "192.168.1.4" .
 
+:Phone a owl:Class ;
+    rdfs:subClassOf :Machine .
+
 :PhysicalPartition a owl:Class ;
     rdfs:subClassOf :Storage .
 
@@ -284,6 +268,9 @@
             owl:onClass :Package ;
             owl:onProperty :componentOf ;
             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+
+:Tablet a owl:Class ;
+    rdfs:subClassOf :Machine .
 
 :Women a owl:Class ;
     rdfs:subClassOf :Person ;
@@ -304,25 +291,23 @@
 :ownedBy a owl:ObjectProperty ;
     rdfs:comment "Ownership is a kind of relationship that could exist between an entity which has become a possession and its owner. The relationship between a file and its owner is an example of this type of associations." .
 
+:requiredBy a owl:ObjectProperty .
+
 :startedBy a owl:ObjectProperty ;
     rdfs:comment "When an entity X makes another entity Y to start doing something or behave in some manner, the association is said to be of type StartedBy." .
 
 :writtenBy a owl:ObjectProperty ;
     rdfs:comment "The relationship beween a writing X and its writer Y." .
 
-:Computer a owl:Class ;
-    rdfs:comment "Computers are the main types of machines for this thesis work. That is why the two terminologies are interchangeably used in different parts of this literature. Personal computers, laptops, server computers all belong to this topic type. A computer runs one or more operating systems. " ;
-    rdfs:subClassOf :Machine .
-
 :File a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty :usedBy ;
+            owl:onProperty :editedBy ;
             owl:someValuesFrom :Package ],
         [ a owl:Restriction ;
             owl:onProperty :usedBy ;
             owl:someValuesFrom :Person ],
         [ a owl:Restriction ;
-            owl:onProperty :editedBy ;
+            owl:onProperty :usedBy ;
             owl:someValuesFrom :Package ] .
 
 :Server a owl:Class ;
@@ -346,15 +331,16 @@
 :providedBy a owl:ObjectProperty ;
     rdfs:comment "When an entity X has the potential and willingness of providing some thing to some other entity, the relationship that exists between them is called ProvidedBy." .
 
-:requiredBy a owl:ObjectProperty ;
-    rdfs:comment "If X depends on Y in order to serve its intended purpose, the relationship between them is called RequiredBy." .
-
 :runsOn a owl:ObjectProperty ;
     rdfs:comment "If entity X performs its actitvities or execution on entity Y, the relationship is called as RunsOn." .
 
 :sexe a owl:DatatypeProperty ;
     rdfs:domain :Person ;
     rdfs:range xsd:string .
+
+:Computer a owl:Class ;
+    rdfs:comment "Computers are the main types of machines for this thesis work. That is why the two terminologies are interchangeably used in different parts of this literature. Personal computers, laptops, server computers all belong to this topic type. A computer runs one or more operating systems. " ;
+    rdfs:subClassOf :Machine .
 
 :Storage a owl:Class ;
     rdfs:comment "Storage is a logical partition of a physical storage media that mainly serves as a location for the different kinds of files. Defined as a file as a complete named collection of information such as a program, set of data used by a program or a user created document." .
@@ -368,35 +354,434 @@
 :promisedBy a owl:ObjectProperty ;
     rdfs:comment "The relationship between a promise and its promiser." .
 
-:Service a owl:Class ;
-    rdfs:comment "Service is a specific functionality of a computer system such as a web service or network service provided by a machine. A process which is defined in this literature as a package or part of a package on action enables the provisioning of services by performing real activities behind the scene." ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty :usedBy ;
-            owl:someValuesFrom :Person ],
-        [ a owl:Restriction ;
-            owl:onProperty :providedBy ;
-            owl:someValuesFrom :Machine ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom :Package ;
-            owl:onProperty :requiredBy ] .
-
 :Package a owl:Class ;
     rdfs:comment "Packages on the other hand are application programs designed to serve specific purpose. It could be to give a network service or web service on a machine. The package named Apache is a good example topic of type package which is designed to enable a web service." ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty :managedBy ;
+            owl:onProperty :configuredBy ;
             owl:someValuesFrom :Machine ],
         [ a owl:Restriction ;
             owl:onProperty :installedBy ;
             owl:someValuesFrom :Package ],
         [ a owl:Restriction ;
-            owl:onProperty :configuredBy ;
+            owl:onProperty :runsOn ;
             owl:someValuesFrom :Machine ],
         [ a owl:Restriction ;
-            owl:onProperty :runsOn ;
+            owl:onProperty :managedBy ;
             owl:someValuesFrom :Machine ] .
 
 :Person a owl:Class .
 
 :Machine a owl:Class ;
     rdfs:comment "Machine is any device that can accept and process information to provide a desired result based on a program or sequence of instructions on how the data is to be processed." .
+
+:Service a owl:Class ;
+    rdfs:comment "Service is a specific functionality of a computer system such as a web service or network service provided by a machine. A process which is defined in this literature as a package or part of a package on action enables the provisioning of services by performing real activities behind the scene." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom :Package ;
+            owl:onProperty :requiredBy ],
+        [ a owl:Restriction ;
+            owl:onProperty :providedBy ;
+            owl:someValuesFrom :Machine ],
+        [ a owl:Restriction ;
+            owl:onProperty :usedBy ;
+            owl:someValuesFrom :Person ] .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( :Computer :Phone :Tablet ) .
+
+[] a :Service ;
+    :name "acpi-support" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "acpid" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "alsa-restore" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "alsa-store" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "anacron" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "apache2" ;
+    :status true .
+
+[] a :Service ;
+    :name "apparmor" ;
+    :status false .
+
+[] a :Service ;
+    :name "apport" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "atd" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "avahi-daemon" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "binfmt-support" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "bitlbee" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "bluetooth" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "bootlogd" ;
+    :status false .
+
+[] a :Service ;
+    :name "brltty" ;
+    :status false .
+
+[] a :Service ;
+    :name "bumblebeed" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "cfengine3" ;
+    :status true .
+
+[] a :Service ;
+    :name "ciscod" ;
+    :status true .
+
+[] a :Service ;
+    :name "console-setup" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "cron" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "cryptdisks" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "cryptdisks-early" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "cryptdisks-enable" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "cryptdisks-udev" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "cups" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "dbus" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "dmesg" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "dns-clean" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "dnsmasq" ;
+    :status false .
+
+[] a :Service ;
+    :name "failsafe-x" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "friendly-recovery" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "grub-common" ;
+    :status false .
+
+[] a :Service ;
+    :name "hostapd" ;
+    :status false .
+
+[] a :Service ;
+    :name "hostname" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "hwclock" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "hwclock-save" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "irqbalance" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "jetty" ;
+    :status false .
+
+[] a :Service ;
+    :name "kerneloops" ;
+    :status false .
+
+[] a :Service ;
+    :name "killprocs" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "lightdm" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "lsh-server" ;
+    :status true .
+
+[] a :Service ;
+    :name "modemmanager" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "module-init-tools" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "mongodb" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "mysql" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "network-interface" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "network-interface-container" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "network-interface-security" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "network-manager" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "networking" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "nmbd" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "ondemand" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "openvpn" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "passwd" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "plymouth" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "plymouth-log" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "plymouth-ready" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "plymouth-splash" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "plymouth-stop" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "plymouth-upstart-bridge" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "postfix" ;
+    :status false .
+
+[] a :Service ;
+    :name "postgresql" ;
+    :status true .
+
+[] a :Service ;
+    :name "pppd-dns" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "procps" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "pulseaudio" ;
+    :status false .
+
+[] a :Service ;
+    :name "qemu-kvm" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "rc.local" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "resolvconf" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "rfkill-restore" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "rfkill-store" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "rsync" ;
+    :status false .
+
+[] a :Service ;
+    :name "rsyslog" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "saned" ;
+    :status true .
+
+[] a :Service ;
+    :name "sendsigs" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "setvtrgb" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "smbd" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "speech-dispatcher" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "ssh" ;
+    :status false .
+
+[] a :Service ;
+    :name "stop-bootlogd" ;
+    :status false .
+
+[] a :Service ;
+    :name "stop-bootlogd-single" ;
+    :status false .
+
+[] a :Service ;
+    :name "sudo" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "udev" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "udev-fallback-graphics" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "udev-finish" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "udevmonitor" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "udevtrigger" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "ufw" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "umountfs" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "umountnfs.sh" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "umountroot" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "unattended-upgrades" ;
+    :status false .
+
+[] a :Service ;
+    :name "urandom" ;
+    :status false .
+
+[] a :Service ;
+    :name "virtualbox" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "vpnagentd" ;
+    :status true .
+
+[] a :Service ;
+    :name "vsftpd" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "whoopsie" ;
+    :status "None" .
+
+[] a :Service ;
+    :name "winbind" ;
+    :status true .
+
+[] a :Service ;
+    :name "x11-common" ;
+    :status false .
 

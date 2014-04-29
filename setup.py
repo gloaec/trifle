@@ -18,9 +18,26 @@ setup(
     long_description = __doc__,
     package_dir      = {"":"src"},
     packages         = [
-        project,
-        "%s.managers" % project,
-        "%s.utils"    % project
+        'rdflib',
+        'rdflib/extras',
+        'rdflib/plugins',
+        'rdflib/plugins/parsers',
+        'rdflib/plugins/parsers/pyRdfa',
+        'rdflib/plugins/parsers/pyRdfa/transform',
+        'rdflib/plugins/parsers/pyRdfa/extras',
+        'rdflib/plugins/parsers/pyRdfa/host',
+        'rdflib/plugins/parsers/pyRdfa/rdfs',
+        'rdflib/plugins/parsers/pyMicrodata',
+        'rdflib/plugins/serializers',
+        'rdflib/plugins/sparql',
+        'rdflib/plugins/sparql/results',
+        'rdflib/plugins/stores',
+        'rdflib/tools'
+        #project,
+        #"%s.managers" % project,
+        #"%s.utils"    % project
+        #"%s.server" % project,
+        #"%s.utils"    % project
     ],
     classifiers      = [
         'Environment :: Web Environment',
