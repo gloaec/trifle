@@ -1,0 +1,80 @@
+{% extends "layouts/application.html" %}
+
+{% block title %}Monitor Services{% endblock %}
+
+{% block breadcrumb %}
+    <div class="row">
+        <div class="col-lg-12">
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa fa-bar-chart-o"></i> Monitor</a></li>
+                <li class="active"><i class="fa fa-gears"></i> Services</li>
+                <li class="text-info pull-right"><strong>Last Snapshot:</strong> 15s ago</li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-list"></i>
+                    Listing all services
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    {% if results %}
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        {% for var in results.vars %}
+                                            <th>{{ var }}</th>
+                                        {% endfor %}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for row in results %}
+                                        <tr>
+                                          <td>{{ row[0] }}</td>
+                                          <td>
+                                              {% if row[1].value == True %}
+                                                  <span class="label label-success">
+                                                      <i class="fa fa-check"></i>
+                                                      Running
+                                                  </span>
+                                              {% elif row[1].value == False %}
+                                                  <span class="label label-danger">
+                                                      <i class="fa fa-times"></i>
+                                                      Stopped
+                                                  </span>
+                                              {% else %}
+                                                  <span class="label label-default">
+                                                      <i class="fa fa-question"></i>
+                                                      Unknown
+                                                  </span>
+                                              {% endif %}
+                                          </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.table-responsive -->
+                    {% else %}
+                        <div class="jumbotron">
+                            <p>No results found in ontology</p>
+                        </div>
+                    {% endif %}
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-6 -->
+    </div>
+    <!-- /.row -->
+{% endblock %}

@@ -9,7 +9,8 @@ __all__ = ['create_app']
 DEFAULT_BLUEPRINTS = [
     api,
     frontend,
-    monitor
+    monitor,
+    configure
 ]
 
 def create_app(config=None, app_name=None, blueprints=None):
@@ -45,6 +46,8 @@ def configure_app(app, config=None):
     app.root_path = os.path.abspath(os.path.dirname(__file__))
     app.static_folder = 'static'
     app.templates_folder = 'templates'
+    app.secret_key = 'A0Zr98j/3&oaKoaygXfAZsdER~?aijmN]LWX/,?RT'
+
     # Use instance folder instead of env variables to make deployment easier.
     #app.config.from_envvar('%s_APP_CONFIG' % DefaultConfig.PROJECT.upper(), silent=True)
 

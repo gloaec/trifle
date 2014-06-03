@@ -119,6 +119,18 @@ body {
     content: "\f107";
 }
 
+.active > a {
+    background-color: #428BCA;
+    border-color: #357EBD;
+    color: #FFFFFF;
+}
+
+.active.node > a,
+.active > a:hover {
+    background-color: #EEEEEE;
+    color: #428BCA;
+}
+
 .nav-second-level li,
 .nav-third-level li {
     border-bottom: none !important;
