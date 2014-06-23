@@ -38,10 +38,10 @@ clean	:
 	rm -rf $(OUT)/*.aux
 	rm -rf $(OUT)/*.bbl
 	rm -rf $(OUT)/*.blg
-	rm -rf $(OUT)/*.dvi
+	#rm -rf $(OUT)/*.dvi
 	rm -rf $(OUT)/*.lof
 	rm -rf $(OUT)/*.log
 	rm -rf $(OUT)/*.lot
 	rm -rf $(OUT)/*.out
 	rm -rf $(OUT)/*.toc
-	rm -rf $(OUT)/*.pdf
+	#rm -rf $(OUT)/*.pdf
