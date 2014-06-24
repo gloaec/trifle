@@ -26,7 +26,123 @@ Dans ce mémoire, nous aborderons les principes communs à chacunes des
 architectures existantes, desquels nous detaillerons le framework conceptuel
 dérivé (!) par couches. Nous présenterons un certaine variété d'intergiciels et
 d'infrastructures reconnus pour faciliter la configuration d'applications et de
-services basés sur le contexte \cite{uci-thesis-latex}.
+services basés sur le contexte.
+
+\section{Background}
+
+De nombreux débats ont eu lieu sur .. Alors que la plupart des gens comprènent
+de manière tacite ce qu'est le contexte, ils le trouve par ailleurs
+particulièrement difficile à élucider.
+
+... toute information pouvant être utilisée pour caractériser la situation d'une
+entité. Une entité peut être une personne, un lieu ou un objet considéré
+pertinent dans l'interaction entre un utilisateur et une application, notamment
+l'utilisateur et l'application eux même.
+
+Cette définition rend la tâche plus facile à un développeur d'application pour
+énumérer le contexte pour un scénario d'application donné. Si un fragment
+d'information peut être utilisé pour caractériser la situation d'un participant
+dans une quelquonque interaction, alors cette information appartient au
+contexte.
+
+\section{Vue d'ensemble sur le contexte}
+
+Le contexte est efficace, seulement lorsqu'il est partagé.
+
+Pour s'assurer que le contexte soit partagé, il doit d'abord être receilli et
+rigoureusement traité. Cela implique qu'un système sensible au contexte doit
+être en mesure de comprendre ce qu'est le contexte avant d'aller à la recherche
+de ces informations et de pouvoir les catégoriser.
+
+\subsection{Classes de contexte}
+
+Schilit et. al. proposent la classification suivante des informations de
+contexte:
+
+\begin{itemize}
+  \item \textbf{Contexte Informatique} - Connectivité réseau, bande passante,
+	  and ressources à proximité telles que des imprimantes, des
+	  affichages ou des postes de travail.
+  \item \textbf{Contexte Utilistateur} - Le profil utilisateur, sa situation
+	  géographique, sa situation sociale actuelle et les individus qui
+	  l'entourent.
+  \item \textbf{Contexte Physique} - L'éclairage, le niveau de bruit, les
+	  condition de circulation ou la température.
+\end{itemize}
+
+Chacune de ces catégories contiennent une richesse d'informations pertinantes
+pour le système sensible au contexte. Elle ne peuvent cependant pas être
+traitées de manière isolée pour pouvoir en extraire le meilleur. L'intention du
+système sensible au contexte est de rassembler et de fusionner ces informations
+pour aboutir à une vue d'ensemble de la situation. Une fois le contexte mis en
+tampon ou en base, le système doit alors filtrer les informations pertinantes
+pour l'utilisateur, dans le moment présent.
+
+Les informations de contexte peuvent alternativement être subdivisées en 2
+catégories bien distinctes: contexte virtuel ou physique.
+
+\subsubsection{Contexte virtuel}
+
+Le contexte virtuel inclut la version du système d'exploitation, les
+possibilités d'interface, la technologie en charge de l'accomplissement des
+communications, les emails envoyés et reçus, et les documents édités.
+
+\subsubsection{Contexte physique}
+
+Les contexte physique d'un autre coté peut être la présence d'une autre entité,
+qu'elle soit utilisateur ou périphérique, la proximité d'un imprimante en
+particulier, une indication que l'utilisateur est debout, en train de marcher ou
+assis ou les conditions météorologiques actuelles. En d'autres termes, le
+contexte physique peut être défini comme toute donnée aquierable par le biais
+d'une sonde.
+
+\subsubsection{Contexte historique}
+
+Les contextes mémorisés au cours d'un certain laps de temps. Cette information
+est considérée très utile, mais n'est que très rarement utilisée, sauf pour les
+applications mobiles. Le système doit être en mesure d'estimer les informations
+valant la peine d'être conservées. Cette évaluation est excessivement coûteuse
+et nécéssite donc des algorithmes très performants.
+
+\subsection{Les caractéristiques des informations de contexte}
+
+\subsection{Système sensible au contexte}
+
+\subsection{Recceuillir l'information}
+
+\subsection{Récupérer l'information}
+
+\subsubsection{Capteur en accès direct}
+
+\subsubsection{Infrastructure intergicielle}
+
+\subsubsection{Serveur de contexte}
+
+\subsection{Les achritectures de gestion de contexte}
+
+\subsubsection{Critères d'arbitrages}
+
+\subsection{Représentation du contexte}
+
+\subsection{Interprétation du contexte}
+
+\subsection{Framework conceptuel en couches}
+
+\subsection{Sécurité et confidentialité}
+
+\section{Systèmes et frameworks existants}
+
+\subsection{Technologies de détection}
+
+\subsection{Représentations du contexte}
+
+\subsection{Découverte des ressouces}
+
+\subsection{Gestion du contexte historique}
+
+\subsection{Sécurité et confidentialité}
+
+\subsection{Conclusion}
 
 % This is an example using the \LaTeX{} template for UCI theses and
 % dissertation documents \cite{uci-thesis-latex}. Figure
