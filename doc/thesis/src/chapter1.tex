@@ -34,10 +34,24 @@ De nombreux débats ont eu lieu sur .. Alors que la plupart des gens comprènent
 de manière tacite ce qu'est le contexte, ils le trouve par ailleurs
 particulièrement difficile à élucider.
 
-... toute information pouvant être utilisée pour caractériser la situation d'une
-entité. Une entité peut être une personne, un lieu ou un objet considéré
-pertinent dans l'interaction entre un utilisateur et une application, notamment
-l'utilisateur et l'application eux même.
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{l}
+    ``... toute information pouvant être utilisée pour caractériser la
+    situation d'une entité.\\
+    Une entité peut être une personne, un lieu ou un
+    objet considéré pertinent dans l'interaction \\
+    entre un utilisateur et une
+    application, notamment l'utilisateur et l'application eux même.``
+    \cite{abowd_baltzer_1997} \\
+    \em \footnotesize Gregory D. Abowd, Christopher G. Atkeson, Jason Hong, Sue
+    Long, Rob Kooper, and Mike \\
+    \em \footnotesize Pinkerton. Cyberguide: a mobile context-aware tour guide.
+    Wireless Networks, 3(5):421–433, October 1997. 
+  \end{tabular}
+  \caption{Le context défini par Abowd et. al.}
+  \label{fig:quote}
+\end{figure}
 
 Cette définition rend la tâche plus facile à un développeur d'application pour
 énumérer le contexte pour un scénario d'application donné. Si un fragment
@@ -47,7 +61,18 @@ contexte.
 
 \section{Vue d'ensemble sur le contexte}
 
-Le contexte est efficace, seulement lorsqu'il est partagé.
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{l}
+    ``Le contexte est efficace, seulement lorsqu'il est partagé.``
+    \cite{winograd_architectures_2001} \\
+    \em \footnotesize Terry Winograd. Architectures for Context. \\
+    \em \footnotesize Human-Computer Interaction, 16(2):401–419,
+     December 2001. \\
+  \end{tabular}
+  \caption{Winograd a propos du contexte}
+  \label{fig:quote}
+\end{figure}
 
 Pour s'assurer que le contexte soit partagé, il doit d'abord être receilli et
 rigoureusement traité. Cela implique qu'un système sensible au contexte doit
@@ -106,21 +131,295 @@ et nécéssite donc des algorithmes très performants.
 
 \subsection{Les caractéristiques des informations de contexte}
 
+Les chercheurs l'université de Queensland ont classifié quatre caractéristiques
+majeures : \cite{catharina_context_2002}
+
+\begin{enumerate}
+    \item \textbf{Les informations de contexte présente une gamme de
+	    caractéristiques temporelles}
+
+	    L'information de contexte est d'hors et déjà catégorisée selon
+	    l'environement auquel il appartient : virtuel ou physique ; elle
+	    peut en outre est subdivisée selon un critère de temporalité :
+
+            \begin{itemize}
+		\item Information statique : toute information apparentée à
+			l'environement de l'utilisateur qui ne varie pas.
+		\item Information dynamique : l'information accumulée
+			continuellement, fréquemment et automatiquement.
+            \end{itemize}
+
+	    De plus, l'information de contexte passé semble indispensable pour
+	    la compréhension de l'état global de l'environnement.
+
+    \item \textbf{L'information de contexte n'est pas parfaite}
+
+	    Cela considère la validité du contexte, majoritairement concernant
+	    les informations de contexte dynamique. La vitesse et la fréquence à
+	    laquelle l'information varie soulève de sérieuses raisons de
+	    douter de sa solidité. Ce ``délai entre la production et
+	    l'utilisation de l'information de contexte``
+	    \cite{catharina_context_2002} est une préoccupation non-négligeable.
+            D'autres sources d'inquiétudes quant au bien-fondé de
+	    l'information de contexte incluent la fiabilité des informations
+	    fournies par les producteurs de contexte : défaillance d'un capteur,
+	    chemin rompu entre les producteurs ou n'importe quelle source qui
+	    fournirait une information erronée ou désuette.
+
+    \item \textbf{L'information incarne un grand nombre de représentations}
+
+            Les données brutes recueillies depuis l'environemment physique et
+	    virtuel peuvent prendre de nombreuses formes et doivent être
+	    traitées pour se mêler à d'autres informations de contexte. La
+	    probabilité pour qu'un système sensible au contexte obtienne un taux
+	    de succès de 100\% lors d'une ``capture des relations existantes
+	    entre les représentations alternatives``
+	    \cite{catharina_context_2002}  de l'information et celle apte à la
+	    situation courante est quasi-nulle.
+
+    \item \textbf{Les informations de contexte sont très fortement correlées}
+
+	    L'information contextuelle provenant d'une origine particulière peut
+	    avoir un lien très étroit avec sa source, si bien qu'elle est
+	    dépendante de l'origine.
+	    Le contexte peut ne pas être fiable ''là où les caractéristiques de
+	    l'information dérivée sont intimement liées aux propriétés de
+	    l'information dont il est issu.'' \cite{catharina_context_2002}
+
+\end{enumerate}
+
 \subsection{Système sensible au contexte}
+
+Un système est dit sensible au contexte s'il utilise le contexte pour fournir
+des informations pertinentes et/ou des services à l'utilisateur, où la
+pertinence dépend de la tâche de l'utilisateur. Les systèmes sensibles au
+contexte peuvent être implémentés sous plusieures formes, mais pour accomplir
+cet objectif, le système doit d'un manière générale :
+
+\begin{itemize}
+    \item Recceuillir l'information
+    \item Sérialiser cette information
+    \item Fusionner l'information pour générer un contexte de plus haut niveau
+    \item Prendre automatiquement des mesures basées sur l'information
+	    recceuillie
+    \item Rendre l'information disponible à l'utilistateur, dans l'immédiat,
+	    dans le futur ou au moment approprié pour améliorer et aider à la
+	    completion de la tâche de l'utilisateur.
+\end{itemize}
+
+Les chercheurs du Context Toolkit à l'université de Berkley proposent 3
+fonctionnalités qu'une application sensible au contexte doit impérativement
+supporter : \cite{dey_providing_2000}
+
+\begin{enumerate}
+    \item Présentation de l'information et des services à l'utilistateur
+    \item Éxécution automatique d'un service pour l'utilisateur
+    \item Etiquetage de l'information de contexte pour une extraction ultérieure
+\end{enumerate}
+
+Les développeurs du systems Kimura ont conçu des composants distribués destinés
+à un système sensible au contexte global. Ces composants se divisent en trois
+classes \cite{voida_integrating_2002}, qui sont les suivantes :
+
+\begin{enumerate}
+    \item Aquisition du contexte - Le système récupère l'information de contexte
+	    et l'ajoute dans un dépôt dédié.
+    \item Interprétation du contexte - Les sytème convertit l'information
+	    recceuillie en un contexte de travail.
+    \item Interaction de l'utilisateur - Le système affiche le contexte de
+	    travail à l'uilisateur.
+\end{enumerate}
 
 \subsection{Recceuillir l'information}
 
+Certaines informations de contexte sont explicitement données au sytème, comme
+le nom de l'utilisateur, son âge, son addresse email, les variables
+d'environemment or le registre. D'autres informations physiques primitives comme
+la lumière, la température ou des lectures de pression peuvent être acquises par
+l'intérmédiaire d'un capteur.
+
+La situation géographique et l'identité sont les deux fragments de contexte les
+plus fréquemment détéctés.
+
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{l}
+    ``Les capteurs ne sont pas toujours précis ou fiables à 100\%, \\
+    tout particuièrement s'ils sont à usage unique. Le processus de \\
+    récupération de l'information doit être tolérent à la défaillance \\
+    protentielle d'un capteur. Toutes les informations recueillies doivent \\
+    être assujetties à des contrôles de validité pour vérifier leur exactitude.\\
+    La fusion des capteur est un moyen de remédier à cette difficulté.``
+    \cite{schmidt_there_1999} \\
+    \em \footnotesize Albrecht Schmidt, Michael Beigl, and Hans-W Gellersen. \\
+    \em \footnotesize There is more to context than location. Computers \&
+    Graphics, 23(6):893–901, 1999.
+  \end{tabular}
+  \caption{La fiabilité des capteurs par Schmidt}
+  \label{fig:quote}
+\end{figure}
+
+Prenez l'exemple d'une centrale éléctrique, possédant de nombreuses sondes de
+témpérature implantées à diverses endroits d'un reacteur nucléaire. Le système
+doit prendre la déscision de refroidir plus ou moins généreusement en fonction
+de ces informations sondées. La sous-estimation du contexte de température
+aurait des conséquences catastrophiques. Il semblerait judicieux de simplement
+calculer un valeur moyenne et/ou d'écarter les valeurs reportées qui
+manifestemment diffèreraient trop des autres mesures. Cette méthode éviterait
+des prises de mesures drastiques du système sesnsible au contexte dans le but de
+corriger ce qu'il considère comme une variation de température, mais qui en
+réalité n'est que le résultat d'une panne de capteur.
+
 \subsection{Récupérer l'information}
+
+\begin{itemize}
+  \item Modèle ''Push'' - La source de contexte recupère l'information avant
+	  même qu'elle soit requise. Cela améliore indéniablement les
+	  performances, mais nécéssite une consommation des resources fréquente
+	  et considérable pour une information qui pourrait bien ne jamais être
+	  exploitée.
+  \item Modèle ''Pull'' - Collecte l'information de contexte au moment opportin.
+	  Cela autorise le recueil d'information à la demande, mais expose le
+	  système aux latences réseaux et aux indisponibilités potentielles de
+	  certains services.
+\end{itemize}
+
+La méthode de d'acquisiton des données de contexte est très importante lorsque
+l'on conçoit un système de cette nature, puisque c'est ce qui prédéfinit le style
+architectural du système. Chen (2003) \cite{chen_intelligent_2003} présente
+trois approches différentes pour acquérir l'information de contexte.
 
 \subsubsection{Capteur en accès direct}
 
+Cette approche est souvent utilisée dans les periphériques avec capteurs
+intégrés. Le logiciel client récupère l'information désirée directement depuis
+les sondes, i.e., il n'y a pas de couche supplémentaire pour obtenir et traiter
+les données du capteur. Les pilotes pour les capteurs sont raccordés à
+l'application, donc cette méthode de couplage étroit n'est utilisable que dans
+des cas très rares. Par conséquent, elle n'est pas adapté pour les sysèmes
+distribués.
+
 \subsubsection{Infrastructure intergicielle}
+
+L'approche intergicielle introduit un architecture en couches avec l'intention
+d'abstraire les détails de bas-niveau du processus de détection. La méthode est
+équivalente au modèle client-serveur, plus flexible que le widget puisqu'elle
+favorise l'indépendance de chacunes des composantes du système. Chaque
+composante doit être en mesure d'effectuer les opération suivantes : établir des
+connexions, envoyer et recevoir des messages et gérer les erreurs. Cet modèle
+est plus complexe de manière significative, mais l'approche est plutôt aisée
+puisqu'elle support un grand nombre de périphériques et d'applications pas
+l'utilisation de normes de codage et des protocoles réseaux standards.
 
 \subsubsection{Serveur de contexte}
 
-\subsection{Les achritectures de gestion de contexte}
+Cette approche distribuée élargie l'infrastructure basée sur les intergiciels en
+introduisant un gestionnaire d'accès distant. Les données recceuillies par les
+capteur sont déplacées vers ce dit ''serveur de contexte'' dans le but de
+faciliter les accès currents.
 
-\subsubsection{Critères d'arbitrages}
+\subsection{Les architectures de gestion de contexte}
+
+Winograde (2001) \cite{winograd_architectures_2001} décrit trois modèles
+différents afin de coordiner les proccessus et composantes multiples :
+
+\begin{itemize}
+        \item \textbf{Widgets}
+		L'objectif clé du widget est distinguer l'application du
+		processus d'acquisition de contexte, de manière d'abstraire la
+		complexité que représente le recueil et la gestion de
+		l'information de contexte. Le widget est considéré comme un
+		médiateur qui transmet exclusivement des informations
+		pertinentes à l'appplication. Un widget de contexte fonctionne
+		totalement indépendament de l'application, cet qui permet à
+		plusieures applications d'en faire usage simultanément. Le
+		widget est notamment responsable de l'entretien d'un historique
+		complet du contexte sondé au fil du temps. C'est le modèle le
+		plus répandu.
+
+        \item \textbf{Services réseaux}
+		Cette approche plus flexible, comme l'argumente Hong
+		and Landay (2001) \cite{hong_infrastructure_2001}, ressemble à
+		l'architecture de serveur de contexte. Au lieu d'un
+		gestionnaire de widget centralisé, des techniques sont utilisées
+		pour découvir les services réseaux dans l'infrastructure. Cette
+		approche basée sur les services n'est aussi performante que
+		l'architecture basée sur les widgets à cause de la complexité
+		des composants orientés réseaux, mais fournit une certaine
+		robustesse.
+
+	\item \textbf{Tableau noir (Blackboard)}
+                En contraste avec la vue orientée processus du widget et le
+		modèle orienté services, le tableau noir représente un approche
+		orientée sur les données. Cete approche donne un focus tout
+		particulier aux données, correspondant des motifs spécifiques
+		dans les données. Dans ce modèle asymétrique, les processus
+		envoient de messages dans un média partagé, le dit ''tableau
+		noir'', et souscrivent à recevoir des notifications lorsque
+		certains évenements se produisent. Les avantages de ce modèles
+		résident dans la simplicité de configuration et d'ajout de
+		nouvelles sources de contexte.
+\end{itemize}
+
+\subsubsection{Critères d'arbitrage}
+
+Afin de définir au mieux quel modèle choisir dans la mise en place d'un système
+sensible au contexte, il est avisé de considérer les caractéristiques suivantes
+:
+
+\begin{itemize}
+    \item \textbf{Efficacité} : 
+	    accélérer le débit de l'information compte tenu de la bande passante
+	    et de la latence causée par l'explosion du nombre d'applications et
+	    de périphériques dans le réseau.
+    \item \textbf{Effort de configuration} : 
+	    compte tenu de la quantité variable de composants, effectuer des
+	    changements dans l'état de la configuration, sans engendrer des
+	    pertubations ou mettre le système en échec, n'est pas une tâche
+	    fastidieuse. Le modèle doit s'assurer que l'édition est sans danger.
+    \item \textbf{Robustesse} : 
+	    Le degré auquel le système peut faire face à la défaillance
+    \item \textbf{Simplicité} : 
+            \begin{quotation}
+              un système qui nécéssite une compréhension avancée des méchanismes 
+	      qu'il implémente pour faire l'usage, ne sera utilisé que par ceux
+	      qui auront le dévouement et la motivation de le maîtriser
+	      \cite{winograd_architectures_2001}
+            \end{quotation}
+    \item \textbf{Extensibilité} : 
+            \begin{quotation}
+              Les services supportant la notion générale de contexte doivent
+	      être facilement extensible pour accueillir toute nouvelle source
+	      d'information de contexte non-anticipée. \cite{ebling_issues_2001}
+            \end{quotation}
+\end{itemize}
+
+Ces critères peuvent être utilisés pour comparer et contraster les différents
+modèles de gestion de contexte présentés précédemment.
+
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{l}
+    Le modèle widget a lien très étroit avec les composantes système, ce qui \\
+    en fait le modèle de plus efficace dans certaines circonstances. \\
+    Il souffre malheureusement d'une configuration très complexe et est \\
+    impuissant face à l'échec. Le modèle d'infrastructure, constitué de \\
+    composants indépendants, est très convoluté, mais cela ne semble pas etre \\
+    un facteur de résignation pour de nombreux développeurs. Toutefois, la \\
+    configuration est simple et le système est robuste, ce qui compense le \\
+    critère négatif de difficulté de compréhension. Pour finir, le modèle \\
+    tableau noir avec des composants très faiblement liés présente des problèmes \\
+    d'efficacité, mais il reste simple, robuste et très facilement configurable.
+    \cite{winograd_architectures_2001} \\
+    \em \footnotesize Terry Winograd. Architectures for Context. \\
+    \em \footnotesize Human-Computer Interaction, 16(2):401–419,
+     December 2001. \\
+  \end{tabular}
+  \caption{Comparaison des différents modèles de gestion de contexte}
+  \label{fig:quote}
+\end{figure}
+\begin{quotation}
+\end{quotation}
 
 \subsection{Représentation du contexte}
 
@@ -144,11 +443,6 @@ et nécéssite donc des algorithmes très performants.
 
 \subsection{Conclusion}
 
-% This is an example using the \LaTeX{} template for UCI theses and
-% dissertation documents \cite{uci-thesis-latex}. Figure
-% \ref{fig:sourcecode} is just for illustration purposes, as is Table
-% \ref{tab:coordinates}.
-% 
 % \begin{figure}
 % \begin{verbatim}
 % #include <iostream>
@@ -160,41 +454,6 @@ et nécéssite donc des algorithmes très performants.
 %   \caption{Example source code.}
 %   \label{fig:sourcecode}
 % \end{figure}
-
-\section{Background}
-
-% Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-% eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-% minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-% aliquip ex ea commodo consequat. Duis aute irure dolor in
-% reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-% pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-% culpa qui officia deserunt mollit anim id est laborum.
-% 
-% \begin{table}
-%   \centering
-%   \begin{tabular}{|rr|r|}
-%     \hline
-%     $x$ & $y$ & $z$ \\
-%     \hline
-%     14 & 12 & -2 \\
-%     0 & 33 & -25 \\
-%     -3 & 11 & 22 \\
-%     4 & 4 & 6 \\
-%     \hline
-%   \end{tabular}
-%   \caption{Example coordinates.}
-%   \label{tab:coordinates}
-% \end{table}
-% 
-% Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-% eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-% minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-% aliquip ex ea commodo consequat. Duis aute irure dolor in
-% reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-% pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-% culpa qui officia deserunt mollit anim id est laborum.
-
 
 %%% Local Variables: ***
 %%% mode: latex ***
