@@ -2,13 +2,13 @@
 
 \section{Introduction}
 
-La configuration des composantes logicielles impose un coût majeur dans
-l'administration d'un système. Des erreurs de configuration peuvent se traduire
-par des vulnérabilités en termes de sécurité, de sévères pertubations dans le
-fonctionnement de la brique logicielle, ou purement et simplement provoquer un
-déni de service. La prise en considération du contexte pourrait permettre une
-abstraction partielle ou complète de cette couche très technique et extrêmement
-pénible à configurer.
+\lettrine{L}{a configuration} des composantes logicielles impose un coût majeur
+dans l'administration d'un système. Des erreurs de configuration peuvent se
+traduire par des vulnérabilités en termes de sécurité, de sévères pertubations
+dans le fonctionnement de la brique logicielle, ou purement et simplement
+provoquer un déni de service. La prise en considération du contexte pourrait
+permettre une abstraction partielle ou complète de cette couche très technique
+et extrêmement pénible à configurer.
 
 Un système sensible au contexte doit être capable de mimer la capacité humaine à
 reconaître et exploiter l'information implicitement présente dans
@@ -418,18 +418,183 @@ modèles de gestion de contexte présentés précédemment.
   \caption{Comparaison des différents modèles de gestion de contexte}
   \label{fig:quote}
 \end{figure}
-\begin{quotation}
-\end{quotation}
 
 \subsection{Représentation du contexte}
 
+Il existe plusieures manières de modéliser l'information de contexte :
+
+\begin{itemize}
+    \item \textbf{Clé-Valeur} : 
+	    La structure de données la plus simple pour modéliser le contexte.
+	    Elle est très fréquemment utilisées dans les framework de services,
+	    où les paires clé-valeur servent à décrire les aptitudes d'un
+	    service.
+    \item \textbf{Langage de balisage} :
+	    Stucture de données consisté de balises avec des attributs et des
+	    contenus associés. 
+    \item \textbf{Graphique} :
+	    Langage de Modélisation Unifié (UML), extension de la Modélisation
+	    Role Objet (ORM) par le contexte.
+    \item \textbf{Orienté objet} :
+	    Exploite tout la puissance de modélisation objet : l'encapsulation,
+	    la réutilisabilité, l'héritage. Les approches existantes utilisent
+	    des objets variés pour représenter différents types de contextes, et
+	    encapsule les détails du traitement et de la représentation du
+	    contexte.
+    \item \textbf{Logique} :
+	    Haut degré de formalité. Typiquemment, des faits, des expressions
+	    et des règles sont utilisés pour définir le modèle de contexte.
+    \item \textbf{Basé sur les ontologies} :
+	    Représente une description des concepts et des relations. Cet outil
+	    est très prometeur pour modéliser l'information contextuelle, grâce
+	    à son expressivité élevée et très formelle et les possibilités
+	    d'appliquer des techniques de raisonemment propres aux ontologies.
+\end{itemize}
+
+La conclusion de l'évaluation présentée par Strang et Linnhoff-Popien
+\cite{strang_context_2004}, basé sur six critères d'exigences, montre que les
+ontologies incarnent de loin le modèle de plus expressif et comblent la plupart
+de ces exigences.
+
+Korpipää et al. \cite{korpipaa_ontology_2003} présente un ensemble de conditions
+requises et d'objectifs dans la conception d'une ontologie de contexte :
+
+\begin{itemize}
+    \item \textbf{Simplicité} : 
+	    Les expressions et relations définies doivent être les plus simples
+	    possible pour ne pas décourager les développeurs d'appplications.
+    \item \textbf{Flexibilité et extensibilité} :
+	    L'ontologie doit supporter l'ajout de nouveaux éléments de contextes
+	    et de relations.
+    \item \textbf{Généricité} :
+	    L'ontologie ne doit pas être limitée à un seul type d'atome de
+	    context, mais au contraire supporter un maximum de formats pour
+	    l'information de contexte.
+    \item \textbf{Expressivité} :
+	    L'ontologie doit permettre de décrire le plus d'états de
+	    contexte possibles et de manière la plus détaillée qu'il soit.
+\end{itemize}
+
+Un atome de contexte peut être decrits à l'aide de quelques attributs seulement.
+Les deux attributs les plus évidents sont :
+
+\begin{itemize}
+    \item \textbf{Type du contexte} :
+	    Catégorie dans laquelle s'incrit le contexte, qu'il s'agisse d'une
+	    donnée de température, temporelle, de vitesse ou d'accélération,
+	    etc. L'information de genre peut être utilisée en tant que paramètre
+	    dans une requête ou une souscription pour certain type de contexte. 
+    \item \textbf{Valeur du contexte} : 
+	    Les données brutes recueillies par une sonde. L'unité dépend très
+	    étroiement du type de contexte et du capteur dont l'information
+	    provient, e.g., degré Celcius, kilomètres par heure, mégabit, etc.
+\end{itemize}
+
+Le type et la valeur du contexte ne sont néanmoins pas des informations
+suffisantes obtenir un système sensible au contexte opérationel. En effet,
+d'autres attributs supplémentaires doivent être mis en oeuvre dans un atome de
+contexte pour améliorer sa concision :
+
+\begin{itemize}
+    \item \textbf{Horodatage} :
+	    Valeur de type date/heure réprésentative de l'instant à laquelle
+	    l'information de contexte a été capturée. Elle est requise dans
+	    l'élaboration d'un historique du contexte ou même le traitement des
+	    conflits de détéction.
+    \item \textbf{Source} :
+	    Comment l'information a-t-elle été reccueillie ? Dans le cas d'un
+	    capteur matériel, l'identifiant de la sonde doit être conservé pour
+	    permettre à une application de préférer les information provenant
+	    de ce capteur en particulier.
+    \item \textbf{Confiance} :
+	    L'incertitude confiée à l'information sondée. Toutes les sources
+	    de données ne fournissent pas une information juste, les données de
+	    situation géoprahique souffrent d'une impréscision certaine
+	    intrinsèquement liée à la puce GPS utilisée.
+\end{itemize}
+
 \subsection{Interprétation du contexte}
+
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{l}
+    L'interprétation fait référence au processus d'élévation \\
+    du niveau d'abtraction d'un fragment de contexte
+    \cite{dey_conceptual_2001} \\
+    \em \footnotesize  Anind Dey, Gregory Abowd, and Daniel Salber. \\
+    \em \footnotesize A Conceptual Framework and a Toolkit for Supporting the 
+    Rapid Prototyping of Context-Aware Applications. \\
+    \em \footnotesize Human-Computer Interaction, 16(2):97–166, December 2001. 
+  \end{tabular}
+  \caption{Intérprétation du contexte par Dey (2001)}
+  \label{fig:quote}
+\end{figure}
+
+Après avoir détecté, récupéré et sauvegardé le contexte provenant de sources
+variées, le système sensible au contexte devra implémenter des méchanismes
+d'intérprétation du contexte, de sorte que les informations recueillies soit
+utilisées de manière convenable. Cette étape d'interprétation implique
+l'integration des plusieurs contexte en un seul et unique contexte de plus haut
+nivea. Ainsi, l'interprète modifie les informations de contexte en augmentant
+son niveau d'abstraction. Une apporoche est d'utiliser la fusion de contexte
+pour convertir des informations de bas niveau en un contexte global directemment
+à la portée des applications.
 
 \subsection{Framework conceptuel en couches}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{img/layered_conceptual_framework}
+  \caption{Framework conceptuel d'un système sensible au contexte}
+  \label{archi}
+\end{figure}
+
 \subsection{Sécurité et confidentialité}
 
+\begin{figure}[h]
+  \centering
+  \begin{tabular}{l}
+    La confidentialité est intrinsèquement liée au contrôle.
+    \cite{ackerman_privacy_2001} \\
+    \em \footnotesize Mark Ackerman, Trevor Darrell, and Daniel Weitzner. 
+    Privacy in Context. \\
+    \em \footnotesize Human-Computer Interaction, 16(2):167–176, December 2001.
+    \\
+  \end{tabular}
+  \caption{La confidentialité par Ackerman}
+  \label{fig:quote}
+\end{figure}
+
+
+Comme le contexte est susceptible de contenir des informations sensible sur des
+personnes, leur situation géographique ou leur activité par example, il est
+nécéssaire de protéger le caractère personnel de ces données. Les systèmes
+sensibles au contexte soulèvent des défis en termes de confidentialité
+inhabituels et inconsidérés par les systèmes traditionnels. La question quant au
+contrôle des différents capteurs et services n'est pas abordée dans Dey et al.
+\cite{dey_conceptual_2001}, et bien souvent, des applications telles que le
+Context Toolkit sont supposées être sous le contrôle d'un ''utilisateur''. Les
+utilistateurs sont assignés comme propriétaires des données sondées par leurs
+soins. Ils sont par ailleurs autorisés à octroyer l'accès à ces données à
+d'autres utilisateurs.
+
+Néamoins, en ce qui concernent les sondes capables de déterminer la présence
+d'individus dans une pièce ou à tout autre endroit, il n'existe aucunes
+préconisations à ce sujet. C'est un point toutefois critique.
+
+D'une manière générale, dans une environemment mettant à
+disposition un certain eventail d'applications sensibles au contexte, un individu opère
+à travers de mutliples environnemments sociaux, qui eux même font l'usage des
+données d'un grand nombre d'autres individus.
+
+epackage{float}
+Aspects souvent négligés, la sécurité et la confidentialité font partie des
+composantes les plus importantes d'un système sensible au contexte, car la
+protection des données sensibles doit être garantie.
+
 \section{Systèmes et frameworks existants}
+
+
 
 \subsection{Technologies de détection}
 

@@ -12,16 +12,19 @@
 \usepackage{tabularx}
 \usepackage[plainpages=false,pdfborder={0 0 0}]{hyperref}
 \usepackage{algorithm}   % \begin{algorithm}...\end{algorithm}
-
-\renewcommand{\listalgorithmname}
-{\protect\centering\protect\Large LISTE DES ALGORITHMES}
-
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{lettrine}
 \usepackage[utf8]{inputenc}
 \usepackage[francais]{babel}
+
 \selectlanguage{francais}
 
 %\widowpenalty=10000
 %\clubpenalty=10000
+
+\renewcommand{\listalgorithmname}
+{\protect\centering\protect\Large LISTE DES ALGORITHMES}
 
 \newtheorem{theorem}{\textsc{Theorem}}[chapter]
 \newtheorem{definition}{\textsc{Definition}}[chapter]
@@ -38,6 +41,7 @@
 \setcounter{secnumdepth}{4}
 
 \begin{document}
+\begin{spacing}{0.5}
 
 \preliminarypages
 
@@ -56,4 +60,5 @@
 
 \include{appendix}
 
+\end{spacing}
 \end{document}

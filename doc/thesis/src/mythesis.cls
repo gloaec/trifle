@@ -150,7 +150,8 @@
 		\Committeechair \\
 	\end{center}
 	\vspace{0.2in}
-	\doublespacing
+	%\doublespacing
+	\onehalfspacing
 	\Thesisbstract
 	\clearpage
 }
