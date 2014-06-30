@@ -196,39 +196,38 @@ pertinence dépend de la tâche de l'utilisateur. Les systèmes sensibles au
 contexte peuvent être implémentés sous plusieures formes, mais pour accomplir
 cet objectif, le système doit d'un manière générale :
 
-\begin{itemize}
-    \item Recceuillir l'information
-    \item Sérialiser cette information
-    \item Fusionner l'information pour générer un contexte de plus haut niveau
-    \item Prendre automatiquement des mesures basées sur l'information
-	    recceuillie
-    \item Rendre l'information disponible à l'utilistateur, dans l'immédiat,
-	    dans le futur ou au moment approprié pour améliorer et aider à la
-	    completion de la tâche de l'utilisateur.
-\end{itemize}
+\begin{enumerate}
+  \item Recceuillir l'information
+  \item Sérialiser cette information
+  \item Fusionner l'information pour générer un contexte de plus haut niveau
+  \item Prendre automatiquement des mesures basées sur l'information recceuillie
+  \item Rendre l'information disponible à l'utilistateur, dans l'immédiat, dans
+	  le futur ou au moment approprié pour améliorer et aider à la
+	  completion de la tâche de l'utilisateur.
+\end{enumerate}
 
 Les chercheurs du Context Toolkit à l'université de Berkley proposent 3
 fonctionnalités qu'une application sensible au contexte doit impérativement
 supporter : \cite{dey_providing_2000}
 
 \begin{enumerate}
-    \item Présentation de l'information et des services à l'utilistateur
-    \item Éxécution automatique d'un service pour l'utilisateur
-    \item Etiquetage de l'information de contexte pour une extraction ultérieure
+  \item Présentation de l'information et des services à l'utilistateur
+  \item Éxécution automatique d'un service pour l'utilisateur
+  \item Etiquetage de l'information de contexte pour une extraction ultérieure
 \end{enumerate}
 
 Les développeurs du systems Kimura ont conçu des composants distribués destinés
 à un système sensible au contexte global. Ces composants se divisent en trois
 classes \cite{voida_integrating_2002}, qui sont les suivantes :
 
-\begin{enumerate}
-    \item Aquisition du contexte - Le système récupère l'information de contexte
-	    et l'ajoute dans un dépôt dédié.
-    \item Interprétation du contexte - Les sytème convertit l'information
-	    recceuillie en un contexte de travail.
-    \item Interaction de l'utilisateur - Le système affiche le contexte de
-	    travail à l'uilisateur.
-\end{enumerate}
+\begin{itemize}
+  \item \textbf{Aquisition du contexte} - Le système récupère l'information de
+	  contexte et l'ajoute dans un dépôt dédié.
+  \item \textbf{Interprétation du contexte} - Les sytème convertit l'information
+	  recceuillie en un contexte de travail.
+  \item \textbf{Interaction de l'utilisateur} - Le système affiche le contexte
+	  de travail à l'uilisateur.
+\end{itemize}
 
 \subsection{Recceuillir l'information}
 
@@ -273,15 +272,16 @@ réalité n'est que le résultat d'une panne de capteur.
 \subsection{Récupérer l'information}
 
 \begin{itemize}
-  \item Modèle ''Push'' - La source de contexte recupère l'information avant
-	  même qu'elle soit requise. Cela améliore indéniablement les
-	  performances, mais nécéssite une consommation des resources fréquente
-	  et considérable pour une information qui pourrait bien ne jamais être
-	  exploitée.
-  \item Modèle ''Pull'' - Collecte l'information de contexte au moment opportin.
-	  Cela autorise le recueil d'information à la demande, mais expose le
-	  système aux latences réseaux et aux indisponibilités potentielles de
-	  certains services.
+  \item \textbf{Modèle ''Push''} - 
+	  La source de contexte recupère l'information avant même qu'elle soit
+	  requise. Cela améliore indéniablement les performances, mais nécéssite
+	  une consommation des resources fréquente et considérable pour une
+	  information qui pourrait bien ne jamais être exploitée.
+  \item \textbf{Modèle ''Pull''} - 
+	  Collecte l'information de contexte au moment opportin.  Cela autorise
+	  le recueil d'information à la demande, mais expose le système aux
+	  latences réseaux et aux indisponibilités potentielles de certains
+	  services.
 \end{itemize}
 
 La méthode de d'acquisiton des données de contexte est très importante lorsque
@@ -587,38 +587,228 @@ disposition un certain eventail d'applications sensibles au contexte, un individ
 à travers de mutliples environnemments sociaux, qui eux même font l'usage des
 données d'un grand nombre d'autres individus.
 
-epackage{float}
 Aspects souvent négligés, la sécurité et la confidentialité font partie des
 composantes les plus importantes d'un système sensible au contexte, car la
 protection des données sensibles doit être garantie.
 
 \section{Systèmes et frameworks existants}
 
+Le tableau \ref{ContextManagementFrameworkComparison} met en concurrence les
+principaux aspects des approches existantes discutées précédemment. Le style
+architectural d'un système sensible au contexte dépend en grande majorité de la
+méthode d'acquisition des informations de contexte. Le principal critère
+permettant de qualifier une approche architecturale comme raisonnable est la
+démarquation claire entre l'acquisition de contexte et les composantes de
+l'utilisateur proposée par Dey (2000) \cite{dey_providing_2000}. Tous les
+frameworks présentés dans ce mémoire supportent cette scission des
+préocupations.
 
+\begin{table*}%[h]
+    \tiny
+    \begin{tabularx}{\linewidth}{
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+      >{\raggedright\arraybackslash}X
+    }
+        \hline
+        \textbf{Architecture} & 
+        \textbf{Detection} & 
+        \textbf{Modèle de contexte} &
+        \textbf{Traitement du contexte} &
+        \textbf{Découverte de ressources} &
+        \textbf{Données de contexte historiques} &
+        \textbf{Sécurité et confidentialité} & 
+        \\
+        \hline
+        CASS &
+        Intergiciel centralisé &
+        Noeuds de capteurs &
+        Modèle de données relationnel &
+	Moteur d'inférence et base de connaissance &
+        n.a. &
+        Disponible &
+        n.a.\\
+
+        Cobra &
+        Basée sur les agents &
+        Modèle d'acquisition de contexte &
+        Ontologies (OWL) &
+	Moteur d'inférence et base de connaissance &
+        n.a. &
+        Disponible &
+        Politiques en langage Rei\\
+
+        Context Management Framework &
+	Basée sur le "tableau noir" (blackboard) &
+        Serveurs de ressources &
+        Ontologies (RDF) &
+        Service de reconnaissance de contexte &
+        Serveurs de resources + Mechanisme de souscription &
+        n.a &
+        n.a.\\
+
+        Context toolkit &
+        Basée sur les widgets &
+        Widgets de contexte &
+        Tuples attribut-valeur &
+        Interprétation et aggrégation du contexte &
+        Composant de découverte &
+        Disponible &
+        Propriété de contexte\\
+
+        CORTEX &
+        Modèle d'objet sensible &
+        Framework de composants de contexte &
+        Modèle de données relationnel &
+        Framework de découverte de services &
+        Framework de gestion des composantes ressources &
+        Disponible &
+        n.a.\\
+
+        Gaia &
+        MVC (étendu) &
+        Fournisseurs de contexte &
+        Prédicats quaternaires (DAML + OIL) &
+        Module de contexte de service (logique de premier ordre) &
+        Service de découverte &
+        Disponible &
+	Supporté (e.g., traçage sécurisé, confidentialité de localisation,
+	contrôle d'accès)\\
+
+        Hydrogen &
+	Architecture trois couches &
+        Adapteurs variés pour les types de contexte &
+        Orienté objet &
+	Interprétations et aggrégation des données brutes seulement &
+        n.a. &
+        n.a. &
+        n.a.\\
+
+        SOCAM &
+	Distribué avec serveur central &
+        Fournisseur de contexte &
+        Ontologies (OWL) &
+	Raisonneur contextuel &
+	Service de localisation de service &
+        Disponible &
+        n.a.\\
+
+        \hline
+    \end{tabularx}
+    \caption{Comparaison des framework existants pour la gestion de contexte}
+    \label{ContextManagementFrameworkComparison}
+\end{table*}
+
+\begin{figure}[h]
+    \centerline{\includegraphics[width=0.6\linewidth]{img/context_toolkit}}
+    \caption{Exemple de configuration des composants du Context Toolkit}
+    \label{Contexttoolkit}
+\end{figure}
 
 \subsection{Technologies de détection}
 
+Dans chaque framework, la technologie de detection est implémentée différemment.
+Afin de garantir la séparation detection/composants susmentionnée, il est
+préférable d'encapsuler le méchanisme concrèt de détection dans des composantes
+séparées. De plus, cela permet un accès aux données de contexte par le biais
+d'interfaces définies. Il n'existe aujourd'hui aucun langage de description ou
+d'ontologie permettant la réutilisation de l'information de contexte à travers
+les différents integiciels et frameworks. Par conséquent, des solutions
+propriétaires ont vu le jour et sont utilisées par de nombreux frameworks.
+Pour la detection d'information de contexte, SOCAM implémente l'approche la plus
+sophistiquée : des services web fournissent de APIs (à l'aide de SOAP) pour les
+sondes virtuelles externes et les sondes internes sont interrogées par
+l'utilisation d'évènements contextuels. Ces évènements de contexte sont
+modélisés en OWL et basés sur une ontologie prédéfinie.
+
 \subsection{Représentations du contexte}
 
-\subsection{Découverte des ressouces}
+Afin d'obtenir des applications et services sensibles au contexte intelligents
+et adaptables, le modèle et la logique de traitement du contexte pris en charge
+individuellement par chaque framework est un critère majeur. Les ontologies
+offrent un formalisme très riche pour représenter l'information de contexte.
+Basé sur un modèle ontologique très sophistiqué, les raisonneurs peuvent dériver
+de nouveaux concepts et ajuster le comportement d'un service en conséquence. La
+représentation clé-valeur utilisée dans le Context Toolkit est donc un
+inconvénient majeur. Le fait que de tels attributs ne peuvent contenir aucune
+sémantique restreint de manière considérable de le développement de procedés de
+traitement et d'aggrégation de contexte. De plus, les modèles non-basés sur les
+ontologies nécéssite un effort de programmation conséquent et couplent très
+étroitemment le modèle de contexte avec le reste du système. En outre, le
+raisonnement et le partage de connaissances à travers les systèmes sont
+impossibles en raison du manque de sémantique déclarative des programmes. SOCAM,
+par exemple, fait l'usage d'une ontologie générale de haut niveau pour spécifier
+des propriétés contextuelles de base communes et pour affiner cette même
+ontologie. Dans le but de fournir des possibilités très granuleuses pour la
+spécifier et formaliser le contexte, certaines ontologies spécifiques à un
+domaine peuvent être définies.
+
+\subsection{Découverte de ressources}
+
+Les mechanismes de découverte de nouvelles ressources sont très rarements
+implémentés malgré l'importance d'un tel dynamisme, surtout dans un environement
+ubiquitaire, où les sources de contexte et les sondes disponibles changent
+constamment. SOCAM est le seul système basé sur une architecture orientée
+services. Il offre un service de localisation de service, qui se raccorde
+dynamiquement aux fournisseurs de contexte disponibles. Cet fonctionnalité
+manquante à la plupart des frameworks est en effet un tort puisque cela implique
+que les sources de contexte utilisées doivent être stables et disponibles en
+permanence, ce qui n'est pas toujours le cas dans les applications du monde
+réel. Si une ou plusieures sources de contexte se comporte mal, cela pourrait
+déboucher à disponibilité réduite des services et des applications sensibles au
+contexte.
 
 \subsection{Gestion du contexte historique}
 
+De la même manière, la majorité des frameworks conservent un historique des
+données de contexte, mais aucun d'entre eux ne les exploitent vraiment.
+Pourtant, cela pourrait permettre de fournir des services sensibles au contexte
+fortemment adaptables, si le contexte historique était utilisé pour implémenter
+des algorithmes d'auto-apprentissage. De plus, l'information de contexte
+pourrait même être anticipée pour offrir proactivement un ensemble de services à
+l'utilisateur.
+
 \subsection{Sécurité et confidentialité}
+
+Un autre aspect important à ne pas négliger est la sécurité et la
+confidentialité. L'information de contexte le plus souvent considère le profil
+utilisateur et d'autre informations sensibles. Pour cette raison, des concepts
+sont requis pour exprimer des règles politiques et définir la propriété de
+l'information de contexte. 
+
+CoBrA inclus son propre langage de définition de politiques appellé Rei
+\cite{kagal_policy_2005}, pour contrôler de manière flexible les accès aux
+données de contexte. Ce langage de définition de politiques est calqué sur les
+concepts déontiques de droits, d'interdictions, d'obligations et de dispenses,
+et contrôle l'accès aux données grâce à des règles de politique modifiables
+dynamiquement et dépendantes d'un domaine particulier. Gaia fait l'usage de
+plusieurs mechanismes pour définir les restrictions en termes de confidentialité
+et pour sécuriser les communications lors de localisations d'individus. Le
+Contexte toolkit implémente le concept de propriété des information de contexte,
+qui autorise seulement au propriétaire des informations de consulter les données
+sondées.
+
+L'aspect sécurité n'est pas implémenté dans les autres frameworks. De nombeux
+systèmes sont totalement dépourvus de modèles de sécurité, d'autres offrent des
+mécanismes de sécurité très génériques et seulement quelques systèmes sont dotés
+d'options de sécurités avancées et suffisantes.
 
 \subsection{Conclusion}
 
-% \begin{figure}
-% \begin{verbatim}
-% #include <iostream>
-% int main(int argc, char** argv) {
-%   std::cout << "Hello World." << std::endl;
-%   return 0;
-% }
-% \end{verbatim}
-%   \caption{Example source code.}
-%   \label{fig:sourcecode}
-% \end{figure}
+Chacun des systèmes et frameworks présentés dans cet état de l'art implémentent
+leur propre format pour la description des informations de contexte et des
+mecanismes de communication dissemblables. La définition d'un modèle standard
+d'abstraction des données de contexte semble être la priorité première dans
+l'évolution des systèmes sensibles au contexte existants. Si le degré de
+sophisitication des systèmes distribués font leur force de calcul, leur
+extrême complexité sont souvent la cause de leur boycott. Le modèle issu de
+cette étude devra être simple, accessible, extensible et doté d'un haut degré de
+formalisation.
 
 %%% Local Variables: ***
 %%% mode: latex ***

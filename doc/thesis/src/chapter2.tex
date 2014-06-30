@@ -1,5 +1,46 @@
 \chapter{Problématiques émergentes}
 
+\section{Orientations de recherche}
+
+In this paper we described different design principles and context models for
+context-aware systems and presented various existent middleware and
+server-based approaches to ease the configuration of context-aware application.
+
+There are several research areas involved in the development of context-based
+configuration. Here are three of the most relevant :
+
+\subsection{Middleware and implementation details}
+
+The need for new middleware arises on the implementation side. Current
+middleware technologies are not adequate to handle the resctrictions imposed by
+mobility and smart environmental systems : volatile connections, processing and
+memory restrictions on mobile devices, narrow communication channels, reduced
+screens, restricted input mechanisms, and the list goes on. There are a set of 
+contex-aware imlementations in litterature with some working prototypes :
+
+\begin{itemize}
+    \item \textbf{Hydrogen} \cite{Hofer2002}: a three layer architecture
+    \item \textbf{Gaia} \cite{Chetan2005}: another middleware infrastructure,
+    extends typical operating system concepts to include context-awareness.
+    \item \textbf{CybreMinder} \cite{Abowd2002}: a context-aware system for sup-
+    porting reminders
+    \item \textbf{Context Toolkit} \cite{Dey2001}: a widget based architecture
+\end{itemize}
+
+\subsection{Representation of context-information}
+
+The representation of context-information is another concern. We presented in
+this paper a generic ontology approach. It is based on four main concepts: user,
+environment, platform and resources.  Presently, ontologies are mainly employed
+to enable communication across the different devices in the same network. As
+proposed by ContextUML \cite{Sheng2005}, the Unified Modeling Language (UML) can
+also be used to model context. The models could be used to separate the
+definition and information related to the context from the specific
+implementation. There are other characteristics that make context information
+difficult to model, as stated before, it is sometimes necessary to differentiate
+between static and dynamic information.
+
+
 L'une des principales innovations à apporter dans les infrastructures
 d'applications sensibles au contexte réside dans l'introduction d'une interface
 présentant un niveau d'abstraction élevé. Cela permetterait de représenter la
