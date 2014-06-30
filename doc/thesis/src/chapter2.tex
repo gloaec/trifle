@@ -2,44 +2,68 @@
 
 \section{Orientations de recherche}
 
-In this paper we described different design principles and context models for
-context-aware systems and presented various existent middleware and
-server-based approaches to ease the configuration of context-aware application.
+Dans ce mémoire, nous avons décris diverses modèles et principes de conception
+d'un système sensible au contexte et présenté une multitude d'intergiciels et
+d'approches distribuées pour simplifier la configuration d'application sensibles
+au contexte. De cet état de l'art se dégagent plusieurs problématiques dans le
+développement d'un système de configuration basé sur le contexte auxquelles nous
+nous tenterons d'apporter une solution. Voici les trois les plus pertinentes :
 
-There are several research areas involved in the development of context-based
-configuration. Here are three of the most relevant :
+\subsection{Integiciel et détails d'implémentation}
 
-\subsection{Middleware and implementation details}
-
-The need for new middleware arises on the implementation side. Current
-middleware technologies are not adequate to handle the resctrictions imposed by
-mobility and smart environmental systems : volatile connections, processing and
-memory restrictions on mobile devices, narrow communication channels, reduced
-screens, restricted input mechanisms, and the list goes on. There are a set of 
-contex-aware imlementations in litterature with some working prototypes :
+Le besoin d'un nouvel intergiciel se fait sentir du coté de l'implémentation.
+Les technologies intergicielles actuelles ne sont pas adaptées pour le prise en
+considération des restrictions imposées pas la mobilité et les systèmes
+environementaux intelligents : connexions volatiles, traitements et restrictions
+mémoire sur les périphériques mobiles, cannaux de communication étroits, écrans
+réduits, mécanismes d'entrées restreintes, et la liste continue. Il existe
+néamoins une gamme d'implémentations de systèmes sensible au contexte dans la
+littérature avec quelques prototypes fonctionnels :
 
 \begin{itemize}
-    \item \textbf{Hydrogen} \cite{Hofer2002}: a three layer architecture
-    \item \textbf{Gaia} \cite{Chetan2005}: another middleware infrastructure,
-    extends typical operating system concepts to include context-awareness.
-    \item \textbf{CybreMinder} \cite{Abowd2002}: a context-aware system for sup-
-    porting reminders
-    \item \textbf{Context Toolkit} \cite{Dey2001}: a widget based architecture
+    \item \textbf{Hydrogen} \cite{hofer_context-awareness_2003}: 
+	    une architecture en trois couches.
+    \item \textbf{Gaia} \cite{chetan_mobile_2005}: 
+            une autre infrastructure intergicielle, etends les caractéristiques
+	    génériques des systèmes d'exploitation pour y incorporer la
+	    sensibilité au contexte.
+    \item \textbf{CybreMinder} \cite{abowd_context-aware_2002}: 
+	    un système sensible au contexte permettant de génerer des messages
+	    de rappel.
+    \item \textbf{Context Toolkit} \cite{dey_conceptual_2001}: 
+	    une architecture basée sur les widgets.
 \end{itemize}
 
-\subsection{Representation of context-information}
+\subsection{Représentation des informations de contexte}
 
-The representation of context-information is another concern. We presented in
-this paper a generic ontology approach. It is based on four main concepts: user,
-environment, platform and resources.  Presently, ontologies are mainly employed
-to enable communication across the different devices in the same network. As
-proposed by ContextUML \cite{Sheng2005}, the Unified Modeling Language (UML) can
-also be used to model context. The models could be used to separate the
-definition and information related to the context from the specific
-implementation. There are other characteristics that make context information
-difficult to model, as stated before, it is sometimes necessary to differentiate
-between static and dynamic information.
+La représentation des informations de contexte est une autre préocupation. Nous
+avons présenté dans ce mémoire une approche basée sur les ontologie très
+générique. Elle est basée sur quatre concepts fondamentaux : utilisateur,
+environemment, plateforme et ressources. Actuellement, les ontologies sont
+surtout utilisées pour permettre la communication entre les différents
+périphériques dans le même réseau. Comme proposé par le ContextUML
+\cite{sheng_contextuml:_2005}, le Langage de Modélisation Unifié (UML) peut
+égalemment être utilisé pour modéliser le contexte. Ces modèles pourrait être
+utilisés pour séparer la définition et l'information liée au contexte de
+l'implémentation spécifique. Il existe d'autre caractéristiques qui font que
+l'information de contexte est difficile à modéliser : comme abordé précédemment,
+il est parfois nécéssaire de différencier une information statique d'une
+information dynamique.
 
+\subsection{Règles sémantiques}
+
+Un autre domaine de recherche concernerait l'utilisation de règles pour exprimer
+les comportemments souhaités en termes d'éléments de haut-niveau. Des langages
+de définition de règles sont utilisés dans certains cas pour obtenir la
+sensibilité au contexte. CRIME \cite{murphy_coordination_2007} par exemple, est
+une implémentation prototypique du modèle Fact Space, qui est un langage de
+coordination fournissant aux applications une vue de leur environement. Les
+règles CRIME décrivent le comportemment des applications conformément à
+l'information de contexte. CRIME traite également les déconnexions en invalidant
+les faits et conclusions qui sont tirés des périphériques qui ne sont plus
+disponibles dans l'environnement.
+
+\section{Ontologie de contexte}
 
 L'une des principales innovations à apporter dans les infrastructures
 d'applications sensibles au contexte réside dans l'introduction d'une interface
@@ -48,8 +72,6 @@ connectivité des composants applicatifs avec les politiques de haut niveau qui
 la régissent.  Cette couche doit rester simple d'utilisation pour les
 développeurs d'applications, et le modèle améliorer simultanément
 l'automatisation et la sécurité.
-
-\section{Ontologie de contexte}
 
 \section{Théorie de promesse}
 
