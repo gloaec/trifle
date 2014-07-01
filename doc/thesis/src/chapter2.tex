@@ -1,15 +1,13 @@
-\chapter{Problématiques émergentes}
-
-\section{Orientations de recherche}
+\chapter{Problématiques émergentes et orientations de recherche}
 
 Dans ce mémoire, nous avons décris diverses modèles et principes de conception
 d'un système sensible au contexte et présenté une multitude d'intergiciels et
 d'approches distribuées pour simplifier la configuration d'application sensibles
 au contexte. De cet état de l'art se dégagent plusieurs problématiques dans le
 développement d'un système de configuration basé sur le contexte auxquelles nous
-nous tenterons d'apporter une solution. Voici les trois les plus pertinentes :
+nous tenterons d'apporter une solution.
 
-\subsection{Integiciel et détails d'implémentation}
+\section{Intergiciel et détails d'implémentation}
 
 Le besoin d'un nouvel intergiciel se fait sentir du coté de l'implémentation.
 Les technologies intergicielles actuelles ne sont pas adaptées pour le prise en
@@ -34,9 +32,20 @@ littérature avec quelques prototypes fonctionnels :
 	    une architecture basée sur les widgets.
 \end{itemize}
 
-\subsection{Représentation des informations de contexte}
 
-La représentation des informations de contexte est une autre préocupation. Nous
+\section{Représentation des informations de contexte}
+
+L'une des principales innovations à apporter dans les infrastructures
+d'applications sensibles au contexte réside dans l'introduction d'une interface
+présentant un niveau d'abstraction élevé. Cela permetterait de représenter la
+connectivité des composants applicatifs avec les politiques de haut niveau qui
+la régissent.  Cette couche doit rester simple d'utilisation pour les
+développeurs d'applications, et le modèle améliorer simultanément
+l'automatisation et la sécurité.
+
+\subsection{Ontologie de contexte}
+
+La représentation des informations de contexte est grande préocupation. Nous
 avons présenté dans ce mémoire une approche basée sur les ontologie très
 générique. Elle est basée sur quatre concepts fondamentaux : utilisateur,
 environemment, plateforme et ressources. Actuellement, les ontologies sont
@@ -50,7 +59,7 @@ l'information de contexte est difficile à modéliser : comme abordé précédem
 il est parfois nécéssaire de différencier une information statique d'une
 information dynamique.
 
-\subsection{Règles sémantiques}
+\section{Règles sémantiques}
 
 Un autre domaine de recherche concernerait l'utilisation de règles pour exprimer
 les comportemments souhaités en termes d'éléments de haut-niveau. Des langages
@@ -63,17 +72,7 @@ l'information de contexte. CRIME traite également les déconnexions en invalida
 les faits et conclusions qui sont tirés des périphériques qui ne sont plus
 disponibles dans l'environnement.
 
-\section{Ontologie de contexte}
-
-L'une des principales innovations à apporter dans les infrastructures
-d'applications sensibles au contexte réside dans l'introduction d'une interface
-présentant un niveau d'abstraction élevé. Cela permetterait de représenter la
-connectivité des composants applicatifs avec les politiques de haut niveau qui
-la régissent.  Cette couche doit rester simple d'utilisation pour les
-développeurs d'applications, et le modèle améliorer simultanément
-l'automatisation et la sécurité.
-
-\section{Théorie de promesse}
+\subsection{Théorie de promesse}
 
 Le modèle permettant la définition des politiques d'administration serait un
 modèle orienté sur les ontologies et basé sur la théorie de la promesse.
