@@ -1,5 +1,7 @@
-*.swp
+.*.swo
 .*.swp
+.*.swn
+.*.swm
 *.pyc
 *~
 build/*
