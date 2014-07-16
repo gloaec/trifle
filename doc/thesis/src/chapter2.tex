@@ -59,6 +59,27 @@ l'information de contexte est difficile à modéliser : comme abordé précédem
 il est parfois nécéssaire de différencier une information statique d'une
 information dynamique.
 
+\subsubsection{Ontologie de services}
+
+\begin{itemize}
+  \item ServiceProfile (partie ''Quoi'')
+  \item ServiceModel (partie ''Comment abstrait'')
+  \item ServiceGrounding (partie ''Comment concrèt'')
+\end{itemize}
+
+Tout comme pour la standardisation de la gestion intelligente de la
+configuration, la classe ServiceModel est très importante. Les services sont
+modélisés comme des processus et la classe Process est utilisée pour indiquer
+les opérations à granularités différentes. La classe Process comprend
+princpalement deux types de processus : atomiques et composites. Puisque
+l'information de gestion de configuration est définie comme un ontologie OWL,
+l'information peut être utilisée comme les paramètres des opérations de gestion
+de la configuration, qui sont définis sous la forme de processus composites.
+Chaque service de gestion de configuration correspond à un processus composite,
+lui-même composé de plusieurs processus atomiques. Quand le gestionnaire invoque
+un service de gestion de configuration prédéfini en OWL-S, le service sera alors
+executé par le périphérique réseau géré.
+
 \section{Règles sémantiques}
 
 Un autre domaine de recherche concernerait l'utilisation de règles pour exprimer
@@ -71,6 +92,18 @@ règles CRIME décrivent le comportemment des applications conformément à
 l'information de contexte. CRIME traite également les déconnexions en invalidant
 les faits et conclusions qui sont tirés des périphériques qui ne sont plus
 disponibles dans l'environnement.
+
+\subsection{Gestion basée sur des politiques (Policy-Based)}
+
+La politique est identifiée comme une spécification de la configuration moyenne
+du système sur des périodes persistantes. Un aspect important de cette
+définition est qu'elle permet une certaine tolérence à l'erreur, nécéssitée par
+les évènements aléatoires se produisant qui corrompent la politique en place
+dans la boucle de gestion du système. Il existe un élément probabiliste ou
+stochastique pour le comportement du système et, par conséquent, la politique ne
+peut être qu'une propriété moyenne en général.
+
+\section{Agents autonomes: lois de comportement}
 
 \subsection{Théorie de promesse}
 
@@ -95,13 +128,163 @@ la mobilité des applications. Alors que les applications sont redessinées pour
 la mobilité et l'évolutivité web, cette approche traditionnelle empêche leur
 déploiement rapide et homogène.
 
-\subsection{Principes de fonctionnement}
+\noindent\rule{8cm}{0.4pt}
 
-\section{Algorithmes de consensus}
+La théorie de la promesse est une théorie nouvelle sur ce qu'il peut arriver
+dans un réseau de composants entièremement autonomes.
 
-\subsection{Algorithme de Paxos}
+Plutôt que d'adopter la croyance conventionnelle que ''seulement ce qui est
+programmé peut arriver'', elle prends le point de vue opposé : ''seulement ce
+qui est promis peut être prédit''. Elle aborde donc la gestion du point de vue
+de l'incertitude avec réalisme plutôt que celui la foi dans la conformité. Dans
+la théorie de la promesse, on suppose un point de vue orienté service des
+interactions entre les différents dispositifs informatiques. Chaque nœud propose
+de jouer un rôle dans un réseau de collaboration en promettant de restreindre
+son comportement de différentes manières. Une utilisation typique de la théorie
+de la promesse est d'examiner le comportement en régime permanent d'un certain
+nombre d'agents (composants) autonomes. La théorie de la prommesse ne détermine
+pas nécéssairement pleinement le comportement de ses composants, elle représente
+seulement les contraintes au sein d'un ensemble de comportements définis. Elle
+n'est pas limitée aux promesses linéaires.
 
-\subsection{Algorithme de Raft}
+La théorie de la promesse adopte un point de vue orienté service des politiques
+et utilise un langage graphique pour composer et analyser les propriétés
+systèmes.
+
+Une caractéristique essentielle des promesses est qu'elles séparent clairement
+ce qui contraint et à qui la contrainte s'applique. C'est un autre domaine
+soulevant bien souvent des confusions dans la théorie des politiques.
+
+\noindent\rule{8cm}{0.4pt}
+
+Une promesse est différente d'un engagement, un engagement est un moment où un
+agent rompt avec une ligne de conduite pour une autre discontinue avec des vues
+sur un objectif, la plupart du temps à travers une action spécifique ou un
+investissement sur des résultat futurs. Dans certains cas, de l'acte
+d'engagement peut résulter en une promesse persistente, mais promettre
+n'implique pas une action provoquant un changement discontinu.
+
+Les promesses sont faites par un agent à un agent et sont modélisée par un
+relation orientée labelisée par un \underline{corps} de promesse qui définit la
+substance de la promesse. Une promesse avec le \underline{corps} \textbf{+b} est 
+une déclaration pour ''donner'' un comportement d'un agent à un autre, tandis
+qu'une promesse avec le \underline{corps} \textbf{-b} est la spécification de
+quel comportement sera reçu, accepté ou utilisé d'un agent à l'autre.
+
+\subsubsection{CfEngine3: une implémentation de référence de la théorie de la
+promesse}
+
+Deux approches :
+
+\begin{itemize}
+  \item \textbf{Centralisée}: 
+  	va pousser avec force les règles et règlements établis centrallement
+  	avec ou sans la volonté de l'utilisateur final hôte.
+  \item \textbf{Basé sur des politiques} :
+  	fonctionne de la même manière manière que le protocole SNMP (Simple
+  	Network Management Protocol), à l'exception qu'elle donne une autonomie
+  	totale aux agent, de manière à ce qu'ils aient plein droit de tirer et
+  	implémenter un ensemble centralisé de politiques de configuration.
+\end{itemize}
+
+En théorie, chacun des agents autonomes va faire formuler un promesse sur son
+comportement attendu basé sur son choix. C'est ce que rend la théorie de la
+promesse optimale pour un framwork de gestion basé sur des politiques.
+
+La théorie de la promesse décrit des services régies par des politiques, dans un
+framework d'agents complètements autonomes, qui aident les uns des autres par la
+coopération volontaire seule.
+
+Dans CfEngine, chaque element de configuration va faire une promesse au sujet de
+ses caractéristiques propres et sa relation avec d'autre éléments de
+configuration.
+
+Une promesse est la spécification d'un état ou comportement ultérieur d'un agent
+autonome à un autre. Elle est ainsi, une unité de politique.
+
+Nous souhaitons être en mesure de promettre que le système est cohérent, verifier
+cela et effectuer des changements seulement si nos promesses ne sont pas
+tenues. Pour comprendre ITIL (Information Technology Infrastructure Library), il
+faut l'imaginer comme un service que fourni CfEngine.
+
+=> Verification continue de l'état de chacun des éléments de configuration
+vis-à-vis de leur promesses respectives pour assurer un système cohérent et en
+conformité avec les politiques en place, en plus de l'implémentation initiale de
+ces promesses.
+
+\subsubsection{Processus de raisonnement lié à la promesse}
+
+\begin{itemize}
+  \item \textbf{Préparation de la promesse} :
+	Processus de raisonnement effectué par A conduisant à la conception, la
+	synchronisation et la délivrance de la promesse P par A.
+  \item \textbf{Analyse de crédibilité} :
+	Processus de raisonnement où les agents C dans le champ d'application de
+	la promesse P déterminent la crédibilité qu'ils assignent à A promettant
+	P compte tenu des faits connus de A (mais à l'exexption des informations
+	historiques précises sur le comportement individuel d'un membre de sa
+	classe d'agent)
+  \item \textbf{Détermination préliminaire de la confiance} :
+	Processus de raisonnement effectué par C (C dans le domaine
+	d'application de la promesse P) servant à :
+  	\begin{enumerate}
+	  \item Déterminer la confiance que C accorde à A avant même de
+		  connaitre la promesse P (confiance préalable)
+	  \item Spécifier quelles sont les attentes générées par la prise en
+		  considération de la promesse P.
+  	\end{enumerate}
+  \item \textbf{Délibération de contre-promesse} :
+	Processus de raisonnement effectué par B concernant les contre-promesses
+	pouvant potentiellement être émises par B en retour de considération de
+	P (B dans le champ d'application de P)
+  \item \textbf{Prédiction de l'impact de la promesse} :
+	(cela peut être réalisé à condition que B ait émis une ou plusieurs
+	contre-promesses plausibles)
+  	\begin{enumerate}
+	  \item Processus de raisonnement effectué par B (dans le champ
+		  d'application de P) et C (n'importe quel agent dans le champ
+		  d'application de P) servant à determiner les (le changement
+		  des) attentes que P créé dans B (et que A a l'intention de
+		  générer).  
+	  \item Processus de raisonnement visant à la modification des ententes
+		  (détenues par B ou C) étant donné la changement des attentes
+		  de chacun d'entre eux amené par la prise en considération de
+		  la promesse P.
+  	\end{enumerate}
+  \item \textbf{Évaluation de la promesse} :
+	Processus de raisonement effectué par C conernant
+  	\begin{enumerate}
+	  \item La façon dont C va évaluer si la promesse de A a été tenue ou
+		  non.
+	  \item L'évaluation de celui-ci au moyen de la méthode d'évaluation
+		  préférée
+  	\end{enumerate}
+  \item \textbf{Surveillance de rétraction de promesse} :
+	A peut être amené à un stade ultérieur à émettre une autre promesse Q,
+	pour laquelle la tenue n'est pas compatible avec la tenue de P. Dans ce
+	cas, Q qualifie un retrait de P. Un agent C applique un processus de
+	raisonnement qui surveille et évalue les promesses postérieurs émises
+	par A pour déterminer si celles-ci seront amenées à rompre la promesse P
+	et induire sont retrait.
+  \item \textbf{Mise à jour de la confiance} :
+	Processus de raisonement en place pour chacun des agents C dans le champ
+	d'application de P visant à mettre à jour la confiance préalablement
+	accordée à A, en adéquation avec la résultat de l'évaluation que C fait
+	concernant le degré avec lequel la promesse P a été tenue par A.
+  \item \textbf{Critère de réputation} :
+	Processus de raisonement effectué par chacun des agents C dans le champ
+	d'application de P visant à échanger entre les différent agents les
+	effets des mises à jour de confiance. Le flux de réputation permet a un
+	agent C n'ayant aucuns aprioris sur un agent A d'acquérir une confiance
+	initiale en prenant en considération les preuves reccueillies par les
+	autres agents.
+\end{itemize}
+
+\subsubsection{$\pi$-calculus}
+
+TODO or NOT TODO, that is the question.
+
+\subsection{Algorithme de consensus de Raft}
 
 Raft est un algorithme de consensus qui est conçu pour être facile à comprendre.
 Il est équivalent à Paxos dans la tolérance aux pannes et en termes de
