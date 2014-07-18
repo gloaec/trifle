@@ -4,13 +4,13 @@ import os
 import sys
 import re
 import time
-from rdflib            import BNode, ConjunctiveGraph, plugin, \
-                              URIRef, Literal, Namespace, RDF
-from rdflib.parser     import Parser
+from rdflib import BNode, ConjunctiveGraph, plugin, \
+                   URIRef, Literal, Namespace, RDF
+from rdflib.parser import Parser
 from rdflib.serializer import Serializer
 
-from trifle.recipes import getHostname, getServices
-from trifle.stores  import Services
+from trifle.sensors import getHostname, getServices
+from trifle.stores import Services
 #from trifle import config
 
 config = {

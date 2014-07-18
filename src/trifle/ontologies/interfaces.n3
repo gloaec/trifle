@@ -1,0 +1,42 @@
+@prefix ns1: <http://trifle/#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://trifle/interfaces/eth0> a ns1:Interface .
+
+<http://trifle/interfaces/eth0/addresses/MACAdress/0> a ns1:MACAdress ;
+    ns1:Address "08:60:6e:00:51:b0" ;
+    ns1:Broadcast "ff:ff:ff:ff:ff:ff" .
+
+<http://trifle/interfaces/lo> a ns1:Interface .
+
+<http://trifle/interfaces/lo/addresses/IPv4Address/0> a ns1:IPv4Address ;
+    ns1:Address "127.0.0.1" ;
+    ns1:NetMask "255.0.0.0" ;
+    ns1:Peer "127.0.0.1" .
+
+<http://trifle/interfaces/lo/addresses/IPv6Address/0> a ns1:IPv6Address ;
+    ns1:Address "::1" ;
+    ns1:NetMask "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff" .
+
+<http://trifle/interfaces/lo/addresses/MACAdress/0> a ns1:MACAdress ;
+    ns1:Address "00:00:00:00:00:00" ;
+    ns1:Peer "00:00:00:00:00:00" .
+
+<http://trifle/interfaces/wlan0> a ns1:Interface .
+
+<http://trifle/interfaces/wlan0/addresses/IPv4Address/0> a ns1:IPv4Address ;
+    ns1:Address "192.168.1.182" ;
+    ns1:Broadcast "192.168.1.255" ;
+    ns1:NetMask "255.255.255.0" .
+
+<http://trifle/interfaces/wlan0/addresses/IPv6Address/0> a ns1:IPv6Address ;
+    ns1:Address "fe80::de85:deff:fe77:c173%wlan0" ;
+    ns1:NetMask "ffff:ffff:ffff:ffff::" .
+
+<http://trifle/interfaces/wlan0/addresses/MACAdress/0> a ns1:MACAdress ;
+    ns1:Address "dc:85:de:77:c1:73" ;
+    ns1:Broadcast "ff:ff:ff:ff:ff:ff" .
+

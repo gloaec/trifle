@@ -2,7 +2,7 @@
 from __future__ import absolute_import
 from termcolor import colored
 
-from trifle.recipes import getServices
+from trifle.sensors import getServices
 
 class Services(object):
 

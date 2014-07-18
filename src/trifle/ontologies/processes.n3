@@ -1,0 +1,4350 @@
+@prefix ns1: <http://trifle/#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+</processes/3491> a ns1:Process ;
+    ns1:Command "" ;
+    ns1:Name "pidgin" ;
+    ns1:ProcessID 3491 ;
+    ns1:Status "zombie" .
+
+</processes/3492> a ns1:Process ;
+    ns1:Command "" ;
+    ns1:Name "pidgin" ;
+    ns1:ProcessID 3492 ;
+    ns1:Status "zombie" .
+
+<http://trifle/interfaces/eth0> a ns1:Interface .
+
+<http://trifle/interfaces/eth0/addresses/MACAdress/0> a ns1:MACAdress ;
+    ns1:Address "08:60:6e:00:51:b0" ;
+    ns1:Broadcast "ff:ff:ff:ff:ff:ff" .
+
+<http://trifle/interfaces/lo> a ns1:Interface .
+
+<http://trifle/interfaces/lo/addresses/IPv4Address/0> a ns1:IPv4Address ;
+    ns1:Address "127.0.0.1" ;
+    ns1:NetMask "255.0.0.0" ;
+    ns1:Peer "127.0.0.1" .
+
+<http://trifle/interfaces/lo/addresses/IPv6Address/0> a ns1:IPv6Address ;
+    ns1:Address "::1" ;
+    ns1:NetMask "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff" .
+
+<http://trifle/interfaces/lo/addresses/MACAdress/0> a ns1:MACAdress ;
+    ns1:Address "00:00:00:00:00:00" ;
+    ns1:Peer "00:00:00:00:00:00" .
+
+<http://trifle/interfaces/wlan0> a ns1:Interface .
+
+<http://trifle/interfaces/wlan0/addresses/IPv4Address/0> a ns1:IPv4Address ;
+    ns1:Address "192.168.1.182" ;
+    ns1:Broadcast "192.168.1.255" ;
+    ns1:NetMask "255.255.255.0" .
+
+<http://trifle/interfaces/wlan0/addresses/IPv6Address/0> a ns1:IPv6Address ;
+    ns1:Address "fe80::de85:deff:fe77:c173%wlan0" ;
+    ns1:NetMask "ffff:ffff:ffff:ffff::" .
+
+<http://trifle/interfaces/wlan0/addresses/MACAdress/0> a ns1:MACAdress ;
+    ns1:Address "dc:85:de:77:c1:73" ;
+    ns1:Broadcast "ff:ff:ff:ff:ff:ff" .
+
+</commands/1> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/sbin/init" ;
+    ns1:executes </processes/1> .
+
+</commands/10> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/10> .
+
+</commands/1006> a ns1:Command ;
+    ns1:Argument "-F" ;
+    ns1:Binary "/usr/sbin/smbd" ;
+    ns1:executes </processes/1006> .
+
+</commands/1037> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/modem-manager" ;
+    ns1:executes </processes/1037> .
+
+</commands/1050> a ns1:Command ;
+    ns1:Argument "--daemon" ;
+    ns1:Binary "/sbin/upstart-socket-bridge" ;
+    ns1:executes </processes/1050> .
+
+</commands/10610> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/dconf/dconf-service" ;
+    ns1:executes </processes/10610> .
+
+</commands/10663> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/bin/bash" ;
+    ns1:executes </processes/10663> .
+
+</commands/11252> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/bin/bash" ;
+    ns1:executes </processes/11252> .
+
+</commands/1144> a ns1:Command ;
+    ns1:Argument "-F" ;
+    ns1:Binary "/usr/sbin/smbd" ;
+    ns1:executes </processes/1144> .
+
+</commands/1151> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1151> .
+
+</commands/1152> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1152> .
+
+</commands/1154> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1154> .
+
+</commands/1155> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1155> .
+
+</commands/1157> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1157> .
+
+</commands/1174> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1174> .
+
+</commands/1175> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1175> .
+
+</commands/1185> a ns1:Command ;
+    ns1:Argument "-8 38400 tty4" ;
+    ns1:Binary "/sbin/getty" ;
+    ns1:executes </processes/1185> .
+
+</commands/1192> a ns1:Command ;
+    ns1:Argument "-8 38400 tty5" ;
+    ns1:Binary "/sbin/getty" ;
+    ns1:executes </processes/1192> .
+
+</commands/12> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/12> .
+
+</commands/1206> a ns1:Command ;
+    ns1:Argument "-8 38400 tty2" ;
+    ns1:Binary "/sbin/getty" ;
+    ns1:executes </processes/1206> .
+
+</commands/1208> a ns1:Command ;
+    ns1:Argument "-8 38400 tty3" ;
+    ns1:Binary "/sbin/getty" ;
+    ns1:executes </processes/1208> .
+
+</commands/1211> a ns1:Command ;
+    ns1:Argument "-8 38400 tty6" ;
+    ns1:Binary "/sbin/getty" ;
+    ns1:executes </processes/1211> .
+
+</commands/1234> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1234> .
+
+</commands/1256> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/NetworkManager" ;
+    ns1:executes </processes/1256> .
+
+</commands/1285> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/vsftpd" ;
+    ns1:executes </processes/1285> .
+
+</commands/1299> a ns1:Command ;
+    ns1:Argument "-c /etc/acpi/events -s /var/run/acpid.socket" ;
+    ns1:Binary "/usr/sbin/acpid" ;
+    ns1:executes </processes/1299> .
+
+</commands/13> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/13> .
+
+</commands/1300> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/whoopsie" ;
+    ns1:executes </processes/1300> .
+
+</commands/1301> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/irqbalance" ;
+    ns1:executes </processes/1301> .
+
+</commands/1317> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/mysqld" ;
+    ns1:executes </processes/1317> .
+
+</commands/1326> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/cron" ;
+    ns1:executes </processes/1326> .
+
+</commands/1327> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/atd" ;
+    ns1:executes </processes/1327> .
+
+</commands/1352> a ns1:Command ;
+    ns1:Argument "--no-debug" ;
+    ns1:Binary "/usr/lib/policykit-1/polkitd" ;
+    ns1:executes </processes/1352> .
+
+</commands/13778> a ns1:Command ;
+    ns1:Argument "protege" ;
+    ns1:Binary "/usr/bin/sudo" ;
+    ns1:executes </processes/13778> .
+
+</commands/13779> a ns1:Command ;
+    ns1:Argument "-Xmx524288000 -Xms262144000 -Dlog4j.configuration=file:log4j.xml -DentityExpansionLimit=100000000 -Dorg.protege.plugin.dir=plugins -Dfile.encoding=UTF-8 com.zerog.lax.LAX /root/Protege_4.3/Protege.lax /tmp/env.properties.13779" ;
+    ns1:Binary "/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java" ;
+    ns1:executes </processes/13779> .
+
+</commands/1378> a ns1:Command ;
+    ns1:Argument "-D /var/lib/postgresql/9.1/main -c config_file=/etc/postgresql/9.1/main/postgresql.conf" ;
+    ns1:Binary "/usr/lib/postgresql/9.1/bin/postgres" ;
+    ns1:executes </processes/1378> .
+
+</commands/1408> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1408> .
+
+</commands/1413> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/lightdm" ;
+    ns1:executes </processes/1413> .
+
+</commands/1422> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1422> .
+
+</commands/1430> a ns1:Command ;
+    ns1:Argument "-B -P /run/sendsigs.omit.d/wpasupplicant.pid -u -s -O /var/run/wpa_supplicant" ;
+    ns1:Binary "/sbin/wpa_supplicant" ;
+    ns1:executes </processes/1430> .
+
+</commands/1432> a ns1:Command ;
+    ns1:Argument ":0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch -background none" ;
+    ns1:Binary "/usr/bin/Xorg" ;
+    ns1:executes </processes/1432> .
+
+</commands/1434> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1434> .
+
+</commands/1450> a ns1:Command ;
+    ns1:Argument "--use-syslog --driver nvidia --driver-module nvidia-331 --ldpath /usr/lib/nvidia-331:/usr/lib32/nvidia-331 --module-path /usr/lib/nvidia-331/xorg,/usr/lib/xorg/modules" ;
+    ns1:Binary "/usr/sbin/bumblebeed" ;
+    ns1:executes </processes/1450> .
+
+</commands/1459> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/accountsservice/accounts-daemon" ;
+    ns1:executes </processes/1459> .
+
+</commands/1499> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1499> .
+
+</commands/15> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/15> .
+
+</commands/1504> a ns1:Command ;
+    ns1:Argument "--no-daemon" ;
+    ns1:Binary "/usr/sbin/console-kit-daemon" ;
+    ns1:executes </processes/1504> .
+
+</commands/1571> a ns1:Command ;
+    ns1:Argument "-d -4 -sf /usr/lib/NetworkManager/nm-dhcp-client.action -pf /var/run/sendsigs.omit.d/network-manager.dhclient-wlan0.pid -lf /var/lib/dhcp/dhclient-e231ecef-328e-4bfc-8617-0f24f04ae042-wlan0.lease -cf /var/run/nm-dhclient-wlan0.conf wlan0" ;
+    ns1:Binary "/sbin/dhclient" ;
+    ns1:executes </processes/1571> .
+
+</commands/1578> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/1578> .
+
+</commands/1591> a ns1:Command ;
+    ns1:Argument "--no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/sendsigs.omit.d/network-manager.dnsmasq.pid --listen-address=127.0.0.1 --conf-file=/var/run/nm-dns-dnsmasq.conf --cache-size=0 --proxy-dnssec --enable-dbus --conf-dir=/etc/NetworkManager/dnsmasq.d" ;
+    ns1:Binary "/usr/sbin/dnsmasq" ;
+    ns1:executes </processes/1591> .
+
+</commands/16> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/16> .
+
+</commands/17> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/17> .
+
+</commands/19> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/19> .
+
+</commands/1918> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/upower/upowerd" ;
+    ns1:executes </processes/1918> .
+
+</commands/19258> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/19258> .
+
+</commands/19856> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/19856> .
+
+</commands/2> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/2> .
+
+</commands/20> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/20> .
+
+</commands/2088> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/rtkit/rtkit-daemon" ;
+    ns1:executes </processes/2088> .
+
+</commands/21> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/21> .
+
+</commands/2196> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/postgresql/9.1/bin/postgres" ;
+    ns1:executes </processes/2196> .
+
+</commands/2197> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/postgresql/9.1/bin/postgres" ;
+    ns1:executes </processes/2197> .
+
+</commands/2198> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/postgresql/9.1/bin/postgres" ;
+    ns1:executes </processes/2198> .
+
+</commands/2199> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/postgresql/9.1/bin/postgres" ;
+    ns1:executes </processes/2199> .
+
+</commands/22> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/22> .
+
+</commands/2258> a ns1:Command ;
+    ns1:Argument "-p 6667 -P /var/run/bitlbee.pid -F" ;
+    ns1:Binary "/usr/sbin/bitlbee" ;
+    ns1:executes </processes/2258> .
+
+</commands/2280> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/var/cfengine/bin/cf-execd" ;
+    ns1:executes </processes/2280> .
+
+</commands/2287> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/var/cfengine/bin/cf-serverd" ;
+    ns1:executes </processes/2287> .
+
+</commands/2294> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/var/cfengine/bin/cf-monitord" ;
+    ns1:executes </processes/2294> .
+
+</commands/23> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/23> .
+
+</commands/23090> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/23090> .
+
+</commands/2319> a ns1:Command ;
+    ns1:Argument "--daemonic --port 22" ;
+    ns1:Binary "/usr/sbin/lshd" ;
+    ns1:executes </processes/2319> .
+
+</commands/24> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/24> .
+
+</commands/2418> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/postfix/master" ;
+    ns1:executes </processes/2418> .
+
+</commands/2430> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/tor" ;
+    ns1:executes </processes/2430> .
+
+</commands/2433> a ns1:Command ;
+    ns1:Argument "-l -t fifo -u" ;
+    ns1:Binary "/usr/lib/postfix/qmgr" ;
+    ns1:executes </processes/2433> .
+
+</commands/2445> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/2445> .
+
+</commands/2446> a ns1:Command ;
+    ns1:Argument "--daemon" ;
+    ns1:Binary "/sbin/udevd" ;
+    ns1:executes </processes/2446> .
+
+</commands/2473> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/winbindd" ;
+    ns1:executes </processes/2473> .
+
+</commands/24971> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/24971> .
+
+</commands/25> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/25> .
+
+</commands/25372> a ns1:Command ;
+    ns1:Argument "/home/ghis/Workspace/trifle/src/trifle/managers/snapshot.py" ;
+    ns1:Binary "/usr/bin/vim.gnome" ;
+    ns1:executes </processes/25372> .
+
+</commands/2539> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/winbindd" ;
+    ns1:executes </processes/2539> .
+
+</commands/2541> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/opt/cisco/hostscan/bin/ciscod" ;
+    ns1:executes </processes/2541> .
+
+</commands/2556> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/opt/cisco/anyconnect/bin/vpnagentd" ;
+    ns1:executes </processes/2556> .
+
+</commands/2578> a ns1:Command ;
+    ns1:Argument "-k start" ;
+    ns1:Binary "/usr/lib/apache2/mpm-prefork/apache2" ;
+    ns1:executes </processes/2578> .
+
+</commands/2596> a ns1:Command ;
+    ns1:Argument "-k start" ;
+    ns1:Binary "/usr/lib/apache2/mpm-prefork/apache2" ;
+    ns1:executes </processes/2596> .
+
+</commands/2597> a ns1:Command ;
+    ns1:Argument "-k start" ;
+    ns1:Binary "/usr/lib/apache2/mpm-prefork/apache2" ;
+    ns1:executes </processes/2597> .
+
+</commands/25976> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/25976> .
+
+</commands/2598> a ns1:Command ;
+    ns1:Argument "-k start" ;
+    ns1:Binary "/usr/lib/apache2/mpm-prefork/apache2" ;
+    ns1:executes </processes/2598> .
+
+</commands/2599> a ns1:Command ;
+    ns1:Argument "-k start" ;
+    ns1:Binary "/usr/lib/apache2/mpm-prefork/apache2" ;
+    ns1:executes </processes/2599> .
+
+</commands/2600> a ns1:Command ;
+    ns1:Argument "-k start" ;
+    ns1:Binary "/usr/lib/apache2/mpm-prefork/apache2" ;
+    ns1:executes </processes/2600> .
+
+</commands/26269> a ns1:Command ;
+    ns1:Argument "-l -t fifo -u -c" ;
+    ns1:Binary "/usr/lib/postfix/pickup" ;
+    ns1:executes </processes/26269> .
+
+</commands/2638> a ns1:Command ;
+    ns1:Argument "-8 38400 tty1" ;
+    ns1:Binary "/sbin/getty" ;
+    ns1:executes </processes/2638> .
+
+</commands/264> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/264> .
+
+</commands/26520> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/26520> .
+
+</commands/2665> a ns1:Command ;
+    ns1:Argument "--session-child 12 21" ;
+    ns1:Binary "/usr/sbin/lightdm" ;
+    ns1:executes </processes/2665> .
+
+</commands/2699> a ns1:Command ;
+    ns1:Argument "--daemonize --login" ;
+    ns1:Binary "/usr/bin/gnome-keyring-daemon" ;
+    ns1:executes </processes/2699> .
+
+</commands/26996> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/26996> .
+
+</commands/27> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/27> .
+
+</commands/27002> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/27002> .
+
+</commands/2710> a ns1:Command ;
+    ns1:Argument "--session=ubuntu" ;
+    ns1:Binary "/usr/bin/gnome-session" ;
+    ns1:executes </processes/2710> .
+
+</commands/27264> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/27264> .
+
+</commands/27271> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/27271> .
+
+</commands/273> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/273> .
+
+</commands/2750> a ns1:Command ;
+    ns1:Argument "/usr/bin/gpg-agent --daemon --sh --write-env-file=/home/ghis/.gnupg/gpg-agent-info-ghis-K55VJ /usr/bin/dbus-launch --exit-with-session gnome-session --session=ubuntu" ;
+    ns1:Binary "/usr/bin/ssh-agent" ;
+    ns1:executes </processes/2750> .
+
+</commands/2751> a ns1:Command ;
+    ns1:Argument "--daemon --sh --write-env-file=/home/ghis/.gnupg/gpg-agent-info-ghis-K55VJ /usr/bin/dbus-launch --exit-with-session gnome-session --session=ubuntu" ;
+    ns1:Binary "/usr/bin/gpg-agent" ;
+    ns1:executes </processes/2751> .
+
+</commands/2754> a ns1:Command ;
+    ns1:Argument "--exit-with-session gnome-session --session=ubuntu" ;
+    ns1:Binary "/usr/bin/dbus-launch" ;
+    ns1:executes </processes/2754> .
+
+</commands/2755> a ns1:Command ;
+    ns1:Argument "--fork --print-pid 5 --print-address 7 --session" ;
+    ns1:Binary "/bin/dbus-daemon" ;
+    ns1:executes </processes/2755> .
+
+</commands/27562> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/27562> .
+
+</commands/27565> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/27565> .
+
+</commands/27642> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/27642> .
+
+</commands/2768> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gnome-settings-daemon/gnome-settings-daemon" ;
+    ns1:executes </processes/2768> .
+
+</commands/2774> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gvfs/gvfsd" ;
+    ns1:executes </processes/2774> .
+
+</commands/2776> a ns1:Command ;
+    ns1:Argument "-f /home/ghis/.gvfs" ;
+    ns1:Binary "/usr/lib/gvfs/gvfs-fuse-daemon" ;
+    ns1:executes </processes/2776> .
+
+</commands/2786> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/compiz" ;
+    ns1:executes </processes/2786> .
+
+</commands/27894> a ns1:Command ;
+    ns1:Argument "./trifle snapshot" ;
+    ns1:Binary "/usr/bin/sudo" ;
+    ns1:executes </processes/27894> .
+
+</commands/27895> a ns1:Command ;
+    ns1:Argument "./trifle snapshot" ;
+    ns1:Binary "/usr/bin/python2.7" ;
+    ns1:executes </processes/27895> .
+
+</commands/2790> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/x86_64-linux-gnu/gconf/gconfd-2" ;
+    ns1:executes </processes/2790> .
+
+</commands/28> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/28> .
+
+</commands/2800> a ns1:Command ;
+    ns1:Argument "-i 2.0 -K -R -t" ;
+    ns1:Binary "/usr/bin/syndaemon" ;
+    ns1:executes </processes/2800> .
+
+</commands/2805> a ns1:Command ;
+    ns1:Argument "--start --log-target=syslog" ;
+    ns1:Binary "/usr/bin/pulseaudio" ;
+    ns1:executes </processes/2805> .
+
+</commands/2806> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1" ;
+    ns1:executes </processes/2806> .
+
+</commands/2807> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/nm-applet" ;
+    ns1:executes </processes/2807> .
+
+</commands/2810> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper" ;
+    ns1:executes </processes/2810> .
+
+</commands/2811> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/bluetooth-applet" ;
+    ns1:executes </processes/2811> .
+
+</commands/2814> a ns1:Command ;
+    ns1:Argument "-n" ;
+    ns1:Binary "/usr/bin/nautilus" ;
+    ns1:executes </processes/2814> .
+
+</commands/2832> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/pulseaudio/pulse/gconf-helper" ;
+    ns1:executes </processes/2832> .
+
+</commands/2836> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gvfs/gvfs-gdu-volume-monitor" ;
+    ns1:executes </processes/2836> .
+
+</commands/2840> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/udisks/udisks-daemon" ;
+    ns1:executes </processes/2840> .
+
+</commands/2843> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/udisks/udisks-daemon" ;
+    ns1:executes </processes/2843> .
+
+</commands/2846> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gvfs/gvfs-afc-volume-monitor" ;
+    ns1:executes </processes/2846> .
+
+</commands/2849> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gvfs/gvfs-gphoto2-volume-monitor" ;
+    ns1:executes </processes/2849> .
+
+</commands/2852> a ns1:Command ;
+    ns1:Argument "--spawner :1.6 /org/gtk/gvfs/exec_spaw/0" ;
+    ns1:Binary "/usr/lib/gvfs/gvfsd-trash" ;
+    ns1:executes </processes/2852> .
+
+</commands/2860> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/bamf/bamfdaemon" ;
+    ns1:executes </processes/2860> .
+
+</commands/2864> a ns1:Command ;
+    ns1:Argument "--spawner :1.6 /org/gtk/gvfs/exec_spaw/1" ;
+    ns1:Binary "/usr/lib/gvfs/gvfsd-burn" ;
+    ns1:executes </processes/2864> .
+
+</commands/2869> a ns1:Command ;
+    ns1:Argument "-c /usr/bin/compiz-decorator" ;
+    ns1:Binary "/bin/dash" ;
+    ns1:executes </processes/2869> .
+
+</commands/2870> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/gtk-window-decorator" ;
+    ns1:executes </processes/2870> .
+
+</commands/2874> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/home/ghis/.dropbox-dist/dropbox" ;
+    ns1:executes </processes/2874> .
+
+</commands/2879> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/unity/unity-panel-service" ;
+    ns1:executes </processes/2879> .
+
+</commands/2881> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/indicator-appmenu/hud-service" ;
+    ns1:executes </processes/2881> .
+
+</commands/2890> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/indicator-session/indicator-session-service" ;
+    ns1:executes </processes/2890> .
+
+</commands/2892> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/indicator-application/indicator-application-service" ;
+    ns1:executes </processes/2892> .
+
+</commands/2895> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/indicator-sound/indicator-sound-service" ;
+    ns1:executes </processes/2895> .
+
+</commands/2896> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/indicator-printers/indicator-printers-service" ;
+    ns1:executes </processes/2896> .
+
+</commands/29> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/29> .
+
+</commands/2901> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/indicator-messages/indicator-messages-service" ;
+    ns1:executes </processes/2901> .
+
+</commands/2906> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/indicator-datetime/indicator-datetime-service" ;
+    ns1:executes </processes/2906> .
+
+</commands/2936> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/geoclue/geoclue-master" ;
+    ns1:executes </processes/2936> .
+
+</commands/2959> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/ubuntu-geoip/ubuntu-geoip-provider" ;
+    ns1:executes </processes/2959> .
+
+</commands/2971> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gvfs/gvfsd-metadata" ;
+    ns1:executes </processes/2971> .
+
+</commands/2975> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/glib-networking/glib-pacrunner" ;
+    ns1:executes </processes/2975> .
+
+</commands/3> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/3> .
+
+</commands/3008> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/notify-osd/notify-osd" ;
+    ns1:executes </processes/3008> .
+
+</commands/3017> a ns1:Command ;
+    ns1:Argument "-d -c /home/ghis/.conkyrc" ;
+    ns1:Binary "/usr/bin/conky" ;
+    ns1:executes </processes/3017> .
+
+</commands/3046> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gnome-disk-utility/gdu-notification-daemon" ;
+    ns1:executes </processes/3046> .
+
+</commands/3051> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/telepathy-indicator" ;
+    ns1:executes </processes/3051> .
+
+</commands/3057> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/telepathy/mission-control-5" ;
+    ns1:executes </processes/3057> .
+
+</commands/3062> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/gnome-online-accounts/goa-daemon" ;
+    ns1:executes </processes/3062> .
+
+</commands/3067> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/gnome-screensaver" ;
+    ns1:executes </processes/3067> .
+
+</commands/3068> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/zeitgeist-datahub" ;
+    ns1:executes </processes/3068> .
+
+</commands/3074> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/zeitgeist-daemon" ;
+    ns1:executes </processes/3074> .
+
+</commands/3080> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/zeitgeist/zeitgeist-fts" ;
+    ns1:executes </processes/3080> .
+
+</commands/3082> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/bin/cat" ;
+    ns1:executes </processes/3082> .
+
+</commands/31> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/31> .
+
+</commands/3108> a ns1:Command ;
+    ns1:Argument "/usr/lib/ubuntuone-client/ubuntuone-syncdaemon" ;
+    ns1:Binary "/usr/bin/python2.7" ;
+    ns1:executes </processes/3108> .
+
+</commands/32> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/32> .
+
+</commands/321> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/321> .
+
+</commands/322> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/322> .
+
+</commands/3235> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/update-notifier" ;
+    ns1:executes </processes/3235> .
+
+</commands/3255> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/unity-lens-applications/unity-applications-daemon" ;
+    ns1:executes </processes/3255> .
+
+</commands/3257> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/unity-lens-files/unity-files-daemon" ;
+    ns1:executes </processes/3257> .
+
+</commands/3259> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/unity-lens-music/unity-music-daemon" ;
+    ns1:executes </processes/3259> .
+
+</commands/3261> a ns1:Command ;
+    ns1:Argument "/usr/lib/unity-lens-video/unity-lens-video" ;
+    ns1:Binary "/usr/bin/python2.7" ;
+    ns1:executes </processes/3261> .
+
+</commands/33> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/33> .
+
+</commands/3306> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/unity-lens-music/unity-musicstore-daemon" ;
+    ns1:executes </processes/3306> .
+
+</commands/3317> a ns1:Command ;
+    ns1:Argument "/usr/lib/system-service/system-service-d" ;
+    ns1:Binary "/usr/bin/python2.7" ;
+    ns1:executes </processes/3317> .
+
+</commands/3319> a ns1:Command ;
+    ns1:Argument "/usr/lib/unity-scope-video-remote/unity-scope-video-remote" ;
+    ns1:Binary "/usr/bin/python2.7" ;
+    ns1:executes </processes/3319> .
+
+</commands/3339> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/firefox/firefox" ;
+    ns1:executes </processes/3339> .
+
+</commands/3366> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/at-spi2-core/at-spi-bus-launcher" ;
+    ns1:executes </processes/3366> .
+
+</commands/34> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/34> .
+
+</commands/3437> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/pidgin" ;
+    ns1:executes </processes/3437> .
+
+</commands/3444> a ns1:Command ;
+    ns1:Argument "/usr/lib/flashplugin-installer/libflashplayer.so -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3339 true plugin" ;
+    ns1:Binary "/usr/lib/firefox/plugin-container" ;
+    ns1:executes </processes/3444> .
+
+</commands/345> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/345> .
+
+</commands/3459> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/deja-dup/deja-dup/deja-dup-monitor" ;
+    ns1:executes </processes/3459> .
+
+</commands/35> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/35> .
+
+</commands/36> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/36> .
+
+</commands/37> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/37> .
+
+</commands/38> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/38> .
+
+</commands/39> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/39> .
+
+</commands/40> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/40> .
+
+</commands/42> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/42> .
+
+</commands/4297> a ns1:Command ;
+    ns1:Argument "dbus://" ;
+    ns1:Binary "/usr/lib/cups/notifier/dbus" ;
+    ns1:executes </processes/4297> .
+
+</commands/43> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/43> .
+
+</commands/44> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/44> .
+
+</commands/45> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/45> .
+
+</commands/46> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/46> .
+
+</commands/47> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/47> .
+
+</commands/48> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/48> .
+
+</commands/50> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/50> .
+
+</commands/5096> a ns1:Command ;
+    ns1:Argument "--window --maximize" ;
+    ns1:Binary "/usr/bin/gnome-terminal" ;
+    ns1:executes </processes/5096> .
+
+</commands/51> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/51> .
+
+</commands/5102> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/libvte-2.90-9/gnome-pty-helper" ;
+    ns1:executes </processes/5102> .
+
+</commands/5103> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/bin/bash" ;
+    ns1:executes </processes/5103> .
+
+</commands/52> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/52> .
+
+</commands/53> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/53> .
+
+</commands/54> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/54> .
+
+</commands/5460> a ns1:Command ;
+    ns1:Argument "--writer /home/ghis/Workspace/propal/MemoireTechnique.odt" ;
+    ns1:Binary "/usr/lib/libreoffice/program/oosplash" ;
+    ns1:executes </processes/5460> .
+
+</commands/55> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/55> .
+
+</commands/5525> a ns1:Command ;
+    ns1:Argument "--writer /home/ghis/Workspace/propal/MemoireTechnique.odt --splash-pipe=6" ;
+    ns1:Binary "/usr/lib/libreoffice/program/soffice.bin" ;
+    ns1:executes </processes/5525> .
+
+</commands/56> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/56> .
+
+</commands/5799> a ns1:Command ;
+    ns1:Argument "--spawner :1.6 /org/gtk/gvfs/exec_spaw/2" ;
+    ns1:Binary "/usr/lib/gvfs/gvfsd-http" ;
+    ns1:executes </processes/5799> .
+
+</commands/6> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/6> .
+
+</commands/64> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/64> .
+
+</commands/66> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/66> .
+
+</commands/67> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/67> .
+
+</commands/673> a ns1:Command ;
+    ns1:Argument "--daemon" ;
+    ns1:Binary "/sbin/upstart-udev-bridge" ;
+    ns1:executes </processes/673> .
+
+</commands/68> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/68> .
+
+</commands/69> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/69> .
+
+</commands/697> a ns1:Command ;
+    ns1:Argument "--daemon" ;
+    ns1:Binary "/sbin/udevd" ;
+    ns1:executes </processes/697> .
+
+</commands/7> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/7> .
+
+</commands/70> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/70> .
+
+</commands/705> a ns1:Command ;
+    ns1:Argument "-c5" ;
+    ns1:Binary "/usr/sbin/rsyslogd" ;
+    ns1:executes </processes/705> .
+
+</commands/706> a ns1:Command ;
+    ns1:Argument "--system --fork --activation=upstart" ;
+    ns1:Binary "/bin/dbus-daemon" ;
+    ns1:executes </processes/706> .
+
+</commands/71> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/71> .
+
+</commands/718> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/avahi-daemon" ;
+    ns1:executes </processes/718> .
+
+</commands/719> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/avahi-daemon" ;
+    ns1:executes </processes/719> .
+
+</commands/726> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/sbin/bluetoothd" ;
+    ns1:executes </processes/726> .
+
+</commands/749> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/749> .
+
+</commands/750> a ns1:Command ;
+    ns1:Argument "-F" ;
+    ns1:Binary "/usr/sbin/cupsd" ;
+    ns1:executes </processes/750> .
+
+</commands/754> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/lib/x86_64-linux-gnu/colord/colord" ;
+    ns1:executes </processes/754> .
+
+</commands/8> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/8> .
+
+</commands/9327> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "/usr/bin/vim.gnome" ;
+    ns1:executes </processes/9327> .
+
+</commands/933> a ns1:Command ;
+    ns1:Argument "--daemon" ;
+    ns1:Binary "/sbin/udevd" ;
+    ns1:executes </processes/933> .
+
+</commands/96> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/96> .
+
+</commands/98> a ns1:Command ;
+    ns1:Argument "" ;
+    ns1:Binary "" ;
+    ns1:executes </processes/98> .
+
+</users/bitlbee> a ns1:User ;
+    ns1:Name "bitlbee" ;
+    ns1:launches </processes/2258> .
+
+</users/colord> a ns1:User ;
+    ns1:Name "colord" ;
+    ns1:launches </processes/754> .
+
+</users/debian-tor> a ns1:User ;
+    ns1:Name "debian-tor" ;
+    ns1:launches </processes/2430> .
+
+</users/lp> a ns1:User ;
+    ns1:Name "lp" ;
+    ns1:launches </processes/4297> .
+
+</users/messagebus> a ns1:User ;
+    ns1:Name "messagebus" ;
+    ns1:launches </processes/706> .
+
+</users/mysql> a ns1:User ;
+    ns1:Name "mysql" ;
+    ns1:launches </processes/1317> .
+
+</users/nobody> a ns1:User ;
+    ns1:Name "nobody" ;
+    ns1:launches </processes/1591> .
+
+</users/rtkit> a ns1:User ;
+    ns1:Name "rtkit" ;
+    ns1:launches </processes/2088> .
+
+</users/syslog> a ns1:User ;
+    ns1:Name "syslog" ;
+    ns1:launches </processes/705> .
+
+</users/whoopsie> a ns1:User ;
+    ns1:Name "whoopsie" ;
+    ns1:launches </processes/1300> .
+
+</processes/1> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/init" ;
+    ns1:Cwd "/" ;
+    ns1:Name "init" ;
+    ns1:ProcessID 1 ;
+    ns1:RAMPercent 4.422435e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1> ;
+    ns1:launchedBy </users/root> .
+
+</processes/10> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksoftirqd/1" ;
+    ns1:ProcessID 10 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/10> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1006> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "smbd -F" ;
+    ns1:Cwd "/" ;
+    ns1:Name "smbd" ;
+    ns1:ProcessID 1006 ;
+    ns1:RAMPercent 9.912125e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1006> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1037> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/modem-manager" ;
+    ns1:Cwd "/" ;
+    ns1:Name "modem-manager" ;
+    ns1:ProcessID 1037 ;
+    ns1:RAMPercent 5.362953e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1037> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1050> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "upstart-socket-bridge --daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "upstart-socket-bridge" ;
+    ns1:ProcessID 1050 ;
+    ns1:RAMPercent 6.937153e-03 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1050> ;
+    ns1:launchedBy </users/root> .
+
+</processes/10610> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/dconf/dconf-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "dconf-service" ;
+    ns1:ProcessID 10610 ;
+    ns1:RAMPercent 4.775963e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/10610> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/10663> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "bash" ;
+    ns1:Cwd "/home/ghis/Workspace/trifle/src/trifle" ;
+    ns1:Name "bash" ;
+    ns1:ProcessID 10663 ;
+    ns1:RAMPercent 1.318059e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis/Workspace/trifle/src/trifle" ;
+    ns1:executedBy </commands/10663> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/11252> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "bash" ;
+    ns1:Cwd "/home/ghis/Workspace/trifle" ;
+    ns1:Name "bash" ;
+    ns1:ProcessID 11252 ;
+    ns1:RAMPercent 1.328732e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis/Workspace/trifle" ;
+    ns1:executedBy </commands/11252> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/1144> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "smbd -F" ;
+    ns1:Cwd "/" ;
+    ns1:Name "smbd" ;
+    ns1:ProcessID 1144 ;
+    ns1:RAMPercent 2.814883e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1144> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1151> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "scsi_eh_6" ;
+    ns1:ProcessID 1151 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1151> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1152> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "rts_bpp" ;
+    ns1:ProcessID 1152 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1152> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1154> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "rtsbpp-polling" ;
+    ns1:ProcessID 1154 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1154> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1155> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "irq/45-mei" ;
+    ns1:ProcessID 1155 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1155> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1157> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "cfg80211" ;
+    ns1:ProcessID 1157 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1157> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1174> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kpsmoused" ;
+    ns1:ProcessID 1174 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1174> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1175> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/4:2" ;
+    ns1:ProcessID 1175 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1175> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1185> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/getty -8 38400 tty4" ;
+    ns1:Cwd "/" ;
+    ns1:Name "getty" ;
+    ns1:ProcessID 1185 ;
+    ns1:RAMPercent 1.640904e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1185> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1192> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/getty -8 38400 tty5" ;
+    ns1:Cwd "/" ;
+    ns1:Name "getty" ;
+    ns1:ProcessID 1192 ;
+    ns1:RAMPercent 1.647574e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1192> ;
+    ns1:launchedBy </users/root> .
+
+</processes/12> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "watchdog/1" ;
+    ns1:ProcessID 12 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/12> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1206> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/getty -8 38400 tty2" ;
+    ns1:Cwd "/" ;
+    ns1:Name "getty" ;
+    ns1:ProcessID 1206 ;
+    ns1:RAMPercent 1.640904e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1206> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1208> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/getty -8 38400 tty3" ;
+    ns1:Cwd "/" ;
+    ns1:Name "getty" ;
+    ns1:ProcessID 1208 ;
+    ns1:RAMPercent 1.640904e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1208> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1211> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/getty -8 38400 tty6" ;
+    ns1:Cwd "/" ;
+    ns1:Name "getty" ;
+    ns1:ProcessID 1211 ;
+    ns1:RAMPercent 1.634233e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1211> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1234> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "led_workqueue" ;
+    ns1:ProcessID 1234 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1234> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1256> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "NetworkManager" ;
+    ns1:Cwd "/" ;
+    ns1:Name "NetworkManager" ;
+    ns1:ProcessID 1256 ;
+    ns1:RAMPercent 1.133958e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1256> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1285> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/vsftpd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "vsftpd" ;
+    ns1:ProcessID 1285 ;
+    ns1:RAMPercent 2.281256e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1285> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1299> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "acpid -c /etc/acpi/events -s /var/run/acpid.socket" ;
+    ns1:Cwd "/" ;
+    ns1:Name "acpid" ;
+    ns1:ProcessID 1299 ;
+    ns1:RAMPercent 1.487486e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1299> ;
+    ns1:launchedBy </users/root> .
+
+</processes/13> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "migration/2" ;
+    ns1:ProcessID 13 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/13> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1300> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "whoopsie" ;
+    ns1:Cwd "/" ;
+    ns1:Name "whoopsie" ;
+    ns1:ProcessID 1300 ;
+    ns1:RAMPercent 8.724804e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1300> ;
+    ns1:launchedBy </users/whoopsie> .
+
+</processes/1301> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/irqbalance" ;
+    ns1:Cwd "/" ;
+    ns1:Name "irqbalance" ;
+    ns1:ProcessID 1301 ;
+    ns1:RAMPercent 1.214002e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1301> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1317> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/mysqld" ;
+    ns1:Cwd "/var/lib/mysql" ;
+    ns1:Name "mysqld" ;
+    ns1:ProcessID 1317 ;
+    ns1:RAMPercent 3.54782e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/lib/mysql" ;
+    ns1:executedBy </commands/1317> ;
+    ns1:launchedBy </users/mysql> .
+
+</processes/1326> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "cron" ;
+    ns1:Cwd "/var/spool/cron" ;
+    ns1:Name "cron" ;
+    ns1:ProcessID 1326 ;
+    ns1:RAMPercent 1.734288e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/spool/cron" ;
+    ns1:executedBy </commands/1326> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1327> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "atd" ;
+    ns1:Cwd "/var/spool/cron/atjobs" ;
+    ns1:Name "atd" ;
+    ns1:ProcessID 1327 ;
+    ns1:RAMPercent 6.270119e-03 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/spool/cron/atjobs" ;
+    ns1:executedBy </commands/1327> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1352> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/policykit-1/polkitd --no-debug" ;
+    ns1:Cwd "/" ;
+    ns1:Name "polkitd" ;
+    ns1:ProcessID 1352 ;
+    ns1:RAMPercent 7.103912e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1352> ;
+    ns1:launchedBy </users/root> .
+
+</processes/13778> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "sudo protege" ;
+    ns1:Cwd "/home/ghis/Workspace/trifle/src/trifle" ;
+    ns1:Name "sudo" ;
+    ns1:ProcessID 13778 ;
+    ns1:RAMPercent 3.588643e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis/Workspace/trifle/src/trifle" ;
+    ns1:executedBy </commands/13778> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/13779> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/jvm/java-6-openjdk-amd64/jre/bin/java -Xmx524288000 -Xms262144000 -Dlog4j.configuration=file:log4j.xml -DentityExpansionLimit=100000000 -Dorg.protege.plugin.dir=plugins -Dfile.encoding=UTF-8 com.zerog.lax.LAX /root/Protege_4.3/Protege.lax /tmp/env.properties.13779" ;
+    ns1:Cwd "/root/Protege_4.3" ;
+    ns1:Name "java" ;
+    ns1:ProcessID 13779 ;
+    ns1:RAMPercent 4.146016e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/root/Protege_4.3" ;
+    ns1:executedBy </commands/13779> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1378> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/postgresql/9.1/bin/postgres -D /var/lib/postgresql/9.1/main -c config_file=/etc/postgresql/9.1/main/postgresql.conf" ;
+    ns1:Cwd "/var/lib/postgresql/9.1/main" ;
+    ns1:Name "postgres" ;
+    ns1:ProcessID 1378 ;
+    ns1:RAMPercent 1.692265e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/lib/postgresql/9.1/main" ;
+    ns1:executedBy </commands/1378> ;
+    ns1:launchedBy </users/postgres> .
+
+</processes/1408> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kvm-irqfd-clean" ;
+    ns1:ProcessID 1408 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1408> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1413> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "lightdm" ;
+    ns1:Cwd "/" ;
+    ns1:Name "lightdm" ;
+    ns1:ProcessID 1413 ;
+    ns1:RAMPercent 5.903251e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1413> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1422> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/2:2" ;
+    ns1:ProcessID 1422 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1422> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1430> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/wpa_supplicant -B -P /run/sendsigs.omit.d/wpasupplicant.pid -u -s -O /var/run/wpa_supplicant" ;
+    ns1:Cwd "/" ;
+    ns1:Name "wpa_supplicant" ;
+    ns1:ProcessID 1430 ;
+    ns1:RAMPercent 3.9355e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1430> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1432> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/X :0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch -background none" ;
+    ns1:Cwd "/etc/X11" ;
+    ns1:Name "Xorg" ;
+    ns1:ProcessID 1432 ;
+    ns1:RAMPercent 5.493692e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/etc/X11" ;
+    ns1:executedBy </commands/1432> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1434> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "hd-audio0" ;
+    ns1:ProcessID 1434 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1434> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1450> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/bumblebeed --use-syslog --driver nvidia --driver-module nvidia-331 --ldpath /usr/lib/nvidia-331:/usr/lib32/nvidia-331 --module-path /usr/lib/nvidia-331/xorg,/usr/lib/xorg/modules" ;
+    ns1:Cwd "/" ;
+    ns1:Name "bumblebeed" ;
+    ns1:ProcessID 1450 ;
+    ns1:RAMPercent 2.841565e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1450> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1459> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/accountsservice/accounts-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "accounts-daemon" ;
+    ns1:ProcessID 1459 ;
+    ns1:RAMPercent 6.250108e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1459> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1499> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/6:2" ;
+    ns1:ProcessID 1499 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1499> ;
+    ns1:launchedBy </users/root> .
+
+</processes/15> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksoftirqd/2" ;
+    ns1:ProcessID 15 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/15> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1504> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/console-kit-daemon --no-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "console-kit-daemon" ;
+    ns1:ProcessID 1504 ;
+    ns1:RAMPercent 6.396856e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1504> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1571> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/dhclient -d -4 -sf /usr/lib/NetworkManager/nm-dhcp-client.action -pf /var/run/sendsigs.omit.d/network-manager.dhclient-wlan0.pid -lf /var/lib/dhcp/dhclient-e231ecef-328e-4bfc-8617-0f24f04ae042-wlan0.lease -cf /var/run/nm-dhclient-wlan0.conf wlan0" ;
+    ns1:Cwd "/" ;
+    ns1:Name "dhclient" ;
+    ns1:ProcessID 1571 ;
+    ns1:RAMPercent 2.608103e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1571> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1578> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "hci0" ;
+    ns1:ProcessID 1578 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1578> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1591> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/sendsigs.omit.d/network-manager.dnsmasq.pid --listen-address=127.0.0.1 --conf-file=/var/run/nm-dns-dnsmasq.conf --cache-size=0 --proxy-dnssec --enable-dbus --conf-dir=/etc/NetworkManager/dnsmasq.d" ;
+    ns1:Cwd "/" ;
+    ns1:Name "dnsmasq" ;
+    ns1:ProcessID 1591 ;
+    ns1:RAMPercent 2.521388e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1591> ;
+    ns1:launchedBy </users/nobody> .
+
+</processes/16> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "watchdog/2" ;
+    ns1:ProcessID 16 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/16> ;
+    ns1:launchedBy </users/root> .
+
+</processes/17> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "migration/3" ;
+    ns1:ProcessID 17 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/17> ;
+    ns1:launchedBy </users/root> .
+
+</processes/19> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksoftirqd/3" ;
+    ns1:ProcessID 19 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/19> ;
+    ns1:launchedBy </users/root> .
+
+</processes/1918> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/upower/upowerd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "upowerd" ;
+    ns1:ProcessID 1918 ;
+    ns1:RAMPercent 7.504132e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/1918> ;
+    ns1:launchedBy </users/root> .
+
+</processes/19258> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/5:2" ;
+    ns1:ProcessID 19258 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/19258> ;
+    ns1:launchedBy </users/root> .
+
+</processes/19856> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/1:1" ;
+    ns1:ProcessID 19856 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/19856> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kthreadd" ;
+    ns1:ProcessID 2 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2> ;
+    ns1:launchedBy </users/root> .
+
+</processes/20> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "watchdog/3" ;
+    ns1:ProcessID 20 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/20> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2088> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/rtkit/rtkit-daemon" ;
+    ns1:Cwd "/proc" ;
+    ns1:Name "rtkit-daemon" ;
+    ns1:ProcessID 2088 ;
+    ns1:RAMPercent 2.227893e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/proc" ;
+    ns1:executedBy </commands/2088> ;
+    ns1:launchedBy </users/rtkit> .
+
+</processes/21> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "migration/4" ;
+    ns1:ProcessID 21 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/21> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2196> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "postgres: writer process   " ;
+    ns1:Cwd "/var/lib/postgresql/9.1/main" ;
+    ns1:Name "postgres" ;
+    ns1:ProcessID 2196 ;
+    ns1:RAMPercent 3.035005e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/lib/postgresql/9.1/main" ;
+    ns1:executedBy </commands/2196> ;
+    ns1:launchedBy </users/postgres> .
+
+</processes/2197> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "postgres: wal writer process   " ;
+    ns1:Cwd "/var/lib/postgresql/9.1/main" ;
+    ns1:Name "postgres" ;
+    ns1:ProcessID 2197 ;
+    ns1:RAMPercent 2.628114e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/lib/postgresql/9.1/main" ;
+    ns1:executedBy </commands/2197> ;
+    ns1:launchedBy </users/postgres> .
+
+</processes/2198> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "postgres: autovacuum launcher process   " ;
+    ns1:Cwd "/var/lib/postgresql/9.1/main" ;
+    ns1:Name "postgres" ;
+    ns1:ProcessID 2198 ;
+    ns1:RAMPercent 5.009425e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/lib/postgresql/9.1/main" ;
+    ns1:executedBy </commands/2198> ;
+    ns1:launchedBy </users/postgres> .
+
+</processes/2199> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "postgres: stats collector process   " ;
+    ns1:Cwd "/var/lib/postgresql/9.1/main" ;
+    ns1:Name "postgres" ;
+    ns1:ProcessID 2199 ;
+    ns1:RAMPercent 2.788202e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/lib/postgresql/9.1/main" ;
+    ns1:executedBy </commands/2199> ;
+    ns1:launchedBy </users/postgres> .
+
+</processes/22> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/4:0" ;
+    ns1:ProcessID 22 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/22> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2258> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/bitlbee -p 6667 -P /var/run/bitlbee.pid -F" ;
+    ns1:Cwd "/" ;
+    ns1:Name "bitlbee" ;
+    ns1:ProcessID 2258 ;
+    ns1:RAMPercent 2.094487e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2258> ;
+    ns1:launchedBy </users/bitlbee> .
+
+</processes/2280> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/var/cfengine/bin/cf-execd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "cf-execd" ;
+    ns1:ProcessID 2280 ;
+    ns1:RAMPercent 6.903802e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2280> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2287> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/var/cfengine/bin/cf-serverd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "cf-serverd" ;
+    ns1:ProcessID 2287 ;
+    ns1:RAMPercent 9.712015e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2287> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2294> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/var/cfengine/bin/cf-monitord" ;
+    ns1:Cwd "/" ;
+    ns1:Name "cf-monitord" ;
+    ns1:ProcessID 2294 ;
+    ns1:RAMPercent 1.145297e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2294> ;
+    ns1:launchedBy </users/root> .
+
+</processes/23> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksoftirqd/4" ;
+    ns1:ProcessID 23 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/23> ;
+    ns1:launchedBy </users/root> .
+
+</processes/23090> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/3:1" ;
+    ns1:ProcessID 23090 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/23090> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2319> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/lshd --daemonic --port 22" ;
+    ns1:Cwd "/" ;
+    ns1:Name "lshd" ;
+    ns1:ProcessID 2319 ;
+    ns1:RAMPercent 8.404628e-03 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2319> ;
+    ns1:launchedBy </users/root> .
+
+</processes/24> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "watchdog/4" ;
+    ns1:ProcessID 24 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/24> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2418> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/postfix/master" ;
+    ns1:Cwd "/var/spool/postfix" ;
+    ns1:Name "master" ;
+    ns1:ProcessID 2418 ;
+    ns1:RAMPercent 2.794872e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/spool/postfix" ;
+    ns1:executedBy </commands/2418> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2430> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/tor" ;
+    ns1:Cwd "/var/lib/tor" ;
+    ns1:Name "tor" ;
+    ns1:ProcessID 2430 ;
+    ns1:RAMPercent 7.27067e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/lib/tor" ;
+    ns1:executedBy </commands/2430> ;
+    ns1:launchedBy </users/debian-tor> .
+
+</processes/2433> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "qmgr -l -t fifo -u" ;
+    ns1:Cwd "/var/spool/postfix" ;
+    ns1:Name "qmgr" ;
+    ns1:ProcessID 2433 ;
+    ns1:RAMPercent 2.601433e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/spool/postfix" ;
+    ns1:executedBy </commands/2433> ;
+    ns1:launchedBy </users/postfix> .
+
+</processes/2445> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "iprt" ;
+    ns1:ProcessID 2445 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2445> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2446> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/udevd --daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "udevd" ;
+    ns1:ProcessID 2446 ;
+    ns1:RAMPercent 2.094487e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2446> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2473> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/winbindd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "winbindd" ;
+    ns1:ProcessID 2473 ;
+    ns1:RAMPercent 4.589194e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2473> ;
+    ns1:launchedBy </users/root> .
+
+</processes/24971> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/0:0" ;
+    ns1:ProcessID 24971 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/24971> ;
+    ns1:launchedBy </users/root> .
+
+</processes/25> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "migration/5" ;
+    ns1:ProcessID 25 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/25> ;
+    ns1:launchedBy </users/root> .
+
+</processes/25372> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "vim /home/ghis/Workspace/trifle/src/trifle/managers/snapshot.py" ;
+    ns1:Cwd "/home/ghis/Workspace/trifle" ;
+    ns1:Name "vim" ;
+    ns1:ProcessID 25372 ;
+    ns1:RAMPercent 2.781532e-01 ;
+    ns1:Status "stopped" ;
+    ns1:Terminal "/home/ghis/Workspace/trifle" ;
+    ns1:executedBy </commands/25372> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2539> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/winbindd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "winbindd" ;
+    ns1:ProcessID 2539 ;
+    ns1:RAMPercent 2.588092e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2539> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2541> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/opt/cisco/hostscan/bin/ciscod" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ciscod" ;
+    ns1:ProcessID 2541 ;
+    ns1:RAMPercent 8.271221e-03 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2541> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2556> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/opt/cisco/anyconnect/bin/vpnagentd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "vpnagentd" ;
+    ns1:ProcessID 2556 ;
+    ns1:RAMPercent 7.864331e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2556> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2578> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/apache2 -k start" ;
+    ns1:Cwd "/" ;
+    ns1:Name "apache2" ;
+    ns1:ProcessID 2578 ;
+    ns1:RAMPercent 2.217888e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2578> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2596> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/apache2 -k start" ;
+    ns1:Cwd "/" ;
+    ns1:Name "apache2" ;
+    ns1:ProcessID 2596 ;
+    ns1:RAMPercent 1.111946e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2596> ;
+    ns1:launchedBy </users/www-data> .
+
+</processes/2597> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/apache2 -k start" ;
+    ns1:Cwd "/" ;
+    ns1:Name "apache2" ;
+    ns1:ProcessID 2597 ;
+    ns1:RAMPercent 1.111946e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2597> ;
+    ns1:launchedBy </users/www-data> .
+
+</processes/25976> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/u:2" ;
+    ns1:ProcessID 25976 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/25976> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2598> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/apache2 -k start" ;
+    ns1:Cwd "/" ;
+    ns1:Name "apache2" ;
+    ns1:ProcessID 2598 ;
+    ns1:RAMPercent 1.111946e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2598> ;
+    ns1:launchedBy </users/www-data> .
+
+</processes/2599> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/apache2 -k start" ;
+    ns1:Cwd "/" ;
+    ns1:Name "apache2" ;
+    ns1:ProcessID 2599 ;
+    ns1:RAMPercent 1.111946e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2599> ;
+    ns1:launchedBy </users/www-data> .
+
+</processes/2600> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/apache2 -k start" ;
+    ns1:Cwd "/" ;
+    ns1:Name "apache2" ;
+    ns1:ProcessID 2600 ;
+    ns1:RAMPercent 1.111946e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2600> ;
+    ns1:launchedBy </users/www-data> .
+
+</processes/26269> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "pickup -l -t fifo -u -c" ;
+    ns1:Cwd "/var/spool/postfix" ;
+    ns1:Name "pickup" ;
+    ns1:ProcessID 26269 ;
+    ns1:RAMPercent 2.534729e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/var/spool/postfix" ;
+    ns1:executedBy </commands/26269> ;
+    ns1:launchedBy </users/postfix> .
+
+</processes/2638> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/getty -8 38400 tty1" ;
+    ns1:Cwd "/" ;
+    ns1:Name "getty" ;
+    ns1:ProcessID 2638 ;
+    ns1:RAMPercent 1.640904e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2638> ;
+    ns1:launchedBy </users/root> .
+
+</processes/264> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/2:1" ;
+    ns1:ProcessID 264 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/264> ;
+    ns1:launchedBy </users/root> .
+
+</processes/26520> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/1:2" ;
+    ns1:ProcessID 26520 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/26520> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2665> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "lightdm --session-child 12 21" ;
+    ns1:Cwd "/" ;
+    ns1:Name "lightdm" ;
+    ns1:ProcessID 2665 ;
+    ns1:RAMPercent 6.29013e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2665> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2699> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/gnome-keyring-daemon --daemonize --login" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gnome-keyring-daemon" ;
+    ns1:ProcessID 2699 ;
+    ns1:RAMPercent 6.056669e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2699> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/26996> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/u:0" ;
+    ns1:ProcessID 26996 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/26996> ;
+    ns1:launchedBy </users/root> .
+
+</processes/27> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksoftirqd/5" ;
+    ns1:ProcessID 27 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/27> ;
+    ns1:launchedBy </users/root> .
+
+</processes/27002> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/5:0" ;
+    ns1:ProcessID 27002 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/27002> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2710> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "gnome-session --session=ubuntu" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "gnome-session" ;
+    ns1:ProcessID 2710 ;
+    ns1:RAMPercent 1.647574e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2710> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/27264> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/0:2" ;
+    ns1:ProcessID 27264 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/27264> ;
+    ns1:launchedBy </users/root> .
+
+</processes/27271> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/3:2" ;
+    ns1:ProcessID 27271 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/27271> ;
+    ns1:launchedBy </users/root> .
+
+</processes/273> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/6:1" ;
+    ns1:ProcessID 273 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/273> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2750> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/ssh-agent /usr/bin/gpg-agent --daemon --sh --write-env-file=/home/ghis/.gnupg/gpg-agent-info-ghis-K55VJ /usr/bin/dbus-launch --exit-with-session gnome-session --session=ubuntu" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ssh-agent" ;
+    ns1:ProcessID 2750 ;
+    ns1:RAMPercent 5.336272e-03 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2750> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2751> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/gpg-agent --daemon --sh --write-env-file=/home/ghis/.gnupg/gpg-agent-info-ghis-K55VJ /usr/bin/dbus-launch --exit-with-session gnome-session --session=ubuntu" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gpg-agent" ;
+    ns1:ProcessID 2751 ;
+    ns1:RAMPercent 6.937153e-03 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2751> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2754> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/dbus-launch --exit-with-session gnome-session --session=ubuntu" ;
+    ns1:Cwd "/" ;
+    ns1:Name "dbus-launch" ;
+    ns1:ProcessID 2754 ;
+    ns1:RAMPercent 1.320727e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2754> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2755> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "//bin/dbus-daemon --fork --print-pid 5 --print-address 7 --session" ;
+    ns1:Cwd "/" ;
+    ns1:Name "dbus-daemon" ;
+    ns1:ProcessID 2755 ;
+    ns1:RAMPercent 6.029987e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2755> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/27562> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/0:1" ;
+    ns1:ProcessID 27562 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/27562> ;
+    ns1:launchedBy </users/root> .
+
+</processes/27565> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/u:1" ;
+    ns1:ProcessID 27565 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/27565> ;
+    ns1:launchedBy </users/root> .
+
+</processes/27642> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/3:0" ;
+    ns1:ProcessID 27642 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/27642> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2768> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gnome-settings-daemon/gnome-settings-daemon" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "gnome-settings-daemon" ;
+    ns1:ProcessID 2768 ;
+    ns1:RAMPercent 3.390534e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2768> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2774> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs/gvfsd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfsd" ;
+    ns1:ProcessID 2774 ;
+    ns1:RAMPercent 4.102259e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2774> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2776> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs//gvfs-fuse-daemon -f /home/ghis/.gvfs" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfs-fuse-daemon" ;
+    ns1:ProcessID 2776 ;
+    ns1:RAMPercent 4.695919e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2776> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2786> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "compiz" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "compiz" ;
+    ns1:ProcessID 2786 ;
+    ns1:RAMPercent 1.734022e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2786> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/27894> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "sudo ./trifle snapshot" ;
+    ns1:Cwd "/home/ghis/Workspace/trifle" ;
+    ns1:Name "sudo" ;
+    ns1:ProcessID 27894 ;
+    ns1:RAMPercent 3.308489e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis/Workspace/trifle" ;
+    ns1:executedBy </commands/27894> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/27895> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "python ./trifle snapshot" ;
+    ns1:Cwd "/home/ghis/Workspace/trifle" ;
+    ns1:Name "python" ;
+    ns1:ProcessID 27895 ;
+    ns1:RAMPercent 4.100258e-01 ;
+    ns1:Status "running" ;
+    ns1:Terminal "/home/ghis/Workspace/trifle" ;
+    ns1:executedBy </commands/27895> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2790> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/x86_64-linux-gnu/gconf/gconfd-2" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gconfd-2" ;
+    ns1:ProcessID 2790 ;
+    ns1:RAMPercent 5.909921e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2790> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/28> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "watchdog/5" ;
+    ns1:ProcessID 28 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/28> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2800> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "syndaemon -i 2.0 -K -R -t" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "syndaemon" ;
+    ns1:ProcessID 2800 ;
+    ns1:RAMPercent 1.56086e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2800> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2805> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/pulseaudio --start --log-target=syslog" ;
+    ns1:Cwd "/" ;
+    ns1:Name "pulseaudio" ;
+    ns1:ProcessID 2805 ;
+    ns1:RAMPercent 1.177982e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2805> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2806> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "polkit-gnome-authentication-agent-1" ;
+    ns1:ProcessID 2806 ;
+    ns1:RAMPercent 1.432122e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2806> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2807> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "nm-applet" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "nm-applet" ;
+    ns1:ProcessID 2807 ;
+    ns1:RAMPercent 2.713494e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2807> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2810> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "gnome-fallback-mount-helper" ;
+    ns1:ProcessID 2810 ;
+    ns1:RAMPercent 1.471477e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2810> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2811> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "bluetooth-applet" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "bluetooth-applet" ;
+    ns1:ProcessID 2811 ;
+    ns1:RAMPercent 1.939068e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2811> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2814> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "nautilus -n" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "nautilus" ;
+    ns1:ProcessID 2814 ;
+    ns1:RAMPercent 6.003306e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2814> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2832> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/pulseaudio/pulse/gconf-helper" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gconf-helper" ;
+    ns1:ProcessID 2832 ;
+    ns1:RAMPercent 4.989414e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2832> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2836> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs/gvfs-gdu-volume-monitor" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfs-gdu-volume-monitor" ;
+    ns1:ProcessID 2836 ;
+    ns1:RAMPercent 6.130042e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2836> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2840> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/udisks/udisks-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "udisks-daemon" ;
+    ns1:ProcessID 2840 ;
+    ns1:RAMPercent 6.463559e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2840> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2843> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "udisks-daemon: not polling any devices" ;
+    ns1:Cwd "/" ;
+    ns1:Name "udisks-daemon" ;
+    ns1:ProcessID 2843 ;
+    ns1:RAMPercent 1.347409e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2843> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2846> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs/gvfs-afc-volume-monitor" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfs-afc-volume-monitor" ;
+    ns1:ProcessID 2846 ;
+    ns1:RAMPercent 4.208984e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2846> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2849> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs/gvfs-gphoto2-volume-monitor" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfs-gphoto2-volume-monitor" ;
+    ns1:ProcessID 2849 ;
+    ns1:RAMPercent 4.175633e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2849> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2852> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs/gvfsd-trash --spawner :1.6 /org/gtk/gvfs/exec_spaw/0" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfsd-trash" ;
+    ns1:ProcessID 2852 ;
+    ns1:RAMPercent 5.436327e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2852> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2860> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/bamf/bamfdaemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "bamfdaemon" ;
+    ns1:ProcessID 2860 ;
+    ns1:RAMPercent 2.011107e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2860> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2864> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs/gvfsd-burn --spawner :1.6 /org/gtk/gvfs/exec_spaw/1" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfsd-burn" ;
+    ns1:ProcessID 2864 ;
+    ns1:RAMPercent 4.389084e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2864> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2869> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/bin/sh -c /usr/bin/compiz-decorator" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "sh" ;
+    ns1:ProcessID 2869 ;
+    ns1:RAMPercent 1.013892e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2869> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2870> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/gtk-window-decorator" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "gtk-window-decorator" ;
+    ns1:ProcessID 2870 ;
+    ns1:RAMPercent 2.201879e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2870> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2874> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/home/ghis/.dropbox-dist/dropbox" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "dropbox" ;
+    ns1:ProcessID 2874 ;
+    ns1:RAMPercent 1.298715e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/2874> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2879> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/unity/unity-panel-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "unity-panel-service" ;
+    ns1:ProcessID 2879 ;
+    ns1:RAMPercent 4.797975e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2879> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2881> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/indicator-appmenu/hud-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "hud-service" ;
+    ns1:ProcessID 2881 ;
+    ns1:RAMPercent 9.545256e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2881> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2890> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/indicator-session/indicator-session-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "indicator-session-service" ;
+    ns1:ProcessID 2890 ;
+    ns1:RAMPercent 1.017894e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2890> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2892> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/indicator-application/indicator-application-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "indicator-application-service" ;
+    ns1:ProcessID 2892 ;
+    ns1:RAMPercent 8.598068e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2892> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2895> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/indicator-sound/indicator-sound-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "indicator-sound-service" ;
+    ns1:ProcessID 2895 ;
+    ns1:RAMPercent 1.160639e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2895> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2896> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/indicator-printers/indicator-printers-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "indicator-printers-service" ;
+    ns1:ProcessID 2896 ;
+    ns1:RAMPercent 1.704272e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2896> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/29> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "migration/6" ;
+    ns1:ProcessID 29 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/29> ;
+    ns1:launchedBy </users/root> .
+
+</processes/2901> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/indicator-messages/indicator-messages-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "indicator-messages-service" ;
+    ns1:ProcessID 2901 ;
+    ns1:RAMPercent 1.147965e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2901> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2906> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/indicator-datetime/indicator-datetime-service" ;
+    ns1:Cwd "/" ;
+    ns1:Name "indicator-datetime-service" ;
+    ns1:ProcessID 2906 ;
+    ns1:RAMPercent 1.240016e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2906> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2936> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/geoclue/geoclue-master" ;
+    ns1:Cwd "/" ;
+    ns1:Name "geoclue-master" ;
+    ns1:ProcessID 2936 ;
+    ns1:RAMPercent 4.569183e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2936> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2959> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/ubuntu-geoip/ubuntu-geoip-provider" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ubuntu-geoip-provider" ;
+    ns1:ProcessID 2959 ;
+    ns1:RAMPercent 1.127287e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2959> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2971> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs/gvfsd-metadata" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfsd-metadata" ;
+    ns1:ProcessID 2971 ;
+    ns1:RAMPercent 6.703691e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2971> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/2975> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/glib-networking/glib-pacrunner" ;
+    ns1:Cwd "/" ;
+    ns1:Name "glib-pacrunner" ;
+    ns1:ProcessID 2975 ;
+    ns1:RAMPercent 6.09002e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/2975> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksoftirqd/0" ;
+    ns1:ProcessID 3 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3> ;
+    ns1:launchedBy </users/root> .
+
+</processes/3008> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/notify-osd/notify-osd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "notify-osd" ;
+    ns1:ProcessID 3008 ;
+    ns1:RAMPercent 2.418665e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3008> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3017> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "conky -d -c /home/ghis/.conkyrc" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "conky" ;
+    ns1:ProcessID 3017 ;
+    ns1:RAMPercent 1.11328e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3017> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3046> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gnome-disk-utility/gdu-notification-daemon" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "gdu-notification-daemon" ;
+    ns1:ProcessID 3046 ;
+    ns1:RAMPercent 1.54285e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3046> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3051> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "telepathy-indicator" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "telepathy-indicator" ;
+    ns1:ProcessID 3051 ;
+    ns1:RAMPercent 1.843015e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3051> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3057> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/telepathy/mission-control-5" ;
+    ns1:Cwd "/" ;
+    ns1:Name "mission-control-5" ;
+    ns1:ProcessID 3057 ;
+    ns1:RAMPercent 1.082596e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3057> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3062> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gnome-online-accounts/goa-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "goa-daemon" ;
+    ns1:ProcessID 3062 ;
+    ns1:RAMPercent 2.295931e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3062> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3067> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "gnome-screensaver" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "gnome-screensaver" ;
+    ns1:ProcessID 3067 ;
+    ns1:RAMPercent 1.53151e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3067> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3068> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "zeitgeist-datahub" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "zeitgeist-datahub" ;
+    ns1:ProcessID 3068 ;
+    ns1:RAMPercent 1.138627e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3068> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3074> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/zeitgeist-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "zeitgeist-daemon" ;
+    ns1:ProcessID 3074 ;
+    ns1:RAMPercent 1.358081e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3074> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3080> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/zeitgeist/zeitgeist-fts" ;
+    ns1:Cwd "/" ;
+    ns1:Name "zeitgeist-fts" ;
+    ns1:ProcessID 3080 ;
+    ns1:RAMPercent 1.222273e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3080> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3082> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/bin/cat" ;
+    ns1:Cwd "/" ;
+    ns1:Name "cat" ;
+    ns1:ProcessID 3082 ;
+    ns1:RAMPercent 5.936602e-03 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3082> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/31> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksoftirqd/6" ;
+    ns1:ProcessID 31 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/31> ;
+    ns1:launchedBy </users/root> .
+
+</processes/3108> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/python /usr/lib/ubuntuone-client/ubuntuone-syncdaemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ubuntuone-syncd" ;
+    ns1:ProcessID 3108 ;
+    ns1:RAMPercent 6.564948e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3108> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/32> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "watchdog/6" ;
+    ns1:ProcessID 32 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/32> ;
+    ns1:launchedBy </users/root> .
+
+</processes/321> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "jbd2/sda2-8" ;
+    ns1:ProcessID 321 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/321> ;
+    ns1:launchedBy </users/root> .
+
+</processes/322> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ext4-dio-unwrit" ;
+    ns1:ProcessID 322 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/322> ;
+    ns1:launchedBy </users/root> .
+
+</processes/3235> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "update-notifier" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "update-notifier" ;
+    ns1:ProcessID 3235 ;
+    ns1:RAMPercent 3.155738e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3235> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3255> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/unity-lens-applications/unity-applications-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "unity-applications-daemon" ;
+    ns1:ProcessID 3255 ;
+    ns1:RAMPercent 2.145181e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3255> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3257> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/unity-lens-files/unity-files-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "unity-files-daemon" ;
+    ns1:ProcessID 3257 ;
+    ns1:RAMPercent 1.19199e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3257> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3259> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/unity-lens-music/unity-music-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "unity-music-daemon" ;
+    ns1:ProcessID 3259 ;
+    ns1:RAMPercent 1.435457e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3259> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3261> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/python /usr/lib/unity-lens-video/unity-lens-video" ;
+    ns1:Cwd "/" ;
+    ns1:Name "unity-lens-vide" ;
+    ns1:ProcessID 3261 ;
+    ns1:RAMPercent 2.807546e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3261> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/33> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "migration/7" ;
+    ns1:ProcessID 33 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/33> ;
+    ns1:launchedBy </users/root> .
+
+</processes/3306> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/unity-lens-music/unity-musicstore-daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "unity-musicstore-daemon" ;
+    ns1:ProcessID 3306 ;
+    ns1:RAMPercent 7.290681e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3306> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3317> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/python /usr/lib/system-service/system-service-d" ;
+    ns1:Cwd "/" ;
+    ns1:Name "system-service-" ;
+    ns1:ProcessID 3317 ;
+    ns1:RAMPercent 2.109828e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3317> ;
+    ns1:launchedBy </users/root> .
+
+</processes/3319> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/bin/python /usr/lib/unity-scope-video-remote/unity-scope-video-remote" ;
+    ns1:Cwd "/" ;
+    ns1:Name "unity-scope-vid" ;
+    ns1:ProcessID 3319 ;
+    ns1:RAMPercent 3.636002e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3319> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3339> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/firefox/firefox" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "firefox" ;
+    ns1:ProcessID 3339 ;
+    ns1:RAMPercent 1.972366e+01 ;
+    ns1:Status "running" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3339> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3366> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/at-spi2-core/at-spi-bus-launcher" ;
+    ns1:Cwd "/" ;
+    ns1:Name "at-spi-bus-launcher" ;
+    ns1:ProcessID 3366 ;
+    ns1:RAMPercent 5.236217e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/3366> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/34> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/7:0" ;
+    ns1:ProcessID 34 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/34> ;
+    ns1:launchedBy </users/root> .
+
+</processes/3437> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "pidgin" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "pidgin" ;
+    ns1:ProcessID 3437 ;
+    ns1:RAMPercent 9.569937e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3437> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/3444> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/firefox/plugin-container /usr/lib/flashplugin-installer/libflashplayer.so -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3339 true plugin" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "plugin-container" ;
+    ns1:ProcessID 3444 ;
+    ns1:RAMPercent 3.075427e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3444> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/345> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "flush-8:0" ;
+    ns1:ProcessID 345 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/345> ;
+    ns1:launchedBy </users/root> .
+
+</processes/3459> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/deja-dup/deja-dup/deja-dup-monitor" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "deja-dup-monitor" ;
+    ns1:ProcessID 3459 ;
+    ns1:RAMPercent 6.190075e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/3459> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/35> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksoftirqd/7" ;
+    ns1:ProcessID 35 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/35> ;
+    ns1:launchedBy </users/root> .
+
+</processes/36> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "watchdog/7" ;
+    ns1:ProcessID 36 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/36> ;
+    ns1:launchedBy </users/root> .
+
+</processes/37> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "cpuset" ;
+    ns1:ProcessID 37 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/37> ;
+    ns1:launchedBy </users/root> .
+
+</processes/38> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "khelper" ;
+    ns1:ProcessID 38 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/38> ;
+    ns1:launchedBy </users/root> .
+
+</processes/39> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kdevtmpfs" ;
+    ns1:ProcessID 39 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/39> ;
+    ns1:launchedBy </users/root> .
+
+</processes/40> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "netns" ;
+    ns1:ProcessID 40 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/40> ;
+    ns1:launchedBy </users/root> .
+
+</processes/42> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "sync_supers" ;
+    ns1:ProcessID 42 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/42> ;
+    ns1:launchedBy </users/root> .
+
+</processes/4297> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/cups/notifier/dbus dbus://" ;
+    ns1:Cwd "/" ;
+    ns1:Name "dbus" ;
+    ns1:ProcessID 4297 ;
+    ns1:RAMPercent 2.828224e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/4297> ;
+    ns1:launchedBy </users/lp> .
+
+</processes/43> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "bdi-default" ;
+    ns1:ProcessID 43 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/43> ;
+    ns1:launchedBy </users/root> .
+
+</processes/44> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kintegrityd" ;
+    ns1:ProcessID 44 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/44> ;
+    ns1:launchedBy </users/root> .
+
+</processes/45> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kblockd" ;
+    ns1:ProcessID 45 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/45> ;
+    ns1:launchedBy </users/root> .
+
+</processes/46> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ata_sff" ;
+    ns1:ProcessID 46 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/46> ;
+    ns1:launchedBy </users/root> .
+
+</processes/47> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "khubd" ;
+    ns1:ProcessID 47 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/47> ;
+    ns1:launchedBy </users/root> .
+
+</processes/48> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "md" ;
+    ns1:ProcessID 48 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/48> ;
+    ns1:launchedBy </users/root> .
+
+</processes/50> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "khungtaskd" ;
+    ns1:ProcessID 50 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/50> ;
+    ns1:launchedBy </users/root> .
+
+</processes/5096> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "gnome-terminal --window --maximize" ;
+    ns1:Cwd "/home/ghis" ;
+    ns1:Name "gnome-terminal" ;
+    ns1:ProcessID 5096 ;
+    ns1:RAMPercent 3.77141e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis" ;
+    ns1:executedBy </commands/5096> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/51> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kswapd0" ;
+    ns1:ProcessID 51 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/51> ;
+    ns1:launchedBy </users/root> .
+
+</processes/5102> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "gnome-pty-helper" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gnome-pty-helper" ;
+    ns1:ProcessID 5102 ;
+    ns1:RAMPercent 1.400771e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/5102> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/5103> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "bash" ;
+    ns1:Cwd "/home/ghis/Workspace/trifle/src/trifle" ;
+    ns1:Name "bash" ;
+    ns1:ProcessID 5103 ;
+    ns1:RAMPercent 1.326731e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis/Workspace/trifle/src/trifle" ;
+    ns1:executedBy </commands/5103> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/52> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ksmd" ;
+    ns1:ProcessID 52 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/52> ;
+    ns1:launchedBy </users/root> .
+
+</processes/53> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "khugepaged" ;
+    ns1:ProcessID 53 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/53> ;
+    ns1:launchedBy </users/root> .
+
+</processes/54> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "fsnotify_mark" ;
+    ns1:ProcessID 54 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/54> ;
+    ns1:launchedBy </users/root> .
+
+</processes/5460> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/libreoffice/program/oosplash --writer /home/ghis/Workspace/propal/MemoireTechnique.odt" ;
+    ns1:Cwd "/home/ghis/Workspace/propal" ;
+    ns1:Name "oosplash" ;
+    ns1:ProcessID 5460 ;
+    ns1:RAMPercent 5.756503e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis/Workspace/propal" ;
+    ns1:executedBy </commands/5460> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/55> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "ecryptfs-kthrea" ;
+    ns1:ProcessID 55 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/55> ;
+    ns1:launchedBy </users/root> .
+
+</processes/5525> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/libreoffice/program/soffice.bin --writer /home/ghis/Workspace/propal/MemoireTechnique.odt --splash-pipe=6" ;
+    ns1:Cwd "/home/ghis/Workspace/propal" ;
+    ns1:Name "soffice.bin" ;
+    ns1:ProcessID 5525 ;
+    ns1:RAMPercent 2.153586e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis/Workspace/propal" ;
+    ns1:executedBy </commands/5525> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/56> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "crypto" ;
+    ns1:ProcessID 56 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/56> ;
+    ns1:launchedBy </users/root> .
+
+</processes/5799> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/gvfs/gvfsd-http --spawner :1.6 /org/gtk/gvfs/exec_spaw/2" ;
+    ns1:Cwd "/" ;
+    ns1:Name "gvfsd-http" ;
+    ns1:ProcessID 5799 ;
+    ns1:RAMPercent 7.544154e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/5799> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/6> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "migration/0" ;
+    ns1:ProcessID 6 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/6> ;
+    ns1:launchedBy </users/root> .
+
+</processes/64> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kthrotld" ;
+    ns1:ProcessID 64 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/64> ;
+    ns1:launchedBy </users/root> .
+
+</processes/66> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "scsi_eh_0" ;
+    ns1:ProcessID 66 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/66> ;
+    ns1:launchedBy </users/root> .
+
+</processes/67> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "scsi_eh_1" ;
+    ns1:ProcessID 67 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/67> ;
+    ns1:launchedBy </users/root> .
+
+</processes/673> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "upstart-udev-bridge --daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "upstart-udev-bridge" ;
+    ns1:ProcessID 673 ;
+    ns1:RAMPercent 1.507497e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/673> ;
+    ns1:launchedBy </users/root> .
+
+</processes/68> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "scsi_eh_2" ;
+    ns1:ProcessID 68 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/68> ;
+    ns1:launchedBy </users/root> .
+
+</processes/69> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "scsi_eh_3" ;
+    ns1:ProcessID 69 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/69> ;
+    ns1:launchedBy </users/root> .
+
+</processes/697> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/udevd --daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "udevd" ;
+    ns1:ProcessID 697 ;
+    ns1:RAMPercent 3.021664e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/697> ;
+    ns1:launchedBy </users/root> .
+
+</processes/7> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "watchdog/0" ;
+    ns1:ProcessID 7 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/7> ;
+    ns1:launchedBy </users/root> .
+
+</processes/70> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "scsi_eh_4" ;
+    ns1:ProcessID 70 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/70> ;
+    ns1:launchedBy </users/root> .
+
+</processes/705> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "rsyslogd -c5" ;
+    ns1:Cwd "/" ;
+    ns1:Name "rsyslogd" ;
+    ns1:ProcessID 705 ;
+    ns1:RAMPercent 2.594762e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/705> ;
+    ns1:launchedBy </users/syslog> .
+
+</processes/706> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "dbus-daemon --system --fork --activation=upstart" ;
+    ns1:Cwd "/" ;
+    ns1:Name "dbus-daemon" ;
+    ns1:ProcessID 706 ;
+    ns1:RAMPercent 4.108929e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/706> ;
+    ns1:launchedBy </users/messagebus> .
+
+</processes/71> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "scsi_eh_5" ;
+    ns1:ProcessID 71 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/71> ;
+    ns1:launchedBy </users/root> .
+
+</processes/718> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "avahi-daemon: running [ghis-K55VJ.local]" ;
+    ns1:Cwd "/etc/avahi" ;
+    ns1:Name "avahi-daemon" ;
+    ns1:ProcessID 718 ;
+    ns1:RAMPercent 2.968301e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/etc/avahi" ;
+    ns1:executedBy </commands/718> ;
+    ns1:launchedBy </users/avahi> .
+
+</processes/719> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "avahi-daemon: chroot helper" ;
+    ns1:Cwd "/" ;
+    ns1:Name "avahi-daemon" ;
+    ns1:ProcessID 719 ;
+    ns1:RAMPercent 7.804298e-03 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/719> ;
+    ns1:launchedBy </users/avahi> .
+
+</processes/726> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/bluetoothd" ;
+    ns1:Cwd "/" ;
+    ns1:Name "bluetoothd" ;
+    ns1:ProcessID 726 ;
+    ns1:RAMPercent 3.581972e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/726> ;
+    ns1:launchedBy </users/root> .
+
+</processes/749> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "krfcommd" ;
+    ns1:ProcessID 749 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/749> ;
+    ns1:launchedBy </users/root> .
+
+</processes/750> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/sbin/cupsd -F" ;
+    ns1:Cwd "/" ;
+    ns1:Name "cupsd" ;
+    ns1:ProcessID 750 ;
+    ns1:RAMPercent 8.738145e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/750> ;
+    ns1:launchedBy </users/root> .
+
+</processes/754> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/usr/lib/x86_64-linux-gnu/colord/colord" ;
+    ns1:Cwd "/" ;
+    ns1:Name "colord" ;
+    ns1:ProcessID 754 ;
+    ns1:RAMPercent 1.989762e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/754> ;
+    ns1:launchedBy </users/colord> .
+
+</processes/8> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "migration/1" ;
+    ns1:ProcessID 8 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/8> ;
+    ns1:launchedBy </users/root> .
+
+</processes/9327> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "vim" ;
+    ns1:Cwd "/home/ghis/Workspace/trifle/src/trifle" ;
+    ns1:Name "vim" ;
+    ns1:ProcessID 9327 ;
+    ns1:RAMPercent 3.059685e-01 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/home/ghis/Workspace/trifle/src/trifle" ;
+    ns1:executedBy </commands/9327> ;
+    ns1:launchedBy </users/ghis> .
+
+</processes/933> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "/sbin/udevd --daemon" ;
+    ns1:Cwd "/" ;
+    ns1:Name "udevd" ;
+    ns1:ProcessID 933 ;
+    ns1:RAMPercent 2.127838e-02 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/933> ;
+    ns1:launchedBy </users/root> .
+
+</processes/96> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "devfreq_wq" ;
+    ns1:ProcessID 96 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/96> ;
+    ns1:launchedBy </users/root> .
+
+</processes/98> a ns1:Process ;
+    ns1:CPUPercent 0e+00 ;
+    ns1:Command "" ;
+    ns1:Cwd "/" ;
+    ns1:Name "kworker/7:1" ;
+    ns1:ProcessID 98 ;
+    ns1:RAMPercent 0e+00 ;
+    ns1:Status "sleeping" ;
+    ns1:Terminal "/" ;
+    ns1:executedBy </commands/98> ;
+    ns1:launchedBy </users/root> .
+
+</users/avahi> a ns1:User ;
+    ns1:Name "avahi" ;
+    ns1:launches </processes/718>,
+        </processes/719> .
+
+</users/postfix> a ns1:User ;
+    ns1:Name "postfix" ;
+    ns1:launches </processes/2433>,
+        </processes/26269> .
+
+</users/postgres> a ns1:User ;
+    ns1:Name "postgres" ;
+    ns1:launches </processes/1378>,
+        </processes/2196>,
+        </processes/2197>,
+        </processes/2198>,
+        </processes/2199> .
+
+</users/www-data> a ns1:User ;
+    ns1:Name "www-data" ;
+    ns1:launches </processes/2596>,
+        </processes/2597>,
+        </processes/2598>,
+        </processes/2599>,
+        </processes/2600> .
+
+</users/ghis> a ns1:User ;
+    ns1:Name "ghis" ;
+    ns1:launches </processes/10610>,
+        </processes/10663>,
+        </processes/11252>,
+        </processes/13778>,
+        </processes/25372>,
+        </processes/2699>,
+        </processes/2710>,
+        </processes/2750>,
+        </processes/2751>,
+        </processes/2754>,
+        </processes/2755>,
+        </processes/2768>,
+        </processes/2774>,
+        </processes/2776>,
+        </processes/2786>,
+        </processes/27894>,
+        </processes/2790>,
+        </processes/2800>,
+        </processes/2805>,
+        </processes/2806>,
+        </processes/2807>,
+        </processes/2810>,
+        </processes/2811>,
+        </processes/2814>,
+        </processes/2832>,
+        </processes/2836>,
+        </processes/2846>,
+        </processes/2849>,
+        </processes/2852>,
+        </processes/2860>,
+        </processes/2864>,
+        </processes/2869>,
+        </processes/2870>,
+        </processes/2874>,
+        </processes/2879>,
+        </processes/2881>,
+        </processes/2890>,
+        </processes/2892>,
+        </processes/2895>,
+        </processes/2896>,
+        </processes/2901>,
+        </processes/2906>,
+        </processes/2936>,
+        </processes/2959>,
+        </processes/2971>,
+        </processes/2975>,
+        </processes/3008>,
+        </processes/3017>,
+        </processes/3046>,
+        </processes/3051>,
+        </processes/3057>,
+        </processes/3062>,
+        </processes/3067>,
+        </processes/3068>,
+        </processes/3074>,
+        </processes/3080>,
+        </processes/3082>,
+        </processes/3108>,
+        </processes/3235>,
+        </processes/3255>,
+        </processes/3257>,
+        </processes/3259>,
+        </processes/3261>,
+        </processes/3306>,
+        </processes/3319>,
+        </processes/3339>,
+        </processes/3366>,
+        </processes/3437>,
+        </processes/3444>,
+        </processes/3459>,
+        </processes/5096>,
+        </processes/5102>,
+        </processes/5103>,
+        </processes/5460>,
+        </processes/5525>,
+        </processes/5799>,
+        </processes/9327> .
+
+</users/root> a ns1:User ;
+    ns1:Name "root" ;
+    ns1:launches </processes/1>,
+        </processes/10>,
+        </processes/1006>,
+        </processes/1037>,
+        </processes/1050>,
+        </processes/1144>,
+        </processes/1151>,
+        </processes/1152>,
+        </processes/1154>,
+        </processes/1155>,
+        </processes/1157>,
+        </processes/1174>,
+        </processes/1175>,
+        </processes/1185>,
+        </processes/1192>,
+        </processes/12>,
+        </processes/1206>,
+        </processes/1208>,
+        </processes/1211>,
+        </processes/1234>,
+        </processes/1256>,
+        </processes/1285>,
+        </processes/1299>,
+        </processes/13>,
+        </processes/1301>,
+        </processes/1326>,
+        </processes/1327>,
+        </processes/1352>,
+        </processes/13779>,
+        </processes/1408>,
+        </processes/1413>,
+        </processes/1422>,
+        </processes/1430>,
+        </processes/1432>,
+        </processes/1434>,
+        </processes/1450>,
+        </processes/1459>,
+        </processes/1499>,
+        </processes/15>,
+        </processes/1504>,
+        </processes/1571>,
+        </processes/1578>,
+        </processes/16>,
+        </processes/17>,
+        </processes/19>,
+        </processes/1918>,
+        </processes/19258>,
+        </processes/19856>,
+        </processes/2>,
+        </processes/20>,
+        </processes/21>,
+        </processes/22>,
+        </processes/2280>,
+        </processes/2287>,
+        </processes/2294>,
+        </processes/23>,
+        </processes/23090>,
+        </processes/2319>,
+        </processes/24>,
+        </processes/2418>,
+        </processes/2445>,
+        </processes/2446>,
+        </processes/2473>,
+        </processes/24971>,
+        </processes/25>,
+        </processes/2539>,
+        </processes/2541>,
+        </processes/2556>,
+        </processes/2578>,
+        </processes/25976>,
+        </processes/2638>,
+        </processes/264>,
+        </processes/26520>,
+        </processes/2665>,
+        </processes/26996>,
+        </processes/27>,
+        </processes/27002>,
+        </processes/27264>,
+        </processes/27271>,
+        </processes/273>,
+        </processes/27562>,
+        </processes/27565>,
+        </processes/27642>,
+        </processes/27895>,
+        </processes/28>,
+        </processes/2840>,
+        </processes/2843>,
+        </processes/29>,
+        </processes/3>,
+        </processes/31>,
+        </processes/32>,
+        </processes/321>,
+        </processes/322>,
+        </processes/33>,
+        </processes/3317>,
+        </processes/34>,
+        </processes/345>,
+        </processes/35>,
+        </processes/36>,
+        </processes/37>,
+        </processes/38>,
+        </processes/39>,
+        </processes/40>,
+        </processes/42>,
+        </processes/43>,
+        </processes/44>,
+        </processes/45>,
+        </processes/46>,
+        </processes/47>,
+        </processes/48>,
+        </processes/50>,
+        </processes/51>,
+        </processes/52>,
+        </processes/53>,
+        </processes/54>,
+        </processes/55>,
+        </processes/56>,
+        </processes/6>,
+        </processes/64>,
+        </processes/66>,
+        </processes/67>,
+        </processes/673>,
+        </processes/68>,
+        </processes/69>,
+        </processes/697>,
+        </processes/7>,
+        </processes/70>,
+        </processes/71>,
+        </processes/726>,
+        </processes/749>,
+        </processes/750>,
+        </processes/8>,
+        </processes/933>,
+        </processes/96>,
+        </processes/98> .
+
