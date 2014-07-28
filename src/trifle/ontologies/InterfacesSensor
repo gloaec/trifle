@@ -2247,8 +2247,7 @@
     ns1:Cwd "/home/ghis" ;
     ns1:Name "firefox" ;
     ns1:ProcessID 25234 ;
-    ns1:RAMPercent 7.12986e+00,
-        7.255862e+00 ;
+    ns1:RAMPercent 7.12986e+00 ;
     ns1:Status "sleeping" ;
     ns1:Terminal "/home/ghis" ;
     ns1:executedBy </commands/25234> ;
@@ -2548,8 +2547,7 @@
     ns1:Cwd "/home/ghis/Workspace/trifle" ;
     ns1:Name "python" ;
     ns1:ProcessID 27055 ;
-    ns1:RAMPercent 5.306922e-01,
-        7.500797e-01 ;
+    ns1:RAMPercent 5.306922e-01 ;
     ns1:Status "sleeping" ;
     ns1:Terminal "/home/ghis/Workspace/trifle" ;
     ns1:executedBy </commands/27055> ;
@@ -2681,8 +2679,7 @@
     ns1:Cwd "/home/ghis" ;
     ns1:Name "compiz" ;
     ns1:ProcessID 2890 ;
-    ns1:RAMPercent 1.641571e+00,
-        1.641637e+00 ;
+    ns1:RAMPercent 1.641637e+00 ;
     ns1:Status "sleeping" ;
     ns1:Terminal "/home/ghis" ;
     ns1:executedBy </commands/2890> ;

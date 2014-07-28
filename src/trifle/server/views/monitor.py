@@ -23,9 +23,15 @@ def monitor_ontology():
     store = Store()
     default_query = """ SELECT ?Subject ?Object 
                         WHERE { ?Subject rdfs:subClassOf ?Object }"""
+    if request.form.get('snapshot', False):
+        store.snapshot()
+        store.save()
     try:
         results = store.graph.query(request.form.get('query', default_query))
     except ParseException, e:
         results = []
         flash(e.msg, 'danger')
-    return render_template('monitor/ontology.html', results=results)
+    return render_template('monitor/ontology.html', 
+            results=results,
+            store_count=len(store.graph),
+            queries=store.queries)

@@ -1,0 +1,1563 @@
+@prefix : <http://trifle#> .
+@prefix t: <http://trifle/#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://trifle> .
+
+<http://trifle> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://trifle#lastName
+
+:lastName rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://trifle#causedBy
+
+:causedBy rdf:type owl:ObjectProperty ;
+          
+          rdfs:comment "An association type where one topic plays the role of affecting the other by changing its state from state X to state Y." .
+
+
+
+###  http://trifle#causes
+
+:causes rdf:type owl:ObjectProperty ;
+        
+        owl:inverseOf :causedBy .
+
+
+
+###  http://trifle#componentOf
+
+:componentOf rdf:type owl:ObjectProperty ;
+             
+             rdfs:comment "The relationship between an entity X which is a component for another entity Y which plays the role of being a complex for thecomponent X." ;
+             
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://trifle#composedOf
+
+:composedOf rdf:type owl:ObjectProperty ;
+            
+            owl:inverseOf :componentOf .
+
+
+
+###  http://trifle#configuredBy
+
+:configuredBy rdf:type owl:ObjectProperty ;
+              
+              rdfs:comment "When an entity X can bring the necessary changes forentity Y in order to let it serve its intended purpose. The relationshipbetween a machine and a configuration management package such as Cfengine 3 is a typical example of such kinds of relationships." .
+
+
+
+###  http://trifle#configures
+
+:configures rdf:type owl:ObjectProperty ;
+            
+            owl:inverseOf :configuredBy .
+
+
+
+###  http://trifle#containedIn
+
+:containedIn rdf:type owl:ObjectProperty ;
+             
+             rdfs:comment "If an entity X is contained with in Y either physically or conceptually, the relationship is called as ContainedIn." .
+
+
+
+###  http://trifle#contains
+
+:contains rdf:type owl:ObjectProperty ;
+          
+          owl:inverseOf :containedIn .
+
+
+
+###  http://trifle#editedBy
+
+:editedBy rdf:type owl:ObjectProperty ;
+          
+          rdfs:comment "Writings such as a file could be amended by an editor such as user of the file for some purpose." .
+
+
+
+###  http://trifle#edits
+
+:edits rdf:type owl:ObjectProperty ;
+       
+       owl:inverseOf :editedBy .
+
+
+
+###  http://trifle#installedBy
+
+:installedBy rdf:type owl:ObjectProperty ;
+             
+             rdfs:comment "An entity X can put program Y into a machine in order to let it serve its intended purpose. This relation ship between a program and an entity who put it into a machine is called as InstalledBy." .
+
+
+
+###  http://trifle#installs
+
+:installs rdf:type owl:ObjectProperty ;
+          
+          owl:inverseOf :installedBy .
+
+
+
+###  http://trifle#locatedAt
+
+:locatedAt rdf:type owl:ObjectProperty .
+
+
+
+###  http://trifle#locates
+
+:locates rdf:type owl:ObjectProperty ;
+         
+         owl:inverseOf :locatedAt ;
+         
+         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://trifle#managedBy
+
+:managedBy rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "If X is responsible for the proper functioning of Y in order to let it accomplish its intended purpose, X is said to be the manger of Y. The act of managing includes a continuous supervision and action taking when there is a deviation from the desired way of behaving." .
+
+
+
+###  http://trifle#manages
+
+:manages rdf:type owl:ObjectProperty ;
+         
+         owl:inverseOf :managedBy .
+
+
+
+###  http://trifle#monitoredBy
+
+:monitoredBy rdf:type owl:ObjectProperty ;
+             
+             rdfs:comment "Monitoring is mainly the responsibility of keeping an eye on some thing. If an entity X monitors Y, it keeps an eye on Y so that it may report to the manager of Y when there is a deviation from the desired behavior." .
+
+
+
+###  http://trifle#monitors
+
+:monitors rdf:type owl:ObjectProperty ;
+          
+          owl:inverseOf :monitoredBy .
+
+
+
+###  http://trifle#ownedBy
+
+:ownedBy rdf:type owl:ObjectProperty ;
+         
+         rdfs:comment "Ownership is a kind of relationship that could exist between an entity which has become a possession and its owner. The relationship between a file and its owner is an example of this type of associations." .
+
+
+
+###  http://trifle#owns
+
+:owns rdf:type owl:ObjectProperty ;
+      
+      owl:inverseOf :ownedBy .
+
+
+
+###  http://trifle#promisedBy
+
+:promisedBy rdf:type owl:ObjectProperty ;
+            
+            rdfs:comment "The relationship between a promise and its promiser." .
+
+
+
+###  http://trifle#promises
+
+:promises rdf:type owl:ObjectProperty ;
+          
+          owl:inverseOf :promisedBy .
+
+
+
+###  http://trifle#providedBy
+
+:providedBy rdf:type owl:ObjectProperty ;
+            
+            rdfs:comment "When an entity X has the potential and willingness of providing some thing to some other entity, the relationship that exists between them is called ProvidedBy." .
+
+
+
+###  http://trifle#provides
+
+:provides rdf:type owl:ObjectProperty ;
+          
+          owl:inverseOf :providedBy .
+
+
+
+###  http://trifle#requiredBy
+
+:requiredBy rdf:type owl:ObjectProperty .
+
+
+
+###  http://trifle#runs
+
+:runs rdf:type owl:ObjectProperty ;
+      
+      owl:inverseOf :runsOn .
+
+
+
+###  http://trifle#runsOn
+
+:runsOn rdf:type owl:ObjectProperty ;
+        
+        rdfs:comment "If entity X performs its actitvities or execution on entity Y, the relationship is called as RunsOn." .
+
+
+
+###  http://trifle#startedBy
+
+:startedBy rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "When an entity X makes another entity Y to start doing something or behave in some manner, the association is said to be of type StartedBy." .
+
+
+
+###  http://trifle#starts
+
+:starts rdf:type owl:ObjectProperty ;
+        
+        owl:inverseOf :startedBy .
+
+
+
+###  http://trifle#usedBy
+
+:usedBy rdf:type owl:ObjectProperty ;
+        
+        rdfs:comment "If an entity X uses entity Y at any point in time for any of its purposes, the the type of association is called UsedBy" .
+
+
+
+###  http://trifle#uses
+
+:uses rdf:type owl:ObjectProperty .
+
+
+
+###  http://trifle#writes
+
+:writes rdf:type owl:ObjectProperty ;
+        
+        owl:inverseOf :writtenBy .
+
+
+
+###  http://trifle#writtenBy
+
+:writtenBy rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "The relationship beween a writing X and its writer Y." .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://trifle#ATime
+
+:ATime rdf:type owl:DatatypeProperty ;
+       
+       rdfs:domain :File ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://trifle#Address
+
+:Address rdf:type owl:DatatypeProperty ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://trifle#AllowConnectFrom
+
+:AllowConnectFrom rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:domain :Machine ;
+                  
+                  rdfs:range xsd:string .
+
+
+
+###  http://trifle#Architecture
+
+:Architecture rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Package ;
+              
+              rdfs:range xsd:string .
+
+
+
+###  http://trifle#Argument
+
+:Argument rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Command .
+
+
+
+###  http://trifle#AuditingEnabled
+
+:AuditingEnabled rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:domain :Package ;
+                 
+                 rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#BuildsOn
+
+:BuildsOn rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Promise ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://trifle#CPU
+
+:CPU rdf:type owl:DatatypeProperty ;
+     
+     rdfs:domain :Machine ;
+     
+     rdfs:range xsd:string .
+
+
+
+###  http://trifle#CTime
+
+:CTime rdf:type owl:DatatypeProperty ;
+       
+       rdfs:domain :File ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://trifle#CheckRoot
+
+:CheckRoot rdf:type owl:DatatypeProperty ;
+           
+           rdfs:domain :Machine ;
+           
+           rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#Command
+
+:Command rdf:type owl:DatatypeProperty ;
+         
+         rdfs:comment "A Command is a utility that can be used by users to start a specific process if there is no schedule set for the same purpose. A very good example that can illustrate the relation ship among those topic types is that of a web service that needs a process such as ”httpd” running on the background which is started by a command:”httpd start”." ;
+         
+         rdfs:domain :Process ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://trifle#DHCPEnabled
+
+:DHCPEnabled rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Interface .
+
+
+
+###  http://trifle#Description
+
+:Description rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Command ,
+                         :File ,
+                         :Interface ,
+                         :Package ,
+                         :Process ,
+                         :Promise ,
+                         :Storage ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://trifle#Disable
+
+:Disable rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :File ;
+         
+         rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#Email
+
+:Email rdf:type owl:DatatypeProperty ;
+       
+       rdfs:domain :Person ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://trifle#ExecutionTimeout
+
+:ExecutionTimeout rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:domain :Command ;
+                  
+                  rdfs:range xsd:integer .
+
+
+
+###  http://trifle#FileSystemFlag
+
+:FileSystemFlag rdf:type owl:DatatypeProperty ;
+                
+                rdfs:domain :Storage .
+
+
+
+###  http://trifle#FileType
+
+:FileType rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :File ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://trifle#FirstName
+
+:FirstName rdf:type owl:DatatypeProperty ;
+           
+           rdfs:domain :Person ;
+           
+           rdfs:range xsd:string .
+
+
+
+###  http://trifle#ForceIPv4
+
+:ForceIPv4 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "TODO: Add Ipv4 and Ipv6 as datatypes" ;
+           
+           rdfs:domain :Machine ;
+           
+           rdfs:range xsd:string .
+
+
+
+###  http://trifle#FreeSpace
+
+:FreeSpace rdf:type owl:DatatypeProperty ;
+           
+           rdfs:domain :Storage ;
+           
+           rdfs:range xsd:string .
+
+
+
+###  http://trifle#GroupID
+
+:GroupID rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Machine ,
+                     :Person ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://trifle#HDD
+
+:HDD rdf:type owl:DatatypeProperty ;
+     
+     rdfs:domain :Machine ;
+     
+     rdfs:range xsd:string .
+
+
+
+###  http://trifle#HardwarePlateform
+
+:HardwarePlateform rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:domain :OperatingSystem .
+
+
+
+###  http://trifle#HomeDirectory
+
+:HomeDirectory rdf:type owl:DatatypeProperty ;
+               
+               rdfs:domain :Person ;
+               
+               rdfs:range xsd:string ;
+               
+               rdfs:subPropertyOf owl:topDataProperty .
+
+
+
+###  http://trifle#IPAdress
+
+:IPAdress rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Interface ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://trifle#IsBackground
+
+:IsBackground rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Process ;
+              
+              rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#IsEncrypted
+
+:IsEncrypted rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :File ;
+             
+             rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#IsVirtualized
+
+:IsVirtualized rdf:type owl:DatatypeProperty ;
+               
+               rdfs:domain :Machine ;
+               
+               rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#Language
+
+:Language rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Package ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://trifle#LinkSource
+
+:LinkSource rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :File ;
+            
+            rdfs:range xsd:string .
+
+
+
+###  http://trifle#LinkType
+
+:LinkType rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :File ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://trifle#Location
+
+:Location rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Machine ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://trifle#LogLevel
+
+:LogLevel rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Package ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://trifle#MTime
+
+:MTime rdf:type owl:DatatypeProperty ;
+       
+       rdfs:domain :File ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://trifle#ManualPage
+
+:ManualPage rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Command ,
+                        :Package ,
+                        :Service ;
+            
+            rdfs:range xsd:anyURI .
+
+
+
+###  http://trifle#MapRoot
+
+:MapRoot rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Machine ;
+         
+         rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#Module
+
+:Module rdf:type owl:DatatypeProperty ;
+        
+        rdfs:domain :Command .
+
+
+
+###  http://trifle#MotherBoardSerialNo
+
+:MotherBoardSerialNo rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:domain :Machine ;
+                     
+                     rdfs:range xsd:string .
+
+
+
+###  http://trifle#MountFileSystem
+
+:MountFileSystem rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:domain :Storage ;
+                 
+                 rdfs:range xsd:string .
+
+
+
+###  http://trifle#MountPoint
+
+:MountPoint rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Storage ;
+            
+            rdfs:range xsd:string .
+
+
+
+###  http://trifle#MountSource
+
+:MountSource rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Storage ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://trifle#MountStatus
+
+:MountStatus rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Storage ;
+             
+             rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#MountType
+
+:MountType rdf:type owl:DatatypeProperty ;
+           
+           rdfs:domain :Storage ;
+           
+           rdfs:range xsd:string .
+
+
+
+###  http://trifle#Name
+
+:Name rdf:type owl:DatatypeProperty ;
+      
+      rdfs:domain :File ,
+                  :Interface ,
+                  :Machine ,
+                  :OperatingSystem ,
+                  :Package ,
+                  :Process ,
+                  :Service ,
+                  :Storage ;
+      
+      rdfs:range xsd:string .
+
+
+
+###  http://trifle#NetMask
+
+:NetMask rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Interface ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://trifle#PackageFileRepositories
+
+:PackageFileRepositories rdf:type owl:DatatypeProperty ;
+                         
+                         rdfs:domain :Machine ;
+                         
+                         rdfs:range xsd:string .
+
+
+
+###  http://trifle#Password
+
+:Password rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Machine ,
+                      :Person ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://trifle#Permission
+
+:Permission rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :File ;
+            
+            rdfs:range xsd:string .
+
+
+
+###  http://trifle#ProcessID
+
+:ProcessID rdf:type owl:DatatypeProperty ;
+           
+           rdfs:domain :Process ;
+           
+           rdfs:range xsd:integer .
+
+
+
+###  http://trifle#RAM
+
+:RAM rdf:type owl:DatatypeProperty ;
+     
+     rdfs:domain :Machine ;
+     
+     rdfs:range xsd:string .
+
+
+
+###  http://trifle#SecurityInput
+
+:SecurityInput rdf:type owl:DatatypeProperty ;
+               
+               rdfs:domain :File ;
+               
+               rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#ServiceCriticality
+
+:ServiceCriticality rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:domain :Service .
+
+
+
+###  http://trifle#ServicePort
+
+:ServicePort rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Service .
+
+
+
+###  http://trifle#ServiceType
+
+:ServiceType rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Service .
+
+
+
+###  http://trifle#Sexe
+
+:Sexe rdf:type owl:DatatypeProperty ;
+      
+      rdfs:domain :Person ;
+      
+      rdfs:range xsd:string .
+
+
+
+###  http://trifle#ShellAccount
+
+:ShellAccount rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Person ;
+              
+              rdfs:range xsd:string .
+
+
+
+###  http://trifle#Size
+
+:Size rdf:type owl:DatatypeProperty ;
+      
+      rdfs:domain :File ,
+                  :Storage ;
+      
+      rdfs:range xsd:double .
+
+
+
+###  http://trifle#Status
+
+:Status rdf:type owl:DatatypeProperty ;
+        
+        rdfs:domain :Machine ,
+                    :Service ;
+        
+        rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#Suffix
+
+:Suffix rdf:type owl:DatatypeProperty ;
+        
+        rdfs:domain :File ;
+        
+        rdfs:range xsd:string .
+
+
+
+###  http://trifle#TrustKeyFrom
+
+:TrustKeyFrom rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Machine ;
+              
+              rdfs:range xsd:string .
+
+
+
+###  http://trifle#Type
+
+:Type rdf:type owl:DatatypeProperty ;
+      
+      rdfs:domain :OperatingSystem ,
+                  :Package ,
+                  :Promise ;
+      
+      rdfs:range xsd:string .
+
+
+
+###  http://trifle#UseShell
+
+:UseShell rdf:type owl:DatatypeProperty ;
+          
+          rdfs:domain :Command ;
+          
+          rdfs:range xsd:boolean .
+
+
+
+###  http://trifle#Version
+
+:Version rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :IPAddress ,
+                     :OperatingSystem ,
+                     :Package ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://trifle#WebPage
+
+:WebPage rdf:type owl:DatatypeProperty ;
+         
+         rdfs:domain :Package ,
+                     :Person ;
+         
+         rdfs:range xsd:anyURI .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://trifle#Client
+
+:Client rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Machine ;
+        
+        owl:disjointWith :Server .
+
+
+
+###  http://trifle#Command
+
+:Command rdf:type owl:Class ;
+         
+         rdfs:comment "A Command is a utility that can be used by users to start a specific process if there is no schedule set for the same purpose. A very good example that can illustrate the relation ship among those topic types is that of a web service that needs a process such as ”httpd” running on the background which is started by a command:”httpd start”." .
+
+
+
+###  http://trifle#Computer
+
+:Computer rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Machine ;
+          
+          rdfs:comment "Computers are the main types of machines for this thesis work. That is why the two terminologies are interchangeably used in different parts of this literature. Personal computers, laptops, server computers all belong to this topic type. A computer runs one or more operating systems. " .
+
+
+
+###  http://trifle#ConfigurationFile
+
+:ConfigurationFile rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :File .
+
+
+
+###  http://trifle#Desktop
+
+:Desktop rdf:type owl:Class ;
+         
+         rdfs:subClassOf :Computer ;
+         
+         owl:disjointWith :Laptop .
+
+
+
+###  http://trifle#File
+
+:File rdf:type owl:Class ;
+      
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :editedBy ;
+                        owl:someValuesFrom :Package
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :usedBy ;
+                        owl:someValuesFrom :Package
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :usedBy ;
+                        owl:someValuesFrom :Person
+                      ] .
+
+
+
+###  http://trifle#GeographicCoordinates
+
+:GeographicCoordinates rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :PhysicalLocation ;
+                       
+                       owl:disjointWith :MACAddress .
+
+
+
+###  http://trifle#IPAddress
+
+:IPAddress rdf:type owl:Class ;
+           
+           rdfs:subClassOf :LogicalLocation ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :locates ;
+                             owl:onClass :Interface ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                           ] ;
+           
+           owl:disjointWith :Path .
+
+
+
+###  http://trifle#IPv4Address
+
+:IPv4Address rdf:type owl:Class ;
+             
+             rdfs:subClassOf [ rdf:type owl:Class ;
+                               owl:intersectionOf ( :IPAddress
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :Version ;
+                                                      owl:hasValue "4"
+                                                    ]
+                                                  )
+                             ] ;
+             
+             owl:disjointWith :IPv6Address .
+
+
+
+###  http://trifle#IPv6Address
+
+:IPv6Address rdf:type owl:Class ;
+             
+             rdfs:subClassOf :IPAddress ,
+                             [ rdf:type owl:Class ;
+                               owl:intersectionOf ( :IPAddress
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :Version ;
+                                                      owl:hasValue "6"
+                                                    ]
+                                                  )
+                             ] .
+
+
+
+###  http://trifle#Interface
+
+:Interface rdf:type owl:Class ;
+           
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :promisedBy ;
+                             owl:someValuesFrom :Promise
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :componentOf ;
+                             owl:someValuesFrom :Machine
+                           ] ;
+           
+           rdfs:comment "Interface is defined as a device used to provide network access to a computer." .
+
+
+
+###  http://trifle#Laptop
+
+:Laptop rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Computer .
+
+
+
+###  http://trifle#Location
+
+:Location rdf:type owl:Class .
+
+
+
+###  http://trifle#LogFile
+
+:LogFile rdf:type owl:Class ;
+         
+         rdfs:subClassOf :File .
+
+
+
+###  http://trifle#LogicalLocation
+
+:LogicalLocation rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf :Location ;
+                 
+                 owl:disjointWith :PhysicalLocation .
+
+
+
+###  http://trifle#LogicalPartition
+
+:LogicalPartition rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Storage ;
+                  
+                  owl:disjointWith :PhysicalPartition .
+
+
+
+###  http://trifle#MACAddress
+
+:MACAddress rdf:type owl:Class ;
+            
+            rdfs:subClassOf :PhysicalLocation ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :locates ;
+                              owl:onClass :Interface ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                            ] .
+
+
+
+###  http://trifle#Machine
+
+:Machine rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :runs ;
+                           owl:someValuesFrom :OperatingSystem
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :composedOf ;
+                           owl:someValuesFrom :Storage
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :usedBy ;
+                           owl:someValuesFrom :Person
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :promisedBy ;
+                           owl:someValuesFrom :Promise
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :composedOf ;
+                           owl:someValuesFrom :Interface
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :runs ;
+                           owl:someValuesFrom :Process
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :runs ;
+                           owl:someValuesFrom :Command
+                         ] ;
+         
+         rdfs:comment "Machine is any device that can accept and process information to provide a desired result based on a program or sequence of instructions on how the data is to be processed." .
+
+
+
+###  http://trifle#Man
+
+:Man rdf:type owl:Class ;
+     
+     owl:equivalentClass [ rdf:type owl:Class ;
+                           owl:intersectionOf ( :Person
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :Sexe ;
+                                                  owl:hasValue "male"
+                                                ]
+                                              )
+                         ] ;
+     
+     rdfs:subClassOf :Person ;
+     
+     owl:disjointWith :Women .
+
+
+
+###  http://trifle#OperatingSystem
+
+:OperatingSystem rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :runsOn ;
+                                   owl:someValuesFrom :Machine
+                                 ] ;
+                 
+                 rdfs:comment "Operating System is a program that bridges the gap between the package and the underlying hardware components of a computer. Operating system as a topic type consists of different operating systems as topics including Windows XP, OS X, and Linux." .
+
+
+
+###  http://trifle#PIDFile
+
+:PIDFile rdf:type owl:Class ;
+         
+         rdfs:subClassOf :File .
+
+
+
+###  http://trifle#Package
+
+:Package rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :runsOn ;
+                           owl:someValuesFrom :Machine
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :installedBy ;
+                           owl:someValuesFrom :Package
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :managedBy ;
+                           owl:someValuesFrom :Machine
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :configuredBy ;
+                           owl:someValuesFrom :Machine
+                         ] ;
+         
+         rdfs:comment "Packages on the other hand are application programs designed to serve specific purpose. It could be to give a network service or web service on a machine. The package named Apache is a good example topic of type package which is designed to enable a web service." .
+
+
+
+###  http://trifle#Path
+
+:Path rdf:type owl:Class ;
+      
+      rdfs:subClassOf :LogicalLocation ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :locates ;
+                        owl:onClass :File ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                      ] .
+
+
+
+###  http://trifle#Person
+
+:Person rdf:type owl:Class ;
+        
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :uses ;
+                          owl:someValuesFrom :Machine
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :uses ;
+                          owl:someValuesFrom :Process
+                        ] .
+
+
+
+###  http://trifle#Phone
+
+:Phone rdf:type owl:Class ;
+       
+       rdfs:subClassOf :Machine .
+
+
+
+###  http://trifle#PhysicalLocation
+
+:PhysicalLocation rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf :Location .
+
+
+
+###  http://trifle#PhysicalMachine
+
+:PhysicalMachine rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :Machine
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :IsVirtualized ;
+                                                              owl:hasValue "false"^^xsd:boolean
+                                                            ]
+                                                          )
+                                     ] ;
+                 
+                 rdfs:subClassOf :Machine ;
+                 
+                 owl:disjointWith :VirtualMachine .
+
+
+
+###  http://trifle#PhysicalPartition
+
+:PhysicalPartition rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :Storage .
+
+
+
+###  http://trifle#Process
+
+:Process rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :componentOf ;
+                           owl:onClass :Package ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                         ] .
+
+
+
+###  http://trifle#Promise
+
+:Promise rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :promisedBy ;
+                           owl:someValuesFrom :Package
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :promisedBy ;
+                           owl:someValuesFrom :Person
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :promisedBy ;
+                           owl:someValuesFrom :File
+                         ] .
+
+
+
+###  http://trifle#Server
+
+:Server rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Machine .
+
+
+
+###  http://trifle#Service
+
+:Service rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :requiredBy ;
+                           owl:allValuesFrom :Package
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :providedBy ;
+                           owl:someValuesFrom :Machine
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :usedBy ;
+                           owl:someValuesFrom :Person
+                         ] ;
+         
+         rdfs:comment "Service is a specific functionality of a computer system such as a web service or network service provided by a machine. A process which is defined in this literature as a package or part of a package on action enables the provisioning of services by performing real activities behind the scene." .
+
+
+
+###  http://trifle#Storage
+
+:Storage rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :contains ;
+                           owl:someValuesFrom :File
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :componentOf ;
+                           owl:someValuesFrom :Machine
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :promisedBy ;
+                           owl:someValuesFrom :Promise
+                         ] ;
+         
+         rdfs:comment "Storage is a logical partition of a physical storage media that mainly serves as a location for the different kinds of files. Defined as a file as a complete named collection of information such as a program, set of data used by a program or a user created document." .
+
+
+
+###  http://trifle#Tablet
+
+:Tablet rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Machine .
+
+
+
+###  http://trifle#VirtualMachine
+
+:VirtualMachine rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:intersectionOf ( :Machine
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :IsVirtualized ;
+                                                             owl:hasValue "true"^^xsd:boolean
+                                                           ]
+                                                         )
+                                    ] ;
+                
+                rdfs:subClassOf :Machine .
+
+
+
+###  http://trifle#Women
+
+:Women rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ( :Person
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :Sexe ;
+                                                    owl:hasValue "female"
+                                                  ]
+                                                )
+                           ] ;
+       
+       rdfs:subClassOf :Person .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://trifle#Apache001
+
+:Apache001 rdf:type :Service ,
+                    owl:NamedIndividual ;
+           
+           :ServicePort "80" ;
+           
+           :providedBy :LocalMachine .
+
+
+
+###  http://trifle#LocalMachine
+
+:LocalMachine rdf:type :Desktop ,
+                       :Server ,
+                       owl:NamedIndividual ;
+              
+              :IsVirtualized "false"^^xsd:boolean ;
+              
+              :Location "192.168.1.4" ;
+              
+              :ForceIPv4 "192.168.1.4" .
+
+
+
+###  http://trifle#Romeo
+
+:Romeo rdf:type :Person ,
+                owl:NamedIndividual ;
+       
+       :FirstName "Romeo" ;
+       
+       :Sexe "male" ;
+       
+       :lastName "Capulet" .
+
+
+
+###  http://trifle#Service3
+
+:Service3 rdf:type :Service ,
+                   owl:NamedIndividual ;
+          
+          :ServicePort 654 ;
+          
+          :startedBy :Apache001 ;
+          
+          :runsOn :LocalMachine .
+
+
+
+###  http://trifle#eth0
+
+:eth0 rdf:type :Interface ,
+               owl:NamedIndividual ;
+      
+      :componentOf :LocalMachine .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Computer
+                :Phone
+                :Tablet
+              )
+] .
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ConfigurationFile
+                :LogFile
+                :PIDFile
+              )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

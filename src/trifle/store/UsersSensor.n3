@@ -1,0 +1,27 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix imdb: <http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rev: <http://purl.org/stuff/rev#> .
+@prefix t: <http://trifle/#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+</users/ghis> a t:User ;
+    t:Host "",
+        ":0" ;
+    t:Name "ghis" ;
+    t:Started 1.406505e+09,
+        1.406531e+09,
+        1.406538e+09,
+        1.40655e+09,
+        1.406551e+09,
+        1.406556e+09 ;
+    t:Terminal "pts/2",
+        "pts/3",
+        "pts/5",
+        "pts/6",
+        "pts/7",
+        "tty7" .
+

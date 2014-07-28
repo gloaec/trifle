@@ -34,8 +34,8 @@ class Snapshot(Command):
 
         """
 
-	InterfacesSensor()._pull()
-	ProcessesSensor()._pull()
-	UsersSensor()._pull()
+	InterfacesSensor().snapshot()
+	ProcessesSensor().snapshot()
+	UsersSensor().snapshot()
 
 

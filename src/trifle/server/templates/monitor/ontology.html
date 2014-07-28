@@ -9,7 +9,7 @@
                 <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                 <li><a href="#"><i class="fa fa-bar-chart-o"></i> Monitor</a></li>
                 <li class="active"><i class="fa fa-code-fork"></i> Ontology</li>
-                <li class="text-info pull-right"><strong>Last Snapshot:</strong> 15s ago</li>
+		<li class="text-info pull-right"><strong>Statements:</strong> {{ store_count }}</li>
             </ol>
         </div>
     </div>
@@ -25,10 +25,26 @@
                         <div class="col-lg-12">
                             <form role="form" method="POST" action="/monitor/ontology">
                                 <div class="form-group">
-                                    <label>SPARQL Query</label>
-                                    <textarea class="form-control sparql-query" name="query" id="query" rows="3" placeholder="SELECT ?subject ?object WHERE { ?subject rdfs:subClassOf ?object }">{{ request.form.get('query','') }}</textarea>
+                                    <select name="basequery" class="form-control">
+                                        {% for label, query in queries.items() %}
+                                            <option value="{{ query }}">{{ label }}</option>
+                                        {% endfor %}
+                                    </select>
                                 </div>
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Query</button>
+                                <div class="form-group">
+                                    <label>SPARQL Query</label>
+                                    <textarea class="form-control sparql-query" name="query" id="query" rows="10" placeholder="SELECT ?subject ?object WHERE { ?subject rdfs:subClassOf ?object }">{{ request.form.get('query','') }}</textarea>
+                                </div>
+                                <div class="btn-group pull-right">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-info active">
+                                            <input name="snapshot" type="checkbox" checked>
+                                            <i class="fa fa-camera"></i> 
+                                            Snapshot
+                                         </label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Query</button>
+                                </div>
                                 <button type="reset" class="btn btn-default"><i class="fa fa-eraser"></i> Reset</button>
                             </form>
                         </div>
@@ -82,4 +98,16 @@
         <!-- /.col-lg-6 -->
     </div>
     <!-- /.row -->
+{% endblock %}
+
+{% block javascript %}
+
+<script type="text/javascript">
+  $(function($){
+    $('select[name=basequery]').change(function(){
+      $('textarea[name=query]').val($(this).val());
+    });
+  });
+</script>
+
 {% endblock %}

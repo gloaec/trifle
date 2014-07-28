@@ -4,57 +4,56 @@ import os
 import sys
 import re
 import time
-from rdflib import BNode, ConjunctiveGraph, plugin, \
-                   URIRef, Literal, Namespace, RDF
+from rdflib import BNode, ConjunctiveGraph, plugin, URIRef, Literal, Namespace
 from rdflib.parser import Parser
 from rdflib.serializer import Serializer
 
-from trifle.sensors import getHostname, getServices
-from trifle.stores import Services
-#from trifle import config
-
-config = {
-    'STORE_FILE': '/home/ghis/Workspace/trifle/src/config.n3',
-    'STORE_URI'  : 'file:///home/ghis/Workspace/trifle/src/config.n3',
-    'NAMESPACES' : {
-        'dc'  : 'http://purl.org/dc/elements/1.1/',
-        'foaf': 'http://xmlns.com/foaf/0.1/',
-        'imdb': 'http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#',
-        'rev' : 'http://purl.org/stuff/rev#'
-    }
-}
+from trifle.namespaces import *
+from trifle.sensors import *
+from trifle import config
 
 r_who = re.compile('^(.*?) <([a-z0-9_-]+(\.[a-z0-9_-]+)*@[a-z0-9_-]+(\.[a-z0-9_-]+)+)>$')
 
-DC   = Namespace('http://purl.org/dc/elements/1.1/')
-FOAF = Namespace('http://xmlns.com/foaf/0.1/')
-IMDB = Namespace('http://www.csd.abdn.ac.uk/~ggrimnes/dev/imdb/IMDB#')
-REV  = Namespace('http://purl.org/stuff/rev#')
-
 plugin.register("rdfjson", Parser,
-   "rdflib.plugins.parsers.rdfjson", "JsonParser")
+    "rdflib.plugins.parsers.rdfjson", "JsonParser")
 plugin.register("rdfjson", Serializer,
     "rdflib.plugins.serializers.rdfjson", "JsonSerializer")
 
 class Store:
 
     def __init__(self, 
-            storefile=config['STORE_FILE'],
-            storeuri=config['STORE_URI'], 
-            format='n3', namespaces={}):
+            storefile  = config['STORE_FILE'],
+            storeuri   = config['STORE_URI'], 
+            structfile = config['STRUCT_FILE'],
+            structuri  = config['STRUCT_URI'],
+            namespaces = config['NAMESPACES'],
+            sensors    = config['SENSORS'],
+            format     = config['FORMAT']):
 
-        self.namespaces = config['NAMESPACES']
-        self.graph      = ConjunctiveGraph()
         self.storeuri   = storeuri
         self.storefile  = storefile
+        self.structuri  = structuri
+        self.structfile = structfile
+        self.namespaces = namespaces
+        self.sensors    = sensors
         self.format     = format
 
         for namespace, uri in namespaces.iteritems():
             self.namespaces[namespace] = uri
-        if os.path.exists(storefile):
-            self.graph.load(storeuri, format=format)
+
+        self.reset()
+
+    def reset(self, new_graph=None):
+        if new_graph is not None:
+            self.graph = new_graph	
+        else:
+            self.graph = ConjunctiveGraph()
         for namespace, uri in self.namespaces.iteritems():
             self.graph.bind(namespace, uri)
+        if os.path.exists(self.structfile):
+            self.graph.load(self.structuri, format=format)
+        if os.path.exists(self.storefile):
+            self.graph.load(self.storeuri, format=format)
 
     def save(self, format=None):
         if not format: format = self.format
@@ -62,6 +61,22 @@ class Store:
 
     def get(self, something): 
         pass
+
+    def snapshot(self):
+        self.reset()
+        for sensor in self.sensors:
+            constructor = globals()[sensor]
+            instance = constructor()
+            instance.snapshot()
+            self.graph = self.graph + instance.graph
+
+    @property
+    def queries(self):
+        q = self.basequeries
+        for sensor in self.sensors:
+            constructor = globals()[sensor]
+            q = dict(q, **constructor.queries)
+        return q
 
     @property
     def local(self):
@@ -91,10 +106,6 @@ class Store:
         else:
             return self.graph.objects(URIRef(storeuri+'#author'), FOAF['name'])
 
-    @property
-    def services(self): 
-        return Services()
-
     def new_movie(self, movie):
         movieuri = URIRef('http://www.imdb.com/title/tt%s/' % movie.movieID)
         self.graph.add((movieuri, RDF.type, IMDB['Movie']))
@@ -119,6 +130,13 @@ class Store:
 
     def movie_is_in(self, uri):
         return (URIRef(uri), RDF.type, IMDB['Movie']) in self.graph
+
+    basequeries = {
+        "Trifle Entities": """
+            SELECT ?Subject ?Object 
+            WHERE { ?Subject rdfs:subClassOf ?Object }
+        """
+    }
 
 def help():
     print __doc__.split('--')[1]

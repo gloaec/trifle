@@ -2,7 +2,9 @@
 import subprocess
 import re
 
-VERBOSE = False
+from trifle.sensors.interfaces import InterfacesSensor
+from trifle.sensors.processes import ProcessesSensor
+from trifle.sensors.users import UsersSensor
 
 def getHostname():
     cmd = 'hostname 2>&1'
