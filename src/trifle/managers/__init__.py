@@ -7,20 +7,21 @@ import argparse
 
 from flask import Flask
 
-from trifle.exceptions        import InvalidCommand
-from trifle.store             import Store
-from trifle.utils.cli         import prompt, prompt_pass, prompt_bool, prompt_choices
-from trifle.utils.compat      import text_type, iteritems, imap, izip
-from trifle.managers.parser   import ArgumentParser
-from trifle.managers.command  import Command
-from trifle.managers.shell    import Shell
-from trifle.managers.snapshot import Snapshot
-from trifle.managers.option   import Option
-from trifle.managers.server   import Server
-from trifle.managers.group    import Group
+from trifle.exceptions           import InvalidCommand
+from trifle.store                import Store
+from trifle.utils.cli            import prompt, prompt_pass, prompt_bool, prompt_choices
+from trifle.utils.compat         import text_type, iteritems, imap, izip
+from trifle.managers.parser      import ArgumentParser
+from trifle.managers.command     import Command
+from trifle.managers.shell       import Shell
+from trifle.managers.snapshot    import Snapshot
+from trifle.managers.option      import Option
+from trifle.managers.server      import Server
+from trifle.managers.raft_server import RaftServer
+from trifle.managers.group       import Group
 
 __all__ = ["Command", "Shell", "Server", "Manager", "Group", "Option",
-           "Snapshot",
+           "Snapshot", "RaftServer",
            "prompt", "prompt_pass", "prompt_bool", "prompt_choices"]
 
 safe_actions = (argparse._StoreAction,
@@ -99,6 +100,7 @@ class Manager(object):
 
         self.add_command("shell", Shell())
         self.add_command("server", Server())
+        self.add_command("raftserver", RaftServer())
         self.add_command("snapshot", Snapshot())
 
     def add_option(self, *args, **kwargs):

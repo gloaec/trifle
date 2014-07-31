@@ -51,9 +51,9 @@ class Store:
         for namespace, uri in self.namespaces.iteritems():
             self.graph.bind(namespace, uri)
         if os.path.exists(self.structfile):
-            self.graph.load(self.structuri, format=format)
+            self.graph.load(self.structuri, format=self.format)
         if os.path.exists(self.storefile):
-            self.graph.load(self.storeuri, format=format)
+            self.graph.load(self.storeuri, format=self.format)
 
     def save(self, format=None):
         if not format: format = self.format

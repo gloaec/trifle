@@ -6,6 +6,7 @@ root_dir = dirname(realpath(__file__))
 
 config = {
     'ROOT_DIR'   : root_dir,
+    'TMP_DIR'    : '/tmp/trifle',
     'STORE_DIR'  : join(root_dir, 'store'),
     'STORE_FILE' : join(root_dir, 'store.n3'),
     'STRUCT_FILE': join(root_dir, 'structure.n3'),
