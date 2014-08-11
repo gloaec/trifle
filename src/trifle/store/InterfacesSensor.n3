@@ -10,8 +10,8 @@
 
 <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0/addresses/IPv4Address/0> a t:IPAddress,
         t:IPv4Address ;
-    t:Address "192.168.10.106" ;
-    t:Broadcast "192.168.10.255" ;
+    t:Address "192.168.110.133" ;
+    t:Broadcast "192.168.110.255" ;
     t:NetMask "255.255.255.0" ;
     t:Type "IPv4" ;
     t:Version "4" ;
