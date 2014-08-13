@@ -95,6 +95,8 @@ class Store:
         name = getHostname()
         location = ""
 
+
+
     def who(self, who=None):
         if who is not None:
             name, email = (r_who.match(who).group(1), r_who.match(who).group(2))

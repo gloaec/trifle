@@ -1,4 +1,4 @@
-\chapter{Problématiques émergentes et orientations de recherche}
+\chapter{Problématiques émergentes \newline et orientations de recherche}
 
 Dans ce mémoire, nous avons décrit diverses modèles et principes de conception
 d'un système sensible au contexte et présenté une multitude d'intergiciels et
@@ -9,7 +9,7 @@ auxquelles nous tenterons d'apporter une solution.
 
 \section{Intergiciel et détails d'implémentation}
 
-Le besoin d'un nouvel intergiciel se fait sentir du coté de l'implémentation.
+Le besoin d'un nouvel intergiciel se fait ressentir du coté de l'implémentation.
 Les technologies intergicielles actuelles ne sont pas adaptées pour le prise en
 considération des restrictions imposées pas la mobilité et les systèmes
 environnementaux intelligents : connexions volatiles, traitements et restrictions
@@ -63,7 +63,7 @@ information dynamique.
 \begin{itemize}
   \item ServiceProfile (partie ''Quoi'')
   \item ServiceModel (partie ''Comment abstrait'')
-  \item ServiceGrounding (partie ''Comment concrèt'')
+  \item ServiceGrounding (partie ''Comment concret'')
 \end{itemize}
 
 Tout comme pour la standardisation de la gestion intelligente de la
@@ -79,7 +79,7 @@ lui-même composé de plusieurs processus atomiques. Quand le gestionnaire invoq
 un service de gestion de configuration prédéfini en OWL-S, le service sera alors
 exécuté pour le dispositif réseau en place.
 
-\section{Règles sémantiques}
+\section{Règles sémantiques et politiques de comportement}
 
 Un autre domaine de recherche concernerait l'utilisation de règles pour exprimer
 les comportements souhaités en termes d'éléments de haut niveau. Des langages
@@ -101,8 +101,6 @@ les évènements aléatoires se produisant susceptibles de corrompre la politiqu
 en place dans la boucle de gestion du système. Il existe un élément probabiliste
 ou stochastique pour le comportement du système et, par conséquent, la politique
 ne peut être qu'une propriété moyenne en général.
-
-\section{Agents autonomes: lois de comportement}
 
 \subsection{Théorie de la promesse}
 
@@ -181,11 +179,12 @@ n'implique pas une action provoquant un changement discontinu.
 \end{figure}
 
 Les promesses sont faites à un agent par un agent et sont modélisées par une
-relation directionnelle labellisée par un \underline{corps} de promesse qui définit la
-substance de la promesse. Une promesse avec le \underline{corps} \textbf{+b} est 
-une déclaration pour ''donner'' un comportement d'un agent à un autre, tandis
-qu'une promesse avec le \underline{corps} \textbf{-b} est la spécification de
-quel comportement sera reçu, accepté ou utilisé d'un agent à l'autre.
+relation unidirectionnelle labellisée par un \emph{corps} de promesse qui
+définit la substance de la promesse. Une promesse avec le \emph{corps}
+\textbf{+b} est une déclaration pour ''donner'' un comportement d'un agent à un
+autre, tandis qu'une promesse avec le \emph{corps} \textbf{-b} est la
+spécification de quel comportement sera reçu, accepté ou utilisé d'un agent à
+l'autre.
 
 \subsubsection{CfEngine3: une implémentation de référence de la théorie de la
 promesse}
@@ -213,7 +212,7 @@ La théorie de la promesse décrit des services régies par des politiques, dans
 framework d'agents complètement autonomes, qui s'aident les uns les autres
 seulement par une coopération volontaire. Dans CfEngine3, chaque élément de
 configuration va faire une promesse concernant ses caractéristiques propres et
-sa relation avec d'autre éléments de configuration.
+sa relation avec d'autres éléments de configuration.
 
 Nous souhaitons être en mesure de promettre que le système est cohérent, de le
 vérifier et d'effectuer des changements seulement si nos promesses ne sont pas
@@ -299,35 +298,103 @@ en plusieurs sous-étapes, accrochez-vous:
 
 \subsubsection{$\pi$-calculus}
 
-TODO or NOT TODO, that is the question.
+TODO or NOT TODO, that is the question
+
+\section{Consistance de l'information et tolérance à l'échec}
 
 \subsection{Algorithme de consensus de Raft}
 
-Raft est un algorithme de consensus qui est conçu pour être facile à comprendre.
-Il est équivalent à Paxos dans la tolérance aux pannes et en termes de
-performance. La différence, c'est qu'il est décomposé en sous-problèmes
-relativement disjoints, et il traite de manière rigoureuse toutes les pièces
-majeures nécessaires pour obtenir un système cohérent.
-
 Le consensus est un problème fondamental dans les systèmes distribués tolérants
-aux pannes. Consensus implique de multiples serveurs acceptant des valeurs. Une
-fois qu'ils atteignent une décision sur une valeur, cette décision est
+aux pannes. Un consensus implique de multiples serveurs acceptant des valeurs.
+Une fois qu'ils atteignent une décision sur une valeur, cette décision est
 définitive. Les algorithmes de consensus typiques sont amenés à faire des
 progrès lorsque la majorité de leurs serveurs sont disponibles, par exemple, un
 cluster de 5 serveurs peut continuer à fonctionner même si deux serveurs ne sont
 plus disponibles. Si plusieurs serveurs échouent, ils cessent de faire des
-progrès (mais ils ne retournerons jamais de valeurs erronées)
+progrès (mais ils ne retournerons jamais de valeurs erronées).
 
-\section{Vue d'ensemble}
+Raft est un algorithme de consensus qui est conçu pour être facile à comprendre.
+Il est équivalent à Paxos dans la tolérance aux pannes et en termes de
+performance. La différence est qu'il est décomposé en sous-problèmes
+relativement disjoints, et traite de manière rigoureuse toutes les pièces
+majeures nécessaires pour obtenir un système cohérent.
 
-Comme on le voit \ref{archi}
+\subsubsection{Architecture de machines à états répliquées}
 
-\begin{figure}[ht!]
-  \centering
-  \includegraphics[width=90mm]{img/archi}
-  \caption{Schéma d'implémentation du système multi-agents}
-  \label{archi}
-\end{figure}
+\begin{wrapfigure}{r}{.5\textwidth}
+    \centerline{\includegraphics[width=.47\textwidth]{img/replicated_state_machine}}
+    \caption{Procédé de réplication des machines à états}
+    \label{replicated_state_machine}
+\end{wrapfigure}
+
+L'algorithme de consensus gère un registre répliqué contenant les commandes de
+la machine à états de chacun des clients dans le réseau. Les machines à états
+traitent des séquences identiques de commandes à partir de journaux partagés, de
+sorte qu'ils produisent les mêmes résultats.
+
+Les systèmes à grande échelle n'ayant qu'un seul cluster leader utilisent une
+machine à état distincte pour gérer les élections et pour stocker les
+informations de configuration qui doivent survivre aux crashs du leader
+(exemple: Chubby, ZooKeeper).
+
+\begin{verse}
+    \underline{
+        Garder le registre répliqué consistant est le travail de l'algorithme de
+        consensus.
+    }
+\end{verse}
+
+Les algorithmes de consensus pour les systèmes concrets ont généralement les
+caractéristiques suivantes :
+
+\begin{itemize}
+    \item Ils assurent la sécurité (ne retournent jamais de résultat erroné)
+        sous toutes conditions non byzantines, y compris les retards dans le
+        réseau, les pertes de partitions et de paquets, la duplication et
+        la réorganisation.
+    \item Ils sont entièrement fonctionnels (disponibles) dans la mesure où au
+        moins la majorité des serveurs sont opérationnels et peuvent communiquer
+        avec les uns les autres et avec les clients. Ainsi, un groupe type de
+        cinq serveurs peut tolérer la défaillance de deux ses membres. Les
+        serveurs sont supposés tomber en panne en s'arrêtant ; ils pourront plus
+        tard retrouver un état stable et rejoindre le cluster.
+    \item Il ne dépendent pas de la contrainte temporelle pour assurer la
+        cohérence des journaux : des horloges défectueuses et des retards
+        abusifs dans la délivrance des messages peuvent causer des problèmes de
+        disponibilité. 
+    \item Dans le cas le plus courant, une commande peut s'achever aussitôt que
+        la majorité de la grappe a répondu à un seul tour d'appels à procédures
+        distantes ; une minorité de serveurs lents de doivent pas impacter les
+        performances globales du système.
+\end{itemize}
+
+\subsubsection{États des serveurs}
+
+Un cluster Raft comprend une multitude des serveurs (cinq est un nombre courant
+permettant au système de tolérer deux échecs). À n'importe quel moment donné,
+chacun des serveur est dans l'un de ces états :
+
+\begin{wrapfigure}{r}{.5\textwidth}
+    \centerline{\includegraphics[width=.47\textwidth]{img/raft_server_states}}
+    \caption{États et transitions dans un cluster Raft}
+    \label{raft_server_states}
+\end{wrapfigure}
+
+\begin{itemize}
+    \item \textbf{Leader} :
+        En cycle normal, il existe un et un seul \emph{leader} et tous les autres
+        serveurs sont \emph{followers}. Le \emph{leader} traite les requêtes de
+        tous les clients (si un client contact un \emph{follower}, le
+        \emph{follower} le redirige vers le \emph{leader}).
+    \item \textbf{Follower} :
+        Les \emph{followers} sont passifs : ils n'émettent jamais de messages par
+        leur propre initiative, ils se contentent simplement de répondre aux
+        requêtes émises par le \emph{leader} et les \emph{candidats}.
+    \item \textbf{Candidat} :
+        Statut intermédiaire utilisé lors de l'élection d'un nouveau
+        \emph{leader}. La figure \ref{raft_server_states} montre les différents états
+        et transitions possibles dans le consensus de Raft.
+\end{itemize}
 
 % ex: set spelllang=fr spell: %
 %%% Local Variables: ***
