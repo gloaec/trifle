@@ -1,6 +1,6 @@
 \chapter{Problématiques émergentes \newline et orientations de recherche}
 
-Dans ce mémoire, nous avons décrit diverses modèles et principes de conception
+Dans ce mémoire, nous avons décrit divers modèles et principes de conception
 d'un système sensible au contexte et présenté une multitude d'intergiciels et
 d'approches distribuées pour simplifier la configuration d'applications
 sensibles au contexte. De cet état de l'art se dégagent plusieurs problématiques
@@ -296,13 +296,64 @@ en plusieurs sous-étapes, accrochez-vous:
     autres agents (parce que même les agents ont des casiers judiciaires).
 \end{itemize}
 
-\subsubsection{$\pi$-calculus}
+\subsubsection{Représentation de la promesse: $\pi$-calculus}
 
-TODO or NOT TODO, that is the question
+% TODO Notations pour les 2 types de promesse
+
+\begin{table}[H]
+    \begin{tabularx}{\linewidth}{
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}X
+        >{\raggedright\arraybackslash}X
+    }
+        \hline
+        \textbf{Type de promesse} & 
+        \textbf{Notation} & 
+        \textbf{Interprétation} \\
+        \hline
+
+        Basique &
+        $n_1 \xrightarrow{\pi} n_2$ &
+        Fournit un service / un flux \\
+
+        Coopérative &
+        $n_1 \xrightarrow{C(\pi)} n_2$ &
+        Imite / Suit \\
+
+        Utilisatrice &
+        $n_1 \xrightarrow{U(\pi)} n_2$ &
+        Utilise / Accepte de la part de\\
+
+        Conditionnelle &
+        $n_1 \xrightarrow{\pi_1/\pi_2} n_2$ &
+        ``File`` de promesses: $\pi_1$ if $\pi_2$\\
+    \end{tabularx}
+\end{table}
+   
+Les promesses de services basiques forment un certain nombre de types, comme par
+exemple `fournir un web service en moins de 5 millisecondes` ou `donner
+n'importe quel information sur l'agent X`. D'autres exemples :
+
+\begin{itemize}
+    \item $X \xrightarrow{q \leq q_0} Y $: l'agent $X$ promet de ne jamais éxeder la
+        limite $q \leq q_0$.
+    \item $X \xrightarrow{q = q_0} Y $: l'agent $X$ promet de satisfaire
+        $q = q_0$.
+    \item $X \xrightarrow{\ell \subseteq  L} Y $: $X$ promet de garder $\ell$
+        comme sous-langage du langage L
+    \item $X \xrightarrow{S} Y $: $X$ offre le service $S$ à $Y$.
+    \item $X \xrightarrow{R} Y $: $X$ promet de relayer $R$ à $Y$.
+    \item $X \xrightarrow{\neg R} Y $: $X$ promet de ne jamais relayer $R$ à $Y$.
+    \item $X \xrightarrow{S,t} Y $: $X$ promet de répondre avec le service $S$
+        en l'espace de $t$ secondes.
+\end{itemize}
+
+Une promesse est dite ``rompue`` si un agent fait deux promesses différentes du
+même type en même temps (différent d'une promesse qui aurait expiré ou changé).
 
 \section{Consistance de l'information et tolérance à l'échec}
 
-\subsection{Algorithme de consensus de Raft}
+\subsection{Algorithme de consensus}
 
 Le consensus est un problème fondamental dans les systèmes distribués tolérants
 aux pannes. Un consensus implique de multiples serveurs acceptant des valeurs.
@@ -313,11 +364,64 @@ cluster de 5 serveurs peut continuer à fonctionner même si deux serveurs ne so
 plus disponibles. Si plusieurs serveurs échouent, ils cessent de faire des
 progrès (mais ils ne retournerons jamais de valeurs erronées).
 
+\subsubsection{Pourquoi Raft ?}
+
 Raft est un algorithme de consensus qui est conçu pour être facile à comprendre.
 Il est équivalent à Paxos dans la tolérance aux pannes et en termes de
 performance. La différence est qu'il est décomposé en sous-problèmes
 relativement disjoints, et traite de manière rigoureuse toutes les pièces
 majeures nécessaires pour obtenir un système cohérent.
+
+Il existe des écarts significatifs entre la description de l'algorithme de Paxos
+et les besoins d'un système dans le monde réel. Le système au final serait basé
+sur un protocole dont il n'existe pour l'heure aucune preuve de son bon
+fonctionnement. % FIXME
+
+\begin{tabular}{p{.48\textwidth}p{.48\textwidth}}
+    \noindent
+    \textbf{\textit{Inconvénients de Paxos}}
+
+    \begin{itemize}
+        \item Extrêmement difficile à comprendre. L'opacité de Paxos dérive de
+            son choix d'avoir un sous-ensemble de décrets uniques comme son
+            fondement.
+        \item Ne fourni pas une bonne base pour la construction d'applications
+            pratiques. Par exemple, il y peu d'avantages à choisir de manière
+            indépendante une collection d'entrées dans le registre, pour les
+            fusionner par la suite dans un journal séquentiel ; cela ajoute
+            juste de la complexité. Il est plus simple et plus efficace de
+            concevoir un système autour d'un journal, où les nouvelles entrées
+            sont ajoutées séquentiellement dans un ordre contraint.
+        \item Utilise une approche symétrique pair-à-pair à sa base. Cela a un
+            sens dans un monde simplifié où seule une décision sera prise, mais
+            peu de systèmes concrets utilisent cette approche.  Si une série de
+            décisions doivent être prises, il est plus simple et plus rapide
+            d'élire d'abord un leader, puis de le laisser coordonner les
+            décisions.
+    \end{itemize} 
+    
+    &
+
+    \textbf{\textit{Avantages de Raft}}
+
+    \begin{itemize}
+        \item Raft utilise une forme plus solide de leadership que les autres
+            algorithmes de consensus. Par exemple, les entrées du registre de
+            seront communiquées que par le leader vers les autres serveurs. Cela
+            simplifie largement la gestion de la réplication des journaux et
+            rend Raft beaucoup plus facile à comprendre.
+        \item Raft utilise des minuteries aléatoires pour élire les leaders.
+            Cela ajoute un peu de mécanismes au système de pulsation déjà
+            nécessaire dans n'importe quel algorithme de consensus, tandis que
+            la résolution des confits se fait simplement et rapidement.
+        \item Le mécanisme de Raft pour changer l'ensemble des serveurs de la
+            grappe utilise une nouvelle approche de consensus conjointe où les
+            majorités des deux différentes configurations se superposent pendant
+            les transitions. Cela permet au groupe de continuer à fonctionner
+            normalement pendant les changements de configuration.
+    \end{itemize}
+
+\end{tabular}
 
 \subsubsection{Architecture de machines à états répliquées}
 
@@ -395,6 +499,13 @@ chacun des serveur est dans l'un de ces états :
         \emph{leader}. La figure \ref{raft_server_states} montre les différents états
         et transitions possibles dans le consensus de Raft.
 \end{itemize}
+
+Les \emph{followers} ne font que répondre aux requêtes des autres serveurs. Si
+un \emph{follower} ne reçoit plus de communications, il devient alors
+\emph{candidat} et initie une élection. Le \emph{candidat} qui reçoit les votes
+d'un majorité du cluster complet devient le nouveau \emph{leader}. D'une manière
+générale, les \emph{leaders} opèrent jusqu'à ce qu'ils échouent.
+
 
 % ex: set spelllang=fr spell: %
 %%% Local Variables: ***
