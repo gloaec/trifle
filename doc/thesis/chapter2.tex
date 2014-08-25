@@ -102,7 +102,7 @@ en place dans la boucle de gestion du système. Il existe un élément probabili
 ou stochastique pour le comportement du système et, par conséquent, la politique
 ne peut être qu'une propriété moyenne en général.
 
-\subsection{Théorie de la promesse}
+\subsection{Modèle de définition des politiques d'administration}
 
 Le modèle permettant la définition des politiques d'administration serait un
 modèle orienté sur les ontologies et basé sur la théorie de la promesse.
@@ -125,7 +125,7 @@ l'évolutivité et la mobilité des applications. Alors que les applications son
 redessinées pour la mobilité et l'évolutivité web, cette approche traditionnelle
 empêche leur déploiement rapide et homogène.
 
-\noindent\rule{8cm}{0.4pt}
+\subsection{Théorie de la promesse}
 
 La théorie de la promesse est une théorie nouvelle sur ce qu'il peut arriver
 dans un réseau de composants entièrement autonomes.
@@ -153,38 +153,6 @@ ce qui contraint et à qui la contrainte s'applique. C'est un autre domaine qui
 soulève bien souvent des confusions dans la théorie des politiques. Néanmoins,
 le modèle ontologique permet un fois de plus de bien distinguer ces deux
 aspects grâce à son haut degré de formalisme.
-
-\subsubsection{Définition de la promesse}
-
-Une promesse est différente d'un engagement : un engagement est le moment où un
-agent rompt avec une ligne de conduite pour une autre discontinue avec des vues
-sur un objectif, la plupart du temps à travers une action spécifique ou un
-investissement sur des résultats futurs. Dans certains cas, l'acte
-d'engagement peut résulter en une promesse persistante, mais promettre
-n'implique pas une action provoquant un changement discontinu.
-
-\begin{figure}[H]
-    \centering
-    \begin{tabular}{l}
-        ``Une promesse est la spécification d'un état ou comportement \\
-        ultérieur d'un agent autonome à un autre. Elle est ainsi, \\
-        une unité de politique.`` \cite{burgess_modeling_2006} \\
-        \em \footnotesize Mark Burgess, Alva Couch, Modeling Next Generation
-        Configuration Management Tools, \\
-        \em \footnotesize Pp. 131-147 of the Proceedings of LISA '06,
-        Décembre 2006
-    \end{tabular}
-    \caption{La promesse par Burgess et al. (2006)}
-    \label{fig:quote}
-\end{figure}
-
-Les promesses sont faites à un agent par un agent et sont modélisées par une
-relation unidirectionnelle labellisée par un \emph{corps} de promesse qui
-définit la substance de la promesse. Une promesse avec le \emph{corps}
-\textbf{+b} est une déclaration pour ''donner'' un comportement d'un agent à un
-autre, tandis qu'une promesse avec le \emph{corps} \textbf{-b} est la
-spécification de quel comportement sera reçu, accepté ou utilisé d'un agent à
-l'autre.
 
 \subsubsection{CfEngine3: une implémentation de référence de la théorie de la
 promesse}
@@ -224,6 +192,140 @@ conformité avec les politiques en vigueur.
 % TODO : expliquer ITIL
 %Pour comprendre ITIL (Information Technology Infrastructure Library), il
 %faut l'imaginer comme un service fourni par CfEngine.
+
+\subsubsection{Définition de la promesse}
+
+Une promesse est différente d'un engagement : un engagement est le moment où un
+agent rompt avec une ligne de conduite pour une autre discontinue avec des vues
+sur un objectif, la plupart du temps à travers une action spécifique ou un
+investissement sur des résultats futurs. Dans certains cas, l'acte
+d'engagement peut résulter en une promesse persistante, mais promettre
+n'implique pas une action provoquant un changement discontinu.
+
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{l}
+        ``Une promesse est la spécification d'un état ou comportement \\
+        ultérieur d'un agent autonome à un autre. Elle est ainsi, \\
+        une unité de politique.`` \cite{burgess_modeling_2006} \\
+        \em \footnotesize Mark Burgess, Alva Couch, Modeling Next Generation
+        Configuration Management Tools, \\
+        \em \footnotesize Pp. 131-147 of the Proceedings of LISA '06,
+        Décembre 2006
+    \end{tabular}
+    \caption{La promesse par Burgess et al. (2006)}
+    \label{fig:quote}
+\end{figure}
+
+Les promesses sont faites à un agent par un agent et sont modélisées par une
+relation unidirectionnelle labellisée par un \emph{corps} de promesse qui
+définit la substance de la promesse. Une promesse avec le \emph{corps}
+\textbf{+b} est une déclaration pour ''donner'' un comportement d'un agent à un
+autre, tandis qu'une promesse avec le \emph{corps} \textbf{-b} est la
+spécification de quel comportement sera reçu, accepté ou utilisé d'un agent à
+l'autre.
+
+\subsubsection{Caractéristiques de la promesse}
+
+Un promesse est l'annonce d'un fait ou d'un comportement d'un prometteur à un
+promis, sous le regard d'un certain nombre de témoins (définissant le champ
+d'application de la promesse), dont le résultat n'a pas encore été évalué.
+
+On distingue deux types de promesses :
+
+\begin{itemize}
+    \item Une promesse d'accepter de se comporter comme une autre. C'est
+        essentiel pour la définition de groupes, de rôles ou de structures
+        sociales avec un consensus de comportement (cf.
+        section~\ref{sec:consensus})
+    \item Une promesse d'utiliser la promesse d'un autre. C'est crucial pour les
+        interactions client/serveur, les dépendances et les contrôles d'accès.
+\end{itemize}
+
+Un promesse présentes les caractéristiques suivantes :
+
+\begin{enumerate}
+    \item Il doit y avoir des agents pour qu'une promesse existe.
+    \item Il doit y avoir un prometteur (ou agent source).
+    \item Il doit y avoir un promis (ou agent destinataire), qui peut très bien
+        aussi être la source.
+    \item Il doit y avoir un \emph{corps} qui décrit la nature de la promesse.
+\end{enumerate}
+
+\subsubsection{Représentation et types de promesse: $\pi$-calculus}
+
+\begin{table}[H]
+    \begin{tabularx}{\textwidth}{
+            >{\centering\arraybackslash}X|
+            >{\centering\arraybackslash}X|
+            >{\centering\arraybackslash}X|
+        }
+
+        \cline{2-3}
+        & 
+        \textbf{Notation} &
+        \textbf{Interprétation} \\ 
+
+        \cline{2-3}
+        &
+        $a \xrightarrow{+b} a'$ &
+        Promesse avec le \emph{corps} $b$ \\
+
+        &
+        $a' \xrightarrow{-b} a$ &
+        Promesse d'accepter $b$ \\
+
+        &
+        $v_a(a \xrightarrow{b} a')$ &
+        La valeur de la promesse à $a$ \\
+
+        \cline{1-1}
+        \multicolumn{1}{ |X| }{\textbf{Type de promesse}} &
+        $v_{a'}(a \xrightarrow{b} a')$ &
+        La valeur de la promesse à $a'$ \\
+
+        \cline{1-3}
+        \multicolumn{1}{ |c| }{Basique} &
+        $n_1 \xrightarrow{\pi} n_2$ &
+        Fournit un service / un flux \\
+
+        \multicolumn{1}{ |c| }{Coopérative} &
+        $n_1 \xrightarrow{C(\pi)} n_2$ &
+        Imite / Suit \\
+
+        \multicolumn{1}{ |c| }{Utilisatrice} &
+        $n_1 \xrightarrow{U(\pi)} n_2$ &
+        Utilise / Accepte de la part de\\
+
+        \multicolumn{1}{ |c| }{Conditionnelle} &
+        $n_1 \xrightarrow{\pi_1/\pi_2} n_2$ &
+        ``File`` de promesses: $\pi_1$ if $\pi_2$\\
+        \cline{1-3}
+    \end{tabularx}
+    \caption{Représentation et types de promesses}
+    \label{PromiseTypes}
+\end{table}
+   
+Les promesses de services basiques forment un certain nombre de types, comme par
+exemple `fournir un web service en moins de 5 millisecondes` ou `donner
+n'importe quel information sur l'agent X`. D'autres exemples :
+
+\begin{itemize}
+    \item $X \xrightarrow{q \leq q_0} Y $: l'agent $X$ promet de ne jamais éxeder la
+        limite $q \leq q_0$.
+    \item $X \xrightarrow{q = q_0} Y $: l'agent $X$ promet de satisfaire
+        $q = q_0$.
+    \item $X \xrightarrow{\ell \subseteq  L} Y $: $X$ promet de garder $\ell$
+        comme sous-langage du langage L
+    \item $X \xrightarrow{S} Y $: $X$ offre le service $S$ à $Y$.
+    \item $X \xrightarrow{R} Y $: $X$ promet de relayer $R$ à $Y$.
+    \item $X \xrightarrow{\neg R} Y $: $X$ promet de ne jamais relayer $R$ à $Y$.
+    \item $X \xrightarrow{S,t} Y $: $X$ promet de répondre avec le service $S$
+        en l'espace de $t$ secondes.
+\end{itemize}
+
+Une promesse est dite ``rompue`` si un agent fait deux promesses différentes du
+même type en même temps (différent d'une promesse qui aurait expiré ou changé).
 
 \subsubsection{Processus de raisonnement lié à la promesse}
 
@@ -296,64 +398,65 @@ en plusieurs sous-étapes, accrochez-vous:
     autres agents (parce que même les agents ont des casiers judiciaires).
 \end{itemize}
 
-\subsubsection{Représentation de la promesse: $\pi$-calculus}
+\subsection{Gestion de configuration basée sur la théorie de la promesse}
 
-% TODO Notations pour les 2 types de promesse
+\subsubsection{Données paramètres}
 
-\begin{table}[H]
-    \begin{tabularx}{\linewidth}{
-        >{\raggedright\arraybackslash}X
-        >{\raggedright\arraybackslash}X
-        >{\raggedright\arraybackslash}X
-    }
-        \hline
-        \textbf{Type de promesse} & 
-        \textbf{Notation} & 
-        \textbf{Interprétation} \\
-        \hline
+Un système de gestion de configuration basé sur la théorie de la promesse
+accepte comme paramètres d'entrée un ensemble de politiques de configuration de
+haut niveau. Ces politiques de haut niveau seront divisées en spécifications de
+configuration de bas niveau, que nous appellerons ``promesses`` dans la
+modélisation par la théorie de la promesse. Notre ontologie permettra
+formalisation de ces promesses.
 
-        Basique &
-        $n_1 \xrightarrow{\pi} n_2$ &
-        Fournit un service / un flux \\
-
-        Coopérative &
-        $n_1 \xrightarrow{C(\pi)} n_2$ &
-        Imite / Suit \\
-
-        Utilisatrice &
-        $n_1 \xrightarrow{U(\pi)} n_2$ &
-        Utilise / Accepte de la part de\\
-
-        Conditionnelle &
-        $n_1 \xrightarrow{\pi_1/\pi_2} n_2$ &
-        ``File`` de promesses: $\pi_1$ if $\pi_2$\\
-    \end{tabularx}
-\end{table}
-   
-Les promesses de services basiques forment un certain nombre de types, comme par
-exemple `fournir un web service en moins de 5 millisecondes` ou `donner
-n'importe quel information sur l'agent X`. D'autres exemples :
+En complément des politiques de configuration, les informations suivantes
+pourront être transmises au système de gestion de configuration :
 
 \begin{itemize}
-    \item $X \xrightarrow{q \leq q_0} Y $: l'agent $X$ promet de ne jamais éxeder la
-        limite $q \leq q_0$.
-    \item $X \xrightarrow{q = q_0} Y $: l'agent $X$ promet de satisfaire
-        $q = q_0$.
-    \item $X \xrightarrow{\ell \subseteq  L} Y $: $X$ promet de garder $\ell$
-        comme sous-langage du langage L
-    \item $X \xrightarrow{S} Y $: $X$ offre le service $S$ à $Y$.
-    \item $X \xrightarrow{R} Y $: $X$ promet de relayer $R$ à $Y$.
-    \item $X \xrightarrow{\neg R} Y $: $X$ promet de ne jamais relayer $R$ à $Y$.
-    \item $X \xrightarrow{S,t} Y $: $X$ promet de répondre avec le service $S$
-        en l'espace de $t$ secondes.
+    \item Le nombre et le type de machines nécessaires
+    \item Le système d'exploitation de chacune des machines
+    \item Les paquets ayant besoin d'être installés sur chaque machine
+    \item Les services que chacun des hôtes doit fournir
+    \item Les préoccupations liées au stockage comme le type de système de
+        fichiers
+    \item Les questions de sécurité, incluant notamment les aspect de gestion
+        des utilisateurs
 \end{itemize}
 
-Une promesse est dite ``rompue`` si un agent fait deux promesses différentes du
-même type en même temps (différent d'une promesse qui aurait expiré ou changé).
+\subsubsection{Traitements}
+
+Les politiques de configuration de haut niveau servant subirons deux traitements
+majeurs :
+
+\begin{enumerate}
+    \item Spécification de la configuration de bas niveau. Ce traitement dépend
+        de l'information liée à l'architecture telle que le détail du
+        périphérique ou le type de topologie attendu par un système.
+    \item Respecter les promesses formulées par chacun des éléments de
+        configuration. Ce traitement consiste à ce que chaque élément de
+        configuration se comporte conformément à leurs promesses. Dans la
+        gestion des changements, CfEngine3 prendra des mesures correctives en
+        plus de jouer le rôle d'informer les parties concernées en cas de non
+        tenue d'une promesse.
+\end{enumerate}
+
+\subsubsection{Résultats attendus}
+
+Le résultat de ces traitements est un système conforme aux règles politiques en
+vigueur où chaque élément de configuration possèdent les clés et valeurs
+attendues.  Autrement dit, un ensemble d'ordinateurs avec les valeurs de
+configuration appropriées (les valeurs d'attribut promises).  Les éléments de
+configuration principaux sont les fichiers, les paquets, les disques, les
+processus, le services et les interfaces. 
+
+En plus de leurs propres valeurs d'attributs et manière d'agir, un ensemble de
+promesses sur le bon type de relations entre ces éléments de configuration est
+nécéssaire pour valider le résultat de ces traitements.
 
 \section{Consistance de l'information et tolérance à l'échec}
 
 \subsection{Algorithme de consensus}
+\label{sec:consensus}
 
 Le consensus est un problème fondamental dans les systèmes distribués tolérants
 aux pannes. Un consensus implique de multiples serveurs acceptant des valeurs.
@@ -505,6 +608,9 @@ un \emph{follower} ne reçoit plus de communications, il devient alors
 \emph{candidat} et initie une élection. Le \emph{candidat} qui reçoit les votes
 d'un majorité du cluster complet devient le nouveau \emph{leader}. D'une manière
 générale, les \emph{leaders} opèrent jusqu'à ce qu'ils échouent.
+
+\section{Conclusion}
+
 
 
 % ex: set spelllang=fr spell: %

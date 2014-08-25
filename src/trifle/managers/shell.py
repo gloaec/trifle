@@ -35,44 +35,46 @@ class Shell(Command):
         self.use_ipython = use_ipython
         self.use_bpython = use_bpython
 
-        #if make_context is None:
-        #   import Queue              as queue
-        #   import trifle.raft.store  as rstore
-        #   import trifle.raft.server as rserver
-        #   import trifle.raft.tcp    as rchannel
-        #   import trifle.raft.log    as rlog 
+        return
 
-        #   store = Store()
-	#   q1 = queue.Queue()                                                               
-	#   q2 = queue.Queue()                                                               
-        #   s1 = rserver.Server(q1, 6181, [])
-        #   s2 = rserver.Server(q2, 6182, [])
-        #   s1.peers = {s1.uuid: ('127.0.0.1', 6181), s2.uuid: ('127.0.0.1', 6182)}
-        #   s2.peers = {s1.uuid: ('127.0.0.1', 6181), s2.uuid: ('127.0.0.1', 6182)}
-        #   s1.start()
-        #   s2.start()
+        if make_context is None:
+            import Queue              as queue
+            import trifle.raft.store  as rstore
+            import trifle.raft.server as rserver
+            import trifle.raft.tcp    as rchannel
+            import trifle.raft.log    as rlog 
+            
+            store = Store()
+            q1 = queue.Queue()                                                               
+            q2 = queue.Queue()                                                               
+            s1 = rserver.Server(q1, 6181, [])
+            s2 = rserver.Server(q2, 6182, [])
+            s1.peers = {s1.uuid: ('127.0.0.1', 6181), s2.uuid: ('127.0.0.1', 6182)}
+            s2.peers = {s1.uuid: ('127.0.0.1', 6181), s2.uuid: ('127.0.0.1', 6182)}
+            s1.start()
+            s2.start()
+            
+            print colored('store', attrs=['bold']), \
+                    '= Store()', \
+                    colored("(%s statements)" % len(store.graph),'cyan')
+            print colored('server1', attrs=['bold']), \
+                    '= Server(queue1, %s, [])'%'6181', \
+                    colored("(uuid: %s)" % s1.uuid,'cyan')
+            print colored('server2', attrs=['bold']), \
+                    '= Server(queue2, %s, [])'%'6182', \
+                    colored("(uuid: %s)" % s2.uuid,'cyan')
+            
+            make_context = lambda: dict(
+                    server1=s1,
+                    server2=s2,
+                    rlog=rlog,
+                    queue1=q1,
+                    queue2=q2,
+                    channel=rchannel,
+                    rstore=rstore,
+                    store=store)
 
-        #   print colored('store', attrs=['bold']), \
-        #           '= Store()', \
-        #           colored("(%s statements)" % len(store.graph),'cyan')
-        #   print colored('server1', attrs=['bold']), \
-        #           '= Server(queue1, %s, [])'%'6181', \
-	#	   colored("(uuid: %s)" % s1.uuid,'cyan')
-        #   print colored('server2', attrs=['bold']), \
-        #           '= Server(queue2, %s, [])'%'6182', \
-	#	   colored("(uuid: %s)" % s2.uuid,'cyan')
-
-        #   make_context = lambda: dict(
-        #           server1=s1,
-        #           server2=s2,
-        #           rlog=rlog,
-        #           queue1=q1,
-        #           queue2=q2,
-        #           channel=rchannel,
-        #           rstore=rstore,
-        #           store=store)
-
-        #self.make_context = make_context
+        self.make_context = make_context
 
     def get_options(self):
         return (

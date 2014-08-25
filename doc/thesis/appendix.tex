@@ -14,7 +14,7 @@
 \begin{itemize}
   \item \textbf{Machine} est n'importe quel périphérique en mesure d'accepter et
 	  de traiter des informations pour fournir le résultat désiré basé sur
-	  un programme ou une séquence d'instructions sur commment les données
+	  un programme ou une séquence d'instructions sur comment les données
 	  doivent être traitées.
   \item \textbf{Computers} sont le type principal de machines dans cette étude.
 	  C'est pourquoi les deux terminologies sont interchangeables dans
@@ -26,7 +26,7 @@
 	  sous-classes disjointes telles que Windows XP, OS X ou Linux.
   \item \textbf{Packages} sont les programmes applicatifs conçus pour servir un
 	  but spécifique comme distribuer un service local, réseau ou web sur
-	  une ou plusieurs machines. Le paquet Apache est en bon example
+	  une ou plusieurs machines. Le paquet Apache est en bon exemple
 	  d'entité conçue pour activer un service web.
   \item \textbf{Service} est une fonctionnalité spécifique d'un système
 	  informatique comme un service web ou réseau offert par une machine. Un
@@ -35,9 +35,9 @@
 	  en exécutant des activités réelles en tâche de fond.
   \item \textbf{Command} est un utilitaire pouvant être utilisé par les
 	  utilisateurs pour démarrer un processus spécifique, à la condition
-	  qu'il n'existe pas de plannification pour l'execution de cette même
+	  qu'il n'existe pas de planification pour l'exécution de cette même
 	  tâche. Un très bon exemple permettant d'illustrer cette relation
-	  entre ces deux entités serait un web service, qui nécéssite qu'un
+	  entre ces deux entités serait un web service, qui nécessite qu'un
 	  processus tel que ''httpd'' soit démarré en arrière plan à l'aide de
 	  la commande ''\begin{verbatim}httpd start\end{verbatim}''.
   \item \textbf{Storage} est une partition logique d'un média de stockage
@@ -56,7 +56,7 @@
           Un type d'association où une entité joue le rôle d'affecter l'autre en
 	  changeant son état de l'état X à l'état Y.
   \item \textbf{Configured By} : 
-	  Quand une entité X peux apporter les changemments nécéssaires à
+	  Quand une entité X peux apporter les changements nécessaires à
 	  l'entité Y pour lui permettre d'accomplir ses objectifs et ses
 	  intentions. Le lien entre une machine et un progiciel de gestion de
 	  configuration comme CfEngine 3 est un exemple typique de ce type de
@@ -70,16 +70,16 @@
 	  de ce rôle implique une supervision constante et des prises de mesures
 	  lorsqu'intervient une déviation dans le comportement souhaité.
   \item \textbf{Monitoring By} : 
-	  La supervision est principalement la responsibilité de garder un oeil
+	  La supervision est principalement la responsabilité de garder un œil
 	  sur quelque chose. Si une entité X supervise Y, elle surveille une
-	  quelquonque altération de comportement pour en informer le ou les
+	  quelconque altération de comportement pour en informer le ou les
 	  managers en charge de cette entité.
   \item \textbf{Component Of} : 
 	  La relation entre une entité X, composant d'une entité plus globale Y
-	  qui joue le rôle d'encapsulateur pour ce composant X.
+      qui joue le rôle d'encapsuleur pour ce composant X.
   \item \textbf{Owned By} : 
 	  La propriété est un type de relation pouvant exister entre entité
-	  devenue possession et son propritaire. Le lien entre un fichier et son
+	  devenue possession et son propriétaire. Le lien entre un fichier et son
 	  propriétaire est un exemple de cet type d'association.
   \item \textbf{Promised By} : 
 	  La relation en une promesse et l'entité qui la formule. 
@@ -101,7 +101,7 @@
   \item \textbf{Provided By} : 
 	  Quand une entité X a le potentiel et la bonne volonté de fournir
 	  quelque chose à une autre entité Y, la relation entre ces deux entités
-	  est appellée ''Provided By''.
+	  est appelée ''Provided By''.
   \item \textbf{Installed By} : 
 	  Une entité X peut mettre en place un programme Y dans une machine de
 	  manière à accomplir son but recherché. La relation existante entre X
@@ -115,7 +115,7 @@
 
 \begin{itemize}
   \item \textbf{AllowConnectFrom} : Liste d'adresses IP ou de nom d'hôtes
-	  suceptibles d'avoir plus d'une connexion au port d'un serveur.
+	  susceptibles d'avoir plus d'une connexion au port d'un serveur.
   \item \textbf{CheckForeign} : Indique s'il est nécessaire de vérifier les
 	  autorisations sur le répertoire racine lors de la recherche de la
 	  profondeur.
@@ -129,7 +129,7 @@
 	  machine pour la recherche de paquets.
   \item \textbf{TrustKeyFrom} : liste des hôtes pour lesquelles une machine
 	  acceptera les clés publiques sur base de la confiance. Définition des
-	  types d'occurences qui sont liés avec le type d'entité stockage sont
+	  types d'occurrences qui sont liés avec le type d'entité stockage sont
 	  répertoriés ci-dessous. Un stockage est une partition logique d'un
 	  support de stockage physique.
   \item \textbf{FreeSpace} : Pourcentage minimum ou absolu d'espace disque
@@ -139,17 +139,17 @@
   \item \textbf{FileSystemFlag} : Liste des options de menu à définir pour les
 	  drapeaux de système de fichiers BSD. 
   \item \textbf{Atime} : Plage temporelle d'accès pour les fichiers
-	  adimissibles.
+	  admissibles.
   \item \textbf{SecureInput} : Indique si les fichiers d'entrée sont accessibles
-	  en écriture pour les utilistateurs non-autorisés.
+	  en écriture pour les utilisateurs non-autorisés.
   \item \textbf{MountType} : L'option de menu pour le type de liens à utiliser
 	  lors de la copie comme le lien symbolique et le lien physique.
   \item \textbf{AuditingEnabled} : Indique si la fonctionnalité de journal
 	  d'audit d'un paquet est activé ou non.
   \item \textbf{LogLevel} : Le niveau de rapport envoyé à syslog.
-  \item \textbf{Architecture} : L'achitecture relative à la section de paquets
+  \item \textbf{Architecture} : L'architecture relative à la section de paquets
 	  comme ''x86-64'' ou ''i386''.
-  \item \textbf{BuildsOn} : Liste de groupemment de promesses sur lesquelles
+  \item \textbf{BuildsOn} : Liste de groupement de promesses sur lesquelles
 	  s'appuie ou dépend une promesse d'une certaine manière (pour la
 	  gestion des connaissances)
   \item \textbf{HomeDirectory} : Répertoire contenant les fichiers personnels
