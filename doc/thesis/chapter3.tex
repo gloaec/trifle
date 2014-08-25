@@ -11,13 +11,6 @@ Comme on le voit \ref{archi}
     \label{archi}
 \end{wrapfigure}
 
-%\begin{figure}[ht!]
-%  \centering
-%  \includegraphics[width=120mm]{img/archi}
-%  \caption{Schéma d'implémentation du système multi-agents}
-%  \label{archi}
-%\end{figure}
-
 \section{Framework de gestion de configuration}
 
 La gestion de la configuration est le processus de contraindre le comportement
@@ -79,11 +72,78 @@ système informatique. Elle permet de comprendre l'organisation entre ceux-ci et
 de modifier leur configuration. La CMDB est un composant fondamental d'une
 architecture ITIL.
 
-\section{Ontologie pour un gestionnaire de configuration basé sur la théorie de
-la promesse}
+\section{Gestionnaire de configuration basé sur la théorie de la promesse}
+
+\subsection{Ontologie de contexte}
+
+Voir appendix1.
+
+\subsection{Sondes de contexte}
+
+\begin{wrapfigure}{r}{.5\textwidth}
+  \begin{alltt}\scriptsize
+    \textbf{user1@server1\$} trifle console
+
+    store   = Store()  # 10598 statements
+    server1 = Server() # uuid: d7c38143d6ed41c8ad1f04c9601733d1)
+    server2 = Server() # uuid: 4a1950ded8c141dd91b695e6f6a09f07)
+    
+    >>> store
+    <trifle.store.Store instance at 0x336acf8>
+    >>> len(store.graph)
+    10598
+    >>> store.snapshot()
+    2014-08-14 15:08:07 \textbf{INFO} Pulling from InterfacesSensor...
+    2014-08-14 15:08:07 \textbf{DEBUG} 36 informations sensored
+    2014-08-14 15:08:07 \textbf{INFO} Pulling from ProcessesSensor...
+    2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 24963
+    2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 24964
+    2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 25080
+    2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 25082
+    2014-08-14 15:08:08 \textbf{DEBUG} 1395 informations sensored
+    2014-08-14 15:08:09 \textbf{INFO} Pulling from UsersSensor...
+    2014-08-14 15:08:09 \textbf{DEBUG} 15 informations sensored
+    [...]
+    >>> len(store.graph)
+    14534
+  \end{alltt}
+  \caption{Capture et fusion des informations de contexte provenant des sondes}
+  \label{fig:sensor}
+\end{wrapfigure}
+
+Afin de garantir la flexibilité et l'extensibilité de notre gestionnaire, les
+sondes de contextes sont implémentées sous la forme d'un greffon. Une classe
+\emph{BaseSensor} est mise à disposition à titre de manifeste pour la création
+de nouvelles sondes. L'interface implémente la méthode \emph{pull()} permettant
+la population de l'ontologie de contexte.
+
+Le processus de fusion des information est assez simple dans l'implémentation
+puisqu'elle prend avantage des méthodes de manipulation de graphes intégrées à
+la librairie Python RDFlib. Il ne peut exister ni d'informations redondantes, ni
+de relations dépourvues d'acteurs : l'information demeure consistante.
+
+Chacune de ces sondes va permettre de recueillir les informations relatives au
+contexte local, c.a.d, les informations liées à la machine sur laquelle opère
+l'agent. Lors de l'incrémentation d'un terme dans le cycle de fonctionnement
+normal basé sur le consensus de Raft, les informations recueillies par chacun
+des agents seront misent en corrélation. La méthode \emph{snapshot()} autorise
+par ailleurs le renouvellement complet de la base d'informations.  La figure
+\ref{fig:sensor} montre (partiellement) le résultat de cette méthode.  Un
+information correspond à un triplet $\langle a P b \rangle$, où $b$ est une
+valeur de la propriété $P$ pour le sujet $a$. Ne vous laissez pas confondre par
+la terminologie : une relation, un prédicat et une propriété sont trois termes
+pour la même notion. La relation $\langle a P b \rangle$ utilise le prédicat
+$P$, et exprime que le sujet $a$ a une valeur $b$ pour la propriété $P$.
 
 \begin{figure}[H]
-  \begin{alltt}
+\end{figure}
+
+\subsection{Système multi-agents}
+
+\subsubsection{Consensus de Raft}
+
+\begin{wrapfigure}{r}{.5\textwidth}
+  \begin{alltt}\scriptsize
     \textbf{user1@server1\$} trifle console
 
     store   = Store()  # 10598 statements
@@ -100,39 +160,38 @@ la promesse}
     ('leader', 'follower')
   \end{alltt}
   \caption{Validation de l'implémentation du consensus de Raft}
-  \label{fig:sourcecode}
-\end{figure}
+  \label{fig:raft}
+\end{wrapfigure}
+
+Le mécanismes que décrit le consensus de Raft ont été implémentés en Python.
+Dans notre implémentation, on suppose qu'il n'existe qu'un seul agent par
+machine. Tout d'abord, parce qu'il n'y a que très peu d'intérêts à déployer
+plusieurs instance sur la même machine, et ensuite, parce que cela facilite
+grandement le processus de découverte de nouvelles ressources. En effet, le
+service (l'agent) sera mis à disposition à travers un port de communication
+TCP/UDP figé : 6182 (hormis le fait qu'il n'est actuellement utilisé par aucune
+application courante, le choix de ce port est complètement arbitraire). Ainsi,
+il sera beaucoup moins coûteux de balayer chacune des plages du réseau à la
+recherche de nouveaux agents.
+
+Dans la figure \ref{fig:raft}, le gestionnaire est lancé en mode console. Le
+serveur 1 correspond au serveur local et le serveur 2 est un serveur distant. À
+l'initialisation du programme, une campagne est lancée et l'un des deux serveur
+est élu \emph{leader}. Le \emph{follower} (serveur 2) va supposer une
+défaillance du leader (arrêt des pulsations) et donc renouveler la campagne à
+laquelle il est \emph{candidat} (et même favori). À l'issue de cette seconde
+élection, on remarque que c'est désormais le second serveur qui est à la tête du
+système et les opérations ont repris leur cours normal.
+
+\subsubsection{Requêtes}
+
+\subsection{Interface d'administration}
 
 \begin{figure}[H]
-  \begin{alltt}
-    \textbf{user1@server1\$} trifle console
-
-    store   = Store()  # 10598 statements
-    server1 = Server() # uuid: d7c38143d6ed41c8ad1f04c9601733d1)
-    server2 = Server() # uuid: 4a1950ded8c141dd91b695e6f6a09f07)
-    
-    >>> store
-    <trifle.store.Store instance at 0x336acf8>
-    >>> len(store.graph)
-    10598
-    >>> store.snapshot()
-    2014-08-14 15:08:07 trifle[15128] \textbf{INFO} Pulling from InterfacesSensor...
-    2014-08-14 15:08:07 trifle[15128] \textbf{DEBUG} 36 informations sensored
-    2014-08-14 15:08:07 trifle[15128] \textbf{INFO} Pulling from ProcessesSensor...
-    2014-08-14 15:08:08 trifle[15128] \textbf{WARNING} NoSuchProcess: 24963
-    2014-08-14 15:08:08 trifle[15128] \textbf{WARNING} NoSuchProcess: 24964
-    2014-08-14 15:08:08 trifle[15128] \textbf{WARNING} NoSuchProcess: 25080
-    2014-08-14 15:08:08 trifle[15128] \textbf{WARNING} NoSuchProcess: 25082
-    2014-08-14 15:08:08 trifle[15128] \textbf{DEBUG} 1395 informations sensored
-    2014-08-14 15:08:09 trifle[15128] \textbf{INFO} Pulling from UsersSensor...
-    2014-08-14 15:08:09 trifle[15128] \textbf{DEBUG} 15 informations sensored
-    >>> len(store.graph)
-    14534
-  \end{alltt}
-  \caption{Capture et fusion des informations de contexte provenant des sondes}
-  \label{fig:sourcecode}
+    \centerline{\includegraphics[width=\textwidth]{img/trifle_gui}}
+    \caption{Interface d'administration du gestionnaire de configuration}
+    \label{fig:trifle_gui}
 \end{figure}
-
 
 \section{Conclusion}
 
