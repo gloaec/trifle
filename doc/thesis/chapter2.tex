@@ -332,6 +332,7 @@ Le procédé de raisonnement qui accompagne l'émanation d'un promesse, se divis
 en plusieurs sous-étapes, accrochez-vous:
 
 \begin{itemize}
+  \small
   \item \textbf{Préparation de la promesse} :
 	Processus de raisonnement effectué par A conduisant à la conception, la
 	synchronisation et la délivrance de la promesse P par A.
@@ -528,8 +529,8 @@ sur un protocole dénué de preuves.
 
 \subsubsection{Architecture de machines à états répliquées}
 
-\begin{wrapfigure}{r}{.5\textwidth}
-    \centerline{\includegraphics[width=.47\textwidth]{img/replicated_state_machine}}
+\begin{wrapfigure}[8]{r}[0pt]{.4\textwidth}
+    \centerline{\includegraphics[width=.37\textwidth]{img/replicated_state_machine}}
     \caption{Procédé de réplication des machines à états}
     \label{replicated_state_machine}
 \end{wrapfigure}
@@ -561,7 +562,7 @@ caractéristiques suivantes :
         la réorganisation.
     \item Ils sont entièrement fonctionnels (disponibles) dans la mesure où au
         moins la majorité des serveurs sont opérationnels et peuvent communiquer
-        avec les uns les autres et avec les clients. Ainsi, un groupe type de
+        les uns avec les autres et avec les clients. Ainsi, un groupe type de
         cinq serveurs peut tolérer la défaillance de deux ses membres. Les
         serveurs sont supposés tomber en panne en s'arrêtant ; ils pourront plus
         tard retrouver un état stable et rejoindre le cluster.
@@ -577,21 +578,23 @@ caractéristiques suivantes :
 
 \subsubsection{États des serveurs}
 
+\begin{wrapfigure}[7]{r}{.4\textwidth}
+    \vspace{-12pt}
+    \centerline{\includegraphics[width=.37\textwidth]{img/raft_server_states}}
+    \caption{États et transitions dans un cluster Raft}
+    \label{fig:raft_server_states}
+    \vspace{12pt}
+\end{wrapfigure}
+
 Un cluster Raft comprend une multitude des serveurs (cinq est un nombre courant
 permettant au système de tolérer deux échecs). À n'importe quel moment donné,
 chacun des serveur est dans l'un de ces états :
-
-\begin{wrapfigure}{r}{.5\textwidth}
-    \centerline{\includegraphics[width=.47\textwidth]{img/raft_server_states}}
-    \caption{États et transitions dans un cluster Raft}
-    \label{raft_server_states}
-\end{wrapfigure}
 
 \begin{itemize}
     \item \textbf{Leader} :
         En cycle normal, il existe un et un seul \emph{leader} et tous les autres
         serveurs sont \emph{followers}. Le \emph{leader} traite les requêtes de
-        tous les clients (si un client contact un \emph{follower}, le
+        tous les clients (si un client contacte un \emph{follower}, le
         \emph{follower} le redirige vers le \emph{leader}).
     \item \textbf{Follower} :
         Les \emph{followers} sont passifs : ils n'émettent jamais de messages par
@@ -599,7 +602,7 @@ chacun des serveur est dans l'un de ces états :
         requêtes émises par le \emph{leader} et les \emph{candidats}.
     \item \textbf{Candidat} :
         Statut intermédiaire utilisé lors de l'élection d'un nouveau
-        \emph{leader}. La figure \ref{raft_server_states} montre les différents états
+        \emph{leader}. La figure \ref{fig:raft_server_states} montre les différents états
         et transitions possibles dans le consensus de Raft.
 \end{itemize}
 
@@ -609,9 +612,57 @@ un \emph{follower} ne reçoit plus de communications, il devient alors
 d'un majorité du cluster complet devient le nouveau \emph{leader}. D'une manière
 générale, les \emph{leaders} opèrent jusqu'à ce qu'ils échouent.
 
+\subsubsection{Élection d'un \emph{leader}}
+
+\begin{wrapfigure}{r}{.4\textwidth}
+    \centerline{\includegraphics[width=.37\textwidth]{img/leader_election}}
+    \caption{Processus d'élection d'un \emph{leader}}
+    \label{fig:leader_election}
+\end{wrapfigure}
+
+Comme le montre la figure \ref{fig:leader_election}, le temps est divisé en
+termes. Chaque terme commence par une élection. Après une élection fructueuse,
+un \emph{leader} unique gère l'intégralité du cluster jusqu'à la fin du terme.
+Parfois les élections échouent, auquel cas le terme se terminera sans choisir de
+\emph{leader} et de nouvelles élections auront lieu au prochain terme. Il est
+important de noter que les transitions seront observées à des moments différents
+d'un serveur à l'autre.
+
+\subsubsection{Réplication des journaux}
+
+\begin{wrapfigure}{r}{.4\textwidth}
+    \centerline{\includegraphics[width=.37\textwidth]{img/log_replication}}
+    \caption{Processus de réplication des journaux}
+    \label{fig:log_replication}
+\end{wrapfigure}
+
+L'organisation des journaux est détaillé par la figure
+\ref{fig:log_replication}.  Les journaux sont composés d'entrées
+séquentiellement numérotées. Dans notre gestionnaire de contexte, ces entrées
+correspondent à des états incrémentaux de notre ontologie. Chaque entrée réfère aux terme
+durant lequel elle a été créée (le numéro de case dans la figure
+\ref{fig:log_replication}) et contient une commande pour la machine à état. Une
+entrée est considérée comme \emph{une transaction validée (committed)} si son
+insertion dans la machine à état est sans dangers.
+
+En cycle fonctionnement normal, il y a un et un seul \emph{leader} et $n$
+\emph{followers}. Le \emph{leader} envoie des pulsations régulières, témoins de
+sa disponibilité, aux autres membres du cluster. Le premier \emph{follower}
+remarquant l'inactivité du \emph{leader} (arrêt des pulsations) initie alors de
+nouvelles élections. 
+
 \section{Conclusion}
 
-
+Les différents concepts détaillés dans ce chapitre nous permettent de répondre
+aux problématiques énoncées auparavant : L'ontologie apporte le haut degré de
+formalisation nécessaire pour modéliser les informations de contexte et les
+promesses permettant la définition des politiques de configuration du système.
+Le théorie de la promesse propose une approche sémantique de la configuration,
+promettant aux utilisateurs un travail de configuration à moindres efforts.
+L'algorithme de consensus garantit la tolérance à l'échec et une organisation
+rigoureuse des communications inter-agents par l'attribution de rôles dans le
+cluster. Le modèle de réplication des journaux qu'il implémente permet d'assurer
+la permanente consistance de l'ontologie avec une simplicité remarquable.
 
 % ex: set spelllang=fr spell: %
 %%% Local Variables: ***
