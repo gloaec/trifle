@@ -4,7 +4,8 @@
 \usepackage{amsthm}
 \usepackage{array}
 \usepackage{graphicx}
-\usepackage{natbib}
+%\usepackage{natbib}
+\usepackage[sorting=none]{biblatex}
 \usepackage{relsize}
 \usepackage{caption}
 \usepackage{subcaption}  % \begin{subfigure}...\end{subfigure} within figure
@@ -21,13 +22,15 @@
 \usepackage[cm]{fullpage}
 \usepackage{enumitem}
 \usepackage{alltt}
+\usepackage{ragged2e}
 %\usepackage{showframe}
-
 
 \selectlanguage{francais}
 
 %\widowpenalty=10000
 %\clubpenalty=10000
+
+\bibliography{thesis}
 
 \renewcommand{\ttdefault}{txtt}
 \renewcommand{\listalgorithmname}
@@ -60,8 +63,13 @@
 \clearpage
 \phantomsection
 
-\bibliographystyle{abbrv}
-\bibliography{thesis}
+\begingroup
+\sloppy
+\RaggedRight %% needs package ragged2e
+%\bibliographystyle{unsrtnat}
+%\bibliographystyle{ieeetr}
+\printbibliography
+\endgroup
 
 \captionsetup[figure]{list=no}
 \captionsetup[table]{list=no}
