@@ -76,7 +76,16 @@ architecture ITIL.
 
 \subsection{Ontologie de contexte}
 
-Voir appendix1.
+La structure de base de l'ontologie de contexte a été implémentée à l'aide du
+logiciel libre \emph{Protégé}. Elle met a disposition une définition générique
+des composants les plus standard d'un réseau d'application comme les interfaces,
+les processus, les utilisateurs ou encore les fichiers et leurs permissions
+associées. Le détail des entités de cette ontologie sont données en
+annexe \ref{appendix:ontology}. La structure n'est pas figée, elle apporte
+seulement la pierre angulaire pour la définition de nouveaux concepts plus
+spécifiques. En effet, la structure s'étend à mesure à des sondes sont ajoutées.
+Celle-ci formalisent un certain nombre d'informations de manière individuelle et
+la structure découle alors de la mise en corrélation de ces informations.
 
 \subsection{Sondes de contexte}
 
@@ -182,9 +191,20 @@ système et les opérations ont repris leur cours normal.
 
 \subsubsection{Requêtes}
 
+% TODO Requests
+
 \subsection{Interface d'administration}
 
-Voir Appendix C
+Le gestionnaire de configuration prévoit un interface d'administration
+pour la définition des politiques de comportement et le contrôle des différents
+composants du système. L'interface est un service web distribué par
+chacun des agents. Toutes les actions effectuées à travers l'interface seront
+opérées par le leader du cluster afin de prévenir les problèmes liés à des
+modifications concurrentes. L'ontologie de contexte sera directement
+consultable en temps réel à l'aide de requêtes SPARQL. Enfin, elle doit
+conserver la possibilité de renseigner les valeurs des variables de
+configuration de bas niveau. Des captures d'écran de l'interface
+d'administration sont disponibles en annexe \ref{appendix:interface}.
 
 \section{Conclusion}
 
