@@ -30,7 +30,7 @@
 		UNIVERSITÉ DE BOURGOGNE, \\
 		Dijon, \\
 		\vspace{0.4in}
-		\Thesistitle \\
+        {\huge \Thesistitle} \\
 		\vspace{0.15in}
 		MÉMOIRE \\
 		\vspace{0.4in}
@@ -143,7 +143,7 @@
 		\vspace{0.2in}
 		\Authorname \\
 		\vspace{0.2in}
-		\Degreename\ in \Degreefield \\
+		\Degreename\ \\%in \Degreefield \\
 		\vspace{0.2in}
 		Unversité de Bourgogne, Dijon, \Degreeyear \\
 		\vspace{0.2in}
