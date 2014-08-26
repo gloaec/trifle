@@ -189,6 +189,10 @@
 	\tableofcontents
 	\clearpage
 	\phantomsection
+	\addcontentsline{toc}{chapter}{REMERCIEMENTS}
+	\acknowledgmentspage
+	\clearpage
+	\phantomsection
 	\addcontentsline{toc}{chapter}{LISTE DES FIGURES}
 	\listoffigures
 	\clearpage
@@ -202,10 +206,6 @@
 	  \addcontentsline{toc}{chapter}{LISTE DES ALGORITHMES}
 	  \listofalgorithms
 	\fi
-	\clearpage
-	\phantomsection
-	\addcontentsline{toc}{chapter}{REMERCIEMENTS}
-	\acknowledgmentspage
 	\clearpage
 	\phantomsection
 	%\addcontentsline{toc}{chapter}{CURRICULUM VITAE}
