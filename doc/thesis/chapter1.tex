@@ -40,7 +40,7 @@ contexte et de l'informatique sensible au contexte. Alors que la plupart des
 gens comprennent de manière tacite ce qu'est le contexte, ils le trouve par
 ailleurs particulièrement difficile à élucider.
 
-%\begin{figure}[H]
+{%\begin{figure}[H]
     \centering
     \begin{tabular}{l}
         ``... toute information pouvant être utilisée pour caractériser la
@@ -57,7 +57,7 @@ ailleurs particulièrement difficile à élucider.
     \end{tabular}
     %\caption{Le contexte défini par Abowd et. al. (1997)}
     %\label{fig:quote}
-%\end{figure}
+}%\end{figure}
 
 Cette définition rend la tâche plus facile à un développeur d'application pour
 énumérer le contexte dans un scénario d'application donné. Si un fragment
@@ -66,7 +66,7 @@ dans une quelconque interaction, alors cette information appartient au contexte.
 
 \section{Vue d'ensemble sur le contexte}
 
-%\begin{figure}[H]
+{%\begin{figure}[H]
     \centering
     \begin{tabular}{l}
         ``Le contexte est efficace, seulement lorsqu'il est partagé.``
@@ -77,7 +77,7 @@ dans une quelconque interaction, alors cette information appartient au contexte.
     \end{tabular}
     %\caption{Winograd à propos du contexte (2001)}
     %\label{fig:quote}
-%\end{figure}
+}%\end{figure}
 
 Pour s'assurer que le contexte soit partagé, il doit d'abord être recueilli et
 rigoureusement traité. Cela implique qu'un système sensible au contexte doit
@@ -120,7 +120,7 @@ dit, il s'agit là de tous les faits non tangibles. Pierre Lévy donne une
 définition intéressante du contexte virtuel à travers une question assez
 philosophique :
 
-%\begin{figure}[H]
+{%\begin{figure}[H]
     \centering
     \begin{tabular}{l}
         ``Pourquoi la consommation d'une information n'est-elle pas destructive
@@ -132,7 +132,7 @@ philosophique :
     \end{tabular}
     %\caption{Le contexte virtuel par Pierre Lévy (2010)}
     %\label{fig:quote}
-%\end{figure}
+}%\end{figure}
 
 \subsubsection{Contexte physique}
 
@@ -263,7 +263,7 @@ l'intermédiaire d'un capteur.
 La situation géographique et l'identité sont les deux fragments de contexte les
 plus fréquemment détectés.
 
-%\begin{figure}[H]
+{%\begin{figure}[H]
   \centering
   \begin{tabular}{l}
     ``Les capteurs ne sont pas toujours précis ou fiables à 100\%, \\
@@ -279,7 +279,7 @@ plus fréquemment détectés.
   \end{tabular}
   %\caption{La fiabilité des capteurs par Schmidt (1999)}
   %\label{fig:quote}
-\end{figure}
+}%\end{figure}
 
 Prenez l'exemple d'une centrale électrique, possédant de nombreuses sondes de
 température implantées à diverses endroits d'un réacteur nucléaire. Le système
@@ -419,7 +419,7 @@ sensible au contexte, il est avisé de considérer les caractéristiques suivant
 Ces critères peuvent être utilisés pour comparer et contraster les différents
 modèles de gestion de contexte présentés précédemment.
 
-%\begin{figure}[H]
+{%\begin{figure}[H]
     \centering
     \begin{tabular}{l}
         Le modèle widget a lien très étroit avec les composantes système, ce qui
@@ -441,7 +441,7 @@ modèles de gestion de contexte présentés précédemment.
     %\caption{Comparaison des différents modèles de gestion de contexte par
     %Winograd (2001)}
     %\label{fig:quote}
-%\end{figure}
+}%\end{figure}
 
 \subsection{Représentation du contexte}
 
@@ -539,7 +539,7 @@ contexte pour améliorer sa concision :
 
 \subsection{Interprétation du contexte}
 
-%\begin{figure}[H]
+{%\begin{figure}[H]
     \centering
     \begin{tabular}{l}
         L'interprétation fait référence au processus d'élévation \\
@@ -552,7 +552,7 @@ contexte pour améliorer sa concision :
     \end{tabular}
     %\caption{Interprétation du contexte par Dey (2001)}
     %\label{fig:quote}
-%\end{figure}
+}%\end{figure}
 
 Après avoir détecté, récupéré et sauvegardé le contexte provenant de sources
 variées, le système sensible au contexte devra implémenter des mécanismes
@@ -575,7 +575,7 @@ pour convertir des informations de bas niveau en un contexte global directement
 
 \subsection{Sécurité et confidentialité}
 
-%\begin{figure}[H]
+{%\begin{figure}[H]
     \centering
     \begin{tabular}{l}
         La confidentialité est intrinsèquement liée au contrôle.
@@ -587,7 +587,7 @@ pour convertir des informations de bas niveau en un contexte global directement
     \end{tabular}
     %\caption{La confidentialité par Ackerman (2001)}
     %\label{fig:quote}
-%\end{figure}
+}%\end{figure}
 
 
 Comme le contexte est susceptible de contenir des informations sensible sur des
@@ -617,11 +617,13 @@ protection des données sensibles doit être garantie.
 
 \section{Systèmes et frameworks existants}
 
-\begin{wrapfigure}{r}{.4\textwidth}
+%\begin{wrapfigure}{r}{.4\textwidth}
+\begin{figure}[H]
     \centerline{\includegraphics[width=.37\textwidth]{img/context_toolkit}}
     \caption{Exemple de configuration des composants du Context Toolkit}
     \label{Contexttoolkit}
-\end{wrapfigure}
+%\end{wrapfigure}
+\end{figure}
 
 Le tableau \ref{ContextManagementFrameworkComparison} met en concurrence les
 principaux aspects des approches existantes discutées précédemment. Le style

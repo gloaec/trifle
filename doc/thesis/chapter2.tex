@@ -204,7 +204,7 @@ investissement sur des résultats futurs. Dans certains cas, l'acte
 d'engagement peut résulter en une promesse persistante, mais promettre
 n'implique pas une action provoquant un changement discontinu.
 
-%\begin{figure}[H]
+{%\begin{figure}[H]
     \centering
     \begin{tabular}{l}
         ``Une promesse est la spécification d'un état ou comportement \\
@@ -217,7 +217,7 @@ n'implique pas une action provoquant un changement discontinu.
     \end{tabular}
     %\caption{La promesse par Burgess et al. (2006)}
     %\label{fig:quote}
-%\end{figure}
+}%\end{figure}
 
 Les promesses sont faites à un agent par un agent et sont modélisées par une
 relation unidirectionnelle labellisée par un \emph{corps} de promesse qui
@@ -334,7 +334,6 @@ Le procédé de raisonnement qui accompagne l'émanation d'un promesse, se divis
 en plusieurs sous-étapes, accrochez-vous:
 
 \begin{itemize}
-  \small
   \item \textbf{Préparation de la promesse} :
 	Processus de raisonnement effectué par A conduisant à la conception, la
 	synchronisation et la délivrance de la promesse P par A.
@@ -484,7 +483,6 @@ sur un protocole dénué de preuves.
 \begin{tabular}{p{.48\textwidth}p{.48\textwidth}}
     \noindent
     \textbf{\textit{Inconvénients de Paxos}}
-    \small
 
     \begin{itemize}
         \item Extrêmement difficile à comprendre. L'opacité de Paxos dérive de
@@ -508,7 +506,6 @@ sur un protocole dénué de preuves.
     &
 
     \textbf{\textit{Avantages de Raft}}
-    \small
 
     \begin{itemize}
         \item Raft utilise une forme plus solide de leadership que les autres
@@ -531,11 +528,13 @@ sur un protocole dénué de preuves.
 
 \subsubsection{Architecture de machines à états répliquées}
 
-\begin{wrapfigure}[8]{r}[0pt]{.4\textwidth}
+%\begin{wrapfigure}[8]{r}[0pt]{.4\textwidth}
+\begin{figure}[H]
     \centerline{\includegraphics[width=.37\textwidth]{img/replicated_state_machine}}
     \caption{Procédé de réplication des machines à états}
     \label{replicated_state_machine}
-\end{wrapfigure}
+%\end{wrapfigure}
+\end{figure}
 
 L'algorithme de consensus gère un registre répliqué contenant les commandes de
 la machine à états de chacun des clients dans le réseau. Les machines à états
@@ -580,14 +579,6 @@ caractéristiques suivantes :
 
 \subsubsection{États des serveurs}
 
-\begin{wrapfigure}[7]{r}{.4\textwidth}
-    \vspace{-12pt}
-    \centerline{\includegraphics[width=.37\textwidth]{img/raft_server_states}}
-    \caption{États et transitions dans un cluster Raft}
-    \label{fig:raft_server_states}
-    \vspace{12pt}
-\end{wrapfigure}
-
 Un cluster Raft comprend une multitude des serveurs (cinq est un nombre courant
 permettant au système de tolérer deux échecs). À n'importe quel moment donné,
 chacun des serveur est dans l'un de ces états :
@@ -608,6 +599,14 @@ chacun des serveur est dans l'un de ces états :
         et transitions possibles dans le consensus de Raft.
 \end{itemize}
 
+%\begin{wrapfigure}[7]{r}{.4\textwidth}
+\begin{figure}[H]
+    \centerline{\includegraphics[width=.47\textwidth]{img/raft_server_states}}
+    \caption{États et transitions dans un cluster Raft}
+    \label{fig:raft_server_states}
+%\end{wrapfigure}
+\end{figure}
+
 Les \emph{followers} ne font que répondre aux requêtes des autres serveurs. Si
 un \emph{follower} ne reçoit plus de communications, il devient alors
 \emph{candidat} et initie une élection. Le \emph{candidat} qui reçoit les votes
@@ -615,12 +614,6 @@ d'un majorité du cluster complet devient le nouveau \emph{leader}. D'une maniè
 générale, les \emph{leaders} opèrent jusqu'à ce qu'ils échouent.
 
 \subsubsection{Élection d'un \emph{leader}}
-
-\begin{wrapfigure}{r}{.4\textwidth}
-    \centerline{\includegraphics[width=.37\textwidth]{img/leader_election}}
-    \caption{Processus d'élection d'un \emph{leader}}
-    \label{fig:leader_election}
-\end{wrapfigure}
 
 Comme le montre la figure \ref{fig:leader_election}, le temps est divisé en
 termes. Chaque terme commence par une élection. Après une élection fructueuse,
@@ -630,13 +623,15 @@ Parfois les élections échouent, auquel cas le terme se terminera sans choisir 
 important de noter que les transitions seront observées à des moments différents
 d'un serveur à l'autre.
 
-\subsubsection{Réplication des journaux}
+%\begin{wrapfigure}{r}{.4\textwidth}
+\begin{figure}[H]
+    \centerline{\includegraphics[width=.37\textwidth]{img/leader_election}}
+    \caption{Processus d'élection d'un \emph{leader}}
+    \label{fig:leader_election}
+%\end{wrapfigure}
+\end{figure}
 
-\begin{wrapfigure}{r}{.4\textwidth}
-    \centerline{\includegraphics[width=.37\textwidth]{img/log_replication}}
-    \caption{Processus de réplication des journaux}
-    \label{fig:log_replication}
-\end{wrapfigure}
+\subsubsection{Réplication des journaux}
 
 L'organisation des journaux est détaillé par la figure
 \ref{fig:log_replication}.  Les journaux sont composés d'entrées
@@ -646,6 +641,14 @@ durant lequel elle a été créée (le numéro de case dans la figure
 \ref{fig:log_replication}) et contient une commande pour la machine à état. Une
 entrée est considérée comme \emph{une transaction validée (committed)} si son
 insertion dans la machine à état est sans dangers.
+
+%\begin{wrapfigure}{r}{.4\textwidth}
+\begin{figure}[H]
+    \centerline{\includegraphics[width=.37\textwidth]{img/log_replication}}
+    \caption{Processus de réplication des journaux}
+    \label{fig:log_replication}
+%\end{wrapfigure}
+\end{figure}
 
 En cycle fonctionnement normal, il y a un et un seul \emph{leader} et $n$
 \emph{followers}. Le \emph{leader} envoie des pulsations régulières, témoins de
