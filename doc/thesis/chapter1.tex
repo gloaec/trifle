@@ -177,7 +177,7 @@ majeures : \cite{catharina_context_2002}
     \item \textbf{L'information de contexte n'est pas parfaite}
 
         Cela considère la validité du contexte, majoritairement concernant
-        les informations de contexte dynamique. La vitesse et la fréquence à
+        les informations de contexte dynamiques. La vitesse et la fréquence à
         laquelle l'information varie soulève de sérieuses raisons de
         douter de sa solidité. Ce ``délai entre la production et
         l'utilisation de l'information de contexte``
@@ -347,8 +347,8 @@ Winograde (2001) \cite{winograd_architectures_2001} décrit trois modèles
 différents afin de coordonner les processus et composantes multiples :
 
 \begin{itemize}
-    \item \textbf{Widgets}
-        L'objectif clé du widget est distinguer l'application du
+    \item \textbf{Widgets} -
+        L'objectif clé du widget est de distinguer l'application du
         processus d'acquisition de contexte, de manière à abstraire la
         complexité que représente le recueil et la gestion de
         l'information de contexte. Le widget est considéré comme un
@@ -360,24 +360,24 @@ différents afin de coordonner les processus et composantes multiples :
         complet du contexte sondé au fil du temps. C'est le modèle le
         plus répandu.
 
-    \item \textbf{Services réseaux}
+    \item \textbf{Services réseaux} -
         Cette approche plus flexible, comme l'argumente Hong
         and Landay (2001) \cite{hong_infrastructure_2001}, ressemble à
         l'architecture de serveur de contexte. Au lieu d'un
         gestionnaire de widget centralisé, des techniques sont utilisées
         pour découvrir les services réseaux dans l'infrastructure. Cette
-        approche basée sur les services n'est aussi performante que
+        approche basée sur les services n'est pas aussi performante que
         l'architecture basée sur les widgets à cause de la complexité
-        des composants orientés réseaux, mais fournit une certaine
+        des composants orientés réseau, mais fournit une certaine
         robustesse.
 
-    \item \textbf{Tableau noir (Blackboard)}
+    \item \textbf{Tableau noir (Blackboard)} -
         En contraste avec la vue orientée processus du widget et le modèle
         orienté services, le tableau noir représente une approche orientée sur
         les données. Cette approche donne une attention toute particulière aux
         données, en faisant correspondre des motifs afin d'extraire
         l'information recherchée. Dans ce modèle asymétrique, les processus
-        envoient de messages dans un média partagé, le dit ''tableau noir'', et
+        envoient des messages dans un média partagé, le dit ''tableau noir'', et
         souscrivent à recevoir des notifications lorsque certains évènements se
         produisent. Les avantages de ce modèle résident dans la simplicité de
         configuration et d'ajout de nouvelles sources de contexte.
@@ -404,7 +404,7 @@ sensible au contexte, il est avisé de considérer les caractéristiques suivant
     \item \textbf{Simplicité} : 
         %\begin{quotation}
             un système qui nécessite une compréhension avancée des mécanismes
-            qu'il implémente pour faire l'usage, ne sera utilisé que par ceux
+            qu'il implémente pour en faire l'usage, ne sera utilisé que par ceux
             qui auront le dévouement et la motivation de le maîtriser
             \cite{winograd_architectures_2001}.
         %\end{quotation}
@@ -448,27 +448,27 @@ modèles de gestion de contexte présentés précédemment.
 Il existe plusieurs manières de modéliser l'information de contexte :
 
 \begin{itemize}
-    \item \textbf{Clé/valeur} : 
+    \item \textbf{Clé/valeur} -
         La structure de données la plus simple pour modéliser le contexte.
-        Elle est très fréquemment utilisées dans les framework de services,
+        Elle est très fréquemment utilisée dans les framework de services,
         où les paires clé/valeur servent à décrire les aptitudes d'un
         service.
-    \item \textbf{Langage de balisage} :
+    \item \textbf{Langage de balisage} -
         Structure de données constituée de balises avec des attributs et des
         contenus associés. 
-    \item \textbf{Graphique} :
+    \item \textbf{Graphique} -
         Langage de Modélisation Unifié (UML), extension de la Modélisation
         Role Objet (ORM) par le contexte.
-    \item \textbf{Orienté objet} :
+    \item \textbf{Orienté objet} -
         Exploite tout la puissance de modélisation objet : l'encapsulation,
-        la réutilisabilité, l'héritage. Les approches existantes utilisent
+        la réutilisabilité et l'héritage. Les approches existantes utilisent
         des objets variés pour représenter différents types de contextes, et
         encapsule les détails du traitement et de la représentation du
         contexte.
-    \item \textbf{Logique} :
+    \item \textbf{Logique} -
 	    Haut degré de formalité. Typiquement, des faits, des expressions
 	    et des règles sont utilisés pour définir le modèle de contexte.
-    \item \textbf{Basé sur les ontologies} :
+    \item \textbf{Basé sur les ontologies} -
 	    Représente une description des concepts et des relations. Cet outil
 	    est très prometteur pour modéliser l'information contextuelle, grâce
 	    à son expressivité élevée et très formelle et les possibilités
@@ -485,31 +485,31 @@ requises et d'objectifs dans la conception d'une ontologie de contexte :
 
 \begin{itemize}
     \item \textbf{Simplicité} : 
-    	Les expressions et relations définies doivent être les plus simples
+    	les expressions et relations définies doivent être les plus simples
     	possible pour ne pas décourager les développeurs d'applications.
     \item \textbf{Flexibilité et extensibilité} :
-        L'ontologie doit supporter l'ajout de nouveaux éléments de contextes
+        l'ontologie doit supporter l'ajout de nouveaux éléments de contextes
         et de relations.
     \item \textbf{Généricité} :
-        L'ontologie ne doit pas être limitée à un seul type d'atome de
+        l'ontologie ne doit pas être limitée à un seul type d'atome de
         contexte, mais au contraire supporter un maximum de formats pour
         l'information de contexte.
     \item \textbf{Expressivité} :
-        L'ontologie doit permettre de décrire le plus d'états de
-        contexte possibles et de manière la plus détaillée qu'il soit.
+        l'ontologie doit permettre de décrire un maximum d'états de
+        contexte et de manière la plus détaillée possible.
 \end{itemize}
 
-Un atome de contexte peut être décrits à l'aide de quelques attributs seulement.
+Un atome de contexte peut être décrit à l'aide de quelques attributs seulement.
 Les deux attributs les plus évidents sont :
 
 \begin{itemize}
     \item \textbf{Type du contexte} :
-        Catégorie dans laquelle s'inscrit le contexte, qu'il s'agisse d'une
+        catégorie dans laquelle s'inscrit le contexte, qu'il s'agisse d'une
         donnée de température, temporelle, de vitesse ou d'accélération,
         etc. L'information de genre peut être utilisée en tant que paramètre
         dans une requête ou une souscription pour certains types de contexte. 
     \item \textbf{Valeur du contexte} : 
-	    Les données brutes recueillies par une sonde. L'unité dépend très
+	    les données brutes recueillies par une sonde. L'unité dépend très
 	    étroitement du type de contexte et du capteur dont l'information
 	    provient, e.g., degré Celcius, kilomètres par heure, mégabit, etc.
 \end{itemize}
@@ -521,17 +521,17 @@ contexte pour améliorer sa concision :
 
 \begin{itemize}
     \item \textbf{Horodatage} :
-        Valeur de type date/heure représentative de l'instant à laquelle
+        valeur de type date/heure représentative de l'instant à laquelle
         l'information de contexte a été capturée. Elle est requise dans
         l'élaboration d'un historique de contexte ou même dans le traitement des
         conflits.
     \item \textbf{Source} :
-        Comment l'information a-t-elle été recueillie ? Dans le cas d'un
+        comment l'information a-t-elle été recueillie ? Dans le cas d'un
         capteur matériel, l'identifiant de la sonde doit être conservé pour
         permettre à une application de préférer les informations provenant
         d'un capteur ou d'un autre.
     \item \textbf{Confiance} :
-        L'incertitude confiée à l'information sondée. Toutes les sources
+        l'incertitude confiée à l'information sondée. Toutes les sources
         de données ne fournissent pas une information juste, les données de
         situation géographique souffrent d'une imprécision certaine
         intrinsèquement liée à la puce GPS utilisée.
@@ -557,10 +557,10 @@ contexte pour améliorer sa concision :
 Après avoir détecté, récupéré et sauvegardé le contexte provenant de sources
 variées, le système sensible au contexte devra implémenter des mécanismes
 d'interprétation du contexte, de sorte à ce que les informations recueillies
-soit utilisées de manière convenable. Cette étape d'interprétation implique
+soit utilisées convenablement. Cette étape d'interprétation implique
 l'intégration des plusieurs contextes en un seul et unique contexte de plus haut
 niveau. Ainsi, l'interprète modifie les informations de contexte en augmentant
-son niveau d'abstraction. Une approche est d'utiliser la fusion de contexte
+son niveau d'abstraction. Une approche possible est d'utiliser la fusion de contexte
 pour convertir des informations de bas niveau en un contexte global directement
 à la portée des applications.
 
@@ -598,7 +598,7 @@ inhabituels et inconsidérés par les systèmes traditionnels. La question quant
 contrôle des différents capteurs et services n'est pas abordée dans Dey et al.
 \cite{dey_conceptual_2001}, et bien souvent, des applications telles que le
 Context Toolkit sont supposées être sous le contrôle d'un ''utilisateur''. Les
-utilisateurs sont assignés comme propriétaires des données sondées par leurs
+utilisateurs sont désignés comme propriétaires des données sondées par leurs
 soins. Ils sont par ailleurs autorisés à octroyer l'accès à ces données à
 d'autres utilisateurs.
 
@@ -626,7 +626,7 @@ protection des données sensibles doit être garantie.
 \end{figure}
 
 Le tableau \ref{ContextManagementFrameworkComparison} met en concurrence les
-principaux aspects des approches existantes discutées précédemment. Le style
+principaux aspects des approches existantes présentées précédemment. Le style
 architectural d'un système sensible au contexte dépend en grande majorité de la
 méthode d'acquisition des informations de contexte. Le principal critère
 permettant de qualifier une approche architecturale comme raisonnable est la
@@ -649,7 +649,7 @@ préoccupations.
     }
         \hline
         \textbf{Architecture} & 
-        \textbf{Detection} & 
+        \textbf{Détection} & 
         \textbf{Modèle de contexte} &
         \textbf{Traitement du contexte} &
         \textbf{Découverte de ressources} &
@@ -659,7 +659,7 @@ préoccupations.
         \hline
         CASS &
         Intergiciel centralisé &
-        Noeuds de capteurs &
+        Nœuds de capteurs &
         Modèle de données relationnel &
         Moteur d'inférence et base de connaissance &
         n.a. &
@@ -754,23 +754,23 @@ modélisés en OWL et basés sur une ontologie prédéfinie.
 
 \subsection{Représentations du contexte}
 
-Afin d'obtenir des applications et services sensibles au contexte intelligents
-et adaptables, le modèle et la logique de traitement du contexte pris en charge
-individuellement par chaque framework est un critère majeur. Les ontologies
-offrent un formalisme très riche pour représenter l'information de contexte.
-Basé sur un modèle ontologique très sophistiqué, les raisonneurs peuvent dériver
-de nouveaux concepts et ajuster le comportement d'un service en conséquence. La
-représentation clé/valeur utilisée dans le Context Toolkit devient donc un
-inconvénient majeur. Le fait que de tels attributs ne peuvent contenir aucune
-sémantique restreint de manière considérable de le développement de procédés de
-traitement et d'agrégation de contexte. De plus, les modèles non basés sur les
-ontologies nécessitent un effort de programmation conséquent et couplent très
-étroitement le modèle de contexte avec le reste du système. En outre, le
-raisonnement et le partage de connaissances à travers les systèmes sont
-impossibles en raison du manque de sémantique déclarative des programmes. SOCAM,
-par exemple, fait l'usage d'une ontologie générale de haut niveau pour spécifier
-des propriétés contextuelles de base communes et pour affiner cette même
-ontologie. Dans le but de fournir des possibilités très granuleuses pour
+Afin d'obtenir des applications et des services sensibles au contexte
+intelligents et adaptables, le modèle et la logique de traitement du contexte
+pris en charge individuellement par chaque framework est un critère majeur. Les
+ontologies offrent un formalisme très riche pour représenter l'information de
+contexte.  Basé sur un modèle ontologique très sophistiqué, les raisonneurs
+peuvent dériver de nouveaux concepts et ajuster le comportement d'un service en
+conséquence. La représentation clé/valeur utilisée dans le Context Toolkit
+devient donc un inconvénient majeur. Le fait que de tels attributs ne peuvent
+contenir aucune sémantique restreint de manière considérable de le développement
+de procédés de traitement et d'agrégation de contexte. De plus, les modèles non
+basés sur les ontologies nécessitent un effort de programmation conséquent et
+couplent très étroitement le modèle de contexte avec le reste du système. En
+outre, le raisonnement et le partage de connaissances à travers les systèmes
+sont impossibles en raison du manque de sémantique déclarative des programmes.
+SOCAM, par exemple, fait l'usage d'une ontologie générale de haut niveau pour
+spécifier des propriétés contextuelles de base communes et pour affiner cette
+même ontologie. Dans le but de fournir des possibilités très granuleuses pour
 spécifier et formaliser le contexte, certaines ontologies spécifiques à un
 domaine peuvent être définies.
 
@@ -794,7 +794,7 @@ au contexte.
 De la même manière, la majorité des frameworks conservent un historique des
 données de contexte, mais aucun d'entre eux ne les exploitent vraiment.
 Pourtant, cela pourrait permettre de fournir des services sensibles au contexte
-fortement adaptables, si le contexte historique était utilisé pour implémenter
+fortement adaptables si le contexte historique était utilisé pour implémenter
 des algorithmes d'auto apprentissage. De plus, l'information de contexte
 pourrait même être anticipée pour offrir proactivement un ensemble de services à
 l'utilisateur.
@@ -807,11 +807,11 @@ utilisateur et d'autres informations sensibles. Pour cette raison, des concepts
 sont requis pour exprimer des règles politiques et définir la propriété de
 l'information de contexte. 
 
-CoBrA inclus son propre langage de définition de politiques appelé Rei
+CoBrA inclut son propre langage de définition de politiques appelé Rei
 \cite{kagal_policy_2005}, pour contrôler de manière flexible les accès aux
 données de contexte. Ce langage de définition de politiques est calqué sur les
-concepts déontiques de droits, d'interdictions, d'obligations et de dispenses,
-et contrôle l'accès aux données grâce à des règles de politique modifiables
+concepts déontiques de droits, d'interdictions, d'obligations et de dispenses.
+Il contrôle l'accès aux données grâce à des règles de politique modifiables
 dynamiquement et dépendantes d'un domaine particulier. Gaia fait l'usage de
 plusieurs mécanismes pour définir les restrictions en termes de confidentialité
 et pour sécuriser les communications lors de localisations d'individus. Le
@@ -819,15 +819,16 @@ Contexte Toolkit implémente le concept de propriété des information de contex
 qui autorise seulement le propriétaire des informations à consulter les données
 sondées.
 
-L'aspect sécurité n'est pas implémenté dans les autres frameworks. De nombreux
-systèmes sont totalement dépourvus de modèles de sécurité, d'autres offrent des
-mécanismes de sécurité très génériques et seulement quelques systèmes sont dotés
-d'options de sécurités avancées et suffisantes.
+Les aspects lié à la sécurité ne sont pas implémentés dans les autres
+frameworks. De nombreux systèmes sont totalement dépourvus de modèles de
+sécurité, d'autres offrent des mécanismes de sécurité très génériques et
+seulement quelques systèmes sont dotés d'options de sécurités avancées et
+suffisantes.
 
 \section{Conclusion}
 
-Chacun des systèmes et frameworks présentés dans cet état de l'art implémentent
-leur propre format pour la description des informations de contexte et des
+Chacun des systèmes et frameworks présentés dans cet état de l'art implémente
+son propre format pour la description des informations de contexte et des
 mécanismes de communication dissemblables. La définition d'un modèle standard
 d'abstraction des données de contexte semble être la priorité première dans
 l'évolution des systèmes sensibles au contexte existants. Si le degré de

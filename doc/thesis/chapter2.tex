@@ -1,4 +1,4 @@
-\chapter{Problématiques émergentes \newline et orientations de recherche}
+\chapter{Problématiques émergentes et orientations de recherche}
 
 \section{Introduction}
 
@@ -40,7 +40,7 @@ L'une des principales innovations à apporter dans les infrastructures
 d'applications sensibles au contexte réside dans l'introduction d'une interface
 présentant un niveau d'abstraction élevé. Cela permettrait de représenter la
 connectivité des composants applicatifs avec les politiques de haut niveau qui
-la régissent.Cette couche doit rester simple d'utilisation pour les
+la régissent. Cette couche doit rester simple d'utilisation pour les
 développeurs d'applications, et le modèle améliorer simultanément
 l'automatisation et la sécurité.
 
@@ -58,28 +58,33 @@ utilisés pour séparer la définition et l'information liée au contexte de
 l'implémentation spécifique. Il existe d'autres caractéristiques qui font que
 l'information de contexte est difficile à modéliser : comme abordé précédemment,
 il est parfois nécessaire de différencier une information statique d'une
-information dynamique.
+information dynamique. Le détail de l'ontologie de contexte développée dans
+cette étude est donnée en annexe \ref{appendix:ontology}.
 
 \subsubsection{Ontologie de services}
 
+Dans le but d'améliorer la compréhension globale, les aptitudes des différents
+composants de l'infrastructure devront être formalisés à l'aide d'une ontologie
+dédiée aux services. Celle-ci implémente trois concepts majeurs :
+
 \begin{itemize}
-  \item ServiceProfile (partie ''Quoi'')
-  \item ServiceModel (partie ''Comment abstrait'')
-  \item ServiceGrounding (partie ''Comment concret'')
+    \item \emph{ServiceProfile} (partie ''Quoi'')
+    \item \emph{ServiceModel} (partie ''Comment abstrait'')
+    \item \emph{ServiceGrounding} (partie ''Comment concret'')
 \end{itemize}
 
 Tout comme pour la standardisation de la gestion intelligente de la
-configuration, la classe ServiceModel est très importante. Les services sont
-modélisés comme des processus et la classe Process est utilisée pour indiquer
-les opérations à des niveaux granularité différents. La classe Process comprend
-principalement deux types de processus : atomiques et composites. Puisque
-l'information de gestion de configuration est définie comme un ontologie OWL,
-l'information peut être utilisée comme les paramètres des opérations de gestion
-de la configuration, qui sont définis sous la forme de processus composites.
-Chaque service de gestion de configuration correspond à un processus composite,
-lui-même composé de plusieurs processus atomiques. Quand le gestionnaire invoque
-un service de gestion de configuration prédéfini en OWL-S, le service sera alors
-exécuté pour le dispositif réseau en place.
+configuration, la classe \emph{ServiceModel} est très importante. Les services
+sont modélisés comme des processus et la classe \emph{Process} est utilisée pour
+indiquer les opérations à des niveaux granularité différents. La classe
+\emph{Process} comprend principalement deux types de processus : atomiques et
+composites. Puisque l'information de gestion de configuration est définie comme
+un ontologie OWL, l'information peut être utilisée comme les paramètres des
+opérations de gestion de la configuration, qui sont définis sous la forme de
+processus composites.  Chaque service de gestion de configuration correspond à
+un processus composite, lui-même composé de plusieurs processus atomiques. Quand
+le gestionnaire invoque un service de gestion de configuration prédéfini en
+OWL-S, le service sera alors exécuté pour le dispositif réseau en place.
 
 \section{Règles sémantiques et politiques de comportement}
 
@@ -133,7 +138,7 @@ La théorie de la promesse est une théorie nouvelle sur ce qu'il peut arriver
 dans un réseau de composants entièrement autonomes.
 
 Plutôt que d'adopter la croyance conventionnelle que ''seulement ce qui est
-programmé peut arriver'', elle pren le point de vue opposé : ''seulement ce
+programmé peut arriver'', elle prend le point de vue opposé : ''seulement ce
 qui est promis peut être prédit''. Elle aborde donc la gestion du point de vue
 de l'incertitude avec réalisme plutôt que celui de la foi en la conformité. Dans
 la théorie de la promesse, on suppose un point de vue orienté service des
@@ -178,14 +183,14 @@ comportement qu'on attend de lui, basé sur un choix qui lui est propre. C'est c
 que rend la théorie de la promesse optimale pour un framework de gestion basé
 sur des politiques.
 
-La théorie de la promesse décrit des services régies par des politiques, dans un
-framework d'agents complètement autonomes, qui s'aident les uns les autres
+La théorie de la promesse décrit des services régis par des politiques, dans un
+framework d'agents complètement autonomes, qui s'entraident les uns les autres
 seulement par une coopération volontaire. Dans CfEngine3, chaque élément de
 configuration va faire une promesse concernant ses caractéristiques propres et
 sa relation avec d'autres éléments de configuration.
 
 Nous souhaitons être en mesure de promettre que le système est cohérent, de le
-vérifier et d'effectuer des changements seulement si nos promesses ne sont pas
+vérifier et d'effectuer des changements seulement si des promesses ne sont pas
 tenues. Cela nécessite, en plus de l'implémentation initiale de ces promesses,
 la vérification continue de l'état de chacun des éléments de configuration
 vis-à-vis de leur promesses respectives pour assurer un système cohérent et en
@@ -224,8 +229,7 @@ relation unidirectionnelle labellisée par un \emph{corps} de promesse qui
 définit la substance de la promesse. Une promesse avec le \emph{corps}
 \textbf{+b} est une déclaration pour ''donner'' un comportement d'un agent à un
 autre, tandis qu'une promesse avec le \emph{corps} \textbf{-b} est la
-spécification de quel comportement sera reçu, accepté ou utilisé d'un agent à
-l'autre.
+spécification de quel comportement sera reçu, accepté ou utilisé.
 
 \subsubsection{Caractéristiques de la promesse}
 
@@ -237,13 +241,13 @@ distingue deux types de promesses :
 \begin{itemize}
     \item Une promesse d'accepter de se comporter comme une autre. C'est
         essentiel pour la définition de groupes, de rôles ou de structures
-        sociales avec un consensus de comportement (cf.
-        section~\ref{sec:consensus})
+        sociales avec un consensus de comportement (cf. section
+        \ref{sec:consensus})
     \item Une promesse d'utiliser la promesse d'un autre. C'est crucial pour les
         interactions client/serveur, les dépendances et les contrôles d'accès.
 \end{itemize}
 
-Un promesse présentes les caractéristiques suivantes :
+Un promesse présente les caractéristiques suivantes :
 
 \begin{enumerate}
     \item Il doit y avoir des agents pour qu'une promesse existe.
@@ -307,7 +311,7 @@ Un promesse présentes les caractéristiques suivantes :
     \label{PromiseTypes}
 \end{table}
    
-Les promesses de services basiques forment un certain nombre de types, comme par
+Les promesses de service basiques forment un certain nombre de types, comme par
 exemple `fournir un web service en moins de 5 millisecondes` ou `donner
 n'importe quel information sur l'agent X`. D'autres exemples :
 
@@ -325,8 +329,8 @@ n'importe quel information sur l'agent X`. D'autres exemples :
         en l'espace de $t$ secondes.
 \end{itemize}
 
-Une promesse est dite ``rompue`` si un agent fait deux promesses différentes du
-même type en même temps (différent d'une promesse qui aurait expiré ou changé).
+Une promesse est dite ``rompue`` si un agent fait deux promesses contradictoires du
+même type et en même temps (différent d'une promesse qui aurait expiré ou changé).
 
 \subsubsection{Processus de raisonnement lié à la promesse}
 
@@ -334,29 +338,29 @@ Le procédé de raisonnement qui accompagne l'émanation d'un promesse, se divis
 en plusieurs sous-étapes, accrochez-vous:
 
 \begin{itemize}
-  \item \textbf{Préparation de la promesse} :
+  \item \textbf{Préparation de la promesse} -
 	Processus de raisonnement effectué par A conduisant à la conception, la
 	synchronisation et la délivrance de la promesse P par A.
-  \item \textbf{Analyse de crédibilité} :
+  \item \textbf{Analyse de crédibilité} -
 	Processus de raisonnement où les agents C dans le champ d'application de
 	la promesse P déterminent la crédibilité qu'ils assignent à A promettant
 	P compte tenu des faits connus de A (mais à l'exception des informations
 	historiques précises sur le comportement individuel d'un membre de sa
 	classe d'agent)
-  \item \textbf{Détermination préliminaire de la confiance} :
+  \item \textbf{Détermination préliminaire de la confiance} -
 	Processus de raisonnement effectué par C (C dans le domaine
 	d'application de la promesse P) servant à :
   	\begin{enumerate}
-	  \item Déterminer la confiance que C accorde à A avant même de
+	  \item déterminer la confiance que C accorde à A avant même de
 		  connaitre la promesse P (confiance préalable)
-	  \item Spécifier quelles sont les attentes générées par la prise en
+	  \item spécifier quelles sont les attentes générées par la prise en
 		  considération de la promesse P.
   	\end{enumerate}
-  \item \textbf{Délibération de contre-promesse} :
+  \item \textbf{Délibération de contre-promesse} -
 	Processus de raisonnement effectué par B concernant les contre-promesses
 	pouvant potentiellement être émises par B en retour de considération de
 	P (B dans le champ d'application de P)
-  \item \textbf{Prédiction de l'impact de la promesse} :
+  \item \textbf{Prédiction de l'impact de la promesse} -
 	(cela peut être réalisé à condition que B ait émis une ou plusieurs
 	contre-promesses plausibles)
   	\begin{enumerate}
@@ -370,27 +374,27 @@ en plusieurs sous-étapes, accrochez-vous:
 		  de chacun d'entre eux amené par la prise en considération de
 		  la promesse P.
   	\end{enumerate}
-  \item \textbf{Évaluation de la promesse} :
+  \item \textbf{Évaluation de la promesse} -
 	Processus de raisonnement effectué par C concernant :
   	\begin{enumerate}
-	  \item La façon dont C va évaluer si la promesse de A a été tenue ou
+	  \item la façon dont C va évaluer si la promesse de A a été tenue ou
 		  non.
-      \item L'évaluation de cette dernière au moyen de la méthode la plus
+      \item l'évaluation de cette dernière au moyen de la méthode la plus
           adéquate
   	\end{enumerate}
-  \item \textbf{Surveillance de rétraction de promesse} :
+  \item \textbf{Surveillance de rétraction de promesse} -
 	A peut être amené à un stade ultérieur à émettre une autre promesse Q,
 	pour laquelle la tenue n'est pas compatible avec la tenue de P. Dans ce
 	cas, Q qualifie un retrait de P. Un agent C applique un processus de
 	raisonnement qui surveille et évalue les promesses postérieures émises
 	par A pour déterminer si celles-ci seront amenées à rompre la promesse P
 	et induire sont retrait.
-  \item \textbf{Mise à jour de la confiance} :
+  \item \textbf{Mise à jour de la confiance} -
 	Processus de raisonnement en place pour chacun des agents C dans le champ
 	d'application de P visant à mettre à jour la confiance préalablement
 	accordée à A, en adéquation avec la résultat de l'évaluation que C fait
 	concernant le degré avec lequel la promesse P a été tenue par A.
-  \item \textbf{Critère de réputation} :
+  \item \textbf{Critère de réputation} -
 	Processus de raisonnement effectué par chacun des agents C dans le champ
 	d'application de P visant à échanger entre les différent agents les
 	effets des mises à jour de confiance. Le flux de réputation permet a un
@@ -420,26 +424,21 @@ pourront être transmises au système de gestion de configuration :
     \item Les services que chacun des hôtes doit fournir
     \item Les préoccupations liées au stockage comme le type de système de
         fichiers
-    \item Les questions de sécurité, incluant notamment les aspect de gestion
+    \item Les questions de sécurité, incluant notamment les aspects de gestion
         des utilisateurs
 \end{itemize}
 
 \subsubsection{Traitements}
 
-Les politiques de configuration de haut niveau subirons deux traitements majeurs
-:
-
-\begin{enumerate}
-    \item Spécification de la configuration de bas niveau. Ce traitement dépend
-        de l'information liée à l'architecture telle que le détail du
-        périphérique ou le type de topologie attendu par un système.
-    \item Respecter les promesses formulées par chacun des éléments de
-        configuration. Ce traitement consiste à ce que chaque élément de
-        configuration se comporte conformément à leurs promesses. Dans la
-        gestion des changements, CfEngine3 prendra des mesures correctives en
-        plus de jouer le rôle d'informer les parties concernées en cas de non
-        tenue d'une promesse.
-\end{enumerate}
+Les politiques de configuration de haut niveau subirons deux traitements
+majeurs. Le premier concerne la spécification de la configuration de bas
+niveau. Ce traitement dépend de l'information liée à l'architecture telle que le
+détail du périphérique ou le type de topologie attendu par un système.
+Le deuxième consiste à respecter les promesses formulées par chacun des éléments
+de configuration. Ce traitement s'assure que chaque élément de configuration se
+comporte conformément à ses promesses. Dans la gestion des changements,
+CfEngine3 prendra des mesures correctives en plus de jouer le rôle d'informer
+les parties concernées en cas de non tenue d'une promesse.
 
 \subsubsection{Résultats attendus}
 
@@ -452,7 +451,7 @@ processus, le services et les interfaces.
 
 En plus de leurs propres valeurs d'attributs et manière d'agir, un ensemble de
 promesses sur le bon type de relations entre ces éléments de configuration est
-nécéssaire pour valider le résultat de ces traitements.
+nécessaire pour valider le résultat de ces traitements.
 
 \section{Consistance de l'information et tolérance à l'échec}
 
@@ -460,19 +459,19 @@ nécéssaire pour valider le résultat de ces traitements.
 \label{sec:consensus}
 
 Le consensus est un problème fondamental dans les systèmes distribués tolérants
-aux pannes. Un consensus implique de multiples serveurs acceptant des valeurs.
+aux pannes. Un consensus implique de multiples serveurs acceptants des valeurs.
 Une fois qu'ils atteignent une décision sur une valeur, cette décision est
 définitive. Les algorithmes de consensus typiques sont amenés à faire des
 progrès lorsque la majorité de leurs serveurs sont disponibles, par exemple, un
 cluster de 5 serveurs peut continuer à fonctionner même si deux serveurs ne sont
 plus disponibles. Si plusieurs serveurs échouent, ils cessent de faire des
-progrès (mais ils ne retournerons jamais de valeurs erronées).
+progrès, mais ils ne retournerons jamais de valeurs erronées.
 
 \subsubsection{Pourquoi Raft ?}
 
 Raft est un algorithme de consensus qui est conçu pour être facile à comprendre.
 Il est équivalent à Paxos dans la tolérance aux pannes et en termes de
-performance. La différence est qu'il est décomposé en sous-problèmes
+performances. La différence est qu'il est décomposé en sous-problèmes
 relativement disjoints, et traite de manière rigoureuse toutes les pièces
 majeures nécessaires pour obtenir un système cohérent.
 
@@ -492,7 +491,7 @@ sur un protocole dénué de preuves.
             pratiques. Par exemple, il y peu d'avantages à choisir de manière
             indépendante une collection d'entrées dans le registre, pour les
             fusionner par la suite dans un journal séquentiel ; cela ajoute
-            juste de la complexité. Il est plus simple et plus efficace de
+            seulement de la complexité. Il est plus simple et plus efficace de
             concevoir un système autour d'un journal, où les nouvelles entrées
             sont ajoutées séquentiellement dans un ordre contraint.
         \item Utilise une approche symétrique pair-à-pair à sa base. Cela a un
@@ -509,7 +508,7 @@ sur un protocole dénué de preuves.
 
     \begin{itemize}
         \item Raft utilise une forme plus solide de leadership que les autres
-            algorithmes de consensus. Par exemple, les entrées du registre de
+            algorithmes de consensus. Par exemple, les entrées du registre
             seront communiquées que par le leader vers les autres serveurs. Cela
             simplifie largement la gestion de la réplication des journaux et
             rend Raft beaucoup plus facile à comprendre.
@@ -536,7 +535,7 @@ sur un protocole dénué de preuves.
 %\end{wrapfigure}
 \end{figure}
 
-L'algorithme de consensus gère un registre répliqué contenant les commandes de
+L'algorithme de consensus gère un registre répliqué regroupant les commandes de
 la machine à états de chacun des clients dans le réseau. Les machines à états
 traitent des séquences identiques de commandes à partir de journaux partagés, de
 sorte qu'ils produisent les mêmes résultats.
@@ -544,7 +543,7 @@ sorte qu'ils produisent les mêmes résultats.
 Les systèmes à grande échelle n'ayant qu'un seul cluster leader utilisent une
 machine à état distincte pour gérer les élections et pour stocker les
 informations de configuration qui doivent survivre aux crashs du leader
-(exemple: Chubby, ZooKeeper).
+(exemples: Chubby, ZooKeeper).
 
 \begin{verse}
     \underline{
@@ -584,19 +583,19 @@ permettant au système de tolérer deux échecs). À n'importe quel moment donn�
 chacun des serveur est dans l'un de ces états :
 
 \begin{itemize}
-    \item \textbf{Leader} :
+    \item \textbf{Leader} -
         En cycle normal, il existe un et un seul \emph{leader} et tous les autres
         serveurs sont \emph{followers}. Le \emph{leader} traite les requêtes de
         tous les clients (si un client contacte un \emph{follower}, le
         \emph{follower} le redirige vers le \emph{leader}).
-    \item \textbf{Follower} :
+    \item \textbf{Follower} -
         Les \emph{followers} sont passifs : ils n'émettent jamais de messages par
         leur propre initiative, ils se contentent simplement de répondre aux
         requêtes émises par le \emph{leader} et les \emph{candidats}.
-    \item \textbf{Candidat} :
+    \item \textbf{Candidat} -
         Statut intermédiaire utilisé lors de l'élection d'un nouveau
         \emph{leader}. La figure \ref{fig:raft_server_states} montre les différents états
-        et transitions possibles dans le consensus de Raft.
+        et transitions possibles dans un cluster Raft.
 \end{itemize}
 
 %\begin{wrapfigure}[7]{r}{.4\textwidth}
@@ -633,7 +632,7 @@ d'un serveur à l'autre.
 
 \subsubsection{Réplication des journaux}
 
-L'organisation des journaux est détaillé par la figure
+L'organisation des journaux est détaillée par la figure
 \ref{fig:log_replication}.  Les journaux sont composés d'entrées
 séquentiellement numérotées. Dans notre gestionnaire de contexte, ces entrées
 correspondent à des états incrémentaux de notre ontologie. Chaque entrée réfère aux terme
@@ -659,15 +658,15 @@ nouvelles élections.
 \section{Conclusion}
 
 Les différents concepts détaillés dans ce chapitre nous permettent de répondre
-aux problématiques énoncées auparavant : L'ontologie apporte le haut degré de
-formalisation nécessaire pour modéliser les informations de contexte et les
-promesses permettant la définition des politiques de configuration du système.
-Le théorie de la promesse propose une approche sémantique de la configuration,
-promettant aux utilisateurs un travail de configuration à moindres efforts.
-L'algorithme de consensus garantit la tolérance à l'échec et une organisation
-rigoureuse des communications inter-agents par l'attribution de rôles dans le
-cluster. Le modèle de réplication des journaux qu'il implémente permet d'assurer
-la permanente consistance de l'ontologie avec une simplicité remarquable.
+aux problématiques énoncées. L'ontologie apporte le haut degré de formalisation
+nécessaire pour modéliser les informations de contexte et les promesses
+permettant la définition des politiques de configuration du système.  Le théorie
+de la promesse propose une approche sémantique de la configuration, promettant
+aux utilisateurs un travail de configuration à moindres efforts.  L'algorithme
+de consensus garantit la tolérance à l'échec et une organisation rigoureuse des
+communications inter-agents par l'attribution de rôles dans le cluster. Le
+modèle de réplication des journaux qu'il implémente permet d'assurer la
+permanente consistance de l'ontologie avec une simplicité remarquable.
 
 % ex: set spelllang=fr spell: %
 %%% Local Variables: ***
