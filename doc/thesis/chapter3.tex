@@ -22,7 +22,7 @@ consultation des données de contexte et la définition de politiques
 d'administration. Elle devra également proposer un écran pour le renseignement
 des variables de configuration de bas niveau pour s'assurer que l'administrateur
 du réseau garde la main sur la configuration de l'architecture (cf. annexe
-\ref{appendix:interface_genconfig}.
+\ref{appendix:interface_genconfig}).
 
 %\begin{wrapfigure}{r}{.7\textwidth}
 \begin{figure}[H]
@@ -39,13 +39,13 @@ du réseau garde la main sur la configuration de l'architecture (cf. annexe
 
 La structure de base de l'ontologie de contexte a été implémentée à l'aide du
 logiciel libre \emph{Protégé}. Elle met a disposition une définition générique
-des composants les plus standard d'un réseau d'application comme les interfaces,
+des composants les plus standards d'un réseau d'application comme les interfaces,
 les processus, les utilisateurs ou encore les fichiers et leurs permissions
-associées. Le détail des entités de cette ontologie sont données dans la section
+associées. Le détail des entités de cette ontologie est donné dans la section
 \ref{sec:ontology}. La structure n'est pas figée, elle apporte seulement la
 pierre angulaire pour la définition de nouveaux concepts plus spécifiques. En
-effet, la structure s'étend à mesure à des sondes sont ajoutées.  Celle-ci
-formalisent un certain nombre d'informations de manière individuelle et la
+effet, la structure s'étend à mesure que des sondes sont ajoutées.  Celle-ci
+formalise un certain nombre d'informations de manière individuelle et la
 structure découle alors de la mise en corrélation de ces informations.
 
 \subsection{Sondes de contexte}
@@ -99,7 +99,7 @@ l'agent. Lors de l'incrémentation d'un terme dans le cycle de fonctionnement
 normal basé sur le consensus de Raft, les informations recueillies par chacun
 des agents seront misent en corrélation. La méthode \emph{snapshot()} autorise
 par ailleurs le renouvellement complet de la base d'informations.  La figure
-\ref{fig:sensor} montre (partiellement) le résultat de cette méthode.  Un
+\ref{fig:sensor} montre (partiellement) le résultat de cette méthode.  Une
 information correspond à un triplet $\langle a P b \rangle$, où $b$ est une
 valeur de la propriété $P$ pour le sujet $a$. Ne vous laissez pas confondre par
 la terminologie : une relation, un prédicat et une propriété sont trois termes
@@ -146,7 +146,7 @@ server2 = Server() # uuid: 4a1950ded8c141dd91b695e6f6a09f07)
 Le mécanismes que décrit le consensus de Raft ont été implémentés en Python.
 Dans notre implémentation, on suppose qu'il n'existe qu'un seul agent par
 machine. Tout d'abord, parce qu'il n'y a que très peu d'intérêts à déployer
-plusieurs instance sur la même machine, et ensuite, parce que cela facilite
+plusieurs instances sur la même machine, et ensuite, parce que cela facilite
 grandement le processus de découverte de nouvelles ressources. En effet, le
 service (l'agent) sera mis à disposition à travers un port de communication
 TCP/UDP figé : 6182 (hormis le fait qu'il n'est actuellement utilisé par aucune
@@ -241,8 +241,8 @@ formalisation et de consistance de l'information. Le système actuel souffre
 néanmoins de quelques lacunes en termes de performances. En effet, nous
 remarquons que le temps de consultation de l'ontologie est étroitement lié à
 la taille de cette dernière. La figure \ref{fig:chart} met bien en évidence ce
-phénomène ; en mettant sur une échelle logarithmique les résultat des tests de
-performances composé de 16 requêtes variées. On remarque que la ligne
+phénomène ; en mettant sur une échelle logarithmique les résultats des tests de
+performances composés de 16 requêtes variées. On remarque que la ligne
 rouge pointillée représentant la moyenne est droite, autrement dit, le temps de
 consultation de l'ontologie est exponentiel vis-à-vis de sa taille.
 
@@ -250,7 +250,7 @@ consultation de l'ontologie est exponentiel vis-à-vis de sa taille.
 
 Dans cette implémentation, nous avons complètement laissé de coté tous les
 aspects liés aux performances. Le prototype en l'état mériterait toutefois
-quelques optimisations. Le base d'échange (ontologie/journaux) est actuellement
+quelques optimisations. La base d'échange (ontologie/journaux) est actuellement
 gérée à l'aide des fichiers ; sa mise en tampon ou en base permettrait sans
 aucuns doutes un accès beaucoup plus rapide.
 
@@ -272,14 +272,14 @@ logiciels, la diversité et l'omniprésence des périphériques continuent
 d'augmenter. Cependant, elle doivent offrir des mécanismes permettant la
 gestion automatique des dépendances inter-composants et composant/ressource.
 Dans le cas contraire, le développement de systèmes basés sur les composants
-demeura difficile à appréhender et conduira bien souvent à des systèmes peu
+demeurera difficile à appréhender et conduira bien souvent à des systèmes peu
 fiables et pas assez robustes.
 
-Les environnements qui composeront l'informatique ubiquitaire de demain sera
-composé de milliers de périphériques, avec des millions de composantes
+Les environnements qui composeront l'informatique ubiquitaire de demain seront
+composés de milliers de périphériques, avec des millions de composantes
 logicielles. Les systèmes actuels s'appuient fortement sur la configuration
-manuelle, ce qui à un telle échelle n'est plus possible. Il n'existe que deux
-issues possible à cette situation : une configuration statique, ou une
+manuelle, ce qui à une telle échelle n'est plus gérable. Il n'existe que deux
+issues possibles à cette situation : une configuration statique, ou une
 configuration dynamique et automatique. Puisque les environnements ont
 tendance à être de plus en plus dynamiques, la configuration autonome semble
 incarner la seule solution viable.

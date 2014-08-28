@@ -147,7 +147,7 @@ même type et en même temps (différent d'une promesse qui aurait expiré ou ch
 
 \section{Processus de raisonnement lié à la promesse}
 
-Le procédé de raisonnement qui accompagne l'émanation d'un promesse, se divisent
+Le procédé de raisonnement qui accompagne l'émanation d'un promesse, se divise
 en plusieurs sous-étapes, accrochez-vous:
 
 \begin{itemize}
@@ -201,7 +201,7 @@ en plusieurs sous-étapes, accrochez-vous:
 	cas, Q qualifie un retrait de P. Un agent C applique un processus de
 	raisonnement qui surveille et évalue les promesses postérieures émises
 	par A pour déterminer si celles-ci seront amenées à rompre la promesse P
-	et induire sont retrait.
+	et induire son retrait.
   \item \textbf{Mise à jour de la confiance} -
 	Processus de raisonnement en place pour chacun des agents C dans le champ
 	d'application de P visant à mettre à jour la confiance préalablement
@@ -209,8 +209,8 @@ en plusieurs sous-étapes, accrochez-vous:
 	concernant le degré avec lequel la promesse P a été tenue par A.
   \item \textbf{Critère de réputation} -
 	Processus de raisonnement effectué par chacun des agents C dans le champ
-	d'application de P visant à échanger entre les différent agents les
-	effets des mises à jour de confiance. Le flux de réputation permet a un
+	d'application de P visant à échanger entre les différents agents les
+	effets des mises à jour de confiance. Le flux de réputation permet à un
 	agent C n'ayant aucuns aprioris sur un agent A d'acquérir une confiance
 	initiale en prenant en considération les preuves recueillies par les
     autres agents (parce que même les agents ont des casiers judiciaires).
@@ -260,7 +260,7 @@ générale, les \emph{leaders} opèrent jusqu'à ce qu'ils échouent.
 \section{Élection d'un \emph{leader}}
 
 Comme le montre la figure \ref{fig:leader_election}, le temps est divisé en
-termes. Chaque terme commence par une élection. Après une élection fructueuse,
+termes. Chaque terme commence par une élection. Suite à une élection fructueuse,
 un \emph{leader} unique gère l'intégralité du cluster jusqu'à la fin du terme.
 Parfois les élections échouent, auquel cas le terme se terminera sans choisir de
 \emph{leader} et de nouvelles élections auront lieu au prochain terme. Il est
@@ -280,7 +280,7 @@ d'un serveur à l'autre.
 L'organisation des journaux est détaillée par la figure
 \ref{fig:log_replication}.  Les journaux sont composés d'entrées
 séquentiellement numérotées. Dans notre gestionnaire de contexte, ces entrées
-correspondent à des états incrémentaux de notre ontologie. Chaque entrée réfère aux terme
+correspondent à des états incrémentaux de notre ontologie. Chaque entrée réfère au terme
 durant lequel elle a été créée (le numéro de case dans la figure
 \ref{fig:log_replication}) et contient une commande pour la machine à état. Une
 entrée est considérée comme \emph{une transaction validée (committed)} si son

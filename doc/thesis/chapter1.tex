@@ -24,7 +24,7 @@ journée, les personnes et périphériques dans l'environnement et leurs activit
 
 Dans ce mémoire, nous aborderons dans un premier temps les principes communs à
 chacune des solutions existantes. Ces concepts seront résumés à l'aide d'un
-framework conceptuel dérivé par couches. Nous présenterons un certaine variété
+framework conceptuel dérivé par couches. Nous présenterons une certaine variété
 d'infrastructures et d'intergiciels reconnus pour faciliter la configuration
 d'applications et de services basés sur le contexte. Dans un second temps, nous
 proposerons un modèle d'abstraction des informations de contexte basé sur les
@@ -37,7 +37,7 @@ concept par une implémentation du modèle en langage Python.
 
 De nombreux débats ont eu lieu et continuent de voir le jour sur le sens du
 contexte et de l'informatique sensible au contexte. Alors que la plupart des
-gens comprennent de manière tacite ce qu'est le contexte, ils le trouve par
+gens comprennent de manière tacite ce qu'est le contexte, ils le trouvent par
 ailleurs particulièrement difficile à élucider.
 
 %{%\begin{figure}[H]
@@ -136,7 +136,7 @@ philosophique :
 
 \subsubsection{Contexte physique}
 
-Les contexte physique d'un autre coté peut se traduire par la présence d'une
+Le contexte physique d'un autre coté peut se traduire par la présence d'une
 autre entité, qu'elle soit utilisateur ou périphérique, la proximité d'une
 imprimante en particulier, une indication que l'utilisateur est debout, en train
 de marcher ou assis ou même les conditions météorologiques actuelles. En d'autres
@@ -161,8 +161,8 @@ majeures : \cite{catharina_context_2002}
         caractéristiques temporelles}
 
         L'information de contexte est d'ores et déjà catégorisée selon
-        l'environnement auquel il appartient : virtuel ou physique ; elle
-        peut en outre est subdivisée selon un critère de temporalité :
+        l'environnement auquel elle appartient : virtuel ou physique ; elle
+        peut en outre être subdivisée selon un critère de temporalité :
 
         \begin{itemize}
             \item Information statique : toute information apparentée à
@@ -307,10 +307,10 @@ réalité n'est que le résultat d'une panne de capteur.
 	  services.
 \end{itemize}
 
-La méthode de d'acquisition des données de contexte est très importante lorsque
-l'on conçoit un système de cette nature, puisque c'est ce qui prédéfinit le style
-architectural du système. Chen (2003) \cite{chen_intelligent_2003} présente
-trois approches différentes pour acquérir l'information de contexte.
+La méthode d'acquisition des données de contexte est très importante lorsque
+l'on conçoit un système de cette nature, puisque c'est ce qui prédéfinit le
+style architectural du système. Chen (2003) \cite{chen_intelligent_2003}
+présente trois approches différentes pour acquérir l'information de contexte.
 
 \subsubsection{Capteur en accès direct}
 
@@ -324,7 +324,7 @@ distribués.
 
 \subsubsection{Infrastructure intergicielle}
 
-L'approche intergicielle introduit un architecture en couches avec l'intention
+L'approche intergicielle introduit une architecture en couches avec l'intention
 d'abstraire les détails de bas niveau du processus de détection. La méthode est
 équivalente au modèle client/serveur, plus flexible que le widget puisqu'elle
 favorise l'indépendance de chacune des composantes du système. Chaque
@@ -336,7 +336,7 @@ l'utilisation de normes de codage et des protocoles réseaux standards.
 
 \subsubsection{Serveur de contexte}
 
-Cette approche distribuée élargie l'infrastructure basée sur les intergiciels en
+Cette approche distribuée élargit l'infrastructure basée sur les intergiciels en
 introduisant un gestionnaire d'accès distant. Les données recueillies par les
 capteur sont déplacées vers ce dit ''serveur de contexte'' dans le but de
 faciliter les accès concurrents.
@@ -354,7 +354,7 @@ différents afin de coordonner les processus et composantes multiples :
         l'information de contexte. Le widget est considéré comme un
         médiateur qui transmet exclusivement des informations
         pertinentes à l'application. Un widget de contexte fonctionne
-        totalement indépendamment de l'application, cet qui permet à
+        totalement indépendamment de l'application, ce qui permet à
         plusieurs applications d'en faire usage simultanément. Le
         widget est notamment responsable de l'entretien d'un historique
         complet du contexte sondé au fil du temps. C'est le modèle le
@@ -411,7 +411,7 @@ sensible au contexte, il est avisé de considérer les caractéristiques suivant
     \item \textbf{Extensibilité} : 
         %\begin{quotation}
             les services supportant la notion générale de contexte doivent
-            être facilement extensible pour accueillir toute nouvelle source
+            être facilement extensibles pour accueillir toute nouvelle source
             d'information de contexte non anticipée \cite{ebling_issues_2001}.
         %\end{quotation}
 \end{itemize}
@@ -476,8 +476,8 @@ Il existe plusieurs manières de modéliser l'information de contexte :
 \end{itemize}
 
 La conclusion de l'évaluation présentée par Strang et Linnhoff-Popien
-\cite{strang_context_2004}, basé sur six critères d'exigences, montre que les
-ontologies incarnent de loin le modèle de plus expressif et comblent la plupart
+\cite{strang_context_2004}, basée sur six critères d'exigences, montre que les
+ontologies incarnent de loin le modèle le plus expressif et comblent la plupart
 de ces exigences.
 
 Korpipää et al. \cite{korpipaa_ontology_2003} présente un ensemble de conditions
@@ -543,7 +543,7 @@ contexte pour améliorer sa concision :
 %    \centering
 %    \begin{tabular}{l}
         L'interprétation fait référence au processus d'élévation
-        du niveau d'abstraction d'un fragment de contexte
+        du niveau d'abstraction d'un fragment de contexte.
         \cite{dey_conceptual_2001}
         %\em \footnotesize  Anind Dey, Gregory Abowd, and Daniel Salber. \\
         %\em \footnotesize A Conceptual Framework and a Toolkit for Supporting the 
@@ -590,7 +590,7 @@ pour convertir des informations de bas niveau en un contexte global directement
 %\par}%\end{figure}
 
 
-Comme le contexte est susceptible de contenir des informations sensible sur des
+Comme le contexte est susceptible de contenir des informations sensibles sur des
 personnes, leur situation géographique ou leur activité par exemple, il est
 nécessaire de protéger le caractère personnel de ces données. Les systèmes
 sensibles au contexte soulèvent des défis en termes de confidentialité
@@ -603,7 +603,7 @@ soins. Ils sont par ailleurs autorisés à octroyer l'accès à ces données à
 d'autres utilisateurs. Néanmoins, en ce qui concernent les sondes capables de
 déterminer la présence d'individus dans une pièce ou à tout autre endroit, il
 n'existe aucunes préconisations à ce sujet. C'est un point toutefois critique.
-D'une manière générale, dans une environnement mettant à disposition un certain
+D'une manière générale, dans un environnement mettant à disposition un certain
 éventail d'applications sensibles au contexte, un individu opère à travers de
 multiples environnements sociaux, qui eux même font l'usage des données d'un
 grand nombre d'autres individus.
@@ -759,7 +759,7 @@ contexte.  Basé sur un modèle ontologique très sophistiqué, les raisonneurs
 peuvent dériver de nouveaux concepts et ajuster le comportement d'un service en
 conséquence. La représentation clé/valeur utilisée dans le Context Toolkit
 devient donc un inconvénient majeur. Le fait que de tels attributs ne peuvent
-contenir aucune sémantique restreint de manière considérable de le développement
+contenir aucune sémantique restreint de manière considérable le développement
 de procédés de traitement et d'agrégation de contexte. De plus, les modèles non
 basés sur les ontologies nécessitent un effort de programmation conséquent et
 couplent très étroitement le modèle de contexte avec le reste du système. En
@@ -789,7 +789,7 @@ au contexte.
 \subsection{Gestion du contexte historique}
 
 De la même manière, la majorité des frameworks conservent un historique des
-données de contexte, mais aucun d'entre eux ne les exploitent vraiment.
+données de contexte, mais aucun d'entre eux ne les exploite vraiment.
 Pourtant, cela pourrait permettre de fournir des services sensibles au contexte
 fortement adaptables si le contexte historique était utilisé pour implémenter
 des algorithmes d'auto apprentissage. De plus, l'information de contexte
@@ -829,8 +829,8 @@ son propre format pour la description des informations de contexte et des
 mécanismes de communication dissemblables. La définition d'un modèle standard
 d'abstraction des données de contexte semble être la priorité première dans
 l'évolution des systèmes sensibles au contexte existants. Si le degré de
-sophistication des systèmes distribués font leur force de calcul, leur
-extrême complexité sont souvent la cause de leur boycott. Le modèle issu de
+sophistication des systèmes distribués fait leur force de calcul, leur
+extrême complexité est souvent la cause de leur boycott. Le modèle issu de
 cette étude devra être simple, accessible, extensible et doté d'un haut degré de
 formalisation.
 

@@ -96,7 +96,7 @@ largement des dictionnaires fournis par le gestionnaire de configuration EOLE
 Créole. Créole est un composant majeur des distributions EOLE permettant
 l'agrégation et la mise en corrélation des données de configuration de chacun
 des modules. Un présentation plus détaillée de cette technologie est donnée en
-annexe \ref{appendix:EOLE}
+annexe \ref{appendix:EOLE}.
 
 \section{Représentation des informations de contexte}
 
@@ -151,8 +151,8 @@ information dynamique.
 	  sous-classes disjointes telles que Windows XP, OS X ou Linux.
   \item \textbf{Packages} sont les programmes applicatifs conçus pour servir un
 	  but spécifique comme distribuer un service local, réseau ou web sur
-	  une ou plusieurs machines. Le paquet Apache est en bon exemple
-	  d'entité conçue pour activer un service web.
+      une ou plusieurs machines. Le paquet Apache est bon exemple d'entité
+      conçue pour activer un service web.
   \item \textbf{Service} est une fonctionnalité spécifique d'un système
 	  informatique comme un service web ou réseau offert par une machine. Un
 	  processus qui est défini dans ce document comme un ensemble ou d'une
@@ -214,7 +214,7 @@ information dynamique.
 	  quelconque altération de comportement pour en informer le ou les
 	  managers en charge de cette entité.
   \item \textbf{Component Of} : 
-	  La relation entre une entité X, composant d'une entité plus globale Y
+	  La relation entre une entité X, composante d'une entité plus globale Y
       qui joue le rôle d'encapsuleur pour ce composant X.
   \item \textbf{Owned By} : 
 	  La propriété est un type de relation pouvant exister entre entité
@@ -323,7 +323,7 @@ dédiée aux services. Celle-ci implémente trois concepts majeurs :
 Tout comme pour la standardisation de la gestion intelligente de la
 configuration, la classe \emph{ServiceModel} est très importante. Les services
 sont modélisés comme des processus et la classe \emph{Process} est utilisée pour
-indiquer les opérations à des niveaux granularité différents. La classe
+indiquer les opérations à des niveaux de granularité différents. La classe
 \emph{Process} comprend principalement deux types de processus : atomiques et
 composites. Puisque l'information de gestion de configuration est définie comme
 un ontologie OWL, l'information peut être utilisée comme les paramètres des
@@ -455,7 +455,7 @@ Un système de gestion de configuration basé sur la théorie de la promesse
 accepte comme paramètres d'entrée un ensemble de politiques de configuration de
 haut niveau. Ces politiques de haut niveau seront divisées en spécifications de
 configuration de bas niveau, que nous appellerons ``promesses`` dans la
-modélisation par la théorie de la promesse. Notre ontologie permettra
+modélisation par la théorie de la promesse. Notre ontologie permettra la
 formalisation de ces promesses.
 
 En complément des politiques de configuration, les informations suivantes
@@ -474,7 +474,7 @@ pourront être transmises au système de gestion de configuration :
 
 \subsubsection{Traitements}
 
-Les politiques de configuration de haut niveau subirons deux traitements
+Les politiques de configuration de haut niveau subiront deux traitements
 majeurs. Le premier concerne la spécification de la configuration de bas
 niveau. Ce traitement dépend de l'information liée à l'architecture telle que le
 détail du périphérique ou le type de topologie attendu par un système.
@@ -555,7 +555,7 @@ sur un protocole dénué de preuves.
         \begin{itemize}
             \item Raft utilise une forme plus solide de leadership que les
                 autres algorithmes de consensus. Par exemple, les entrées du
-                registre seront communiquées que par le leader vers les autres
+                registre ne seront communiquées que par le leader vers les autres
                 serveurs. Cela simplifie largement la gestion de la réplication
                 des journaux et rend Raft beaucoup plus facile à comprendre.
             \item Raft utilise des minuteries aléatoires pour élire les leaders.
@@ -597,7 +597,7 @@ caractéristiques suivantes :
         disponibilité. 
     \item Dans le cas le plus courant, une commande peut s'achever aussitôt que
         la majorité de la grappe a répondu à un seul tour d'appels à procédures
-        distantes ; une minorité de serveurs lents de doivent pas impacter les
+        distantes ; une minorité de serveurs lents ne doivent pas impacter les
         performances globales du système.
 \end{itemize}
 
@@ -633,7 +633,7 @@ informations de configuration qui doivent survivre aux crashs du leader
 Les différents concepts détaillés dans ce chapitre nous permettent de répondre
 aux problématiques énoncées. L'ontologie apporte le haut degré de formalisation
 nécessaire pour modéliser les informations de contexte et les promesses
-permettant la définition des politiques de configuration du système.  Le théorie
+permettant la définition des politiques de configuration du système.  La théorie
 de la promesse propose une approche sémantique de la configuration, promettant
 aux utilisateurs un travail de configuration à moindres efforts.  L'algorithme
 de consensus garantit la tolérance à l'échec et une organisation rigoureuse des
