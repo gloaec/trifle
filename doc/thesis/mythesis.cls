@@ -208,10 +208,10 @@
 	\listoftables
 	\ifx\listalgorithmname\undefined  % for algorithm package
 	\else
-	  \clearpage
-	  \phantomsection
-	  \addcontentsline{toc}{chapter}{LISTE DES ALGORITHMES}
-	  \listofalgorithms
+	%  \clearpage
+	%  \phantomsection
+	%  \addcontentsline{toc}{chapter}{LISTE DES ALGORITHMES}
+	%  \listofalgorithms
 	\fi
 	\clearpage
 	\phantomsection

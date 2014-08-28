@@ -16,11 +16,11 @@ OK -"Garder le registre consistent est le travail de l'algo de consensus" BOuger
     enlever souligné.
 
 OK - Supprimer les annexe ontologie et les rajouter section 2
-Insérer une annexe sur les requetes (interface).
+     Insérer une annexe sur les requetes (interface).
 
-Rajouter des relevés de performances.
+OK   Rajouter des relevés de performances.
 
- 1/2 page pour les limtes (performances) + 1/2 page pour les perspectives
-d'évolution
+OK - 1/2 page pour les limtes (performances) + 1/2 page pour les perspectives
+     d'évolution
 
 OK - Block de code avec fond gris.
