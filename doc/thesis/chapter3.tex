@@ -2,8 +2,27 @@
 
 \section{Vue d'ensemble de la solution proposée}
 
-La figure \ref{fig:archi} présente un vue d'ensemble de la solution
-proposée.
+La figure \ref{fig:archi} présente un vue d'ensemble de la solution proposée.
+L'ontologie constitue le point central du système. Elle sert de registre pour
+les informations de contextes, la définition des promesses et même les variables
+de configuration de bas niveau.  Ce registre est distribué dans un système
+multi-agents implémentant le consensus de Raft. Ce système permet le versioning
+et l'historisation de l'information grâce au procédé d'incrémentation des termes
+qu'implémente le consensus de Raft.
+
+L'ontologie de contexte est peuplée par chacun des agents, qui individuellement
+vont agréger l'information provenant des journaux d'évènements et des variables
+d'environnement et de configuration . Des sondes plus spécifiques sont
+implémentées pour permettre la récupération d'informations telles que
+l'adressage IP, la consommation des ressources ou encore les utilisateurs
+actuellement connectés. 
+
+Enfin, une interface web met à disposition les outils nécessaires pour la
+consultation des données de contexte et la définition de politiques
+d'administration. Elle devra également proposer un écran pour le renseignement
+des variables de configuration de bas niveau pour s'assurer que l'administrateur
+du réseau garde la main sur la configuration de l'architecture (cf. annexe
+\ref{appendix:interface_genconfig}.
 
 %\begin{wrapfigure}{r}{.7\textwidth}
 \begin{figure}[H]
@@ -14,67 +33,6 @@ proposée.
 %\end{wrapfigure}
 \end{figure}
 
-\section{Framework de gestion de configuration}
-
-La gestion de la configuration est le processus de contraindre le comportement
-d'un réseau de machines de manière à ce que le comportement de chaque machine
-soit conforme aux politiques et lignes directrices prédéfinies, et
-accomplisse les objectifs d'entreprise prédéterminés. Cela implique :
-
-\begin{itemize}
-  \item Des personnes
-  \item Outil gestion de configuration ``zéro`` (exemple: CfEngine)
-  \item Un ensemble ce machines interconnectées
-  \item Un ensemble de processus de configuration destiné à aboutir à un système
-	  conforme à la politique en vigueur.
-\end{itemize}
-
-Les paramètres de configuration peuvent être la permission d'un fichier,
-l'adresse d'un carte réseau, le type de système de fichier pouvant être monté
-sur un volume disque.
-
-La possibilité d'automatiser la configuration des réseaux IP (Internet
-Protocol) en utilisant une technologie sémantique est également très
-prometteuse. L'initiative connexe de créer un environnement de réseau de
-capteurs basé sur le ontologies semble également être une solution viable.
-
-La plupart des organisations aujourd'hui n'ont aucun procédé systématique pour
-gérer leurs informations de configuration. Cela signifie que des informations
-comme l'adresse IP d'une machine et le statut de son service réseau sont
-stockées de manière dispersée et désorganisée. Certains outils de supervision
-tels que Nagios présente une manière de réorganiser ces informations provenant
-de sources dispersées.
-
-L'idée d'utiliser une CMDB (Configuration Management Database) est également un
-alternative permettant de solutionner le problème ci-dessus. Toutefois, le besoin
-pour un gestionnaire d'informations de plus haut niveau est mentionné dans de
-nombreuses littératures.
-
-Cette nouvelle façon de renforcer l'efficacité de la gestion des connaissances
-dans le domaine de la gestion de configuration, nécessite la possibilité
-d'extraction automatique de données à partir d'emplacements de stockage
-précédents et la possibilité de mise à jour automatique de stockages permanents
-tels que la CMDB afin d'augmenter la qualité de l'information sous-jacente.
-
-La possibilité de ces deux fonctions à savoir, l'extraction automatique des
-données et également la mise à jour automatique des informations stockées ont
-été fournies par ITIL. % FIXME ITIL ?
-
-Le travail de ce mémoire est de démontrer les possibilités d'obtenir un
-gestionnaire de connaissances intégré en conjuguant les ontologies, la théorie
-de la promesse et le consensus de Raft. La structure de l'information de
-configuration stockée dans une CMDB et dans d'autres fichiers sera représentée en
-concordance avec les standard de OWL. Cette structure de domaine de connaissance
-sera implémentée comme une promesse de structure d'information.
-
-\noindent\rule{8cm}{0.4pt}
-
-La Configuration Management Database (abrégé CMDB), ou base de données de
-gestion de configuration, est une base de données unifiant les composants d'un
-système informatique. Elle permet de comprendre l'organisation entre ceux-ci et
-de modifier leur configuration. La CMDB est un composant fondamental d'une
-architecture ITIL.
-
 \section{Gestionnaire de configuration basé sur la théorie de la promesse}
 
 \subsection{Ontologie de contexte}
@@ -83,45 +41,46 @@ La structure de base de l'ontologie de contexte a été implémentée à l'aide 
 logiciel libre \emph{Protégé}. Elle met a disposition une définition générique
 des composants les plus standard d'un réseau d'application comme les interfaces,
 les processus, les utilisateurs ou encore les fichiers et leurs permissions
-associées. Le détail des entités de cette ontologie sont données en
-annexe \ref{appendix:ontology}. La structure n'est pas figée, elle apporte
-seulement la pierre angulaire pour la définition de nouveaux concepts plus
-spécifiques. En effet, la structure s'étend à mesure à des sondes sont ajoutées.
-Celle-ci formalisent un certain nombre d'informations de manière individuelle et
-la structure découle alors de la mise en corrélation de ces informations.
+associées. Le détail des entités de cette ontologie sont données dans la section
+\ref{sec:ontology}. La structure n'est pas figée, elle apporte seulement la
+pierre angulaire pour la définition de nouveaux concepts plus spécifiques. En
+effet, la structure s'étend à mesure à des sondes sont ajoutées.  Celle-ci
+formalisent un certain nombre d'informations de manière individuelle et la
+structure découle alors de la mise en corrélation de ces informations.
 
 \subsection{Sondes de contexte}
 
-\begin{wrapfigure}{r}{.5\textwidth}
-  \begin{alltt}\scriptsize
-    \textbf{user1@server1\$} trifle console
+\begin{figure}[h]
+    \scriptsize
+    \begin{myverbatim}[commandchars=\\\{\},codes={\catcode`$=3\catcode`_=8}]
+\textbf{user1@server1\$} trifle console
 
-    store   = Store()  # 10598 statements
-    server1 = Server() # uuid: d7c38143d6ed41c8ad1f04c9601733d1)
-    server2 = Server() # uuid: 4a1950ded8c141dd91b695e6f6a09f07)
-    
-    >>> store
-    <trifle.store.Store instance at 0x336acf8>
-    >>> len(store.graph)
-    10598
-    >>> store.snapshot()
-    2014-08-14 15:08:07 \textbf{INFO} Pulling from InterfacesSensor...
-    2014-08-14 15:08:07 \textbf{DEBUG} 36 informations sensored
-    2014-08-14 15:08:07 \textbf{INFO} Pulling from ProcessesSensor...
-    2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 24963
-    2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 24964
-    2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 25080
-    2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 25082
-    2014-08-14 15:08:08 \textbf{DEBUG} 1395 informations sensored
-    2014-08-14 15:08:09 \textbf{INFO} Pulling from UsersSensor...
-    2014-08-14 15:08:09 \textbf{DEBUG} 15 informations sensored
-    [...]
-    >>> len(store.graph)
-    14534
-  \end{alltt}
+store   = Store()  # 10598 statements
+server1 = Server() # uuid: d7c38143d6ed41c8ad1f04c9601733d1)
+server2 = Server() # uuid: 4a1950ded8c141dd91b695e6f6a09f07)
+
+>>> store
+<trifle.store.Store instance at 0x336acf8>
+>>> len(store.graph)
+10598
+>>> store.snapshot()
+2014-08-14 15:08:07 \textbf{INFO} Pulling from InterfacesSensor...
+2014-08-14 15:08:07 \textbf{DEBUG} 36 informations sensored
+2014-08-14 15:08:07 \textbf{INFO} Pulling from ProcessesSensor...
+2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 24963
+2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 24964
+2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 25080
+2014-08-14 15:08:08 \textbf{WARNING} NoSuchProcess: 25082
+2014-08-14 15:08:08 \textbf{DEBUG} 1395 informations sensored
+2014-08-14 15:08:09 \textbf{INFO} Pulling from UsersSensor...
+2014-08-14 15:08:09 \textbf{DEBUG} 15 informations sensored
+[...]
+>>> len(store.graph)
+14534
+    \end{myverbatim}
   \caption{Capture et fusion des informations de contexte provenant des sondes}
   \label{fig:sensor}
-\end{wrapfigure}
+\end{figure}
 
 Afin de garantir la flexibilité et l'extensibilité de notre gestionnaire, les
 sondes de contextes sont implémentées sous la forme d'un greffon. Une classe
@@ -151,26 +110,38 @@ $P$, et exprime que le sujet $a$ a une valeur $b$ pour la propriété $P$.
 
 \subsubsection{Consensus de Raft}
 
-\begin{wrapfigure}{r}{.5\textwidth}
-  \begin{alltt}\scriptsize
-    \textbf{user1@server1\$} trifle console
+%\begin{wrapfigure}{r}{.5\textwidth}
+\begin{figure}[h]
+  %\scriptsize
+  %\centering
 
-    store   = Store()  # 10598 statements
-    server1 = Server() # uuid: d7c38143d6ed41c8ad1f04c9601733d1)
-    server2 = Server() # uuid: 4a1950ded8c141dd91b695e6f6a09f07)
-    
-    >>> server1, server2
-    (<Server(Thread-1, started daemon 140389140690688)>, 
-     <Server(Thread-2, started daemon 140388924913408)>)
-    >>> server1.role, server2.role
-    ('follower', 'leader')
-    >>> server1.call_election()
-    >>> server1.role, server2.role
-    ('leader', 'follower')
-  \end{alltt}
+  %\begin{minipage}{.6\textwidth}
+  %\begin{frame}[t,fragile]
+  %\defverbatim[colored]\mycode{
+    \scriptsize
+    \begin{myverbatim}[commandchars=\\\{\},codes={\catcode`$=3\catcode`_=8}]
+\textbf{user1@server1\$} trifle console
+
+store   = Store()  # 10598 statements
+server1 = Server() # uuid: d7c38143d6ed41c8ad1f04c9601733d1)
+server2 = Server() # uuid: 4a1950ded8c141dd91b695e6f6a09f07)
+
+>>> server1, server2
+(<Server(Thread-1, started daemon 140389140690688)>, 
+ <Server(Thread-2, started daemon 140388924913408)>)
+>>> server1.role, server2.role
+('follower', 'leader')
+>>> server1.call\_election()
+>>> server1.role, server2.role
+('leader', 'follower')
+    \end{myverbatim}
+  %}
+  %\end{frame}
+  %\end{minipage}
   \caption{Validation de l'implémentation du consensus de Raft}
   \label{fig:raft}
-\end{wrapfigure}
+%\end{wrapfigure}
+\end{figure}
 
 Le mécanismes que décrit le consensus de Raft ont été implémentés en Python.
 Dans notre implémentation, on suppose qu'il n'existe qu'un seul agent par
@@ -192,13 +163,56 @@ laquelle il est \emph{candidat} (et même favori). À l'issue de cette seconde
 élection, on remarque que c'est désormais le second serveur qui est à la tête du
 système et les opérations ont repris leur cours normal.
 
-\subsubsection{Requêtes}
+\subsubsection{Consistance de l'ontologie}
 
-% TODO Requests
+\begin{figure}[h]
+    \scriptsize
+    \begin{myverbatim}[commandchars=\\\{\},codes={\catcode`$=3\catcode`_=8}]
+\textbf{SELECT} ?MachineName ?UserName ?PID ?IPv4Address ?Port ?ServiceName ?Command ?Status
+\textbf{WHERE} \{
+    ?Process   a             t:Process .
+    ?Process   t:ProcessID   ?PID .
+    ?Process   t:launchedBy  ?User .
+    ?Process   t:runsOn      ?Machine .
+    ?Process   t:Command     ?Command .
+    ?Process   t:Name        ?ProcessName .
+    ?Process   t:Status      ?Status .
+    ?User      t:Name        ?UserName .
+    ?Machine   t:Name        ?MachineName .
+    ?Service   t:startedBy   ?Process .
+    ?Service   t:ServicePort ?Port .
+    ?Service   t:Status      ?Status .
+    ?Interface t:componentOf ?Machine .
+    ?Location  a             ?IPAddress .
+    ?Location  t:Type        "IPv4"^^xsd:string .
+    ?Location  t:locates     ?Interface .
+    ?Location  t:Address     ?IPv4Address .
+\}
+    \end{myverbatim}
+    \caption{Exemple de requête permettant de vérifier la consistance de l'ontologie}
+    \label{fig:sparql}
+\end{figure}
+
+Afin de valider la consistance de l'ontologie, le procédé consiste à vérifier
+la bonne mise en correspondance d'une certaine quantité d'informations
+provenant d'agents et de sondes différentes. La figure \ref{fig:sparql} est un
+exemple pertinent de requête permettant de justifier la bonne mise en
+corrélation des informations de contexte. Cet requête permet d'obtenir la liste
+détaillée de tous les services disponibles dans l'infrastructure, leurs hôtes
+respectifs, ainsi que les processus auxquels ils sont attachés, la commande qui a
+permit leur démarrage et même l'utilisateur propriétaire du processus. Cet
+exemple invoque de multiples sondes dans le réseau. La sonde \emph{base}
+permettant l'identification de la machine sur laquelle opère
+l'agent. La sonde \emph{interfaces} permet d'associer des données d'adressage à
+la machine courante. La sonde \emph{services} permet de détecter les différents
+services dans le réseau et les ports sur lesquels ils sont distribués. La sonde
+\emph{processus} autorise la lecture des états des différents processus. Enfin
+la sonde \emph{user} permet le référencement des groupes et utilisateurs dans le
+cluster.
 
 \subsection{Interface d'administration}
 
-Le gestionnaire de configuration prévoit un interface d'administration
+Le gestionnaire de configuration prévoit une interface d'administration
 pour la définition des politiques de comportement et le contrôle des différents
 composants du système. L'interface est un service web distribué par
 chacun des agents. Toutes les actions effectuées à travers l'interface seront
@@ -208,6 +222,47 @@ consultable en temps réel à l'aide de requêtes SPARQL. Enfin, elle doit
 conserver la possibilité de renseigner les valeurs des variables de
 configuration de bas niveau. Des captures d'écran de l'interface
 d'administration sont disponibles en annexe \ref{appendix:interface}.
+
+\section{Évaluation de la solution proposée}
+
+\subsection{Limites de la solution}
+
+%\begin{wrapfigure}{r}{.7\textwidth}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/chart_sparql}
+    \caption{Schéma d'implémentation du système multi-agents}
+    \label{fig:chart}
+%\end{wrapfigure}
+\end{figure}
+
+Dans cette étude, nous avons porté une attention accrue aux problématiques de
+formalisation et de consistance de l'information. Le système actuel souffre
+néanmoins de quelques lacunes en termes de performances. En effet, nous
+remarquons que le temps de consultation de l'ontologie est étroitement lié à
+la taille de cette dernière. La figure \ref{fig:chart} met bien en évidence ce
+phénomène ; en mettant sur une échelle logarithmique les résultat des tests de
+performances composé de 16 requêtes variées. On remarque que la ligne
+rouge pointillée représentant la moyenne est droite, autrement dit, le temps de
+consultation de l'ontologie est exponentiel vis-à-vis de sa taille.
+
+\subsection{Perspectives d'évolution}
+
+Dans cette implémentation, nous avons complètement laissé de coté tous les
+aspects liés aux performances. Le prototype en l'état mériterait toutefois
+quelques optimisations. Le base d'échange (ontologie/journaux) est actuellement
+gérée à l'aide des fichiers ; sa mise en tampon ou en base permettrait sans
+aucuns doutes un accès beaucoup plus rapide.
+
+Les sondes sont implémentées de manière à modéliser un maximum d'informations
+et trouver les corrélations entre les différentes informations sondées. Elles
+ne sont cependant pas interdépendantes d'un point de vue fonctionnel. Nous
+pourrions par conséquent facilement paralléliser tout le processus de sondage.
+
+Pour finir, l'ontologie de contexte implémentée pour cette preuve de concept
+est très générique et entièrement ciblée sur l'environnement virtuel. Il semble
+primordial d'apporter les outils et la documentation nécessaires pour permettre
+à la communauté du libre de contribuer à la base de connaissance.
 
 \section{Conclusion}
 

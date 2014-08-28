@@ -23,11 +23,18 @@
 
 \newcommand{\thesistitlepage}
 {
-	\vspace*{0.5in}
 	\thispagestyle{empty}
 	\singlespacing
+	\vspace*{0.5in}
+	\begin{center}
+        \begin{tabular}[h]{cc}
+            \includegraphics[height=2cm]{img/ub} &
+            \includegraphics[height=2cm]{img/cadoles} \\
+        \end{tabular}    
+	\end{center}
 	\begin{center}
 		UNIVERSITÉ DE BOURGOGNE, \\
+        SOCIÉTÉ CADOLES, \\
 		Dijon, \\
 		\vspace{0.4in}
         {\huge \Thesistitle} \\

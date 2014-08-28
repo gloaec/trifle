@@ -8,22 +8,9 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0/addresses/IPv4Address/0> a t:IPAddress,
-        t:IPv4Address ;
-    t:Address "192.168.10.106" ;
-    t:Broadcast "192.168.10.255" ;
-    t:NetMask "255.255.255.0" ;
-    t:Type "IPv4" ;
-    t:Version "4" ;
-    t:locates <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0> .
-
-<file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0/addresses/IPv6Address/0> a t:IPAddress,
-        t:IPv6Address ;
-    t:Address "fe80::a60:6eff:fe00:51b0%eth0" ;
-    t:NetMask "ffff:ffff:ffff:ffff::" ;
-    t:Type "IPv6" ;
-    t:Version "6" ;
-    t:locates <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0> .
+<file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0> a t:Interface ;
+    t:Name "eth0" ;
+    t:locatedAt <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0/addresses/MACAddress/0> .
 
 <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0/addresses/MACAddress/0> a t:MACAddress ;
     t:Address "08:60:6e:00:51:b0" ;
@@ -54,9 +41,22 @@
     t:Type "MAC" ;
     t:locates <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/lo> .
 
-<file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0> a t:Interface ;
-    t:Name "wlan0" ;
-    t:locatedAt <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0/addresses/MACAddress/0> .
+<file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0/addresses/IPv4Address/0> a t:IPAddress,
+        t:IPv4Address ;
+    t:Address "192.168.1.182" ;
+    t:Broadcast "192.168.1.255" ;
+    t:NetMask "255.255.255.0" ;
+    t:Type "IPv4" ;
+    t:Version "4" ;
+    t:locates <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0> .
+
+<file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0/addresses/IPv6Address/0> a t:IPAddress,
+        t:IPv6Address ;
+    t:Address "fe80::de85:deff:fe77:c173%wlan0" ;
+    t:NetMask "ffff:ffff:ffff:ffff::" ;
+    t:Type "IPv6" ;
+    t:Version "6" ;
+    t:locates <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0> .
 
 <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0/addresses/MACAddress/0> a t:MACAddress ;
     t:Address "dc:85:de:77:c1:73" ;
@@ -64,15 +64,15 @@
     t:Type "MAC" ;
     t:locates <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0> .
 
-<file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0> a t:Interface ;
-    t:Name "eth0" ;
-    t:locatedAt <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0/addresses/IPv4Address/0>,
-        <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0/addresses/IPv6Address/0>,
-        <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/eth0/addresses/MACAddress/0> .
-
 <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/lo> a t:Interface ;
     t:Name "lo" ;
     t:locatedAt <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/lo/addresses/IPv4Address/0>,
         <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/lo/addresses/IPv6Address/0>,
         <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/lo/addresses/MACAddress/0> .
+
+<file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0> a t:Interface ;
+    t:Name "wlan0" ;
+    t:locatedAt <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0/addresses/IPv4Address/0>,
+        <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0/addresses/IPv6Address/0>,
+        <file:///home/ghis/Workspace/trifle/src/trifle/store.n3/interfaces/wlan0/addresses/MACAddress/0> .
 

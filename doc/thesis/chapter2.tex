@@ -1,4 +1,4 @@
-\chapter{Problématiques émergentes et orientations de recherche}
+\chapter{Problématiques émergentes et choix technologiques}
 
 \section{Introduction}
 
@@ -9,7 +9,7 @@ sensibles au contexte. De cet état de l'art se dégagent plusieurs problématiq
 dans le développement d'un système de configuration basé sur le contexte
 auxquelles nous tenterons d'apporter une solution.
 
-\section{Intergiciel et détails d'implémentation}
+\section{Besoin d'un nouvel intergiciel}
 
 Le besoin d'un nouvel intergiciel se fait ressentir du coté de l'implémentation.
 Les technologies intergicielles actuelles ne sont pas adaptées pour le prise en
@@ -34,6 +34,70 @@ littérature avec quelques prototypes fonctionnels :
 	    une architecture basée sur les widgets.
 \end{itemize}
 
+\subsection{Elaboration d'un framework de gestion de configuration}
+
+La gestion de la configuration est le processus de contraindre le comportement
+d'un réseau de machines de manière à ce que le comportement de chaque machine
+soit conforme aux politiques et lignes directrices prédéfinies, et
+accomplisse les objectifs d'entreprise prédéterminés. Cela implique :
+
+\begin{itemize}
+  \item Des personnes
+  \item Un outil gestion de configuration ``zéro`` (exemple: CfEngine)
+  \item Un ensemble ce machines interconnectées
+  \item Un ensemble de processus de configuration destiné à aboutir à un système
+	  conforme à la politique en vigueur.
+\end{itemize}
+
+Les paramètres de configuration peuvent être la permission d'un fichier,
+l'adresse d'un carte réseau, le type de système de fichier pouvant être monté
+sur un volume disque.
+
+La possibilité d'automatiser par exemple la configuration des réseaux IP
+(Internet Protocol) en utilisant une technologie sémantique est très
+prometteuse. L'initiative connexe de créer un environnement de réseau de
+capteurs basé sur le ontologies semble également être une solution viable.
+La plupart des organisations aujourd'hui n'ont aucun procédé systématique pour
+gérer leurs informations de configuration. Cela signifie que des informations
+comme l'adresse IP d'une machine et le statut de son service réseau sont
+stockées de manière dispersée et désorganisée. Certains outils de supervision
+tels que Nagios présentent une manière de réorganiser ces informations provenant
+de sources dispersées. 
+
+\subsection{Utilisation d'une base de gestion de configuration}
+
+L'idée d'utiliser une CMDB (Configuration Management Database) est également une
+alternative permettant de solutionner le problème ci-dessus. La base de données
+de gestion de configuration est une base unifiant les composants d'un système
+informatique. Elle permet de comprendre l'organisation entre ceux-ci et de
+modifier leur configuration. La CMDB est un composant fondamental d'une
+architecture basé sur les application doté d'un gestionnaire de configuration
+centralisé. 
+
+Cette nouvelle façon de renforcer l'efficacité de la gestion des connaissances
+dans le domaine de la gestion de configuration, nécessite la possibilité
+d'extraction automatique de données à partir d'emplacements de stockage
+précédents et la possibilité de mise à jour automatique de stockages permanents
+tels que la CMDB afin d'augmenter la qualité de l'information sous-jacente.
+
+Ces deux fonctionnalités, à savoir, l'extraction automatique des
+données et également la mise à jour automatique des informations stockées
+doivent impérativement être implémentées. Mais le besoin pour un gestionnaire
+d'informations de plus haut niveau est tout de même mentionné dans de nombreuses
+littératures.
+
+\subsection{Conception d'une ontologie de gestion de configuration}
+
+La structure de l'information de configuration stockée dans une CMDB et dans
+d'autres fichiers sera représentée en concordance avec les standard de OWL.
+Cette structure de domaine de connaissance sera implémentée comme une promesse
+de structure d'information. La structure d'information initiale s'inspirera très
+largement des dictionnaires fournis par le gestionnaire de configuration EOLE
+Créole. Créole est un composant majeur des distributions EOLE permettant
+l'agrégation et la mise en corrélation des données de configuration de chacun
+des modules. Un présentation plus détaillée de cette technologie est donnée en
+annexe \ref{appendix:EOLE}
+
 \section{Représentation des informations de contexte}
 
 L'une des principales innovations à apporter dans les infrastructures
@@ -44,7 +108,8 @@ la régissent. Cette couche doit rester simple d'utilisation pour les
 développeurs d'applications, et le modèle améliorer simultanément
 l'automatisation et la sécurité.
 
-\subsection{Ontologie de contexte}
+\subsection{Conception d'un ontologie de contexte}
+\label{sec:ontology}
 
 La représentation des informations de contexte est grande préoccupation. Nous
 avons présenté dans ce mémoire une approche basée sur les ontologie très
@@ -58,10 +123,192 @@ utilisés pour séparer la définition et l'information liée au contexte de
 l'implémentation spécifique. Il existe d'autres caractéristiques qui font que
 l'information de contexte est difficile à modéliser : comme abordé précédemment,
 il est parfois nécessaire de différencier une information statique d'une
-information dynamique. Le détail de l'ontologie de contexte développée dans
-cette étude est donnée en annexe \ref{appendix:ontology}.
+information dynamique. 
 
-\subsubsection{Ontologie de services}
+\subsubsection{Entités principales de l'ontologie}
+
+%\begin{wrapfigure}{r}{.7\textwidth}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{img/ontology_entities}
+    \caption{Entités de l'ontologie}
+    \label{fig:ontology_entities}
+%\end{wrapfigure}
+\end{figure}
+
+\begin{itemize}
+  \item \textbf{Machine} est n'importe quel périphérique en mesure d'accepter et
+	  de traiter des informations pour fournir le résultat désiré basé sur
+	  un programme ou une séquence d'instructions sur comment les données
+	  doivent être traitées.
+  \item \textbf{Computers} sont le type principal de machines dans cette étude.
+	  C'est pourquoi les deux terminologies sont interchangeables dans
+	  diverses sections de ces travaux. Les ordinateurs personnels (PCs),
+	  les ordinateurs portables et les serveurs héritent tous de ce type.
+  \item \textbf{Operating System} est un programme faisant le pont en les
+	  composants logiciels et les composants matériels sous-jacents d'une
+	  machine. Le système d'exploitation est une entité comportant plusieurs
+	  sous-classes disjointes telles que Windows XP, OS X ou Linux.
+  \item \textbf{Packages} sont les programmes applicatifs conçus pour servir un
+	  but spécifique comme distribuer un service local, réseau ou web sur
+	  une ou plusieurs machines. Le paquet Apache est en bon exemple
+	  d'entité conçue pour activer un service web.
+  \item \textbf{Service} est une fonctionnalité spécifique d'un système
+	  informatique comme un service web ou réseau offert par une machine. Un
+	  processus qui est défini dans ce document comme un ensemble ou d'une
+	  partie d'un ensemble de mesures permettant la fourniture de services
+	  en exécutant des activités réelles en tâche de fond.
+  \item \textbf{Command} est un utilitaire pouvant être utilisé par les
+	  utilisateurs pour démarrer un processus spécifique, à la condition
+	  qu'il n'existe pas de planification pour l'exécution de cette même
+	  tâche. Un très bon exemple permettant d'illustrer cette relation
+	  entre ces deux entités serait un web service, qui nécessite qu'un
+	  processus tel que ''httpd'' soit démarré en arrière plan à l'aide de
+	  la commande ''\begin{verbatim}httpd start\end{verbatim}''.
+  \item \textbf{Storage} est une partition logique d'un média de stockage
+	  physique qui sert principalement d'hôte pour les différents types de
+	  fichiers. Un fichier est défini comme une collection d'informations
+	  complète comme un programme, un ensemble de données utilisées par un
+	  programme ou un document créé par un utilisateur.
+  \item \textbf{Interface} est défini comme un périphérique permettant l'accès à
+	  un réseau par une machine.
+\end{itemize}
+
+\subsubsection{Propriétés objets principales de l'ontologie (Relations)}
+
+%\begin{wrapfigure}{r}{.7\textwidth}
+\begin{figure}[h]
+    \centering
+    \begin{tabular}{p{.54\textwidth}p{.43\textwidth}}
+        \noindent
+        \includegraphics[width=.53\textwidth]{img/ontology_relations1}
+        &
+        \includegraphics[width=.42\textwidth]{img/ontology_relations2}
+    \end{tabular}
+    \caption{Propriétés objets de l'ontologie}
+    \label{fig:ontology_entities}
+%\end{wrapfigure}
+\end{figure}
+
+\begin{itemize}
+  \item \textbf{Caused By} :
+          Un type d'association où une entité joue le rôle d'affecter l'autre en
+	  changeant son état de l'état X à l'état Y.
+  \item \textbf{Configured By} : 
+	  Quand une entité X peux apporter les changements nécessaires à
+	  l'entité Y pour lui permettre d'accomplir ses objectifs et ses
+	  intentions. Le lien entre une machine et un progiciel de gestion de
+	  configuration comme CfEngine 3 est un exemple typique de ce type de
+	  relations.
+  \item \textbf{Edited By} : 
+	  Décrit qu'un fichier peut être modifié par un éditeur tel que
+	  l'utilisateur du fichier à certaines fins.
+  \item \textbf{Managed By} : 
+	  Si X est responsable du bon fonctionnement de Y dans l'accomplissement
+	  de son objectif, X est dit manager de Y. Le fait qu'une entité hérite
+	  de ce rôle implique une supervision constante et des prises de mesures
+	  lorsqu'intervient une déviation dans le comportement souhaité.
+  \item \textbf{Monitoring By} : 
+	  La supervision est principalement la responsabilité de garder un œil
+	  sur quelque chose. Si une entité X supervise Y, elle surveille une
+	  quelconque altération de comportement pour en informer le ou les
+	  managers en charge de cette entité.
+  \item \textbf{Component Of} : 
+	  La relation entre une entité X, composant d'une entité plus globale Y
+      qui joue le rôle d'encapsuleur pour ce composant X.
+  \item \textbf{Owned By} : 
+	  La propriété est un type de relation pouvant exister entre entité
+	  devenue possession et son propriétaire. Le lien entre un fichier et son
+	  propriétaire est un exemple de cet type d'association.
+  \item \textbf{Promised By} : 
+	  La relation en une promesse et l'entité qui la formule. 
+  \item \textbf{Required By} : 
+	  Si X dépend de Y dans l'accomplissement de ses intentions, la relation
+	  entre ces deux entités est de type ''Required By''.
+  \item \textbf{Runs On} : 
+	  Si l'entité X exerce ses activités ou son exécution sur l'entité Y, la
+	  relation est appelé ''Runs On''.
+  \item \textbf{Written By} : 
+	  La relation entre une écriture X et son auteur Y.
+  \item \textbf{Used By} : 
+	  Si une entité X fait l'usage d'une entité Y à n'importe quelle moment
+	  de son exercice, la relation est de type ''Used By''.
+  \item \textbf{Started By} : 
+	  Quand une entité X est responsable du démarrage d'une entité Y ou
+	  qu'elle commence à se comporter d'un certaine manière, l'association
+	  est dite de type ''Started By''.
+  \item \textbf{Provided By} : 
+	  Quand une entité X a le potentiel et la bonne volonté de fournir
+	  quelque chose à une autre entité Y, la relation entre ces deux entités
+	  est appelée ''Provided By''.
+  \item \textbf{Installed By} : 
+	  Une entité X peut mettre en place un programme Y dans une machine de
+	  manière à accomplir son but recherché. La relation existante entre X
+	  et Y est alors de type ''Installed By''.
+  \item \textbf{Contained In} :
+	  Si une entité X est contenue dans Y, physiquement ou conceptuellement,
+	  la relation est de type ''Contained In''.
+\end{itemize}
+
+\subsubsection{Propriétés de données principales de l'ontologie (Attributs)}
+
+%\begin{wrapfigure}{r}{.7\textwidth}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\textwidth]{img/ontology_attributes}
+    \caption{Propriétés de données de l'ontologie}
+    \label{fig:ontology_entities}
+%\end{wrapfigure}
+\end{figure}
+
+\begin{itemize}
+  \item \textbf{AllowConnectFrom} : Liste d'adresses IP ou de nom d'hôtes
+	  susceptibles d'avoir plus d'une connexion au port d'un serveur.
+  \item \textbf{CheckForeign} : Indique s'il est nécessaire de vérifier les
+	  autorisations sur le répertoire racine lors de la recherche de la
+	  profondeur.
+  \item \textbf{CheckRoot} : Liste de nom d'hôtes ou d'adresses IP auxquels
+	  accorder un droit de lecture sur le serveur.
+  \item \textbf{ForceIpv4} : Indique s'il y a un usage forcé de l'adresse IP
+	  pour les connexions.
+  \item \textbf{IsMachineVirtualized} : Indique si une machine est virtuelle ou
+	  non.
+  \item \textbf{PackageFileRepository} : Liste de répertoires locaux à la
+	  machine pour la recherche de paquets.
+  \item \textbf{TrustKeyFrom} : liste des hôtes pour lesquelles une machine
+	  acceptera les clés publiques sur base de la confiance. Définition des
+	  types d'occurrences qui sont liés avec le type d'entité stockage sont
+	  répertoriés ci-dessous. Un stockage est une partition logique d'un
+	  support de stockage physique.
+  \item \textbf{FreeSpace} : Pourcentage minimum ou absolu d'espace disque
+	  devant être disponible sur le support de stockage avec de lever un
+	  avertissement.
+  \item \textbf{MountType} : Type de protocole d'un système de fichier distant. 
+  \item \textbf{FileSystemFlag} : Liste des options de menu à définir pour les
+	  drapeaux de système de fichiers BSD. 
+  \item \textbf{Atime} : Plage temporelle d'accès pour les fichiers
+	  admissibles.
+  \item \textbf{SecureInput} : Indique si les fichiers d'entrée sont accessibles
+	  en écriture pour les utilisateurs non-autorisés.
+  \item \textbf{MountType} : L'option de menu pour le type de liens à utiliser
+	  lors de la copie comme le lien symbolique et le lien physique.
+  \item \textbf{AuditingEnabled} : Indique si la fonctionnalité de journal
+	  d'audit d'un paquet est activé ou non.
+  \item \textbf{LogLevel} : Le niveau de rapport envoyé à syslog.
+  \item \textbf{Architecture} : L'architecture relative à la section de paquets
+	  comme ''x86-64'' ou ''i386''.
+  \item \textbf{BuildsOn} : Liste de groupement de promesses sur lesquelles
+	  s'appuie ou dépend une promesse d'une certaine manière (pour la
+	  gestion des connaissances)
+  \item \textbf{HomeDirectory} : Répertoire contenant les fichiers personnels
+	  d'un utilisateur.
+  \item \textbf{ShellAccount} : Compte personnel donnant accès à une invite de
+	  commande Unix.
+  \item \textbf{Module} : Indique s'il faut s'attendre à un protocole de module
+	  CfEngine.
+\end{itemize}
+
+\subsubsection{Conception d'une ontologie de services}
 
 Dans le but d'améliorer la compréhension globale, les aptitudes des différents
 composants de l'infrastructure devront être formalisés à l'aide d'une ontologie
@@ -109,7 +356,7 @@ en place dans la boucle de gestion du système. Il existe un élément probabili
 ou stochastique pour le comportement du système et, par conséquent, la politique
 ne peut être qu'une propriété moyenne en général.
 
-\subsection{Modèle de définition des politiques d'administration}
+\subsection{Choix d'un modèle de définition des politiques d'administration}
 
 Le modèle permettant la définition des politiques d'administration serait un
 modèle orienté sur les ontologies et basé sur la théorie de la promesse.
@@ -200,209 +447,6 @@ conformité avec les politiques en vigueur.
 %Pour comprendre ITIL (Information Technology Infrastructure Library), il
 %faut l'imaginer comme un service fourni par CfEngine.
 
-\subsubsection{Définition de la promesse}
-
-Une promesse est différente d'un engagement : un engagement est le moment où un
-agent rompt avec une ligne de conduite pour une autre discontinue avec des vues
-sur un objectif, la plupart du temps à travers une action spécifique ou un
-investissement sur des résultats futurs. Dans certains cas, l'acte
-d'engagement peut résulter en une promesse persistante, mais promettre
-n'implique pas une action provoquant un changement discontinu.
-
-{%\begin{figure}[H]
-    \centering
-    \begin{tabular}{l}
-        ``Une promesse est la spécification d'un état ou comportement \\
-        ultérieur d'un agent autonome à un autre. Elle est ainsi, \\
-        une unité de politique.`` \cite{burgess_modeling_2006} \\
-        %\em \footnotesize Mark Burgess, Alva Couch, Modeling Next Generation
-        %Configuration Management Tools, \\
-        %\em \footnotesize Pp. 131-147 of the Proceedings of LISA '06,
-        %Décembre 2006
-    \end{tabular}
-    %\caption{La promesse par Burgess et al. (2006)}
-    %\label{fig:quote}
-\par}%\end{figure}
-
-Les promesses sont faites à un agent par un agent et sont modélisées par une
-relation unidirectionnelle labellisée par un \emph{corps} de promesse qui
-définit la substance de la promesse. Une promesse avec le \emph{corps}
-\textbf{+b} est une déclaration pour ''donner'' un comportement d'un agent à un
-autre, tandis qu'une promesse avec le \emph{corps} \textbf{-b} est la
-spécification de quel comportement sera reçu, accepté ou utilisé.
-
-\subsubsection{Caractéristiques de la promesse}
-
-Un promesse est l'annonce d'un fait ou d'un comportement d'un prometteur à un
-promis, sous le regard d'un certain nombre de témoins (définissant le champ
-d'application de la promesse), dont le résultat n'a pas encore été évalué.  On
-distingue deux types de promesses :
-
-\begin{itemize}
-    \item Une promesse d'accepter de se comporter comme une autre. C'est
-        essentiel pour la définition de groupes, de rôles ou de structures
-        sociales avec un consensus de comportement (cf. section
-        \ref{sec:consensus})
-    \item Une promesse d'utiliser la promesse d'un autre. C'est crucial pour les
-        interactions client/serveur, les dépendances et les contrôles d'accès.
-\end{itemize}
-
-Un promesse présente les caractéristiques suivantes :
-
-\begin{enumerate}
-    \item Il doit y avoir des agents pour qu'une promesse existe.
-    \item Il doit y avoir un prometteur (ou agent source).
-    \item Il doit y avoir un promis (ou agent destinataire), qui peut très bien
-        aussi être la source.
-    \item Il doit y avoir un \emph{corps} qui décrit la nature de la promesse.
-\end{enumerate}
-
-\subsubsection{Représentation et types de promesse: $\pi$-calculus}
-
-\begin{table}[H]
-    \begin{tabularx}{\textwidth}{
-            >{\centering\arraybackslash}X|
-            >{\centering\arraybackslash}X|
-            >{\centering\arraybackslash}X|
-        }
-
-        \cline{2-3}
-        & 
-        \textbf{Notation} &
-        \textbf{Interprétation} \\ 
-
-        \cline{2-3}
-        &
-        $a \xrightarrow{+b} a'$ &
-        Promesse avec le \emph{corps} $b$ \\
-
-        &
-        $a' \xrightarrow{-b} a$ &
-        Promesse d'accepter $b$ \\
-
-        &
-        $v_a(a \xrightarrow{b} a')$ &
-        La valeur de la promesse à $a$ \\
-
-        \cline{1-1}
-        \multicolumn{1}{ |X| }{\textbf{Type de promesse}} &
-        $v_{a'}(a \xrightarrow{b} a')$ &
-        La valeur de la promesse à $a'$ \\
-
-        \cline{1-3}
-        \multicolumn{1}{ |c| }{Basique} &
-        $n_1 \xrightarrow{\pi} n_2$ &
-        Fournit un service / un flux \\
-
-        \multicolumn{1}{ |c| }{Coopérative} &
-        $n_1 \xrightarrow{C(\pi)} n_2$ &
-        Imite / Suit \\
-
-        \multicolumn{1}{ |c| }{Utilisatrice} &
-        $n_1 \xrightarrow{U(\pi)} n_2$ &
-        Utilise / Accepte de la part de\\
-
-        \multicolumn{1}{ |c| }{Conditionnelle} &
-        $n_1 \xrightarrow{\pi_1/\pi_2} n_2$ &
-        ``File`` de promesses: $\pi_1$ if $\pi_2$\\
-        \cline{1-3}
-    \end{tabularx}
-    \caption{Représentation et types de promesses}
-    \label{PromiseTypes}
-\end{table}
-   
-Les promesses de service basiques forment un certain nombre de types, comme par
-exemple `fournir un web service en moins de 5 millisecondes` ou `donner
-n'importe quel information sur l'agent X`. D'autres exemples :
-
-\begin{itemize}
-    \item $X \xrightarrow{q \leq q_0} Y $: l'agent $X$ promet de ne jamais éxeder la
-        limite $q \leq q_0$.
-    \item $X \xrightarrow{q = q_0} Y $: l'agent $X$ promet de satisfaire
-        $q = q_0$.
-    \item $X \xrightarrow{\ell \subseteq  L} Y $: $X$ promet de garder $\ell$
-        comme sous-langage du langage L
-    \item $X \xrightarrow{S} Y $: $X$ offre le service $S$ à $Y$.
-    \item $X \xrightarrow{R} Y $: $X$ promet de relayer $R$ à $Y$.
-    \item $X \xrightarrow{\neg R} Y $: $X$ promet de ne jamais relayer $R$ à $Y$.
-    \item $X \xrightarrow{S,t} Y $: $X$ promet de répondre avec le service $S$
-        en l'espace de $t$ secondes.
-\end{itemize}
-
-Une promesse est dite ``rompue`` si un agent fait deux promesses contradictoires du
-même type et en même temps (différent d'une promesse qui aurait expiré ou changé).
-
-\subsubsection{Processus de raisonnement lié à la promesse}
-
-Le procédé de raisonnement qui accompagne l'émanation d'un promesse, se divisent
-en plusieurs sous-étapes, accrochez-vous:
-
-\begin{itemize}
-  \item \textbf{Préparation de la promesse} -
-	Processus de raisonnement effectué par A conduisant à la conception, la
-	synchronisation et la délivrance de la promesse P par A.
-  \item \textbf{Analyse de crédibilité} -
-	Processus de raisonnement où les agents C dans le champ d'application de
-	la promesse P déterminent la crédibilité qu'ils assignent à A promettant
-	P compte tenu des faits connus de A (mais à l'exception des informations
-	historiques précises sur le comportement individuel d'un membre de sa
-	classe d'agent)
-  \item \textbf{Détermination préliminaire de la confiance} -
-	Processus de raisonnement effectué par C (C dans le domaine
-	d'application de la promesse P) servant à :
-  	\begin{enumerate}
-	  \item déterminer la confiance que C accorde à A avant même de
-		  connaitre la promesse P (confiance préalable)
-	  \item spécifier quelles sont les attentes générées par la prise en
-		  considération de la promesse P.
-  	\end{enumerate}
-  \item \textbf{Délibération de contre-promesse} -
-	Processus de raisonnement effectué par B concernant les contre-promesses
-	pouvant potentiellement être émises par B en retour de considération de
-	P (B dans le champ d'application de P)
-  \item \textbf{Prédiction de l'impact de la promesse} -
-	(cela peut être réalisé à condition que B ait émis une ou plusieurs
-	contre-promesses plausibles)
-  	\begin{enumerate}
-	  \item Processus de raisonnement effectué par B (dans le champ
-		  d'application de P) et C (n'importe quel agent dans le champ
-		  d'application de P) servant à déterminer les (le changement
-		  des) attentes que P créé dans B (et que A a l'intention de
-		  générer).  
-	  \item Processus de raisonnement visant à la modification des ententes
-		  (détenues par B ou C) étant donné la changement des attentes
-		  de chacun d'entre eux amené par la prise en considération de
-		  la promesse P.
-  	\end{enumerate}
-  \item \textbf{Évaluation de la promesse} -
-	Processus de raisonnement effectué par C concernant :
-  	\begin{enumerate}
-	  \item la façon dont C va évaluer si la promesse de A a été tenue ou
-		  non.
-      \item l'évaluation de cette dernière au moyen de la méthode la plus
-          adéquate
-  	\end{enumerate}
-  \item \textbf{Surveillance de rétraction de promesse} -
-	A peut être amené à un stade ultérieur à émettre une autre promesse Q,
-	pour laquelle la tenue n'est pas compatible avec la tenue de P. Dans ce
-	cas, Q qualifie un retrait de P. Un agent C applique un processus de
-	raisonnement qui surveille et évalue les promesses postérieures émises
-	par A pour déterminer si celles-ci seront amenées à rompre la promesse P
-	et induire sont retrait.
-  \item \textbf{Mise à jour de la confiance} -
-	Processus de raisonnement en place pour chacun des agents C dans le champ
-	d'application de P visant à mettre à jour la confiance préalablement
-	accordée à A, en adéquation avec la résultat de l'évaluation que C fait
-	concernant le degré avec lequel la promesse P a été tenue par A.
-  \item \textbf{Critère de réputation} -
-	Processus de raisonnement effectué par chacun des agents C dans le champ
-	d'application de P visant à échanger entre les différent agents les
-	effets des mises à jour de confiance. Le flux de réputation permet a un
-	agent C n'ayant aucuns aprioris sur un agent A d'acquérir une confiance
-	initiale en prenant en considération les preuves recueillies par les
-    autres agents (parce que même les agents ont des casiers judiciaires).
-\end{itemize}
-
 \subsection{Gestion de configuration basée sur la théorie de la promesse}
 
 \subsubsection{Données paramètres}
@@ -455,7 +499,7 @@ nécessaire pour valider le résultat de ces traitements.
 
 \section{Consistance de l'information et tolérance à l'échec}
 
-\subsection{Algorithme de consensus}
+\subsection{Choix d'un algorithme de consensus}
 \label{sec:consensus}
 
 Le consensus est un problème fondamental dans les systèmes distribués tolérants
@@ -467,7 +511,7 @@ cluster de 5 serveurs peut continuer à fonctionner même si deux serveurs ne so
 plus disponibles. Si plusieurs serveurs échouent, ils cessent de faire des
 progrès, mais ils ne retournerons jamais de valeurs erronées.
 
-\subsubsection{Pourquoi Raft ?}
+\subsubsection{Choix du consensus de Raft}
 
 Raft est un algorithme de consensus qui est conçu pour être facile à comprendre.
 Il est équivalent à Paxos dans la tolérance aux pannes et en termes de
@@ -479,78 +523,59 @@ Il existe des écarts significatifs entre la description de l'algorithme de Paxo
 et les besoins d'un système dans le monde réel. Le système au final serait basé
 sur un protocole dénué de preuves.
 
-\begin{tabular}{p{.48\textwidth}p{.48\textwidth}}
-    \noindent
-    \textbf{\textit{Inconvénients de Paxos}}
-
-    \begin{itemize}
-        \item Extrêmement difficile à comprendre. L'opacité de Paxos dérive de
-            son choix d'avoir un sous-ensemble de décrets uniques comme son
-            fondement.
-        \item Ne fourni pas une bonne base pour la construction d'applications
-            pratiques. Par exemple, il y peu d'avantages à choisir de manière
-            indépendante une collection d'entrées dans le registre, pour les
-            fusionner par la suite dans un journal séquentiel ; cela ajoute
-            seulement de la complexité. Il est plus simple et plus efficace de
-            concevoir un système autour d'un journal, où les nouvelles entrées
-            sont ajoutées séquentiellement dans un ordre contraint.
-        \item Utilise une approche symétrique pair-à-pair à sa base. Cela a un
-            sens dans un monde simplifié où seule une décision sera prise, mais
-            peu de systèmes concrets utilisent cette approche.  Si une série de
-            décisions doivent être prises, il est plus simple et plus rapide
-            d'élire d'abord un leader, puis de le laisser coordonner les
-            décisions.
-    \end{itemize} 
+\begin{table*}
+    \begin{tabular}{p{.48\textwidth}p{.48\textwidth}}
+        \noindent
+        \textbf{\textit{Inconvénients de Paxos}}
     
-    &
+        \begin{itemize}
+            \item Extrêmement difficile à comprendre. L'opacité de Paxos dérive
+                de son choix d'avoir un sous-ensemble de décrets uniques comme
+                son fondement.
+            \item Ne fourni pas une bonne base pour la construction
+                d'applications pratiques. Par exemple, il y peu d'avantages à
+                choisir de manière indépendante une collection d'entrées dans le
+                registre, pour les fusionner par la suite dans un journal
+                séquentiel ; cela ajoute seulement de la complexité. Il est plus
+                simple et plus efficace de concevoir un système autour d'un
+                journal, où les nouvelles entrées sont ajoutées séquentiellement
+                dans un ordre contraint.
+            \item Utilise une approche symétrique pair-à-pair à sa base. Cela a
+                un sens dans un monde simplifié où seule une décision sera
+                prise, mais peu de systèmes concrets utilisent cette approche.
+                Si une série de décisions doivent être prises, il est plus
+                simple et plus rapide d'élire d'abord un leader, puis de le
+                laisser coordonner les décisions.
+        \end{itemize} 
+        
+        &
+    
+        \textbf{\textit{Avantages de Raft}}
+    
+        \begin{itemize}
+            \item Raft utilise une forme plus solide de leadership que les
+                autres algorithmes de consensus. Par exemple, les entrées du
+                registre seront communiquées que par le leader vers les autres
+                serveurs. Cela simplifie largement la gestion de la réplication
+                des journaux et rend Raft beaucoup plus facile à comprendre.
+            \item Raft utilise des minuteries aléatoires pour élire les leaders.
+                Cela ajoute un peu de mécanismes au système de pulsation déjà
+                nécessaire dans n'importe quel algorithme de consensus, tandis
+                que la résolution des confits se fait simplement et rapidement.
+            \item Le mécanisme de Raft pour changer l'ensemble des serveurs de
+                la grappe utilise une nouvelle approche de consensus conjointe
+                où les majorités des deux différentes configurations se
+                superposent pendant les transitions. Cela permet au groupe de
+                continuer à fonctionner normalement pendant les changements de
+                configuration.
+        \end{itemize}
+    
+    \end{tabular}
+    \caption{Comparaison des algorithmes de consensus de Raft et de Paxos}
+    \label{table:consensus_comparison}
+\end{table*}
 
-    \textbf{\textit{Avantages de Raft}}
-
-    \begin{itemize}
-        \item Raft utilise une forme plus solide de leadership que les autres
-            algorithmes de consensus. Par exemple, les entrées du registre
-            seront communiquées que par le leader vers les autres serveurs. Cela
-            simplifie largement la gestion de la réplication des journaux et
-            rend Raft beaucoup plus facile à comprendre.
-        \item Raft utilise des minuteries aléatoires pour élire les leaders.
-            Cela ajoute un peu de mécanismes au système de pulsation déjà
-            nécessaire dans n'importe quel algorithme de consensus, tandis que
-            la résolution des confits se fait simplement et rapidement.
-        \item Le mécanisme de Raft pour changer l'ensemble des serveurs de la
-            grappe utilise une nouvelle approche de consensus conjointe où les
-            majorités des deux différentes configurations se superposent pendant
-            les transitions. Cela permet au groupe de continuer à fonctionner
-            normalement pendant les changements de configuration.
-    \end{itemize}
-
-\end{tabular}
-
-\subsubsection{Architecture de machines à états répliquées}
-
-%\begin{wrapfigure}[8]{r}[0pt]{.4\textwidth}
-\begin{figure}[H]
-    \centerline{\includegraphics[width=.37\textwidth]{img/replicated_state_machine}}
-    \caption{Procédé de réplication des machines à états}
-    \label{replicated_state_machine}
-%\end{wrapfigure}
-\end{figure}
-
-L'algorithme de consensus gère un registre répliqué regroupant les commandes de
-la machine à états de chacun des clients dans le réseau. Les machines à états
-traitent des séquences identiques de commandes à partir de journaux partagés, de
-sorte qu'ils produisent les mêmes résultats.
-
-Les systèmes à grande échelle n'ayant qu'un seul cluster leader utilisent une
-machine à état distincte pour gérer les élections et pour stocker les
-informations de configuration qui doivent survivre aux crashs du leader
-(exemples: Chubby, ZooKeeper).
-
-\begin{verse}
-    \underline{
-        Garder le registre répliqué consistant est le travail de l'algorithme de
-        consensus.
-    }
-\end{verse}
+\subsubsection{Caractéristiques des algorithmes de consensus}
 
 Les algorithmes de consensus pour les systèmes concrets ont généralement les
 caractéristiques suivantes :
@@ -576,84 +601,32 @@ caractéristiques suivantes :
         performances globales du système.
 \end{itemize}
 
-\subsubsection{États des serveurs}
+\subsubsection{Architecture de machines à états répliquées}
 
-Un cluster Raft comprend une multitude des serveurs (cinq est un nombre courant
-permettant au système de tolérer deux échecs). À n'importe quel moment donné,
-chacun des serveur est dans l'un de ces états :
-
-\begin{itemize}
-    \item \textbf{Leader} -
-        En cycle normal, il existe un et un seul \emph{leader} et tous les autres
-        serveurs sont \emph{followers}. Le \emph{leader} traite les requêtes de
-        tous les clients (si un client contacte un \emph{follower}, le
-        \emph{follower} le redirige vers le \emph{leader}).
-    \item \textbf{Follower} -
-        Les \emph{followers} sont passifs : ils n'émettent jamais de messages par
-        leur propre initiative, ils se contentent simplement de répondre aux
-        requêtes émises par le \emph{leader} et les \emph{candidats}.
-    \item \textbf{Candidat} -
-        Statut intermédiaire utilisé lors de l'élection d'un nouveau
-        \emph{leader}. La figure \ref{fig:raft_server_states} montre les différents états
-        et transitions possibles dans un cluster Raft.
-\end{itemize}
-
-%\begin{wrapfigure}[7]{r}{.4\textwidth}
-\begin{figure}[H]
-    \centerline{\includegraphics[width=.47\textwidth]{img/raft_server_states}}
-    \caption{États et transitions dans un cluster Raft}
-    \label{fig:raft_server_states}
+%\begin{wrapfigure}[8]{r}[0pt]{.4\textwidth}
+\begin{figure}[h]
+    \centerline{\includegraphics[width=.37\textwidth]{img/replicated_state_machine}}
+    \caption{Procédé de réplication des machines à états}
+    \label{replicated_state_machine}
 %\end{wrapfigure}
 \end{figure}
 
-Les \emph{followers} ne font que répondre aux requêtes des autres serveurs. Si
-un \emph{follower} ne reçoit plus de communications, il devient alors
-\emph{candidat} et initie une élection. Le \emph{candidat} qui reçoit les votes
-d'un majorité du cluster complet devient le nouveau \emph{leader}. D'une manière
-générale, les \emph{leaders} opèrent jusqu'à ce qu'ils échouent.
+L'algorithme de consensus gère un registre répliqué regroupant les commandes de
+la machine à états de chacun des clients dans le réseau. Les machines à états
+traitent des séquences identiques de commandes à partir de journaux partagés, de
+sorte qu'ils produisent les mêmes résultats.
 
-\subsubsection{Élection d'un \emph{leader}}
+Les systèmes à grande échelle n'ayant qu'un seul cluster leader utilisent une
+machine à état distincte pour gérer les élections et pour stocker les
+informations de configuration qui doivent survivre aux crashs du leader
+(exemples: Chubby, ZooKeeper).
 
-Comme le montre la figure \ref{fig:leader_election}, le temps est divisé en
-termes. Chaque terme commence par une élection. Après une élection fructueuse,
-un \emph{leader} unique gère l'intégralité du cluster jusqu'à la fin du terme.
-Parfois les élections échouent, auquel cas le terme se terminera sans choisir de
-\emph{leader} et de nouvelles élections auront lieu au prochain terme. Il est
-important de noter que les transitions seront observées à des moments différents
-d'un serveur à l'autre.
-
-%\begin{wrapfigure}{r}{.4\textwidth}
-\begin{figure}[H]
-    \centerline{\includegraphics[width=.37\textwidth]{img/leader_election}}
-    \caption{Processus d'élection d'un \emph{leader}}
-    \label{fig:leader_election}
-%\end{wrapfigure}
-\end{figure}
-
-\subsubsection{Réplication des journaux}
-
-L'organisation des journaux est détaillée par la figure
-\ref{fig:log_replication}.  Les journaux sont composés d'entrées
-séquentiellement numérotées. Dans notre gestionnaire de contexte, ces entrées
-correspondent à des états incrémentaux de notre ontologie. Chaque entrée réfère aux terme
-durant lequel elle a été créée (le numéro de case dans la figure
-\ref{fig:log_replication}) et contient une commande pour la machine à état. Une
-entrée est considérée comme \emph{une transaction validée (committed)} si son
-insertion dans la machine à état est sans dangers.
-
-%\begin{wrapfigure}{r}{.4\textwidth}
-\begin{figure}[H]
-    \centerline{\includegraphics[width=.37\textwidth]{img/log_replication}}
-    \caption{Processus de réplication des journaux}
-    \label{fig:log_replication}
-%\end{wrapfigure}
-\end{figure}
-
-En cycle fonctionnement normal, il y a un et un seul \emph{leader} et $n$
-\emph{followers}. Le \emph{leader} envoie des pulsations régulières, témoins de
-sa disponibilité, aux autres membres du cluster. Le premier \emph{follower}
-remarquant l'inactivité du \emph{leader} (arrêt des pulsations) initie alors de
-nouvelles élections. 
+%\begin{verse}
+%    \underline{
+        Garder le registre répliqué consistant est le travail de l'algorithme de
+        consensus.
+%    }
+%\end{verse}
 
 \section{Conclusion}
 

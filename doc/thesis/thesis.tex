@@ -4,7 +4,6 @@
 \usepackage{amsthm}
 \usepackage{array}
 \usepackage{graphicx}
-%\usepackage{natbib}
 \usepackage[sorting=none]{biblatex}
 \usepackage{relsize}
 \usepackage{caption}
@@ -22,9 +21,13 @@
 \usepackage[cm]{fullpage}
 \usepackage{enumitem}
 \usepackage{alltt}
+\usepackage{verbatim}
 \usepackage{ragged2e}
 \usepackage{type1cm} % scalable fonts
+\usepackage{xcolor}
+\usepackage{fancyvrb}
 %\usepackage{showframe}
+%\usepackage{natbib}
 
 \selectlanguage{francais}
 
@@ -32,6 +35,18 @@
 %\clubpenalty=10000
 
 \bibliography{thesis}
+
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
+\definecolor{pastelgray}{rgb}{0.81, 0.81, 0.77}
+\definecolor{pearl}{rgb}{0.94, 0.92, 0.84}
+\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
+\definecolor{namecolor}{cmyk}{1,.50,0,.10} % Here I am trying to define the font color that is used in the example but I don't really know which one is it so I leave this to the OP to figure ou
+
+\let\oldv\Verbatim
+\let\oldendv\endVerbatim
+\def\myverbatim{\par\setbox0\vbox\bgroup\oldv}
+\def\endmyverbatim{\oldendv\egroup \noindent\colorbox{pearl}{\usebox0}\par}
+
 
 \renewcommand{\ttdefault}{txtt}
 \renewcommand{\listalgorithmname}
